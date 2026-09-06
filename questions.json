@@ -1,0 +1,2546 @@
+[
+  {
+    "id": 1,
+    "question": "Trong SPSS, kiểm định One-Sample T Test là phép kiểm định dùng để so sánh:",
+    "options": {
+      "A": "Giá trị trung bình của một tổng thể với một giá trị cụ thể xác định",
+      "B": "Hai giá trị trung bình của một biến trên 2 nhóm quan sát",
+      "C": "Trung bình 2 dãy giá trị của 2 biến trên cùng 1 nhóm quan sát tại 2 thời điểm",
+      "D": "Giá trị trung bình của một biến trên nhiều nhóm quan sát"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 2,
+    "question": "Trong SPSS, trong hộp thoại Explore tại mục Factor List, biến được đưa vào là:",
+    "options": {
+      "A": "Định tính",
+      "B": "Định lượng",
+      "C": "Định tính và định lượng",
+      "D": "Tỷ lệ"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 3,
+    "question": "Trong SPSS, khi thực hiện kiểm định tính chuẩn của biến, muốn đưa ra biểu đồ xác suất chuẩn (Q-Q plot) chọn lệnh Analyze\\ Descriptive Statistics\\ Explore, tích chọn mục nào?",
+    "options": {
+      "A": "Factor levels together",
+      "B": "Normality plots with tests",
+      "C": "Dependents together",
+      "D": "Stem-and-leaf"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 4,
+    "question": "Trong SPSS, khi thực hiện thống kê Explore, tại mục Display muốn xuất hiện kết quả thống kê và biểu đồ kết quả, chọn mục nào?",
+    "options": {
+      "A": "Both",
+      "B": "Statistics",
+      "C": "Plots",
+      "D": "Statistics and plots"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 5,
+    "question": "Trong SPSS, khi thực hiện thống kê Explore, tại mục Display muốn xuất hiện kết quả thống kê, chọn mục nào?",
+    "options": {
+      "A": "Both",
+      "B": "Statistics",
+      "C": "Plots",
+      "D": "Statistics and plots"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 6,
+    "question": "Trong SPSS, khi thực hiện thống kê Explore, tại mục Display muốn xuất hiện biểu đồ kết quả, chọn mục nào?",
+    "options": {
+      "A": "Both",
+      "B": "Statistics",
+      "C": "Plots",
+      "D": "Statistics and plots"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 7,
+    "question": "Trong SPSS, lệnh Explore có ý nghĩa:",
+    "options": {
+      "A": "Lược qua dữ liệu để phát hiện các giá trị bất thường",
+      "B": "Xóa dữ liệu có các giá trị bất thường",
+      "C": "Đánh dấu dữ liệu để phát hiện các giá trị bất thường",
+      "D": "Gạch chân dữ liệu để phát hiện các giá trị bất thường"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 8,
+    "question": "Trong SPSS, tại mục Dependent List của hộp thoại Explore:",
+    "options": {
+      "A": "Có thể chọn một hoặc nhiều biến định lượng",
+      "B": "Có thể chọn một hoặc nhiều biến định tính",
+      "C": "Chỉ chọn duy nhất 1 biến",
+      "D": "Chỉ chọn biến định danh"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 9,
+    "question": "Trong SPSS, để kiểm định mối liên hệ giữa hai biến định tính chọn lệnh:",
+    "options": {
+      "A": "General tables",
+      "B": "Custom tables",
+      "C": "Descriptive Statistics\\ Crosstabs, chọn mục Chi-square",
+      "D": "Compare means"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 10,
+    "question": "Khi thực hiện kiểm định Chi-square SPSS ra thông báo \"a 18 cells (69.2%) have expected count less than 5. The minimum expected count is .94.\" nghĩa là:",
+    "options": {
+      "A": "Có 18 ô có tần suất mong đợi dưới 5 chiếm 69.2% các ô",
+      "B": "Có 18 ô có giá trị khuyết chiếm 69.2% các ô",
+      "C": "Có 18 ô chứa dữ liệu chiếm 69.2% các ô",
+      "D": "Tất cả đều sai"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 11,
+    "question": "Trong SPSS, kiểm định Chi-square không còn tin tưởng được khi có:",
+    "options": {
+      "A": "Quá 5% số ô có tần suất kỳ vọng dưới 5",
+      "B": "Quá 10% số ô có tần suất kỳ vọng dưới 5",
+      "C": "Quá 15% số ô có tần suất kỳ vọng dưới 5",
+      "D": "Quá 20% số ô có tần suất kỳ vọng dưới 5"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 12,
+    "question": "Trong kiểm định trung bình hai mẫu độc lập thì:",
+    "options": {
+      "A": "Không quan tâm đến việc đưa các biến vào vị trí nào",
+      "B": "Biến định lượng đưa vào ô grouping variables và biến định tính đưa vào ô test variables",
+      "C": "Biến định lượng đưa vào ô test variables và biến định tính đưa vào ô define groups",
+      "D": "Biến định lượng đưa vào ô test variables và biến định tính đưa vào ô grouping variables"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 13,
+    "question": "Đổi vị trí 2 biến giữa 2 ô chứa chúng khi lập bảng tổng hợp hai biến sẽ:",
+    "options": {
+      "A": "Không làm thay đổi kết quả xử lý, nhưng làm thay đổi cách hiển thị kết quả",
+      "B": "Làm cho kết quả xử lý và hiển thị đều thay đổi",
+      "C": "Làm thay đổi kết quả xử lý, nhưng không làm thay đổi kết quả hiển thị",
+      "D": "Không làm thay đổi kết quả xử lý và hiển thị kết quả xử lý"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 14,
+    "question": "Trong SPSS, phát biểu không đúng về kiểm định Chi-bình phương là: Continuity Correction là một dạng biến thể của Pearson Chi-Square để sử dụng cho những bảng dạng 2x2, tức là bảng kết hợp của 2 biến mà mỗi biến đều có:",
+    "options": {
+      "A": "3 biểu hiện",
+      "B": "2 biểu hiện trở lên",
+      "C": "2 biểu hiện",
+      "D": "1 biểu hiện"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 15,
+    "question": "Khi nghiên cứu mối liên hệ giữa 2 biến, trong đó biến nguyên nhân là Đi làm thêm, biến kết quả là Xếp loại học tập của sinh viên thì sử dụng kiểm định nào?",
+    "options": {
+      "A": "Kiểm định Chi-bình phương",
+      "B": "Kiểm định trung bình 1 mẫu",
+      "C": "Kiểm định trung bình 2 mẫu",
+      "D": "Phân tích phương sai (ANOVA)"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 16,
+    "question": "Trong SPSS, khi kiểm định trung bình hai mẫu độc lập, tại cửa sổ Independent-Samples T Test:",
+    "options": {
+      "A": "Không quan tâm đến việc đưa các biến vào vị trí nào",
+      "B": "Biến định lượng đưa vào ô Grouping variables và biến định tính đưa vào ô Test variables",
+      "C": "Biến định lượng đưa vào ô Test variables và biến định tính đưa vào ô Define range",
+      "D": "Biến định lượng đưa vào ô Test Variables và biến định tính đưa vào ô Grouping Variables"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 17,
+    "question": "Trong SPSS, muốn so sánh trung bình mẫu với trung bình lý thuyết, dùng kiểm định nào?",
+    "options": {
+      "A": "One-Sample T Test",
+      "B": "Independent-Samples T Test",
+      "C": "Paired-Samples T Test",
+      "D": "Summary Independent-Sample T Test"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 18,
+    "question": "Trong SPSS, khi định nghĩa biến nhiều trả lời: Chọn tất cả các biến thuộc câu nhiều lựa chọn đưa vào khung Variables in Set. Tại khung Variables Are Coded As: Nếu biến có 2 lựa chọn, khi khai báo cách mã hoá chọn mục nào?",
+    "options": {
+      "A": "Dichotomies",
+      "B": "Categories",
+      "C": "Multiple Response",
+      "D": "Define Variable"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 19,
+    "question": "Trong SPSS, khi định nghĩa biến nhiều trả lời: Chọn tất cả các biến thuộc câu nhiều lựa chọn đưa vào khung Variables in Set. Sau đó tại khung Variables Are Coded As: Nếu biến có nhiều lựa chọn, khi khai báo cách mã hoá chọn mục nào?",
+    "options": {
+      "A": "Dichotomies",
+      "B": "Multiple Response",
+      "C": "Categories",
+      "D": "Define Variable"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 20,
+    "question": "Khi định nghĩa Analyze - Tables - Custom Tables, nếu muốn tách kết quả của bảng trong khung mẫu thành các bảng khác nhau theo từng phân loại của biến phân loại chọn mục nào?",
+    "options": {
+      "A": "Titles",
+      "B": "Options",
+      "C": "Layers",
+      "D": "Normal"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 21,
+    "question": "Trong SPSS, lệnh không hỗ trợ tìm dữ liệu nhập sai là:",
+    "options": {
+      "A": "Chạy lệnh Frequencies",
+      "B": "Data\\ Sort cases",
+      "C": "Data\\ Select cases",
+      "D": "Data\\ Merge Files"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 22,
+    "question": "Khi chạy Frequencies đối với các biến định tính đã mã hóa, khi chọn tính các đại lượng thống kê thì SPSS sẽ:",
+    "options": {
+      "A": "Không tính các đại lượng thống kê",
+      "B": "Thực hiện tính các đại lượng thống kê nhưng không có ý nghĩa trong nghiên cứu",
+      "C": "Thực hiện tính các đại lượng thống kê, có ý nghĩa trong nghiên cứu",
+      "D": "Máy sẽ báo lỗi"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 23,
+    "question": "Trong SPSS, tại bảng kết quả thống kê \"Std. Deviation\" cho biết:",
+    "options": {
+      "A": "Độ lệch chuẩn",
+      "B": "Sai số chuẩn khi dùng trị trung bình của mẫu để ước lượng trung bình tổng thể",
+      "C": "Sai số chuẩn khi ước lượng trị trung bình",
+      "D": "Độ lệch chuẩn bình phương"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 24,
+    "question": "Trong SPSS, tại bảng kết quả thống kê \"S.E. Mean\" cho biết:",
+    "options": {
+      "A": "Sai số chuẩn khi dùng trị trung bình của mẫu để ước lượng trung bình tổng thể",
+      "B": "Độ lệch chuẩn",
+      "C": "Phương sai của mẫu",
+      "D": "Độ lệch chuẩn bình phương"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 25,
+    "question": "Trong SPSS, tại bảng kết quả thống kê \"Std. Error\" cho biết:",
+    "options": {
+      "A": "Độ lệch chuẩn",
+      "B": "Sai số chuẩn khi ước lượng trị trung bình",
+      "C": "Độ lệch chuẩn bình phương",
+      "D": "Phương sai"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 26,
+    "question": "Trong SPSS, kiểm định Independent-Samples T Test là phép kiểm định dùng để so sánh:",
+    "options": {
+      "A": "Giá trị trung bình của một tổng thể với một giá trị cụ thể xác định",
+      "B": "Hai giá trị trung bình của một biến trên 2 nhóm quan sát",
+      "C": "Trung bình 2 dãy giá trị của 2 biến trên cùng 1 nhóm quan sát tại 2 thời điểm",
+      "D": "Giá trị trung bình của một biến trên nhiều nhóm quan sát"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 27,
+    "question": "Trong SPSS, tại hộp thoại Explore Statistics thì ô Descriptives mặc định độ tin cậy là:",
+    "options": {
+      "A": "95%, đây là độ tin cậy",
+      "B": "5%, đây là sai số hệ thống",
+      "C": "99%, đây là độ tin cậy",
+      "D": "5%, đây là độ tin cậy"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 28,
+    "question": "Trong SPSS, lệnh Custom Tables để tính một số thống kê trên các nhóm quan sát được xác định bằng:",
+    "options": {
+      "A": "Một hay nhiều biến phân nhóm",
+      "B": "Một biến phân nhóm",
+      "C": "Nhiều biến phân nhóm",
+      "D": "Không biến phân nhóm"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 29,
+    "question": "Trong SPSS, khi thực hiện kiểm định One-Sample T Test phải:",
+    "options": {
+      "A": "Biết trước trị trung bình của nhóm nghiên cứu",
+      "B": "Không cần biết trước trị trung bình của nhóm nghiên cứu",
+      "C": "Biết trị trung bình cần kiểm định",
+      "D": "Biết tổng số quan sát của nhóm nghiên cứu"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 30,
+    "question": "Trong SPSS, khi thực hiện kiểm định trung bình của hai nhóm phải:",
+    "options": {
+      "A": "Biết trước trị trung bình của 02 nhóm",
+      "B": "Không cần biết trị trung bình của 02 nhóm",
+      "C": "Kiểm định phương sai của hai nhóm",
+      "D": "Kiểm định mối liên hệ của hai nhóm"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 31,
+    "question": "Trong SPSS, để kiểm định tính chuẩn của biến, dùng lệnh:",
+    "options": {
+      "A": "Analyze\\ Descriptive Statistics\\ Explore",
+      "B": "Analyze\\ Descriptive Statistics\\ P-P Plots",
+      "C": "Analyze\\ Descriptive Statistics\\ Q-Q Plots",
+      "D": "Analyze\\ Descriptive Statistics\\ Crosstabs"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 32,
+    "question": "Trong SPSS, khi thực hiện kiểm định sự phân bố một mẫu sử dụng kiểm định nào sau đây?",
+    "options": {
+      "A": "Kiểm định Chi-bình phương",
+      "B": "Kiểm định Chi-square 1 mẫu",
+      "C": "Kiểm định trung bình 2 mẫu",
+      "D": "Phân tích phương sai (ANOVA)"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 33,
+    "question": "Trong SPSS, kiểm định Chi-bình phương chỉ có ý nghĩa khi số quan sát đủ lớn. Giá trị Chi-bình phương không còn đáng tin cậy nếu có:",
+    "options": {
+      "A": "Quá 20% số ô trong bảng chéo có tần số lý thuyết nhỏ hơn 5",
+      "B": "Quá 10% số ô trong bảng chéo có tần số lý thuyết nhỏ hơn 5",
+      "C": "Đủ 20% số ô trong bảng chéo có tần số lý thuyết nhỏ hơn 5",
+      "D": "Ít hơn 10% số ô trong bảng chéo có tần số lý thuyết nhỏ hơn 5"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 34,
+    "question": "Nhiều người cho rằng độ tuổi kết hôn của những người nữ đã tốt nghiệp đại học là 30 tuổi, một nghiên cứu khảo sát trên 150 phụ nữ lập gia đình trong 2 năm qua để xem nhận định đó đúng hay sai. Sử dụng kiểm định nào?",
+    "options": {
+      "A": "Kiểm định Chi-bình phương",
+      "B": "Kiểm định trung bình 1 mẫu",
+      "C": "Kiểm định trung bình 2 mẫu",
+      "D": "Phân tích phương sai (ANOVA)"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 35,
+    "question": "Trong SPSS, khi nghiên cứu sự khác biệt về Điểm trung bình học tập giữa hai nhóm sinh viên Có đi làm thêm và Không đi làm thêm, sử dụng kiểm định nào?",
+    "options": {
+      "A": "Kiểm định Chi-bình phương",
+      "B": "Kiểm định trung bình 1 mẫu",
+      "C": "Kiểm định trung bình 2 mẫu",
+      "D": "Phân tích phương sai (ANOVA)"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 36,
+    "question": "Yêu cầu kiểm định sự khác biệt trị trung bình giữa hai mẫu độc lập dùng lệnh:",
+    "options": {
+      "A": "Compute\\ Crosstabs...",
+      "B": "Compare Means\\ Independent-Samples T Test",
+      "C": "Recode\\ Crosstabs...",
+      "D": "Recode\\ Independent-Samples T Test"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 37,
+    "question": "Trong SPSS, kiểm định Paired-Samples T Test là phép kiểm định dùng để so sánh:",
+    "options": {
+      "A": "Giá trị trung bình của một tổng thể với một giá trị cụ thể xác định",
+      "B": "Hai giá trị trung bình của một biến trên 2 nhóm quan sát",
+      "C": "Trung bình 2 dãy giá trị của 2 biến trên cùng 1 nhóm quan sát tại 2 thời điểm",
+      "D": "Giá trị trung bình của một biến trên nhiều nhóm quan sát"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 38,
+    "question": "Trong SPSS, khi kiểm định trung bình của một tổng thể thì giá trị Sig. (2-tailed) < 0.05 thì:",
+    "options": {
+      "A": "Công nhận trị trung bình của tổng thể bằng trung bình tập mẫu",
+      "B": "Kiểm định không còn tin tưởng được",
+      "C": "Không công nhận trị trung bình của tổng thể bằng trung bình tập mẫu",
+      "D": "Không kết luận"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 39,
+    "question": "Trong SPSS, khi kiểm định trung bình của một tổng thể thì giá trị Sig. (2-tailed) > 0.05 thì:",
+    "options": {
+      "A": "Kiểm định không còn tin tưởng được",
+      "B": "Ta công nhận trị trung bình của tổng thể bằng trung bình tập mẫu",
+      "C": "Ta bác bỏ trị trung bình của tổng thể bằng trung bình tập mẫu",
+      "D": "Không kết luận"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 40,
+    "question": "Trong SPSS, kiểm định One-Sample T Test là phép kiểm định:",
+    "options": {
+      "A": "So sánh trung bình hai biến chuẩn",
+      "B": "So sánh trung bình hai biến độc lập",
+      "C": "So sánh trung bình mẫu với trung bình lý thuyết",
+      "D": "So sánh trung bình của nhiều biến chuẩn"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 41,
+    "question": "Trong SPSS, kiểm định Independent-Sample T Test là phép kiểm định:",
+    "options": {
+      "A": "So sánh trung bình hai biến chuẩn",
+      "B": "So sánh trung bình hai biến độc lập",
+      "C": "So sánh trung bình mẫu với trung bình lý thuyết",
+      "D": "So sánh trung bình của nhiều biến chuẩn"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 42,
+    "question": "Trong SPSS, tại hộp thoại Custom Tables muốn đưa biến cần thống kê vào, thực hiện:",
+    "options": {
+      "A": "Đánh dấu các biến đưa vào thống kê sau đó click mũi tên đưa biến vào thống kê",
+      "B": "Nhấp kéo rê biến vào cột hoặc dòng để thống kê",
+      "C": "Click vào các biến, tự SPSS đưa vào ô thống kê",
+      "D": "Không thực hiện được"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 43,
+    "question": "Trong SPSS, khi thực hiện kiểm định One-Sample T Test, đọc bảng kết quả và kết luận bác bỏ giả thuyết H0 khi giá trị Sig. (2-tailed):",
+    "options": {
+      "A": ">= alpha",
+      "B": "> alpha",
+      "C": "<= alpha",
+      "D": "< alpha"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 44,
+    "question": "Trong SPSS, khi thực hiện kiểm định One-Sample T Test, đọc bảng kết quả và kết luận chấp nhận giả thuyết H0 khi giá trị Sig. (2-tailed):",
+    "options": {
+      "A": ">= alpha",
+      "B": "> alpha",
+      "C": "<= alpha",
+      "D": "< alpha"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 45,
+    "question": "Trong SPSS, tại hộp thoại One-Sample T Test: Options... mục Confidence Interval Percentage dùng để xác định:",
+    "options": {
+      "A": "Độ tin cậy cần kiểm định",
+      "B": "Mức ý nghĩa cần kiểm định",
+      "C": "Giá trị trung bình của biến cần kiểm định",
+      "D": "Tổng số quan sát"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 46,
+    "question": "Trong SPSS, tại hộp thoại One-Sample T Test, mục Test Value để:",
+    "options": {
+      "A": "Nhập vào giá trị trung bình của biến cần kiểm định",
+      "B": "Nhập vào độ tin cậy cần kiểm định",
+      "C": "Nhập vào mức ý nghĩa",
+      "D": "Nhập vào giá trị cần kiểm định"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 47,
+    "question": "Trong SPSS, so sánh trung bình giá trị của 1 nhóm quan sát tại hai thời điểm, dùng lệnh:",
+    "options": {
+      "A": "Analyze\\ Compare Means\\ One-Sample T Test",
+      "B": "Analyze\\ Compare Means\\ Independent-Samples T Test",
+      "C": "Analyze\\ Compare Means\\ Paired-Samples T Test",
+      "D": "Analyze\\ Compare Means\\ Summary Independent-Sample T Test"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 48,
+    "question": "Trong SPSS, muốn tạo biến mới (không điều kiện) bằng công cụ Compute thực hiện:",
+    "options": {
+      "A": "Transform\\ Recode into Same Variables...",
+      "B": "Transform\\ Recode into Different Variables...",
+      "C": "Transform\\ Compute Variable...",
+      "D": "Transform\\ Count Values within Cases"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 49,
+    "question": "Trong SPSS, nếu biến trong nghiên cứu là biến chuẩn, để so sánh trung bình trên hai mẫu độc lập, dùng lệnh:",
+    "options": {
+      "A": "Analyze\\ Compare Means\\ One-Sample T Test",
+      "B": "Analyze\\ Compare Means\\ Independent-Samples T Test",
+      "C": "Analyze\\ Compare Means\\ Paired-Samples T Test",
+      "D": "Analyze\\ Compare Means\\ Summary Independent-Sample T Test"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 50,
+    "question": "Trong SPSS, để mở hộp thoại Custom Tables cần thực hiện:",
+    "options": {
+      "A": "Analyze\\ Tables",
+      "B": "Analyze\\ Tables\\ Custom Tables",
+      "C": "Tables\\ Custom Tables",
+      "D": "Analyze\\ Tables\\ Custom"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 51,
+    "question": "Trong SPSS, tại hộp thoại Custom Tables muốn tính tổng theo cột hoặc dòng của các biến cần thống kê chọn mục:",
+    "options": {
+      "A": "Summary Statistics",
+      "B": "Categories and Totals...",
+      "C": "Summary",
+      "D": "Categories"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 52,
+    "question": "Trong SPSS, để tính tần suất và tỉ lệ của biến định tính, thực hiện:",
+    "options": {
+      "A": "Transform\\ Descriptive Statistics\\ Frequencies",
+      "B": "Analyze\\ Descriptive Statistics\\ Crosstabs",
+      "C": "Transform\\ Compare Means\\ Frequencies",
+      "D": "Analyze\\ Descriptive Statistics\\ Frequencies"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 53,
+    "question": "Trong SPSS, để mô tả mối liên quan giữa 2 biến định tính, thực hiện:",
+    "options": {
+      "A": "Analyze\\ Descriptive Statistics\\ Crosstabs",
+      "B": "Analyze\\ Compare Means\\ Crosstabs",
+      "C": "Analyze\\ Reports\\ Case Summaries",
+      "D": "Analyze\\ Compare Means\\ Means"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 54,
+    "question": "Trong SPSS, so sánh giá trị trung bình với một giá trị lý thuyết hoặc giá trị quần thể ở biến định lượng:",
+    "options": {
+      "A": "Analyze\\ Nonparametric Tests\\ One-Sample T Test",
+      "B": "Analyze\\ Compare Means\\ One-Sample T Test",
+      "C": "Analyze\\ Compare Means\\ Independent-Samples T",
+      "D": "Không thực hiện được"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 55,
+    "question": "Trong SPSS, muốn tìm dữ liệu sai có thể dùng:",
+    "options": {
+      "A": "Chạy Frequencies",
+      "B": "Vào Data\\ Sort cases",
+      "C": "Vào Data\\ Select cases",
+      "D": "Vào Data\\ Sort cases hoặc Vào Data\\ Select cases"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 56,
+    "question": "Trong SPSS, khi lập bảng tổng hợp hai biến, đổi vị trí 2 biến giữa hai ô chứa chúng sẽ:",
+    "options": {
+      "A": "Làm thay đổi kết quả và thay đổi hiển thị",
+      "B": "Không làm thay đổi kết quả nhưng làm thay đổi kết quả hiển thị",
+      "C": "Làm thay đổi kết quả và không thay đổi hiển thị",
+      "D": "Không thực hiện được"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 57,
+    "question": "Trong SPSS, sau khi đưa các biến cần thống kê, tại hộp thoại Custom Tables muốn tính tỷ lệ phần trăm theo cột hoặc dòng chọn mục:",
+    "options": {
+      "A": "Summary Statistics",
+      "B": "Categories and Totals...",
+      "C": "Summary",
+      "D": "Categories"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 58,
+    "question": "Trong SPSS, tại cửa sổ Data View, để xóa trường hợp (case) thực hiện:",
+    "options": {
+      "A": "Nhấn phím phải chuột, chọn Insert Cases",
+      "B": "Chọn Edit\\ Insert Cases",
+      "C": "Chọn biểu tượng Insert Cases trên thanh công cụ",
+      "D": "Chọn Edit\\ Clear"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 59,
+    "question": "Trong SPSS, tại cửa sổ Data View, để xóa trường hợp, lệnh không thực hiện được là:",
+    "options": {
+      "A": "Nhấn phím phải chuột, chọn Clear",
+      "B": "Chọn Edit\\ Clear",
+      "C": "Nhấn phím Delete trên bàn phím",
+      "D": "Chọn Edit\\ Insert Cases"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 60,
+    "question": "Trong SPSS, tại cửa sổ Data View, các cách để thực hiện chèn thêm trường hợp là:",
+    "options": {
+      "A": "Nhấn phím phải chuột, chọn Insert Cases; Chọn Edit\\ Insert Cases; Chọn biểu tượng Insert Cases trên thanh công cụ",
+      "B": "Nhấn phím phải chuột, chọn Insert Cases; Chọn Edit\\ Insert Cases",
+      "C": "Chọn biểu tượng Insert Cases trên thanh công cụ",
+      "D": "Nhấn phím phải chuột, chọn Insert Cases; Chọn biểu tượng Insert Cases trên thanh công cụ; Chọn Edit\\ Insert Variable"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 61,
+    "question": "Trong SPSS, tại cửa sổ Data View, các cách để thực hiện xóa đi trường hợp là:",
+    "options": {
+      "A": "Nhấn phím phải chuột, chọn Clear; Chọn Edit\\ Clear; Nhấn phím Delete trên bàn phím",
+      "B": "Nhấn phím phải chuột, chọn Clear; Chọn Edit\\ Clear",
+      "C": "Nhấn phím phải chuột, chọn Clear; Nhấn phím Delete trên bàn phím",
+      "D": "Nhấn phím phải chuột, chọn Clear; Nhấn phím Delete trên bàn phím; Chọn Edit\\ Insert Cases"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 62,
+    "question": "Trong SPSS, kết luận kiểm định Chi-square nếu giá trị Sig. < 0.05:",
+    "options": {
+      "A": "Bác bỏ giả thuyết H0 với độ tin cậy 95%",
+      "B": "Chấp nhận giả thuyết H0 với độ tin cậy 95%",
+      "C": "Chưa đủ cơ sở kết luận",
+      "D": "Tất cả đều sai"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 63,
+    "question": "Trong SPSS, công cụ Frequencies có thể tính cho:",
+    "options": {
+      "A": "Một biến",
+      "B": "Hai biến",
+      "C": "Ba biến",
+      "D": "Nhiều biến"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 64,
+    "question": "Trong SPSS, khi thực hiện kiểm định Independent-Sample T Test, tại bảng kết quả Independent Samples Test, khi phương sai của hai tổng thể bằng nhau, thì sẽ đọc kết quả giá trị Sig tại:",
+    "options": {
+      "A": "Dòng Equal variances assumed",
+      "B": "Dòng Equal variances not assumed",
+      "C": "Cột Levene's Test for Equality of Variances",
+      "D": "Không cần quan tâm, cứ có giá trị Sig là đọc"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 65,
+    "question": "Trong SPSS, để thống kê tần số thực hiện:",
+    "options": {
+      "A": "Analyze\\ Descriptive Statistics\\ Frequencies",
+      "B": "Analyze\\ Descriptive Statistics",
+      "C": "Descriptive Statistics\\ Frequencies",
+      "D": "Analyze\\ Frequencies"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 66,
+    "question": "Trong SPSS, khi thực hiện thống kê tần số, muốn xuất hiện biểu đồ. Tại cửa sổ Frequencies chọn:",
+    "options": {
+      "A": "Nút Statistics",
+      "B": "Nút Option",
+      "C": "Nút Charts",
+      "D": "Nút Format"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 67,
+    "question": "Trong SPSS, khi thống kê tần số, bảng tần số của các biến cần phân tích:",
+    "options": {
+      "A": "Bắt buộc phải hiện ra",
+      "B": "Không cần phải hiện ra",
+      "C": "Có thể hiện hoặc không hiện ra",
+      "D": "Không có bảng này trong thống kê tần số"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 68,
+    "question": "Trong SPSS, khi thực hiện thống kê tần số, nếu không muốn bảng tần số của các biến cần phân tích xuất hiện. Tại cửa sổ Frequencies bỏ chọn mục:",
+    "options": {
+      "A": "Statistics",
+      "B": "Option",
+      "C": "Chart",
+      "D": "Display frequency tables"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 69,
+    "question": "Trong SPSS, các đại lượng thống kê mô tả (như Mean, Median) chỉ được tính phù hợp với các:",
+    "options": {
+      "A": "Biến định tính",
+      "B": "Biến định lượng",
+      "C": "Biến định tính và Biến định lượng",
+      "D": "Tất cả các biến"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 70,
+    "question": "Trong SPSS, khi thực hiện thống kê tần số, tại cửa sổ Frequencies chọn mục Display frequency tables để:",
+    "options": {
+      "A": "Hiển thị Bảng tần số của các biến cần phân tích",
+      "B": "Hiển thị biểu đồ của các biến cần phân tích",
+      "C": "Hiển thị bảng giá trị các đại lượng thống kê",
+      "D": "Hiển thị sơ đồ phân tích"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 71,
+    "question": "Trong SPSS, để mở hộp thoại Descriptives cần thực hiện:",
+    "options": {
+      "A": "Analyze\\ Descriptive Statistics",
+      "B": "Analyze\\ Descriptive Statistics\\ Descriptives",
+      "C": "Analyze\\ Descriptive Statistics\\ Frequencies",
+      "D": "Descriptive Statistics\\ Descriptives"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 72,
+    "question": "Trong SPSS, khi thực hiện kiểm định Independent-Sample T Test, mục Define Groups để:",
+    "options": {
+      "A": "Chỉ định 2 biến cần so sánh",
+      "B": "Chỉ định các nhóm cần so sánh",
+      "C": "Chỉ định 2 nhóm cần so sánh",
+      "D": "Chỉ định 1 nhóm cần so sánh"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 73,
+    "question": "Trong SPSS, khi thực hiện kiểm định Independent-Sample T Test, tại bảng kết quả Independent Samples Test, giá trị Sig tại cột Levene's Test for Equality of Variances để:",
+    "options": {
+      "A": "Kiểm định phương sai của 2 nhóm",
+      "B": "Kiểm định trị trung bình của 2 nhóm",
+      "C": "Kiểm định phương sai của nhiều nhóm",
+      "D": "Kiểm định phương sai của 1 nhóm"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 74,
+    "question": "Trong SPSS, để mở hộp thoại Explore cần thực hiện:",
+    "options": {
+      "A": "Descriptive Statistics\\ Explore",
+      "B": "Analyze\\ Descriptive Statistics",
+      "C": "Analyze\\ Descriptive Statistics\\ Explore",
+      "D": "Analyze\\ Descriptive Statistics\\ Descriptives"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 75,
+    "question": "Trong SPSS, kiểm định Chi-square dùng để:",
+    "options": {
+      "A": "Kiểm định mối liên quan giữa hai biến định tính",
+      "B": "Kiểm định mối liên hệ giữa hai biến không có biến multiple",
+      "C": "So sánh tỷ lệ một mẫu với một tỷ lệ lý thuyết",
+      "D": "Kiểm định mối liên quan giữa hai biến định lượng"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 76,
+    "question": "Trong SPSS, so sánh trung bình mẫu với trung bình lý thuyết, dùng lệnh:",
+    "options": {
+      "A": "Analyze\\ Compare Means\\ One-Sample T Test",
+      "B": "Analyze\\ Compare Means\\ Independent-Samples T Test",
+      "C": "Analyze\\ Compare Means\\ Paired-Samples T Test",
+      "D": "Analyze\\ Compare Means\\ Summary Independent-Sample T Test"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 77,
+    "question": "Trong SPSS, mỗi cột của cửa sổ Data View trong tập tin dữ liệu thể hiện:",
+    "options": {
+      "A": "Một biến (hoặc một câu hỏi/thành phần câu hỏi)",
+      "B": "Một bảng câu hỏi",
+      "C": "Tập hợp các bảng câu hỏi",
+      "D": "Một quan sát"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 78,
+    "question": "Trong SPSS, khi thực hiện tạo biến mới bằng mã hóa các biến trong file dữ liệu, trong mục Old and New Values..., tùy chọn Range khai báo:",
+    "options": {
+      "A": "Một khoảng cũ tương ứng với một giá trị mới",
+      "B": "Khoảng giữa hai giá trị",
+      "C": "Khoảng từ một giá trị nhỏ nhất đến một giá trị xác định",
+      "D": "Các giá trị khác"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 79,
+    "question": "Trong SPSS, khi thực hiện tạo biến mới bằng mã hóa các biến trong file dữ liệu, trong mục Old and New Values..., tùy chọn Range... through... khai báo:",
+    "options": {
+      "A": "Khoảng giữa hai giá trị từ... đến...",
+      "B": "Một giá trị đơn lẻ",
+      "C": "Khoảng từ một giá trị nhỏ nhất đến một giá trị xác định",
+      "D": "Các giá trị còn lại"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 80,
+    "question": "Trong SPSS, khi thực hiện tạo biến mới bằng mã hóa các biến trong file dữ liệu, trong mục Old and New Values..., tùy chọn Range, LOWEST through value khai báo:",
+    "options": {
+      "A": "Một khoảng cũ tương ứng với một giá trị mới",
+      "B": "Khoảng giữa hai giá trị",
+      "C": "Khoảng từ giá trị nhỏ nhất đến một giá trị xác định",
+      "D": "Các giá trị khác"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 81,
+    "question": "Trong SPSS, khi thực hiện tạo biến mới bằng mã hóa các biến trong file dữ liệu, trong mục Old and New Values..., tùy chọn All other values khai báo:",
+    "options": {
+      "A": "Tất cả các giá trị còn lại",
+      "B": "Khoảng giữa hai giá trị",
+      "C": "Khoảng từ một giá trị nhỏ nhất đến một giá trị xác định",
+      "D": "Các giá trị khuyết"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 82,
+    "question": "Trong SPSS, không tiến hành mã hóa lại trong trường hợp nào?",
+    "options": {
+      "A": "Muốn giảm số biểu hiện của một số biến định tính",
+      "B": "Muốn chuyển một biến định lượng thành một biến định tính",
+      "C": "Muốn thay đổi bản chất dữ liệu không theo mục tiêu nghiên cứu",
+      "D": "Muốn nhóm các khoảng giá trị lại với nhau"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 83,
+    "question": "Giá trị Median (Trung vị) là:",
+    "options": {
+      "A": "Giá trị trung bình của một biến được tính bằng tổng các giá trị quan sát chia cho số quan sát",
+      "B": "Giá trị nằm giữa dãy quan sát hoặc là giá trị trung bình của 2 quan sát nằm ở giữa dãy quan sát được sắp xếp theo thứ tự từ nhỏ đến lớn",
+      "C": "Giá trị có tần suất xuất hiện lớn nhất của một tập hợp các số đo",
+      "D": "Khoảng cách giữa giá trị quan sát nhỏ nhất và giá trị quan sát lớn nhất"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 84,
+    "question": "Giá trị Mean (Trung bình) là:",
+    "options": {
+      "A": "Giá trị trung bình của một biến được tính bằng tổng các giá trị quan sát chia cho số quan sát",
+      "B": "Giá trị nằm giữa dãy quan sát sau khi đã sắp xếp",
+      "C": "Giá trị có tần suất xuất hiện lớn nhất của một tập hợp các số đo",
+      "D": "Khoảng cách giữa giá trị quan sát nhỏ nhất và giá trị quan sát lớn nhất"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 85,
+    "question": "Giá trị Mode (Yếu vị) là:",
+    "options": {
+      "A": "Giá trị trung bình của một biến",
+      "B": "Giá trị nằm giữa dãy quan sát",
+      "C": "Giá trị có tần suất xuất hiện lớn nhất của một tập hợp các số đo",
+      "D": "Khoảng cách giữa giá trị quan sát nhỏ nhất và lớn nhất"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 86,
+    "question": "Giá trị Std. Deviation (Độ lệch chuẩn) là:",
+    "options": {
+      "A": "Giá trị trung bình của một biến",
+      "B": "Giá trị nằm giữa dãy quan sát",
+      "C": "Giá trị có tần suất xuất hiện lớn nhất",
+      "D": "Một công cụ dùng để đo lường mức độ phân tán của dữ liệu xung quanh giá trị trung bình của nó"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 87,
+    "question": "Khi thực hiện mã hóa thành biến mới Recode into Different Variables... mục Old and New Values... dùng để xác định:",
+    "options": {
+      "A": "Sự chuyển đổi giữa giá trị cũ và giá trị mới",
+      "B": "Sự chuyển đổi giữa giá trị mới thành giá trị cũ",
+      "C": "Giá trị mới",
+      "D": "Giá trị cũ"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 88,
+    "question": "Thủ tục Recode into Different Variables:",
+    "options": {
+      "A": "Tạo biến mới trên cơ sở biến cũ, biến cũ làm cơ sở mã hóa vẫn được giữ lại",
+      "B": "Tạo biến mới trên cơ sở biến cũ, biến cũ làm cơ sở mã hóa bị mất đi",
+      "C": "Không tạo biến mới trên cơ sở biến cũ",
+      "D": "Đổi tên biến"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 89,
+    "question": "Trong SPSS, thủ tục Recode into Same Variables dùng để:",
+    "options": {
+      "A": "Mã hóa lại giá trị đè lên biến cũ (biến cũ bị thay đổi giá trị)",
+      "B": "Tạo biến mới giữ nguyên biến cũ",
+      "C": "Không tạo biến mới",
+      "D": "Đổi tên biến"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 90,
+    "question": "Trong SPSS, để tính toán giữa các biến và đưa giá trị vào biến mới thực hiện:",
+    "options": {
+      "A": "View\\ Compute...",
+      "B": "Analyze\\ Compute...",
+      "C": "Data\\ Compute...",
+      "D": "Transform\\ Compute Variable..."
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 91,
+    "question": "Trong SPSS, để chọn một tập hợp các bản ghi (lọc quan sát), thực hiện:",
+    "options": {
+      "A": "Data\\ Select Cases",
+      "B": "Data\\ Filter Cases",
+      "C": "View\\ Filter Cases",
+      "D": "Transform\\ Select Cases"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 92,
+    "question": "Trong SPSS, chức năng của Recode into Same Variables:",
+    "options": {
+      "A": "Mã hóa lại giá trị của nhiều biến thành một biến",
+      "B": "Mã hóa lại giá trị của một biến và đè lên chính biến đó",
+      "C": "Mã hóa lại giá trị của một biến và tạo ra biến mới",
+      "D": "Mã hóa lại giá trị tập hợp biến"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 93,
+    "question": "Trong SPSS, khi thực hiện mã hóa thành biến mới Recode into Different Variables..., muốn mã hóa khoảng từ một giá trị nhỏ nhất đến một giá trị xác định chọn mục nào?",
+    "options": {
+      "A": "Range... through...",
+      "B": "Range, LOWEST through value",
+      "C": "Range, HIGHEST through value",
+      "D": "All other values"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 94,
+    "question": "Trong SPSS, khi thực hiện mã hóa thành biến mới Recode into Different Variables, muốn mã hóa khoảng từ một giá trị xác định đến giá trị lớn nhất chọn mục nào?",
+    "options": {
+      "A": "Range... through...",
+      "B": "Range, LOWEST through value",
+      "C": "Range, HIGHEST through value",
+      "D": "All other values"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 95,
+    "question": "Trong SPSS, tại cửa sổ Data View, để chèn thêm trường hợp (cases), lệnh không thực hiện được là:",
+    "options": {
+      "A": "Nhấn phím phải chuột, chọn Insert Cases",
+      "B": "Chọn Edit\\ Insert Cases",
+      "C": "Chọn biểu tượng Insert Cases trên thanh công cụ",
+      "D": "Chọn Edit\\ Insert Variable"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 96,
+    "question": "Trong SPSS, tại bảng kết quả Thống kê tần số, cột Percent thể hiện:",
+    "options": {
+      "A": "Tần suất xuất hiện của biểu hiện theo tỷ lệ (%) (tần số của mỗi biểu hiện chia cho tổng số quan sát bao gồm cả khuyết)",
+      "B": "Tần suất xuất hiện theo tỉ lệ % trên tổng số quan sát có trả lời (Valid)",
+      "C": "Phần trăm tích lũy cộng dồn",
+      "D": "Tần số hay số lần xuất hiện của biểu hiện đó"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 97,
+    "question": "Trong SPSS, tại bảng kết quả Thống kê tần số, cột Valid Percent thể hiện:",
+    "options": {
+      "A": "Tần số của mỗi biểu hiện chia cho tổng số quan sát có thông tin trả lời (không tính missing)",
+      "B": "Phần trăm tính cả giá trị khuyết",
+      "C": "Phần trăm tích lũy cộng dồn",
+      "D": "Tần số hay số lần xuất hiện"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 98,
+    "question": "Trong SPSS, tại cửa sổ Data View, để xóa trường hợp (cases), thực hiện lệnh nào là sai?",
+    "options": {
+      "A": "Nhấn phím phải chuột tại tiêu đề dòng, chọn Clear",
+      "B": "Chọn Edit\\ Clear",
+      "C": "Nhấn chọn tại tiêu đề dòng, Nhấn phím Delete trên bàn phím",
+      "D": "Chọn Edit\\ Insert Variable"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 99,
+    "question": "Trong SPSS, cách đặt tên biến hợp lệ là:",
+    "options": {
+      "A": "1nghe",
+      "B": "N nghiep",
+      "C": "N_nghiep",
+      "D": "Nghe nghiep"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 100,
+    "question": "Trong SPSS, biến định tính là:",
+    "options": {
+      "A": "Chiều cao",
+      "B": "Chỉ số BMI",
+      "C": "Dân tộc",
+      "D": "Nồng độ androgen trong huyết tương"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 101,
+    "question": "Trong SPSS, tại cửa sổ Variable View, thao tác nào KHÔNG thể thực hiện được?",
+    "options": {
+      "A": "Đặt tên biến",
+      "B": "Xác định loại biến",
+      "C": "Gán giá trị Value",
+      "D": "Nhập dữ liệu từng quan sát vào ô"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 102,
+    "question": "Trong SPSS, chức năng có thể tạo thêm được biến mới trong tập tin dữ liệu là:",
+    "options": {
+      "A": "Transform\\ Compute Variable...",
+      "B": "Recode into Same Variables",
+      "C": "Transform\\ Compute",
+      "D": "Data\\ Compute"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 103,
+    "question": "Trong SPSS, khi muốn từ biến cũ tạo ra biến mới, lệnh không thực hiện được là:",
+    "options": {
+      "A": "Transform\\ Recode into Different Variables...",
+      "B": "Transform\\ Compute Variable...",
+      "C": "Transform\\ Multiple Response",
+      "D": "Transform\\ Count Values within Cases..."
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 104,
+    "question": "Trong SPSS, muốn nối các biến từ hai file dữ liệu, thực hiện:",
+    "options": {
+      "A": "Data\\ Merge Files\\ Add Cases",
+      "B": "Data\\ Merge Files\\ Add Variables",
+      "C": "Tables\\ Merge Files\\ Cases",
+      "D": "Data\\ Split File"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 105,
+    "question": "Trong SPSS, muốn nối các trường hợp (cases) từ hai file dữ liệu, thực hiện:",
+    "options": {
+      "A": "Data\\ Merge Files\\ Add Cases",
+      "B": "Data\\ Merge Files\\ Add Variables",
+      "C": "Tables\\ Merge Files\\ Cases",
+      "D": "Data\\ Split File"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 106,
+    "question": "Trong SPSS, với những câu hỏi không trả lời khi nhập dữ liệu bạn để trống, khi phân tích:",
+    "options": {
+      "A": "Máy không thống kê được kết quả",
+      "B": "Máy thống kê và cho vào giá trị khuyết (System Missing)",
+      "C": "Báo lỗi",
+      "D": "Không ảnh hưởng kết quả"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 107,
+    "question": "Trong SPSS, biến về trình độ học vấn thuộc thang đo:",
+    "options": {
+      "A": "Khoảng (Interval)",
+      "B": "Thứ bậc (Ordinal)",
+      "C": "Định danh (Nominal)",
+      "D": "Tỷ lệ (Ratio)"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 108,
+    "question": "Trong SPSS, cách nào sau đây không thể đưa dữ liệu vào để phân tích?",
+    "options": {
+      "A": "Mở dữ liệu đã được lưu bằng định dạng SPSS (.sav)",
+      "B": "Nhập dữ liệu trực tiếp trong Data View",
+      "C": "Đọc tập tin dữ liệu vào SPSS từ Excel, Database, Stata...",
+      "D": "Đọc tập tin dữ liệu vào SPSS từ nguồn PowerPoint, Paint"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 109,
+    "question": "Trong SPSS, muốn thực hiện lệnh đếm số lần xuất hiện giá trị chọn:",
+    "options": {
+      "A": "Data\\ Count Values Within Cases",
+      "B": "Analyze\\ Count Values Within Cases",
+      "C": "Transform\\ Shift Values",
+      "D": "Transform\\ Count Values Within Cases..."
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 110,
+    "question": "Trong SPSS, khi muốn mã hoá biến cũ thành biến mới mà dữ liệu gốc bị thay thế bằng dữ liệu mới, chọn lệnh:",
+    "options": {
+      "A": "Transform\\ Recode into Same Variables...",
+      "B": "Transform\\ Recode into Different Variables...",
+      "C": "Transform\\ Old and New Values",
+      "D": "Data\\ Recode into Same Variables"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 111,
+    "question": "Trong SPSS, sự khác nhau giữa lệnh Recode into Same Variables... và Recode into Different Variables... là:",
+    "options": {
+      "A": "Recode into Different Variables tạo ra một biến mới còn Same Variables thì đè lên biến cũ",
+      "B": "Thay đổi tên",
+      "C": "Tạo ra một giá trị mới",
+      "D": "Không có sự khác nhau"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 112,
+    "question": "Trong SPSS, tại cửa sổ Data View, lệnh không thực hiện thêm biến là:",
+    "options": {
+      "A": "Nhấn phím phải chuột, chọn Insert Variable",
+      "B": "Chọn Edit\\ Insert Variable",
+      "C": "Chọn biểu tượng Insert Variable trên thanh công cụ",
+      "D": "Chọn Edit\\ Clear"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 113,
+    "question": "Trong SPSS, khi thực hiện lọc chọn mẫu dựa vào phạm vi thời gian hoặc dòng tại hộp thoại Select Cases chọn:",
+    "options": {
+      "A": "All cases",
+      "B": "If condition is satisfied",
+      "C": "Random sample of cases",
+      "D": "Based on time or case range"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 114,
+    "question": "Trong SPSS, khi thực hiện lọc nếu muốn xóa những đối tượng không được chọn khỏi tập dữ liệu, tại hộp thoại Select Cases chọn:",
+    "options": {
+      "A": "Filter out unselected cases",
+      "B": "Copy selected cases to a new dataset",
+      "C": "Delete unselected cases",
+      "D": "Use filter variable"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 115,
+    "question": "Trong SPSS, khi thực hiện mã hóa đối với câu hỏi một trả lời:",
+    "options": {
+      "A": "Chỉ cần tạo một biến",
+      "B": "Cần tạo nhiều biến",
+      "C": "Cần tạo số biến tương ứng với số lựa chọn trong câu hỏi đó",
+      "D": "Không cần tạo biến"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 116,
+    "question": "Trong SPSS, khi thực hiện mã hóa đối với câu hỏi nhiều trả lời (nhị phân):",
+    "options": {
+      "A": "Chỉ cần tạo một biến",
+      "B": "Cần tạo số biến tương ứng với số lựa chọn trong câu hỏi đó",
+      "C": "Không cần tạo biến",
+      "D": "Tạo 2 biến"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 117,
+    "question": "Trong SPSS, tại cửa sổ Data View, để thêm trường hợp (cases), thực hiện:",
+    "options": {
+      "A": "Nhấn phím phải chuột tại tiêu đề dòng, chọn Insert Cases",
+      "B": "Chọn Edit\\ Clear",
+      "C": "Nhấn chọn tại tiêu đề dòng, Nhấn phím Delete",
+      "D": "Chọn Edit\\ Insert Cases"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 118,
+    "question": "Trong SPSS, tại cửa sổ Data View, để thêm biến (variable), lệnh không thực hiện được là:",
+    "options": {
+      "A": "Nhấn phím phải chuột tại tiêu đề cột, chọn Insert Variable",
+      "B": "Chọn Edit\\ Insert Variable",
+      "C": "Chọn biểu tượng Insert Variable trên thanh công cụ",
+      "D": "Chọn Edit\\ Clear"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 119,
+    "question": "Trong SPSS, tại cửa sổ Data View, để xóa biến (variable) thực hiện:",
+    "options": {
+      "A": "Nhấn phím phải chuột tại tiêu đề cột, chọn Insert Variable",
+      "B": "Chọn Edit\\ Insert Variable",
+      "C": "Chọn biểu tượng Insert Variable trên thanh công cụ",
+      "D": "Chọn tiêu đề cột và chọn Edit\\ Clear"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 120,
+    "question": "Trong SPSS, việc khai báo biến sẽ được tiến hành trong tab Variable View. Để khai báo tên biến chọn cột:",
+    "options": {
+      "A": "Name",
+      "B": "Type",
+      "C": "Width",
+      "D": "Label"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 121,
+    "question": "Trong SPSS, việc khai báo biến sẽ được tiến hành trong tab Variable View. Để khai báo kiểu biến chọn cột:",
+    "options": {
+      "A": "Name",
+      "B": "Type",
+      "C": "Width",
+      "D": "Label"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 122,
+    "question": "Trong SPSS, việc khai báo biến sẽ được tiến hành trong tab Variable View. Để khai báo độ rộng của biến chọn cột:",
+    "options": {
+      "A": "Name",
+      "B": "Type",
+      "C": "Width",
+      "D": "Label"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 123,
+    "question": "Trong SPSS, việc khai báo biến sẽ được tiến hành trong tab Variable View. Để khai báo thang đo của biến chọn cột:",
+    "options": {
+      "A": "Name",
+      "B": "Type",
+      "C": "Width",
+      "D": "Measure"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 124,
+    "question": "Trong SPSS, việc khai báo biến sẽ được tiến hành trong tab Variable View. Để khai báo biến có kiểu ngày tháng, tại mục Type chọn:",
+    "options": {
+      "A": "Numeric",
+      "B": "Dot",
+      "C": "Comma",
+      "D": "Date"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 125,
+    "question": "Trong SPSS, để khai báo biến kiểu số có dấu phân cách phần nghìn (dấu phẩy), tại mục Type chọn:",
+    "options": {
+      "A": "Numeric",
+      "B": "Dot",
+      "C": "Comma",
+      "D": "Date"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 126,
+    "question": "Trong SPSS, định nghĩa biến tập hợp các câu hỏi con lại với nhau của biến nhiều lựa chọn, thực hiện chọn:",
+    "options": {
+      "A": "Analyze\\ Multiple Response\\ Define Variable Sets...",
+      "B": "Analyze\\ Define Variable Sets",
+      "C": "Multiple Response\\ Define Variable Sets",
+      "D": "Analyze\\ Descriptive Statistics\\ Crosstabs"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 127,
+    "question": "Trong SPSS, để thống kê tần số biến nhiều lựa chọn, thực hiện:",
+    "options": {
+      "A": "Analyze\\ Multiple Response\\ Frequencies...",
+      "B": "Analyze\\ Frequencies",
+      "C": "Analyze\\ Descriptive Statistics\\ Frequencies",
+      "D": "Analyze\\ Descriptive Statistics\\ Crosstabs"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 128,
+    "question": "Trong SPSS, cách mã hóa câu hỏi nhiều lựa chọn là:",
+    "options": {
+      "A": "Có 2 cách mã hóa câu hỏi nhiều lựa chọn: dạng mã hóa theo con số giá trị (Categories) và dạng mã hóa theo hệ nhị phân 0-1 (Dichotomies)",
+      "B": "Có 1 cách mã hóa câu hỏi nhiều lựa chọn: dạng mã hóa theo hệ nhị phân 0-1",
+      "C": "Có 1 cách mã hóa câu hỏi nhiều lựa chọn: dạng mã hóa theo con số giá trị",
+      "D": "Có nhiều cách"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 129,
+    "question": "Trong SPSS, tại cửa sổ Thống kê tần số biến nhiều lựa chọn, với biến có hai lựa chọn (hoặc mã hóa nhị phân), chọn mục:",
+    "options": {
+      "A": "Dichotomies",
+      "B": "Categories",
+      "C": "Name",
+      "D": "Label"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 130,
+    "question": "Trong SPSS, tại cửa sổ Thống kê tần số biến nhiều lựa chọn, với biến có nhiều lựa chọn (mã hóa theo nhóm giá trị), chọn mục:",
+    "options": {
+      "A": "Dichotomies",
+      "B": "Categories",
+      "C": "Name",
+      "D": "Label"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 131,
+    "question": "Trong SPSS, tại bảng kết quả Thống kê tần số biến nhiều lựa chọn, ý nghĩa của cột Percent of Cases là:",
+    "options": {
+      "A": "Tỷ lệ phần trăm số lượt chọn so với tổng số người được khảo sát",
+      "B": "Tỷ lệ đáp án của giá trị so với tổng số đáp án",
+      "C": "Tỷ lệ giá trị khuyết",
+      "D": "Số đáp án của giá trị với tổng số đáp án của tất cả các giá trị"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 132,
+    "question": "Trong SPSS, tại bảng kết quả Thống kê tần số biến nhiều lựa chọn, ý nghĩa của cột Percent là:",
+    "options": {
+      "A": "Số đáp án của giá trị so với tổng số câu trả lời (lượt chọn) của tất cả các giá trị",
+      "B": "Số đáp án của giá trị so với tổng số người được khảo sát",
+      "C": "Tỷ lệ phần trăm tích lũy",
+      "D": "Số đáp án của giá trị với tổng số người khảo sát"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 133,
+    "question": "Trong SPSS, khởi tạo biến mới là:",
+    "options": {
+      "A": "Đặt tên cho biến",
+      "B": "Tạo bảng danh mục mã hoá",
+      "C": "Xác định tất cả các thông số phù hợp cho biến trên cửa sổ tạo biến (Variable View)",
+      "D": "Xác định thang đo của biến"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 134,
+    "question": "Khi thực hiện tạo biến mới (không điều kiện) bằng lệnh Compute Variable..., ô Target Variable không dùng để:",
+    "options": {
+      "A": "Nhập tên của biến đích",
+      "B": "Nhập tên biến cần sửa đổi",
+      "C": "Nhập tên của biến mới sẽ được tạo ra",
+      "D": "Nhập biểu thức tính toán"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 135,
+    "question": "Trong SPSS, để thay thế giá trị khuyết thực hiện:",
+    "options": {
+      "A": "Transform\\ Recode into Same Variables...",
+      "B": "Transform\\ Recode into Different Variables...",
+      "C": "Transform\\ Compute Variable...",
+      "D": "Transform\\ Replace Missing Values..."
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 136,
+    "question": "Trong SPSS, để sắp xếp dữ liệu thực hiện:",
+    "options": {
+      "A": "Data\\ Sort Cases...",
+      "B": "Data\\ Select Cases...",
+      "C": "Data\\ Sort Variables...",
+      "D": "Data\\ Merge Files..."
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 137,
+    "question": "Trong SPSS, để lọc dữ liệu thực hiện:",
+    "options": {
+      "A": "Data\\ Sort Cases...",
+      "B": "Data\\ Select Cases...",
+      "C": "Data\\ Sort Variables...",
+      "D": "Data\\ Merge Files..."
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 138,
+    "question": "Trong SPSS, để kết nối hai bảng số liệu bằng cách ghép thêm các trường hợp (cases) thực hiện:",
+    "options": {
+      "A": "Data\\ Merge Files\\ Add Cases...",
+      "B": "Data\\ Merge Files\\ Add Variables...",
+      "C": "Data\\ Merge Files",
+      "D": "Data\\ Split File..."
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 139,
+    "question": "Trong SPSS, để ghép thêm các biến (variables) từ file khác thực hiện:",
+    "options": {
+      "A": "Data\\ Merge Files\\ Add Cases...",
+      "B": "Data\\ Merge Files\\ Add Variables...",
+      "C": "Data\\ Merge Files",
+      "D": "Data\\ Split File..."
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 140,
+    "question": "Trong SPSS, khi mã hóa tên biến phải bắt đầu bởi:",
+    "options": {
+      "A": "Ký tự @, #, $, gạch chân ( _ )",
+      "B": "Khoảng trắng",
+      "C": "Bắt đầu bằng một ký tự chữ cái (hoặc ký tự chữ được cho phép)",
+      "D": "Bắt đầu bằng một chữ số"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 141,
+    "question": "Trong SPSS, biến chứa dữ liệu không thuộc dữ liệu định tính là:",
+    "options": {
+      "A": "Giới tính",
+      "B": "Tình trạng hôn nhân",
+      "C": "Xếp loại học tập",
+      "D": "Điểm trung bình"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 142,
+    "question": "Trong SPSS, biến chứa dữ liệu không thuộc dữ liệu định lượng là:",
+    "options": {
+      "A": "Nhiệt độ cơ thể",
+      "B": "Cân nặng",
+      "C": "Chiều cao",
+      "D": "Phân loại nhiệt độ (Sốt / Bình thường)"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 143,
+    "question": "Trong SPSS, việc khai báo biến sẽ được tiến hành trong tab Variable View. Để khai báo nhãn biến chọn cột:",
+    "options": {
+      "A": "Name",
+      "B": "Type",
+      "C": "Width",
+      "D": "Label"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 144,
+    "question": "Trong SPSS, tại hộp thoại Frequencies Chart, muốn xuất hiện đồ thị theo dạng hình tròn, chọn mục:",
+    "options": {
+      "A": "Bar charts",
+      "B": "Pie charts",
+      "C": "Histograms",
+      "D": "None"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 145,
+    "question": "Trong SPSS, thang đo phù hợp với câu hỏi khảo sát \"Anh/ chị sống ở đâu, Thành phố hay Nông thôn?\" là:",
+    "options": {
+      "A": "Định danh (Nominal)",
+      "B": "Thứ bậc (Ordinal)",
+      "C": "Khoảng (Interval)",
+      "D": "Tỷ lệ (Ratio)"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 146,
+    "question": "Trong SPSS, thang đo phù hợp với câu hỏi khảo sát \"Số ngày Anh/ chị phải nằm viện?\" là:",
+    "options": {
+      "A": "Định danh",
+      "B": "Thứ bậc",
+      "C": "Khoảng",
+      "D": "Tỷ lệ (Ratio)"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 147,
+    "question": "Trong SPSS, thang đo phù hợp với câu hỏi khảo sát \"Trình độ học vấn cao nhất của người trả lời với các đáp án: 1- Không đi học/mù chữ, 2- Tiểu học, 3- Trung học cơ sở, 4- Trung học phổ thông, 5- Trung cấp trở lên\" là:",
+    "options": {
+      "A": "Định danh",
+      "B": "Thứ bậc (Ordinal)",
+      "C": "Khoảng",
+      "D": "Tỷ lệ"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 148,
+    "question": "Trong SPSS, thang đo phù hợp với câu hỏi khảo sát \"Loại phương tiện nào liên quan đến chấn thương của anh/ chị? với các đáp án: 1- Xe ô tô, 2- Xe máy, 3- Xe đạp, 4- Người đi bộ\" là:",
+    "options": {
+      "A": "Định danh (Nominal)",
+      "B": "Thứ bậc",
+      "C": "Khoảng",
+      "D": "Tỷ lệ"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 149,
+    "question": "Trong SPSS, khi thực hiện lọc có điều kiện, tại hộp thoại Select Cases chọn:",
+    "options": {
+      "A": "All cases",
+      "B": "If condition is satisfied",
+      "C": "Random sample of cases",
+      "D": "Based on time or case range"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 150,
+    "question": "Trong SPSS, khi thực hiện lọc ngẫu nhiên một số trường hợp, tại hộp thoại Select Cases chọn:",
+    "options": {
+      "A": "All cases",
+      "B": "If condition is satisfied",
+      "C": "Random sample of cases",
+      "D": "Based on time or case range"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 151,
+    "question": "Trong SPSS khi khai báo biến, phần khai báo giá trị khuyết thiếu ở mục Missing. Nếu chọn Nút Discrete missing values thì ta có thể gán tối đa:",
+    "options": {
+      "A": "2 giá trị khuyết thiếu",
+      "B": "3 giá trị khuyết thiếu",
+      "C": "4 giá trị khuyết thiếu",
+      "D": "5 giá trị khuyết thiếu"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 152,
+    "question": "Trong SPSS khi khai báo biến, phần khai báo giá trị khuyết thiếu ở mục Missing. Nếu chọn nút Range plus one optional missing value rồi gán các giá trị, tại ô Discrete Value có thể gán tối đa:",
+    "options": {
+      "A": "1 giá trị khuyết thiếu",
+      "B": "2 giá trị khuyết thiếu",
+      "C": "3 giá trị khuyết thiếu",
+      "D": "Không giới hạn số lượng giá trị khuyết thiếu"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 153,
+    "question": "Trong SPSS, tìm các giá trị lỗi hoặc các mã hóa sai sót/ không mong muốn bằng cách:",
+    "options": {
+      "A": "Sử dụng bảng phân bố tần suất",
+      "B": "Khảo sát sự liên quan logic giữa hai hay các biến với nhau",
+      "C": "Sử dụng bảng phân bố tần suất hoặc khảo sát sự liên quan logic giữa hai hay các biến với nhau",
+      "D": "Không thực hiện được"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 154,
+    "question": "Trong SPSS, khi khai báo mục Value, tại cửa sổ Value Labels muốn thêm giá trị chọn mục:",
+    "options": {
+      "A": "Add",
+      "B": "Change",
+      "C": "Remove",
+      "D": "Cancel"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 155,
+    "question": "Trong SPSS, khi khai báo mục Value, tại cửa sổ Value Labels muốn thay đổi giá trị chọn mục:",
+    "options": {
+      "A": "Add",
+      "B": "Change",
+      "C": "Remove",
+      "D": "Cancel"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 156,
+    "question": "Trong SPSS, lệnh Recode into... không dùng để:",
+    "options": {
+      "A": "Tạo biến với các giá trị mới dựa trên biến cũ",
+      "B": "Thay đổi giá trị của một biến cũ",
+      "C": "Tạo biến mới với giá trị mới",
+      "D": "Tạo biến mới bằng cách tính toán công thức toán học"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 157,
+    "question": "Trong SPSS, số lượng biến được khởi tạo:",
+    "options": {
+      "A": "Bị giới hạn bởi số câu hỏi",
+      "B": "Bởi tổng số câu trả lời",
+      "C": "Không bị giới hạn (phụ thuộc vào cấu hình máy tính/dung lượng)",
+      "D": "Tối đa 256 biến"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 158,
+    "question": "Trong SPSS, tại cửa sổ Data View một dòng trong tập tin dữ liệu thể hiện:",
+    "options": {
+      "A": "Một câu hỏi",
+      "B": "Tập hợp câu trả lời của một đối tượng khảo sát (một quan sát / case)",
+      "C": "Tập hợp các câu hỏi một lựa chọn",
+      "D": "Tập hợp các câu hỏi nhiều lựa chọn"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 159,
+    "question": "Trong SPSS, khi khai báo mục Value, tại cửa sổ Value Labels muốn xóa giá trị chọn mục:",
+    "options": {
+      "A": "Add",
+      "B": "Change",
+      "C": "Remove",
+      "D": "Cancel"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 160,
+    "question": "Trong SPSS, muốn tìm kiếm dữ liệu, tại cửa sổ Data View nhấp chọn tại biến thực hiện:",
+    "options": {
+      "A": "Vào Edit, chọn Go to Variable...",
+      "B": "Vào Edit, chọn Go to Case...",
+      "C": "Chọn phím tắt Ctrl + F",
+      "D": "Chọn phím tắt Ctrl + H"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 161,
+    "question": "Trong SPSS, muốn tạo biến mới từ những biến đã có bằng công cụ tính toán, thực hiện lệnh:",
+    "options": {
+      "A": "Transform\\ Compute Variable...",
+      "B": "Data\\ Insert\\ Compute...",
+      "C": "Insert\\ Case",
+      "D": "Insert\\ Compute"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 162,
+    "question": "Trong SPSS, tên biến khi khai báo phải:",
+    "options": {
+      "A": "Bắt đầu bằng số",
+      "B": "Không được trùng lặp trong cùng một dataset",
+      "C": "Có chứa khoảng trắng",
+      "D": "Kết thúc bằng một dấu chấm"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 163,
+    "question": "Trong SPSS, khi khai báo biến thực hiện các bước cơ bản theo thứ tự:",
+    "options": {
+      "A": "Đặt tên biến; Chọn kiểu biến; Chọn thang đo",
+      "B": "Chọn kiểu biến; Chọn thang đo",
+      "C": "Chọn thang đo",
+      "D": "Chọn kiểu biến"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 164,
+    "question": "Trong SPSS, để tạo biến về thu nhập của người dân, kiểu dữ liệu thích hợp là:",
+    "options": {
+      "A": "Date",
+      "B": "String",
+      "C": "Scientific notation",
+      "D": "Numeric"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 165,
+    "question": "Trong SPSS, trước khi nhập dữ liệu phải:",
+    "options": {
+      "A": "Mã hoá phiếu điều tra và khai báo các biến tương ứng",
+      "B": "Không cần mã hoá",
+      "C": "Để mặc định theo phần mềm",
+      "D": "Đặt tên cột tùy ý"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 166,
+    "question": "Trong SPSS, để khai báo biến chọn cửa sổ nào?",
+    "options": {
+      "A": "Data View",
+      "B": "Không cần khai báo biến trong SPSS",
+      "C": "Variable View",
+      "D": "Viewer"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 167,
+    "question": "Trong SPSS, muốn sắp xếp dữ liệu của trường nào đó theo thứ tự tăng dần thực hiện lệnh:",
+    "options": {
+      "A": "Data\\ Sort Cases (chọn Ascending)",
+      "B": "Data\\ Sort Cases (chọn Descending)",
+      "C": "Data\\ Select Cases\\ Ascending",
+      "D": "Data\\ Select Cases\\ Descending"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 168,
+    "question": "Trong SPSS, muốn sắp xếp dữ liệu của trường nào đó theo thứ tự giảm dần thực hiện lệnh:",
+    "options": {
+      "A": "Data\\ Sort Cases (chọn Ascending)",
+      "B": "Data\\ Sort Cases (chọn Descending)",
+      "C": "Data\\ Select Cases\\ Ascending",
+      "D": "Data\\ Select Cases\\ Descending"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 169,
+    "question": "Trong SPSS, để tạo biến về năm sinh người dân, kiểu dữ liệu thích hợp là:",
+    "options": {
+      "A": "Date",
+      "B": "String",
+      "C": "Scientific notation",
+      "D": "Numeric"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 170,
+    "question": "Trong SPSS, cột Missing trong khung Variable View dùng để:",
+    "options": {
+      "A": "Khai báo kiểu biến",
+      "B": "Khai báo nhãn biến",
+      "C": "Khai báo các giá trị khuyết",
+      "D": "Khai báo kiểu đo lường"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 171,
+    "question": "Trong SPSS, cột Measure trong khung Variable View dùng để:",
+    "options": {
+      "A": "Khai báo kiểu biến",
+      "B": "Khai báo nhãn biến",
+      "C": "Khai báo giá trị khuyết",
+      "D": "Khai báo thang đo / kiểu đo lường"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 172,
+    "question": "Trong SPSS, cột Decimals trong khung Variable View dùng để:",
+    "options": {
+      "A": "Khai báo nhãn biến",
+      "B": "Khai báo số chữ số thập phân hiển thị",
+      "C": "Khai báo số nhị phân",
+      "D": "Khai báo số thập lục phân"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 173,
+    "question": "Trong SPSS, cột Width trong khung Variable View dùng để:",
+    "options": {
+      "A": "Khai báo kiểu biến",
+      "B": "Khai báo độ rộng cột",
+      "C": "Khai báo độ rộng tối đa của biến (số ký tự)",
+      "D": "Khai báo độ rộng khung"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 174,
+    "question": "Trong SPSS, cột Columns trong khung Variable View dùng để:",
+    "options": {
+      "A": "Khai báo kiểu biến",
+      "B": "Khai báo độ rộng hiển thị cột dữ liệu",
+      "C": "Khai báo độ rộng biến",
+      "D": "Khai báo độ rộng khung"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 175,
+    "question": "Trong SPSS, màn hình quản lý biến (Variable View) là:",
+    "options": {
+      "A": "Lưu giữ các kết quả như bảng biểu, đồ thị",
+      "B": "Nơi để khai báo và quản lý các thuộc tính của biến",
+      "C": "Nơi lưu trữ dữ liệu nghiên cứu",
+      "D": "Lưu trữ những cú pháp của một lệnh phân tích"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 176,
+    "question": "Trong SPSS, màn hình hiển thị kết quả (Output Viewer) là:",
+    "options": {
+      "A": "Nơi lưu giữ và hiển thị các kết quả phân tích như bảng biểu, đồ thị",
+      "B": "Nơi để khai báo các biến",
+      "C": "Nơi nhập dữ liệu nghiên cứu",
+      "D": "Nơi sửa đổi dữ liệu gốc"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 177,
+    "question": "Trong SPSS, màn hình hiển thị dữ liệu (Data View) là:",
+    "options": {
+      "A": "Lưu giữ các kết quả như bảng biểu, đồ thị",
+      "B": "Nơi để nhập và hiển thị dữ liệu quan sát",
+      "C": "Nơi khai báo biến",
+      "D": "Nơi lưu trữ cú pháp"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 178,
+    "question": "Trong SPSS, trong khai báo tạo biến để nhập dữ liệu, nếu chọn sai thang đo thì:",
+    "options": {
+      "A": "SPSS không chạy các câu lệnh khi được ra lệnh",
+      "B": "SPSS vẫn chạy nhưng có thể dẫn đến phân tích không đúng bản chất/ý nghĩa của dữ liệu",
+      "C": "Dữ liệu bị xóa lập tức",
+      "D": "Không ảnh hưởng gì"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 179,
+    "question": "Kiểu Scientific Notation trong khai báo biến là:",
+    "options": {
+      "A": "Kiểu hiển thị số dưới dạng ký tự E và số mũ (ví dụ 1E+02)",
+      "B": "Một biến có thể bao gồm năm, tháng, ngày, giờ",
+      "C": "Kiểu giá trị số với dấu phẩy phân cách",
+      "D": "Dạng ký tự văn bản"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 180,
+    "question": "Trong SPSS, khi thực hiện ghép thêm các biến, ở khung Variables in New Active Dataset sẽ chứa danh sách các biến:",
+    "options": {
+      "A": "Của 1 bảng",
+      "B": "Sẽ có mặt ở bảng số liệu mới sau khi ghép",
+      "C": "Chung của 2 bảng số liệu",
+      "D": "Có mặt ở bảng số liệu cũ"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 181,
+    "question": "Trong SPSS, khi thực hiện ghép thêm các biến, khung Excluded Variables chứa danh sách các biến:",
+    "options": {
+      "A": "Chứa danh sách các biến của 1 bảng",
+      "B": "Chứa danh sách các biến bị loại ra (không đưa vào file kết hợp mới)",
+      "C": "Chứa danh sách các biến chung của 2 bảng số liệu",
+      "D": "Không chứa danh sách các biến"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 182,
+    "question": "Trong SPSS, khi thực hiện lọc nếu muốn sao chép những đối tượng được chọn ra một file dữ liệu mới, tại hộp thoại Select Cases chọn:",
+    "options": {
+      "A": "Filter out unselected cases",
+      "B": "Copy selected cases to a new dataset",
+      "C": "Delete unselected cases",
+      "D": "Không thực hiện được"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 183,
+    "question": "Trong SPSS, khi thực hiện lọc nếu muốn những đối tượng bị loại chỉ không tham gia vào phép tính nhưng vẫn giữ lại trong file, tại hộp thoại Select Cases chọn:",
+    "options": {
+      "A": "Filter out unselected cases",
+      "B": "Copy selected cases to a new dataset",
+      "C": "Delete unselected cases",
+      "D": "Không thực hiện được"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 184,
+    "question": "Trong SPSS, tại cửa sổ Output khi nhấp kép chuột vào biểu đồ để chỉnh sửa, sẽ mở cửa sổ:",
+    "options": {
+      "A": "Chart Editor",
+      "B": "Chart Builder",
+      "C": "Data Editor",
+      "D": "View Editor"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 185,
+    "question": "Trong SPSS, câu hỏi về cân nặng cụ thể của người được phỏng vấn thuộc thang đo:",
+    "options": {
+      "A": "Tỷ lệ (Scale / Ratio)",
+      "B": "Khoảng",
+      "C": "Định danh",
+      "D": "Thứ bậc"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 186,
+    "question": "Trong SPSS, câu hỏi về Nghề nghiệp của người được phỏng vấn thuộc thang đo:",
+    "options": {
+      "A": "Tỷ lệ",
+      "B": "Khoảng",
+      "C": "Định danh (Nominal)",
+      "D": "Thứ bậc"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 187,
+    "question": "Phần mềm SPSS có chức năng chính là:",
+    "options": {
+      "A": "Phân tích thống kê",
+      "B": "Quản trị dữ liệu",
+      "C": "Phân tích thống kê và Quản trị dữ liệu",
+      "D": "Phân tích thống kê và báo cáo"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 188,
+    "question": "Dữ liệu định lượng là:",
+    "options": {
+      "A": "Các giá trị thể hiện bằng con số, tính toán được và có thể tính trị trung bình",
+      "B": "Các nhãn danh xưng không tính toán được",
+      "C": "Các biến chữ (text)",
+      "D": "Một tập các mã hóa phân loại"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 189,
+    "question": "Trong SPSS, thang đo Nominal dùng để đo:",
+    "options": {
+      "A": "Dữ liệu định tính không phân chia thứ bậc",
+      "B": "Dữ liệu định tính có phân chia thứ bậc",
+      "C": "Dữ liệu định lượng liên tục",
+      "D": "Các đại lượng số học"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 190,
+    "question": "Trong SPSS, mã hóa dữ liệu là:",
+    "options": {
+      "A": "Chuyển 1 biến định tính thành biến định lượng",
+      "B": "Chuyển 1 biến định lượng thành biến định tính",
+      "C": "Chuyển biến dạng text thành biến dạng số",
+      "D": "Chuyển các dữ liệu thu thập từ dạng chữ/mô tả sang các con số đại diện theo quy ước nhất định"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 191,
+    "question": "Trong SPSS, tên biến nào sau đây là hợp lệ?",
+    "options": {
+      "A": "cl1*",
+      "B": "11e",
+      "C": "cl1",
+      "D": "*ecl1"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 192,
+    "question": "Trên SPSS, để tạo biến nhiều lựa chọn ta có bao nhiêu cách mã hóa chính?",
+    "options": {
+      "A": "1 cách",
+      "B": "2 cách (Dichotomies và Categories)",
+      "C": "3 cách",
+      "D": "4 cách"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 193,
+    "question": "Trong SPSS, tại cửa sổ Viewer, muốn di chuyển một bảng kết quả, chọn đối tượng cần di chuyển, thực hiện lệnh Cut và chọn:",
+    "options": {
+      "A": "Edit\\ Delete",
+      "B": "Edit\\ Paste After",
+      "C": "Edit\\ Cut",
+      "D": "Không thực hiện được"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 194,
+    "question": "Trong SPSS, tại cửa sổ Viewer, muốn sao chép kết quả, chọn đối tượng cần sao chép, thực hiện lệnh Copy và chọn:",
+    "options": {
+      "A": "Edit\\ Delete",
+      "B": "Edit\\ Paste After",
+      "C": "Edit\\ Cut",
+      "D": "Không thực hiện được"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 195,
+    "question": "Trong SPSS, muốn đọc được file dữ liệu trực tiếp từ Excel thực hiện:",
+    "options": {
+      "A": "Kết nối qua ODBC",
+      "B": "Mở trực tiếp file Excel qua File\\ Open\\ Data (chọn kiểu file .xls/.xlsx)",
+      "C": "Không thực hiện được",
+      "D": "Thực hiện qua phần mềm trung gian"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 196,
+    "question": "Trong quá trình nghiên cứu khoa học, SPSS tham gia chủ yếu vào giai đoạn nào?",
+    "options": {
+      "A": "Thiết kế đề cương nghiên cứu khoa học",
+      "B": "Thiết kế phương án thu thập thông tin",
+      "C": "Thu thập thông tin",
+      "D": "Phân tích, xử lý dữ liệu"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 197,
+    "question": "Trong SPSS, khi chạy một lệnh phân tích, kết quả được thể hiện trong cửa sổ nào?",
+    "options": {
+      "A": "Viewer / Output",
+      "B": "Data Editor",
+      "C": "Syntax Editor",
+      "D": "Variable View"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 198,
+    "question": "Trong SPSS, tại cửa sổ Viewer muốn ẩn một bảng hoặc một đồ thị chọn:",
+    "options": {
+      "A": "View\\ Hide",
+      "B": "View\\ Show",
+      "C": "Edit\\ Hide",
+      "D": "Edit\\ Show"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 199,
+    "question": "Trong SPSS, tại cửa sổ Viewer muốn hiện lại một bảng hoặc đồ thị đã ẩn chọn:",
+    "options": {
+      "A": "View\\ Hide",
+      "B": "View\\ Show",
+      "C": "Edit\\ Hide",
+      "D": "Edit\\ Show"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 200,
+    "question": "SPSS thường KHÔNG đọc trực tiếp dữ liệu dạng văn bản từ phần mềm nào sau đây?",
+    "options": {
+      "A": "Word (.docx)",
+      "B": "Excel (.xlsx)",
+      "C": "Access (.mdb/.accdb)",
+      "D": "Text file (.txt/.csv)"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 201,
+    "question": "Trong SPSS, để biên tập và chỉnh sửa đồ thị dùng cửa sổ:",
+    "options": {
+      "A": "Data Editor",
+      "B": "Output Viewer",
+      "C": "Chart Editor",
+      "D": "Pivot Table Editor"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 202,
+    "question": "Trong SPSS, để chọn các biến nằm liền kề nhau trong một danh sách biến, thực hiện:",
+    "options": {
+      "A": "Giữ phím Ctrl và nhấp chuột vào từng biến",
+      "B": "Giữ phím Alt và nhấp chuột vào từng biến",
+      "C": "Giữ phím Tab và nhấp chuột vào từng biến",
+      "D": "Nhấp chuột ở biến đầu, giữ phím Shift và nhấp chuột ở biến cuối"
+    },
+    "answer": "D",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 203,
+    "question": "Trong SPSS, để chọn các biến KHÔNG nằm liền kề nhau trong một danh sách biến, thực hiện:",
+    "options": {
+      "A": "Giữ phím Ctrl và nhấp chuột vào từng biến muốn chọn",
+      "B": "Giữ phím Alt và nhấp chuột vào từng biến",
+      "C": "Giữ phím Tab và nhấp chuột vào từng biến",
+      "D": "Nhấp chuột ở biến đầu, giữ phím Shift và nhấp chuột ở biến cuối"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 204,
+    "question": "Trong SPSS, tại hộp thoại Dialog box, để xem thông tin về một biến trong danh sách biến, thực hiện:",
+    "options": {
+      "A": "Nhấp chuột phải lên biến trong danh sách và chọn Variable Information",
+      "B": "Nhấp chuột trái lên biến trong danh sách",
+      "C": "Nhấp chuột trái và giữ phím Shift",
+      "D": "Nhấp chuột phải và giữ phím Shift"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 205,
+    "question": "Trong SPSS, tại hộp thoại Dialog box, để danh sách biến hiển thị theo tên biến (Variable Names), nhấp chuột phải lên biến bất kỳ trong danh sách và chọn:",
+    "options": {
+      "A": "Display Variable Names",
+      "B": "Display Variable Labels",
+      "C": "Variable Information",
+      "D": "Sort Alphabetically"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 206,
+    "question": "Trong SPSS, tại hộp thoại Dialog box, để danh sách biến hiển thị theo nhãn biến (Variable Labels), nhấp chuột phải lên biến bất kỳ trong danh sách và chọn:",
+    "options": {
+      "A": "Display Variable Names",
+      "B": "Display Variable Labels",
+      "C": "Variable Information",
+      "D": "Sort Alphabetically"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 207,
+    "question": "Tổ hợp phím Ctrl + S trong SPSS dùng để:",
+    "options": {
+      "A": "Xóa tệp dữ liệu",
+      "B": "Đóng tệp dữ liệu",
+      "C": "Lưu tệp dữ liệu",
+      "D": "Tạo tệp dữ liệu mới"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 208,
+    "question": "Trong SPSS, muốn thoát khỏi chương trình, thực hiện chọn:",
+    "options": {
+      "A": "View\\ Exit",
+      "B": "Edit\\ Exit",
+      "C": "File\\ Exit",
+      "D": "File\\ Close"
+    },
+    "answer": "C",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 209,
+    "question": "Trong SPSS, muốn lưu dữ liệu với một tên khác thực hiện chọn:",
+    "options": {
+      "A": "File\\ Save",
+      "B": "File\\ Save As...",
+      "C": "Window\\ Save",
+      "D": "Window\\ Save As..."
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 210,
+    "question": "Trong SPSS, menu gồm các lựa chọn khôi phục lệnh (Undo), cắt/dán (Cut/Paste), tìm kiếm thay thế (Find/Replace) là:",
+    "options": {
+      "A": "File",
+      "B": "Edit",
+      "C": "View",
+      "D": "Data"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 211,
+    "question": "Trong SPSS, menu chứa các lệnh giúp chuyển đổi dữ liệu, tính toán, mã hóa lại các biến... là:",
+    "options": {
+      "A": "Transform",
+      "B": "Analyze",
+      "C": "View",
+      "D": "Data"
+    },
+    "answer": "A",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  },
+  {
+    "id": 212,
+    "question": "Trong SPSS, menu thực hiện các lệnh thống kê như: tóm tắt dữ liệu, lập bảng tổng hợp, so sánh trung bình, phân tích phương sai... là:",
+    "options": {
+      "A": "Transform",
+      "B": "Analyze",
+      "C": "View",
+      "D": "Data"
+    },
+    "answer": "B",
+    "source": "SỬ DỤNG PHẦN MỀM THỐNG KÊ TRONG Y HỌC"
+  }
+]
