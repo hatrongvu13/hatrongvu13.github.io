@@ -2,70 +2,104 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Ngân hàng đề thi</title>
   <style>
     :root {
-      --bg: #f5f7fb;
-      --card: #fff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
       --accent: #2563eb;
-      --correct: #15803d;
+      --accent-active: #1d4ed8;
+      --correct: #16a34a;
+      --correct-bg: #f0fdf4;
       --wrong: #dc2626;
+      --wrong-bg: #fef2f2;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding-bottom: 70px;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 600px;
       margin: 0 auto;
-      padding: 24px 16px 60px;
+      padding: 12px 12px 20px;
     }
 
     header {
-      margin-bottom: 20px;
+      margin-bottom: 12px;
+      padding: 0 4px;
     }
 
-    h1 { margin: 0 0 6px; }
-    .muted { color: var(--muted); }
+    h1 {
+      font-size: 20px;
+      margin: 0 0 4px;
+      font-weight: 700;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 16px;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
 
     .toolbar {
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
+    }
+
+    select, button {
+      font-size: 15px;
+      border-radius: 8px;
+    }
+
+    select {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text);
+      outline: none;
     }
 
     button {
       border: 0;
-      border-radius: 9px;
-      padding: 10px 15px;
+      padding: 12px 16px;
       cursor: pointer;
       background: var(--accent);
       color: white;
-      font-size: 15px;
+      font-weight: 600;
+      touch-action: manipulation;
+    }
+
+    button:active {
+      background: var(--accent-active);
     }
 
     button.secondary {
-      background: #eef2ff;
-      color: #1e40af;
+      background: #f1f5f9;
+      color: #334155;
     }
 
     button:disabled {
@@ -74,9 +108,9 @@
     }
 
     #progress {
-      margin: 15px 0;
-      height: 8px;
-      background: #e5e7eb;
+      margin-top: 10px;
+      height: 6px;
+      background: #e2e8f0;
       border-radius: 99px;
       overflow: hidden;
     }
@@ -85,108 +119,142 @@
       height: 100%;
       width: 0;
       background: var(--accent);
-      transition: width .2s;
+      transition: width .2s ease-out;
     }
 
     .question {
-      font-size: 19px;
-      line-height: 1.55;
-      margin-bottom: 18px;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      font-weight: 600;
       white-space: pre-wrap;
     }
 
     .option {
-      display: block;
+      display: flex;
       width: 100%;
       text-align: left;
       background: white;
       color: var(--text);
       border: 1px solid var(--border);
-      margin: 9px 0;
-      padding: 13px 14px;
-      line-height: 1.45;
+      border-radius: 10px;
+      margin: 8px 0;
+      padding: 12px 14px;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: normal;
+      transition: background 0.15s, border-color 0.15s;
     }
 
-    .option:hover {
-      border-color: var(--accent);
+    .option:active {
+      background: #f8fafc;
     }
 
     .option.selected {
       border: 2px solid var(--accent);
       background: #eff6ff;
+      color: #1e40af;
+      font-weight: 500;
     }
 
     .option.correct {
-      border-color: var(--correct);
-      background: #f0fdf4;
+      border: 2px solid var(--correct) !important;
+      background: var(--correct-bg) !important;
+      color: #14532d;
     }
 
     .option.wrong {
-      border-color: var(--wrong);
-      background: #fef2f2;
+      border: 2px solid var(--wrong) !important;
+      background: var(--wrong-bg) !important;
+      color: #7f1d1d;
     }
 
     #questionNav {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
       gap: 6px;
+      max-height: 160px;
+      overflow-y: auto;
+      padding: 2px;
     }
 
     .q-number {
-      padding: 8px 4px;
+      padding: 10px 0;
       background: white;
       color: var(--text);
       border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
     }
 
     .q-number.answered {
       background: #dbeafe;
       color: #1e40af;
+      border-color: #93c5fd;
     }
 
     .q-number.current {
-      outline: 2px solid var(--accent);
+      border: 2px solid var(--accent);
+      font-weight: bold;
+    }
+
+    /* Fixed Bottom Action Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    }
+
+    .bottom-bar button {
+      flex: 1;
     }
 
     .result {
       text-align: center;
-      font-size: 22px;
+      padding: 10px 0;
     }
+
+    .result h2 { margin-top: 0; }
+    .score-text { font-size: 28px; font-weight: bold; color: var(--accent); }
 
     .hidden { display: none !important; }
-
-    @media (max-width: 600px) {
-      .container { padding: 15px 10px 40px; }
-      .card { padding: 15px; }
-      .question { font-size: 17px; }
-    }
   </style>
 </head>
 <body>
+
 <div class="container">
 
   <header>
     <h1>Ngân hàng đề thi</h1>
-    <div class="muted">Mỗi lần tạo sẽ chọn ngẫu nhiên 50 câu.</div>
+    <div class="muted">Tự động xáo trộn câu hỏi & đáp án</div>
   </header>
 
   <section id="startCard" class="card">
-    <h2>Bắt đầu</h2>
+    <h3 style="margin-top:0">Bắt đầu làm bài</h3>
     <p id="bankInfo" class="muted">Đang tải ngân hàng câu hỏi...</p>
 
-    <div class="toolbar">
-      <label>
-        Số câu:
+    <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+      <label style="display:flex; justify-content:space-between; align-items:center;">
+        <span>Số lượng câu hỏi:</span>
         <select id="questionCount">
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="40">40</option>
-          <option value="50" selected>50</option>
-          <option value="60">60</option>
-          <option value="100">100</option>
+          <option value="20">20 câu</option>
+          <option value="30">30 câu</option>
+          <option value="40">40 câu</option>
+          <option value="50" selected>50 câu</option>
+          <option value="60">60 câu</option>
+          <option value="100">100 câu</option>
         </select>
       </label>
-      <button id="startBtn" disabled>Bắt đầu làm bài</button>
+      <button id="startBtn" style="width:100%" disabled>Bắt đầu ngay</button>
     </div>
   </section>
 
@@ -194,7 +262,7 @@
 
     <div class="card">
       <div class="toolbar">
-        <strong id="counter"></strong>
+        <strong id="counter" style="font-size:15px"></strong>
         <span class="muted" id="answeredInfo"></span>
       </div>
       <div id="progress"><div id="progressBar"></div></div>
@@ -203,26 +271,27 @@
     <div class="card">
       <div id="question" class="question"></div>
       <div id="options"></div>
-
-      <div class="toolbar" style="margin-top:20px">
-        <button id="prevBtn" class="secondary">← Câu trước</button>
-        <button id="nextBtn">Câu tiếp →</button>
-        <button id="submitBtn" class="hidden">Nộp bài</button>
-      </div>
     </div>
 
     <div class="card">
-      <h3>Danh sách câu</h3>
+      <h4 style="margin:0 0 10px">Danh sách câu hỏi</h4>
       <div id="questionNav"></div>
     </div>
+
+    <div class="bottom-bar">
+      <button id="prevBtn" class="secondary">← Câu trước</button>
+      <button id="nextBtn">Câu tiếp →</button>
+      <button id="submitBtn" class="hidden" style="background:var(--correct)">Nộp bài</button>
+    </div>
+
   </section>
 
   <section id="resultCard" class="card hidden">
     <div class="result">
       <h2>Kết quả</h2>
-      <div id="score"></div>
+      <div id="score" class="score-text"></div>
       <p id="scoreDetail" class="muted"></p>
-      <button id="newExamBtn">Tạo đề mới</button>
+      <button id="newExamBtn" style="width:100%; margin-top:10px;">Làm đề khác</button>
     </div>
   </section>
 
@@ -240,33 +309,24 @@ const $ = id => document.getElementById(id);
 async function loadBank() {
   try {
     const response = await fetch("questions.json", { cache: "no-store" });
-
-    if (!response.ok) {
-      throw new Error("Không thể tải questions.json");
-    }
+    if (!response.ok) throw new Error("Không thể tải questions.json");
 
     bank = await response.json();
-
-    $("bankInfo").textContent =
-      `Đã tải ${bank.length} câu hỏi. Bạn có thể tạo đề.`;
-
+    $("bankInfo").textContent = `Sẵn sàng với ${bank.length} câu hỏi trong hệ thống.`;
     $("startBtn").disabled = bank.length === 0;
 
   } catch (error) {
-    $("bankInfo").textContent =
-      "Lỗi: chưa có questions.json hoặc file JSON không hợp lệ.";
+    $("bankInfo").textContent = "Lỗi: Không tải được dữ liệu câu hỏi.";
     console.error(error);
   }
 }
 
 function shuffle(array) {
   const a = [...array];
-
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
-
   return a;
 }
 
@@ -277,16 +337,10 @@ function createExam(count) {
   }
 
   const selected = shuffle(bank).slice(0, count);
-
-  exam = selected.map(q => {
-    const options = Object.entries(q.options || {});
-    const shuffled = shuffle(options);
-
-    return {
-      ...q,
-      shuffledOptions: shuffled
-    };
-  });
+  exam = selected.map(q => ({
+    ...q,
+    shuffledOptions: shuffle(Object.entries(q.options || {}))
+  }));
 
   current = 0;
   answers = {};
@@ -302,36 +356,21 @@ function createExam(count) {
 function render() {
   const q = exam[current];
 
-  $("counter").textContent =
-    `Câu ${current + 1} / ${exam.length}`;
-
-  const answeredCount = Object.keys(answers).length;
-
-  $("answeredInfo").textContent =
-    `${answeredCount}/${exam.length} câu đã chọn`;
-
-  $("progressBar").style.width =
-    `${((current + 1) / exam.length) * 100}%`;
-
-  $("question").textContent =
-    `${q.question}`;
-
+  $("counter").textContent = `Câu ${current + 1}/${exam.length}`;
+  $("answeredInfo").textContent = `Đã chọn: ${Object.keys(answers).length}/${exam.length}`;
+  $("progressBar").style.width = `${((current + 1) / exam.length) * 100}%`;
+  $("question").textContent = q.question;
   $("options").innerHTML = "";
 
   for (const [letter, text] of q.shuffledOptions) {
     const button = document.createElement("button");
     button.className = "option";
 
-    if (answers[q.id] === letter) {
-      button.classList.add("selected");
-    }
+    if (answers[q.id] === letter) button.classList.add("selected");
 
     if (submitted) {
-      if (letter === q.answer) {
-        button.classList.add("correct");
-      } else if (answers[q.id] === letter) {
-        button.classList.add("wrong");
-      }
+      if (letter === q.answer) button.classList.add("correct");
+      else if (answers[q.id] === letter) button.classList.add("wrong");
     }
 
     button.textContent = `${letter}. ${text}`;
@@ -347,15 +386,8 @@ function render() {
   }
 
   $("prevBtn").disabled = current === 0;
-  $("nextBtn").classList.toggle(
-    "hidden",
-    current === exam.length - 1
-  );
-
-  $("submitBtn").classList.toggle(
-    "hidden",
-    current !== exam.length - 1 || submitted
-  );
+  $("nextBtn").classList.toggle("hidden", current === exam.length - 1);
+  $("submitBtn").classList.toggle("hidden", current !== exam.length - 1 || submitted);
 
   renderNavigation();
 }
@@ -367,19 +399,14 @@ function renderNavigation() {
     const button = document.createElement("button");
     button.className = "q-number";
 
-    if (answers[q.id]) {
-      button.classList.add("answered");
-    }
-
-    if (index === current) {
-      button.classList.add("current");
-    }
+    if (answers[q.id]) button.classList.add("answered");
+    if (index === current) button.classList.add("current");
 
     button.textContent = index + 1;
-
     button.onclick = () => {
       current = index;
       render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     $("questionNav").appendChild(button);
@@ -388,63 +415,31 @@ function renderNavigation() {
 
 function submitExam() {
   const unanswered = exam.filter(q => !answers[q.id]).length;
-
   if (unanswered > 0) {
-    const ok = confirm(
-      `Bạn còn ${unanswered} câu chưa trả lời. Vẫn nộp bài?`
-    );
-
-    if (!ok) return;
+    if (!confirm(`Bạn còn ${unanswered} câu chưa trả lời. Vẫn nộp bài?`)) return;
   }
 
   submitted = true;
-
   let correct = 0;
 
   exam.forEach(q => {
-    if (answers[q.id] === q.answer) {
-      correct++;
-    }
+    if (answers[q.id] === q.answer) correct++;
   });
 
-  const percent = Math.round(correct / exam.length * 100);
+  const percent = Math.round((correct / exam.length) * 100);
 
-  $("score").textContent =
-    `${correct}/${exam.length} — ${percent}%`;
-
-  $("scoreDetail").textContent =
-    `Đúng ${correct} câu, sai hoặc chưa trả lời ${exam.length - correct} câu.`;
-
+  $("score").textContent = `${correct}/${exam.length} (${percent}%)`;
+  $("scoreDetail").textContent = `Đúng ${correct} câu, sai/bỏ qua ${exam.length - correct} câu.`;
   $("resultCard").classList.remove("hidden");
 
   render();
-
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth"
-  });
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 }
 
-$("startBtn").onclick = () => {
-  createExam(Number($("questionCount").value));
-};
-
-$("prevBtn").onclick = () => {
-  if (current > 0) {
-    current--;
-    render();
-  }
-};
-
-$("nextBtn").onclick = () => {
-  if (current < exam.length - 1) {
-    current++;
-    render();
-  }
-};
-
+$("startBtn").onclick = () => createExam(Number($("questionCount").value));
+$("prevBtn").onclick = () => { if (current > 0) { current--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } };
+$("nextBtn").onclick = () => { if (current < exam.length - 1) { current++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } };
 $("submitBtn").onclick = submitExam;
-
 $("newExamBtn").onclick = () => {
   $("resultCard").classList.add("hidden");
   $("examCard").classList.add("hidden");
