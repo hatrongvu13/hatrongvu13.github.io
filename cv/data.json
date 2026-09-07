@@ -94,7 +94,9 @@
         "GitHub Actions",
         "Maven",
         "Linux",
-        "SonarQube"
+        "SonarQube",
+        "Kubernetes",
+        "Apache Jmeter"
       ]
     }
   ],
