@@ -1,0 +1,216 @@
+{
+  "settings": {
+    "defaultLanguage": "vi",
+    "defaultTheme": "cyan",
+    "formEndpoint": "",
+    "pdfFileName": "Vu-Ha-Trong-Java-Developer-CV.pdf"
+  },
+  "personal": {
+    "fullName": "Vũ Hà Trọng",
+    "initials": "Vu Ha",
+    "role": {
+      "vi": "Chuyên viên chính Lập trình Back End",
+      "en": "Senior Java Backend Developer"
+    },
+    "tagline": {
+      "vi": "Xây dựng backend Java ổn định, dễ mở rộng và bám sát nghiệp vụ.",
+      "en": "Building reliable, scalable Java backends aligned with business needs."
+    },
+    "summary": {
+      "vi": "Lập trình viên Backend tập trung vào Java, Spring Boot, thiết kế API, tích hợp hệ thống và kiến trúc phần mềm dễ kiểm thử, bảo trì.",
+      "en": "Backend developer focused on Java, Spring Boot, API design, system integrations, and maintainable software architecture."
+    },
+    "email": "hatrongvu13@gmail.com",
+    "phone": "+84 943 561 685",
+    "location": {
+      "vi": "Hà Nội, Việt Nam",
+      "en": "Hanoi, Vietnam"
+    },
+    "github": "https://github.com/hatrongvu13",
+    "linkedin": "https://linkedin.com/in/iamhatrongvu"
+  },
+  "stats": [
+    {
+      "value": "5+",
+      "label": {
+        "vi": "Năm kinh nghiệm",
+        "en": "Years experience"
+      }
+    },
+    {
+      "value": "20+",
+      "label": {
+        "vi": "API và tích hợp",
+        "en": "APIs and integrations"
+      }
+    },
+    {
+      "value": "10+",
+      "label": {
+        "vi": "Dự án tham gia",
+        "en": "Projects delivered"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "title": "Backend",
+      "items": [
+        "Java 17+",
+        "Spring Boot",
+        "Spring Security",
+        "Spring Data JPA",
+        "REST API",
+        "MapStruct"
+      ]
+    },
+    {
+      "title": "Database",
+      "items": [
+        "Oracle",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "Hibernate",
+        "SQL Tuning"
+      ]
+    },
+    {
+      "title": "Architecture",
+      "items": [
+        "Clean Architecture",
+        "DDD",
+        "SOLID",
+        "Design Patterns",
+        "Event-driven",
+        "Microservices"
+      ]
+    },
+    {
+      "title": "Tools",
+      "items": [
+        "Docker",
+        "Git",
+        "GitHub Actions",
+        "Maven",
+        "Linux",
+        "SonarQube"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "period": "2022 - Present",
+      "company": "Enterprise / Financial Technology",
+      "role": {
+        "vi": "Chuyên viên chính Lập trình Back End",
+        "en": "Senior Backend Developer"
+      },
+      "description": {
+        "vi": "Thiết kế và phát triển dịch vụ backend cho quy trình nghiệp vụ nhiều bước, tích hợp hệ thống và tự động hóa thông báo.",
+        "en": "Design and development of backend services for multi-step workflows, system integrations, and notification automation."
+      },
+      "achievements": {
+        "vi": [
+          "Chuẩn hóa xử lý template email theo Strategy và Factory.",
+          "Thiết kế API có logging, retry và xử lý lỗi.",
+          "Review code và tối ưu truy vấn dữ liệu."
+        ],
+        "en": [
+          "Standardized email templates using Strategy and Factory.",
+          "Designed APIs with logging, retries, and error handling.",
+          "Reviewed code and optimized data queries."
+        ]
+      }
+    },
+    {
+      "period": "2019 - 2022",
+      "company": "Software Development Team",
+      "role": {
+        "vi": "Lập trình viên Java Backend",
+        "en": "Java Backend Developer"
+      },
+      "description": {
+        "vi": "Phát triển module nghiệp vụ, REST API và tiến trình đồng bộ dữ liệu trên Java/Spring.",
+        "en": "Developed business modules, REST APIs, and data synchronization processes with Java/Spring."
+      },
+      "achievements": {
+        "vi": [
+          "Xây dựng API theo OpenAPI.",
+          "Tăng khả năng kiểm thử bằng unit test."
+        ],
+        "en": [
+          "Built APIs documented with OpenAPI.",
+          "Improved testability with unit tests."
+        ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "name": "Java Design Patterns Lab",
+      "type": "Open Source",
+      "description": {
+        "vi": "Ví dụ thực tế cho Strategy, Factory Method, Template Method, Chain of Responsibility và Adapter, kèm README và test.",
+        "en": "Practical Strategy, Factory Method, Template Method, Chain of Responsibility, and Adapter examples with documentation and tests."
+      },
+      "tech": [
+        "Java 17",
+        "JUnit 5",
+        "Maven"
+      ],
+      "source": "https://github.com/your-github/java-design-patterns-lab",
+      "demo": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+    },
+    {
+      "name": "Dynamic Email Template Engine",
+      "type": "Architecture Sample",
+      "description": {
+        "vi": "Engine chọn template và nguồn dữ liệu email theo điều kiện nghiệp vụ bằng factory, data fetcher và renderer độc lập.",
+        "en": "An engine selecting email templates and data sources from business rules with independent factories, fetchers, and renderers."
+      },
+      "tech": [
+        "Spring Boot",
+        "Thymeleaf",
+        "Strategy",
+        "Factory"
+      ],
+      "source": "https://github.com/your-github/dynamic-email-engine",
+      "demo": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+    },
+    {
+      "name": "Secure Media Gateway",
+      "type": "System Design",
+      "description": {
+        "vi": "Gateway phân phối media bằng signed URL, thời hạn truy cập, phân quyền và audit log.",
+        "en": "A media gateway with signed URLs, expiry controls, authorization, and audit logs."
+      },
+      "tech": [
+        "Java",
+        "Spring Security",
+        "Redis",
+        "MinIO"
+      ],
+      "source": "https://github.com/your-github/secure-media-gateway",
+      "demo": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+    }
+  ],
+  "interests": [
+    {
+      "vi": "Kiến trúc phần mềm",
+      "en": "Software architecture"
+    },
+    {
+      "vi": "AI local và tự động hóa",
+      "en": "Local AI and automation"
+    },
+    {
+      "vi": "CNC và chế tạo",
+      "en": "CNC and making"
+    },
+    {
+      "vi": "Nông nghiệp bền vững",
+      "en": "Sustainable farming"
+    }
+  ]
+}
