@@ -378,9 +378,7 @@ function renderCareerMatrix() {
 Future Architect Path
 ==================================
 */
-
 function renderArchitectJourney() {
-
     const container =
         document.getElementById(
             "roadmap-container"
@@ -390,33 +388,200 @@ function renderArchitectJourney() {
         return;
     }
 
+    const stages = [
+        {
+            level: "01",
+            title: "Java Developer",
+            description: {
+                vi: "Nền tảng Java, OOP, SQL, REST API và Spring Boot.",
+                en: "Java fundamentals, OOP, SQL, REST APIs and Spring Boot."
+            },
+            status: "completed",
+            icon: "☕"
+        },
+        {
+            level: "02",
+            title: "Senior Java Developer",
+            description: {
+                vi: "Thiết kế module, tối ưu hiệu năng, review code và xử lý nghiệp vụ phức tạp.",
+                en: "Module design, performance optimization, code review and complex business logic."
+            },
+            status: "completed",
+            icon: "⌨"
+        },
+        {
+            level: "03",
+            title: "Technical Lead",
+            description: {
+                vi: "Dẫn dắt kỹ thuật, kiểm soát chất lượng và hỗ trợ phát triển đội ngũ.",
+                en: "Technical leadership, quality control and team development."
+            },
+            status: "learning",
+            icon: "◆"
+        },
+        {
+            level: "04",
+            title: "Solution Architect",
+            description: {
+                vi: "Thiết kế giải pháp tổng thể, tích hợp hệ thống và lựa chọn công nghệ.",
+                en: "End-to-end solution design, system integration and technology selection."
+            },
+            status: "planned",
+            icon: "⬡"
+        },
+        {
+            level: "05",
+            title: "Enterprise Architect",
+            description: {
+                vi: "Định hướng kiến trúc doanh nghiệp, tiêu chuẩn kỹ thuật và chiến lược dài hạn.",
+                en: "Enterprise architecture direction, technical standards and long-term strategy."
+            },
+            status: "planned",
+            icon: "△"
+        }
+    ];
+
+    const language =
+        window.LanguageManager
+            ?.getLanguage?.() || "vi";
+
+    const statusLabels = {
+        completed: {
+            vi: "Đã đạt được",
+            en: "Completed"
+        },
+        learning: {
+            vi: "Đang phát triển",
+            en: "In progress"
+        },
+        planned: {
+            vi: "Mục tiêu tiếp theo",
+            en: "Next target"
+        }
+    };
+
     const card =
-        document.createElement("div");
+        document.createElement("section");
 
     card.className =
-        "content-card";
-
-    card.style.marginTop =
-        "24px";
+        "content-card architect-journey-card";
 
     card.innerHTML = `
-<pre>
+        <div class="architect-journey-header">
 
-Java Developer
-      │
-      ▼
-Senior Java Developer
-      │
-      ▼
-Technical Lead
-      │
-      ▼
-Solution Architect
-      │
-      ▼
-Enterprise Architect
+            <div>
+                <span class="architect-journey-eyebrow">
+                    CAREER PATH
+                </span>
 
-</pre>
+                <h3>
+                    ${
+        language === "vi"
+            ? "Lộ trình Java đến Kiến trúc sư hệ thống"
+            : "Java to System Architect Journey"
+    }
+                </h3>
+
+                <p>
+                    ${
+        language === "vi"
+            ? "Lộ trình phát triển năng lực từ kỹ thuật backend chuyên sâu đến thiết kế giải pháp và kiến trúc doanh nghiệp."
+            : "A professional path from backend engineering expertise to solution and enterprise architecture."
+    }
+                </p>
+            </div>
+
+            <div class="architect-journey-progress">
+                <strong>02 / 05</strong>
+
+                <span>
+                    ${
+        language === "vi"
+            ? "Cột mốc hoàn thành"
+            : "Milestones completed"
+    }
+                </span>
+            </div>
+
+        </div>
+
+        <div class="architect-path">
+
+            ${stages.map((stage, index) => `
+                <article
+                    class="architect-stage ${stage.status}"
+                >
+                    <div class="architect-stage-marker">
+
+                        <span class="architect-stage-icon">
+                            ${stage.icon}
+                        </span>
+
+                        ${
+        index < stages.length - 1
+            ? '<span class="architect-stage-line"></span>'
+            : ""
+    }
+
+                    </div>
+
+                    <div class="architect-stage-content">
+
+                        <div class="architect-stage-meta">
+
+                            <span class="architect-stage-level">
+                                LEVEL ${stage.level}
+                            </span>
+
+                            <span
+                                class="architect-stage-status ${stage.status}"
+                            >
+                                ${statusLabels[stage.status][language]}
+                            </span>
+
+                        </div>
+
+                        <h4>
+                            ${stage.title}
+                        </h4>
+
+                        <p>
+                            ${
+        stage.description[language]
+        || stage.description.vi
+    }
+                        </p>
+
+                    </div>
+                </article>
+            `).join("")}
+
+        </div>
+
+        <footer class="architect-journey-footer">
+
+<!--            <code class="architect-footer-code">-->
+<!--    <span class="code-keyword">while</span>-->
+<!--    <span class="code-bracket">(</span><span class="code-object">career</span>.<span class="code-method">isGrowing</span><span class="code-bracket">())</span>-->
+<!--    <span class="code-bracket">{</span>-->
+
+<!--    <span class="code-method">learn</span><span class="code-bracket">();</span>-->
+<!--    <span class="code-method">build</span><span class="code-bracket">();</span>-->
+<!--    <span class="code-method">share</span><span class="code-bracket">();</span>-->
+
+<!--    <span class="code-bracket">}</span>-->
+<!--</code>-->
+<pre class="architect-footer-code"><code><span class="code-keyword">while</span> (<span class="code-object">career</span>.<span class="code-method">isGrowing</span>()) {
+    <span class="code-method">learn</span>();
+    <span class="code-method">build</span>();
+    <span class="code-method">share</span>();
+}</code></pre>
+
+            <span class="architect-footer-focus">
+                Java • Architecture • Leadership
+            </span>
+
+        </footer>
     `;
 
     container.appendChild(card);
