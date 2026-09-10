@@ -380,31 +380,6 @@ const App = (() => {
 
     /*
     ==================================
-    Developer Console Banner
-    ==================================
-    */
-
-    function showDeveloperBanner() {
-
-        console.log(`
-
-======================================
-Vu Ha Trong Portfolio
-======================================
-
-Java Backend Developer
-Spring Boot
-System Design
-Architecture
-Content Creator
-
-======================================
-
-        `);
-    }
-
-    /*
-    ==================================
     App Ready
     ==================================
     */

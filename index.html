@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="./css/theme.css">
   <link rel="stylesheet" href="./css/layout.css">
   <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/cv.css">
 
   <script type="application/ld+json" id="person-schema">
   {
@@ -255,6 +256,80 @@
     </section>
   </main>
 
+  <!-- Dynamic CV document: hidden on portfolio, visible in CV preview/print mode -->
+  <section id="cv-document" class="cv-document" hidden aria-label="Curriculum Vitae">
+      <div class="cv-page">
+          <header class="cv-header">
+              <div class="cv-identity">
+                  <div class="cv-avatar-wrap">
+                      <img
+                              id="cv-avatar"
+                              src="./assets/avatar/avatar.png"
+                              alt="Ảnh đại diện Vũ Hà Trọng"
+                              width="144"
+                              height="144"
+                      >
+                      <div id="cv-avatar-fallback" class="cv-avatar-fallback" hidden aria-hidden="true">VHT</div>
+                  </div>
+
+                  <div class="cv-heading">
+                      <h1 id="cv-full-name">Vũ Hà Trọng</h1>
+                      <h2 id="cv-role">Senior Java Backend Developer</h2>
+                      <p id="cv-tagline"></p>
+                  </div>
+              </div>
+
+              <div id="cv-contact-list" class="cv-contact-list" aria-label="Thông tin liên hệ"></div>
+          </header>
+
+          <div class="cv-body">
+              <aside class="cv-sidebar">
+                  <section class="cv-block" aria-labelledby="cv-summary-title">
+                      <h3 id="cv-summary-title">Hồ sơ</h3>
+                      <p id="cv-summary"></p>
+                  </section>
+
+                  <section class="cv-block" aria-labelledby="cv-skills-title">
+                      <h3 id="cv-skills-title">Kỹ năng</h3>
+                      <div id="cv-skills"></div>
+                  </section>
+
+                  <section class="cv-block" aria-labelledby="cv-competencies-title">
+                      <h3 id="cv-competencies-title">Năng lực chính</h3>
+                      <div id="cv-competencies"></div>
+                  </section>
+
+                  <section class="cv-block" aria-labelledby="cv-roadmap-title">
+                      <h3 id="cv-roadmap-title">Lộ trình phát triển</h3>
+                      <div id="cv-roadmap"></div>
+                  </section>
+              </aside>
+
+              <div class="cv-main-column">
+                  <section class="cv-block" aria-labelledby="cv-experience-title">
+                      <h3 id="cv-experience-title">Kinh nghiệm</h3>
+                      <div id="cv-experience"></div>
+                  </section>
+
+                  <section class="cv-block" aria-labelledby="cv-projects-title">
+                      <h3 id="cv-projects-title">Dự án nổi bật</h3>
+                      <div id="cv-projects"></div>
+                  </section>
+
+                  <section class="cv-block" aria-labelledby="cv-architectures-title">
+                      <h3 id="cv-architectures-title">Thiết kế hệ thống</h3>
+                      <div id="cv-architectures"></div>
+                  </section>
+              </div>
+          </div>
+
+          <footer class="cv-footer">
+              <span>© <span id="cv-footer-name">Vũ Hà Trọng</span></span>
+              <span>Java Backend Developer · System Architecture</span>
+          </footer>
+      </div>
+  </section>
+
   <footer>
     <div class="container footer-content">
       <p>© <span id="footer-year"></span> <span id="footer-name">Vũ Hà Trọng</span></p>
@@ -282,6 +357,7 @@
   <script src="./js/roadmap.js" defer></script>
   <script src="./js/github.js" defer></script>
   <script src="./js/contact.js" defer></script>
+  <script src="./js/cv.js" defer></script>
   <script src="./js/app.js" defer></script>
 </body>
 </html>

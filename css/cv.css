@@ -1,376 +1,508 @@
 /*
-==================================
-Dynamic CV Theme
-==================================
-*/
+ * Vu Ha Trong Portfolio
+ * cv.css: dynamic CV preview and print stylesheet
+ * Requires: theme.css
+ */
+
+/* ================================================================
+   Base CV tokens
+   ================================================================ */
+
+:root {
+    --cv-paper-width: 210mm;
+    --cv-paper-min-height: 297mm;
+    --cv-page-padding-x: 13mm;
+    --cv-page-padding-y: 12mm;
+    --cv-sidebar-width: 58mm;
+    --cv-column-gap: 9mm;
+    --cv-font-size: 9.2pt;
+    --cv-line-height: 1.42;
+    --cv-heading: #172033;
+    --cv-text: #293548;
+    --cv-muted: #667085;
+    --cv-line: #d8dee8;
+    --cv-surface: #f5f7fa;
+    --cv-accent: #b96525;
+    --cv-accent-soft: #f7ebe1;
+    --cv-success: #4f7f5e;
+    --cv-learning: #456f9e;
+    --cv-planned: #7a8493;
+}
+
+/* ================================================================
+   Visibility and preview mode
+   ================================================================ */
+
+.cv-document[hidden] {
+    display: none !important;
+}
 
 .cv-document {
-    background: #e5e7eb;
-    color: #172033;
-
-    padding: 40px 0;
+    color: var(--cv-text);
+    font-family: var(--font-sans, Arial, sans-serif);
+    font-size: var(--cv-font-size);
+    line-height: var(--cv-line-height);
 }
+
+body.cv-preview-mode {
+    overflow: auto;
+    background: #dfe4ea;
+}
+
+body.cv-preview-mode > .header,
+body.cv-preview-mode > main,
+body.cv-preview-mode > footer,
+body.cv-preview-mode > dialog,
+body.cv-preview-mode > .toast,
+body.cv-preview-mode > #back-to-top,
+body.cv-preview-mode > .noscript-message {
+    display: none !important;
+}
+
+body.cv-preview-mode > .cv-document {
+    display: block !important;
+    width: 100%;
+    padding: 24px;
+}
+
+/* ================================================================
+   A4 paper
+   ================================================================ */
 
 .cv-page {
-    width: 210mm;
-    min-height: 297mm;
-
+    position: relative;
+    width: var(--cv-paper-width);
+    min-height: var(--cv-paper-min-height);
     margin: 0 auto;
-
+    padding: var(--cv-page-padding-y) var(--cv-page-padding-x);
+    overflow: hidden;
     background: #ffffff;
-
-    color: #172033;
-
-    box-shadow:
-            0 20px 60px rgba(15, 23, 42, .18);
-
-    font-family:
-            "Inter",
-            "Segoe UI",
-            Arial,
-            sans-serif;
+    color: var(--cv-text);
+    box-shadow: 0 16px 50px rgba(15, 23, 42, 0.18);
 }
 
+.cv-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4mm;
+    background: linear-gradient(
+            90deg,
+            var(--cv-accent) 0%,
+            var(--cv-accent) 28%,
+            #315f99 28%,
+            #315f99 74%,
+            #5e8f49 74%,
+            #5e8f49 100%
+    );
+}
+
+/* ================================================================
+   Header
+   ================================================================ */
+
 .cv-header {
+    padding-top: 3mm;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid var(--cv-line);
+}
+
+.cv-identity {
     display: grid;
-
-    grid-template-columns:
-        128px 1fr;
-
-    gap: 28px;
-
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 6mm;
     align-items: center;
-
-    padding: 28px 32px;
-
-    color: #ffffff;
-
-    background:
-            linear-gradient(
-                    120deg,
-                    #111827,
-                    #16263b
-            );
-
-    border-bottom:
-            5px solid #f89820;
 }
 
 .cv-avatar-wrap {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+    width: 31mm;
+    height: 31mm;
+    flex: 0 0 31mm;
 }
 
-.cv-avatar,
-.cv-avatar-fallback {
-    width: 112px;
-    height: 112px;
-
-    border-radius: 18px;
-
-    border: 3px solid #6db33f;
-}
-
-.cv-avatar {
-    display: block;
-    object-fit: cover;
-}
-
-.cv-avatar-fallback {
-    display: grid;
-    place-items: center;
-
-    background:
-            linear-gradient(
-                    135deg,
-                    #f89820,
-                    #58a6ff,
-                    #6db33f
-            );
-
-    color: #071019;
-
-    font-family:
-            "JetBrains Mono",
-            Consolas,
-            monospace;
-
-    font-size: 28px;
-    font-weight: 900;
-}
-
-.cv-avatar-fallback[hidden] {
+.cv-avatar-wrap[hidden],
+.cv-avatar-wrap:has(#cv-avatar[hidden]) {
     display: none;
 }
 
-.cv-heading h1 {
-    margin: 0 0 6px;
+#cv-avatar,
+.cv-avatar-fallback {
+    width: 100%;
+    height: 100%;
+    border: 1.1mm solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.45mm var(--cv-accent);
+    background: var(--cv-surface);
+}
 
+#cv-avatar {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+#cv-avatar[hidden] {
+    display: none !important;
+}
+
+.cv-avatar-fallback {
+    place-items: center;
     color: #ffffff;
+    background: var(--cv-accent);
+    font-family: var(--font-mono, monospace);
+    font-size: 12pt;
+    font-weight: 700;
+}
 
-    font-size: 34px;
+.cv-avatar-fallback:not([hidden]) {
+    display: grid;
+}
 
-    letter-spacing: -.02em;
+.cv-heading {
+    min-width: 0;
+}
+
+.cv-heading h1 {
+    margin: 0 0 1.2mm;
+    color: var(--cv-heading);
+    font-size: 25pt;
+    font-weight: 760;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
 }
 
 .cv-heading h2 {
-    margin: 0 0 10px;
-
-    color: #f89820;
-
-    font-size: 19px;
+    margin: 0 0 1.8mm;
+    color: var(--cv-accent);
+    font-size: 12.5pt;
+    font-weight: 700;
+    line-height: 1.22;
 }
 
 .cv-heading p {
-    margin: 0 0 12px;
-
-    color: #d5deea;
+    max-width: 112mm;
+    margin: 0;
+    color: var(--cv-muted);
+    font-size: 9.2pt;
+    line-height: 1.45;
 }
 
 .cv-contact-list {
     display: flex;
-
     flex-wrap: wrap;
-
-    gap: 7px 18px;
-
-    font-size: 12px;
-
-    color: #d5deea;
+    gap: 1.5mm 4mm;
+    margin-top: 4.5mm;
+    color: var(--cv-muted);
+    font-size: 8.3pt;
 }
 
-.cv-contact-list a {
-    color: #d5deea;
+.cv-contact-list > * {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    overflow-wrap: anywhere;
+    text-decoration: none;
 }
 
-.cv-layout {
+.cv-contact-list > *:not(:last-child)::after {
+    content: "·";
+    position: relative;
+    left: 2mm;
+    color: #a6afbc;
+}
+
+.cv-contact-list a:hover {
+    color: var(--cv-accent);
+}
+
+/* ================================================================
+   Main two-column body
+   ================================================================ */
+
+.cv-body {
     display: grid;
+    grid-template-columns: var(--cv-sidebar-width) minmax(0, 1fr);
+    gap: var(--cv-column-gap);
+    padding-top: 6mm;
+}
 
-    grid-template-columns:
-        31% 69%;
+.cv-sidebar,
+.cv-main-column {
+    min-width: 0;
 }
 
 .cv-sidebar {
-    padding: 26px 22px;
-
-    background: #f3f6f9;
-
-    border-right:
-            1px solid #dbe2ea;
+    padding-right: 6mm;
+    border-right: 1px solid var(--cv-line);
 }
 
-.cv-main {
-    padding: 26px 30px;
+.cv-main-column {
+    padding-left: 0;
 }
 
 .cv-block {
-    margin-bottom: 24px;
-
-    break-inside: avoid;
+    margin: 0 0 5mm;
+    break-inside: auto;
 }
 
 .cv-block:last-child {
     margin-bottom: 0;
 }
 
-.cv-block h3 {
-    margin: 0 0 12px;
+.cv-block[hidden] {
+    display: none !important;
+}
 
-    padding-bottom: 7px;
-
-    color: #172033;
-
-    border-bottom:
-            2px solid #f89820;
-
-    font-size: 15px;
-
+.cv-block > h3 {
+    display: flex;
+    align-items: center;
+    gap: 2.2mm;
+    margin: 0 0 3mm;
+    color: var(--cv-heading);
+    font-size: 10.5pt;
+    font-weight: 760;
+    letter-spacing: 0.065em;
     text-transform: uppercase;
-
-    letter-spacing: .08em;
 }
 
-.cv-block p,
+.cv-block > h3::before {
+    content: "";
+    width: 3.2mm;
+    height: 1mm;
+    flex: 0 0 3.2mm;
+    border-radius: 999px;
+    background: var(--cv-accent);
+}
+
+.cv-block p {
+    margin: 0 0 2.2mm;
+    color: var(--cv-text);
+}
+
+.cv-block ul {
+    margin: 2mm 0 0;
+    padding-left: 4.2mm;
+    color: var(--cv-text);
+}
+
 .cv-block li {
-    color: #364152;
-
-    font-size: 12px;
-
-    line-height: 1.55;
+    margin-bottom: 1mm;
+    padding-left: 0.7mm;
 }
+
+.cv-block li::marker {
+    color: var(--cv-accent);
+}
+
+/* ================================================================
+   Skills and chips
+   ================================================================ */
 
 .cv-skill-group {
-    margin-bottom: 16px;
+    margin-bottom: 3.4mm;
+    break-inside: avoid;
+}
+
+.cv-skill-group:last-child {
+    margin-bottom: 0;
 }
 
 .cv-skill-group h4 {
-    margin: 0 0 7px;
-
-    color: #172033;
-
-    font-size: 12px;
+    margin: 0 0 1.8mm;
+    color: var(--cv-heading);
+    font-size: 8.7pt;
+    font-weight: 730;
 }
 
 .cv-chip-list {
     display: flex;
-
     flex-wrap: wrap;
-
-    gap: 5px;
+    gap: 1.4mm;
 }
 
 .cv-chip {
-    display: inline-block;
-
-    padding: 4px 7px;
-
-    border:
-            1px solid #cdd7e3;
-
-    border-radius: 5px;
-
-    background: #ffffff;
-
-    color: #27364a;
-
-    font-family:
-            "JetBrains Mono",
-            Consolas,
-            monospace;
-
-    font-size: 9px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 5.7mm;
+    max-width: 100%;
+    border: 0.25mm solid #d7dde6;
+    border-radius: 999px;
+    background: var(--cv-surface);
+    color: #465267;
+    padding: 0.8mm 2mm;
+    font-family: var(--font-mono, monospace);
+    font-size: 7.3pt;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
 }
+
+/* ================================================================
+   Experience, project and architecture items
+   ================================================================ */
 
 .cv-experience-item,
 .cv-project-item,
 .cv-architecture-item {
-    margin-bottom: 18px;
-
+    margin-bottom: 4.2mm;
+    padding-bottom: 4mm;
+    border-bottom: 0.25mm solid var(--cv-line);
     break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.cv-experience-item:last-child,
+.cv-project-item:last-child,
+.cv-architecture-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
 }
 
 .cv-item-heading {
     display: flex;
-
-    align-items: flex-start;
+    align-items: baseline;
     justify-content: space-between;
-
-    gap: 16px;
-
-    margin-bottom: 5px;
+    gap: 4mm;
+    margin-bottom: 1mm;
 }
 
 .cv-item-heading h4 {
+    min-width: 0;
     margin: 0;
-
-    color: #172033;
-
-    font-size: 13px;
+    color: var(--cv-heading);
+    font-size: 10.3pt;
+    font-weight: 740;
+    line-height: 1.25;
 }
 
 .cv-period {
     flex: 0 0 auto;
-
-    color: #f89820;
-
-    font-family:
-            "JetBrains Mono",
-            Consolas,
-            monospace;
-
-    font-size: 10px;
-    font-weight: 700;
+    color: var(--cv-accent);
+    font-family: var(--font-mono, monospace);
+    font-size: 7.6pt;
+    font-weight: 650;
+    white-space: nowrap;
 }
 
 .cv-company {
-    margin-bottom: 7px;
-
-    color: #6db33f;
-
-    font-size: 11px;
-    font-weight: 700;
+    margin-bottom: 1.6mm;
+    color: var(--cv-muted);
+    font-size: 8.3pt;
+    font-weight: 650;
 }
 
-.cv-experience-item ul {
-    margin: 7px 0 0;
-    padding-left: 18px;
+.cv-experience-item p,
+.cv-project-item p,
+.cv-architecture-item p {
+    margin-bottom: 1.8mm;
+}
+
+/* ================================================================
+   Roadmap
+   ================================================================ */
+
+#cv-roadmap {
+    position: relative;
+    display: grid;
+    gap: 2mm;
+    padding-left: 4mm;
+}
+
+#cv-roadmap::before {
+    content: "";
+    position: absolute;
+    top: 1.5mm;
+    bottom: 1.5mm;
+    left: 1mm;
+    width: 0.35mm;
+    background: var(--cv-line);
 }
 
 .cv-roadmap-item {
     position: relative;
-
-    margin-bottom: 12px;
-
-    padding-left: 17px;
-
-    font-size: 10px;
+    display: grid;
+    grid-template-columns: 14mm minmax(0, 1fr);
+    gap: 2mm;
+    align-items: start;
+    break-inside: avoid;
+    color: var(--cv-muted);
+    font-size: 7.8pt;
 }
 
 .cv-roadmap-item::before {
     content: "";
-
     position: absolute;
-
-    top: 4px;
-    left: 0;
-
-    width: 8px;
-    height: 8px;
-
+    top: 1.4mm;
+    left: -3.7mm;
+    width: 2mm;
+    height: 2mm;
+    border: 0.55mm solid #ffffff;
     border-radius: 50%;
-
-    background: #58a6ff;
+    background: currentColor;
+    box-shadow: 0 0 0 0.25mm currentColor;
 }
 
-.cv-roadmap-item.completed::before {
-    background: #6db33f;
+.cv-roadmap-item strong {
+    color: inherit;
+    font-family: var(--font-mono, monospace);
+    font-size: 7.5pt;
 }
 
-.cv-roadmap-item.learning::before {
-    background: #f89820;
+.cv-roadmap-item.completed {
+    color: var(--cv-success);
 }
+
+.cv-roadmap-item.learning {
+    color: var(--cv-learning);
+}
+
+.cv-roadmap-item.planned {
+    color: var(--cv-planned);
+}
+
+.cv-roadmap-item > div {
+    color: var(--cv-text);
+    font-weight: 650;
+}
+
+/* ================================================================
+   Footer
+   ================================================================ */
 
 .cv-footer {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
-    padding: 12px 30px;
-
-    color: #d5deea;
-
-    background: #111827;
-
-    font-size: 9px;
+    gap: 4mm;
+    margin-top: 6mm;
+    padding-top: 3mm;
+    border-top: 1px solid var(--cv-line);
+    color: var(--cv-muted);
+    font-family: var(--font-mono, monospace);
+    font-size: 6.8pt;
 }
 
-/*
-==================================
-Portfolio CV Preview Mode
-==================================
-*/
+/* ================================================================
+   Preview responsiveness
+   ================================================================ */
 
-body.cv-preview-mode > nav,
-body.cv-preview-mode > main,
-body.cv-preview-mode > footer,
-body.cv-preview-mode > dialog,
-body.cv-preview-mode > #back-to-top,
-body.cv-preview-mode > .toast {
-    display: none !important;
+@media screen and (max-width: 900px) {
+    body.cv-preview-mode > .cv-document {
+        overflow-x: auto;
+        padding: 12px;
+    }
+
+    .cv-page {
+        transform-origin: top left;
+    }
 }
 
-body.cv-preview-mode #cv-document {
-    display: block !important;
-}
-
-/*
-==================================
-Print
-==================================
-*/
+/* ================================================================
+   Print A4
+   ================================================================ */
 
 @page {
     size: A4;
@@ -378,48 +510,59 @@ Print
 }
 
 @media print {
-
     html,
     body {
         width: 210mm;
-
-        margin: 0;
-        padding: 0;
-
+        min-width: 210mm;
+        min-height: 297mm;
+        margin: 0 !important;
+        padding: 0 !important;
         background: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
-    body > nav,
+    body > .header,
     body > main,
     body > footer,
     body > dialog,
-    body > noscript,
+    body > .toast,
     body > #back-to-top,
-    body > .toast {
+    body > .noscript-message {
         display: none !important;
     }
 
-    #cv-document {
+    body > .cv-document,
+    body.cv-preview-mode > .cv-document {
         display: block !important;
-
-        width: 210mm;
-
-        margin: 0;
-        padding: 0;
-
-        background: #ffffff;
+        width: 210mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .cv-page {
         width: 210mm;
         min-height: 297mm;
-
         margin: 0;
-
+        padding: var(--cv-page-padding-y) var(--cv-page-padding-x);
+        overflow: visible;
         box-shadow: none;
     }
 
-    .cv-block,
+    .cv-header,
+    .cv-avatar-wrap,
+    .cv-skill-group,
+    .cv-roadmap-item,
+    .cv-footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .cv-block > h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
     .cv-experience-item,
     .cv-project-item,
     .cv-architecture-item {
@@ -427,21 +570,12 @@ Print
         page-break-inside: avoid;
     }
 
-    a {
-        color: inherit;
+    .cv-contact-list a {
+        color: var(--cv-muted);
         text-decoration: none;
     }
-}
 
-@media screen and (max-width: 900px) {
-
-    .cv-document {
-        padding: 20px 10px;
-
-        overflow-x: auto;
-    }
-
-    .cv-page {
-        transform-origin: top left;
+    a[href]::after {
+        content: none !important;
     }
 }
