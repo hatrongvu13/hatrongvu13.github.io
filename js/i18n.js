@@ -414,6 +414,10 @@ document.addEventListener(
     }
 );
 
+document.addEventListener("languageChanged", () => {
+    applyStaticTranslations();
+})
+
 /*
 ==================================
 Public API

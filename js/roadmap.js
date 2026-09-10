@@ -560,22 +560,22 @@ function renderArchitectJourney() {
 
         <footer class="architect-journey-footer">
 
-<!--            <code class="architect-footer-code">-->
-<!--    <span class="code-keyword">while</span>-->
-<!--    <span class="code-bracket">(</span><span class="code-object">career</span>.<span class="code-method">isGrowing</span><span class="code-bracket">())</span>-->
-<!--    <span class="code-bracket">{</span>-->
+            <code class="architect-footer-code">
+    <span class="code-keyword">while</span>
+    <span class="code-bracket">(</span><span class="code-object">career</span>.<span class="code-method">isGrowing</span><span class="code-bracket">())</span>
+    <span class="code-bracket">{</span>
 
-<!--    <span class="code-method">learn</span><span class="code-bracket">();</span>-->
-<!--    <span class="code-method">build</span><span class="code-bracket">();</span>-->
-<!--    <span class="code-method">share</span><span class="code-bracket">();</span>-->
+    <span class="code-method">learn</span><span class="code-bracket">();</span>
+    <span class="code-method">build</span><span class="code-bracket">();</span>
+    <span class="code-method">share</span><span class="code-bracket">();</span>
 
-<!--    <span class="code-bracket">}</span>-->
-<!--</code>-->
-<pre class="architect-footer-code"><code><span class="code-keyword">while</span> (<span class="code-object">career</span>.<span class="code-method">isGrowing</span>()) {
-    <span class="code-method">learn</span>();
-    <span class="code-method">build</span>();
-    <span class="code-method">share</span>();
-}</code></pre>
+    <span class="code-bracket">}</span>
+</code>
+<!--<pre class="architect-footer-code"><code><span class="code-keyword">while</span> (<span class="code-object">career</span>.<span class="code-method">isGrowing</span>()) {-->
+<!--    <span class="code-method">learn</span>();-->
+<!--    <span class="code-method">build</span>();-->
+<!--    <span class="code-method">share</span>();-->
+<!--}</code></pre>-->
 
             <span class="architect-footer-focus">
                 Java • Architecture • Leadership
