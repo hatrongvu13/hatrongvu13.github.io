@@ -1,452 +1,561 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Ngân hàng đề thi</title>
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --accent: #2563eb;
-      --accent-active: #1d4ed8;
-      --correct: #16a34a;
-      --correct-bg: #f0fdf4;
-      --wrong: #dc2626;
-      --wrong-bg: #fef2f2;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Java Backend Developer CV and portfolio">
+    <title>Java Developer CV</title>
+    <style>
+        :root {
+            --accent: #22d3ee;
+            --accent2: #3b82f6;
+            --bg: #071019;
+            --panel: #0e1a26;
+            --text: #eef6ff;
+            --muted: #94a3b8;
+            --line: #203040
+        }
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+        * {
+            box-sizing: border-box
+        }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      padding-bottom: 70px;
-    }
+        html {
+            scroll-behavior: smooth
+        }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 12px 12px 20px;
-    }
+        body {
+            margin: 0;
+            font: 15px/1.65 Inter, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text)
+        }
 
-    header {
-      margin-bottom: 12px;
-      padding: 0 4px;
-    }
+        body.light {
+            --bg: #f6f8fb;
+            --panel: #fff;
+            --text: #0f172a;
+            --muted: #526174;
+            --line: #dbe3ec
+        }
 
-    h1 {
-      font-size: 20px;
-      margin: 0 0 4px;
-      font-weight: 700;
-    }
+        .wrap {
+            width: min(1100px, calc(100% - 32px));
+            margin: auto
+        }
 
-    .muted {
-      color: var(--muted);
-      font-size: 13px;
-    }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line)
+        }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-    }
+        nav .wrap {
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px
+        }
 
-    .toolbar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .brand {
+            font: 800 18px monospace
+        }
 
-    select, button {
-      font-size: 15px;
-      border-radius: 8px;
-    }
+        .accent {
+            color: var(--accent)
+        }
 
-    select {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      background: white;
-      color: var(--text);
-      outline: none;
-    }
+        .navlinks, .actions, .links {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
 
-    button {
-      border: 0;
-      padding: 12px 16px;
-      cursor: pointer;
-      background: var(--accent);
-      color: white;
-      font-weight: 600;
-      touch-action: manipulation;
-    }
+        a {
+            color: inherit;
+            text-decoration: none
+        }
 
-    button:active {
-      background: var(--accent-active);
-    }
+        button, .button {
+            border: 1px solid var(--line);
+            background: var(--panel);
+            color: var(--text);
+            padding: 9px 13px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700
+        }
 
-    button.secondary {
-      background: #f1f5f9;
-      color: #334155;
-    }
+        .primary {
+            background: linear-gradient(100deg, var(--accent), var(--accent2));
+            color: #061018;
+            border: 0
+        }
 
-    button:disabled {
-      opacity: .45;
-      cursor: not-allowed;
-    }
+        section {
+            padding: 72px 0
+        }
 
-    #progress {
-      margin-top: 10px;
-      height: 6px;
-      background: #e2e8f0;
-      border-radius: 99px;
-      overflow: hidden;
-    }
+        .hero {
+            display: grid;
+            grid-template-columns:1fr 310px;
+            gap: 48px;
+            align-items: center
+        }
 
-    #progressBar {
-      height: 100%;
-      width: 0;
-      background: var(--accent);
-      transition: width .2s ease-out;
-    }
+        .code {
+            font-family: monospace;
+            color: var(--accent)
+        }
 
-    .question {
-      font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 16px;
-      font-weight: 600;
-      white-space: pre-wrap;
-    }
+        h1 {
+            font-size: clamp(44px, 7vw, 76px);
+            line-height: 1;
+            margin: 14px 0;
+            letter-spacing: -.05em
+        }
 
-    .option {
-      display: flex;
-      width: 100%;
-      text-align: left;
-      background: white;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin: 8px 0;
-      padding: 12px 14px;
-      font-size: 15px;
-      line-height: 1.4;
-      font-weight: normal;
-      transition: background 0.15s, border-color 0.15s;
-    }
+        h2 {
+            font-size: 34px;
+            margin: 0 0 24px
+        }
 
-    .option:active {
-      background: #f8fafc;
-    }
+        h3 {
+            margin: 0
+        }
 
-    .option.selected {
-      border: 2px solid var(--accent);
-      background: #eff6ff;
-      color: #1e40af;
-      font-weight: 500;
-    }
+        .gradient {
+            background: linear-gradient(100deg, var(--accent), var(--accent2));
+            background-clip: text;
+            color: transparent
+        }
 
-    .option.correct {
-      border: 2px solid var(--correct) !important;
-      background: var(--correct-bg) !important;
-      color: #14532d;
-    }
+        .muted {
+            color: var(--muted)
+        }
 
-    .option.wrong {
-      border: 2px solid var(--wrong) !important;
-      background: var(--wrong-bg) !important;
-      color: #7f1d1d;
-    }
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 24px
+        }
 
-    #questionNav {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-      gap: 6px;
-      max-height: 160px;
-      overflow-y: auto;
-      padding: 2px;
-    }
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 24px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(100deg, var(--accent), var(--accent2));
+            color: #061018;
+            font-size: 30px;
+            font-weight: 900
+        }
 
-    .q-number {
-      padding: 10px 0;
-      background: white;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 500;
-    }
+        .contact-line {
+            margin-top: 14px;
+            word-break: break-word
+        }
 
-    .q-number.answered {
-      background: #dbeafe;
-      color: #1e40af;
-      border-color: #93c5fd;
-    }
+        .stats, .grid2, .grid3 {
+            display: grid;
+            gap: 16px
+        }
 
-    .q-number.current {
-      border: 2px solid var(--accent);
-      font-weight: bold;
-    }
+        .stats {
+            grid-template-columns:repeat(3, 1fr);
+            margin-top: 42px
+        }
 
-    /* Fixed Bottom Action Bar */
-    .bottom-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      border-top: 1px solid var(--border);
-      padding: 10px 16px;
-      display: flex;
-      gap: 10px;
-      z-index: 100;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-    }
+        .grid2 {
+            grid-template-columns:repeat(2, 1fr)
+        }
 
-    .bottom-bar button {
-      flex: 1;
-    }
+        .grid3 {
+            grid-template-columns:repeat(3, 1fr)
+        }
 
-    .result {
-      text-align: center;
-      padding: 10px 0;
-    }
+        .stat strong {
+            font-size: 30px;
+            color: var(--accent)
+        }
 
-    .result h2 { margin-top: 0; }
-    .score-text { font-size: 28px; font-weight: bold; color: var(--accent); }
+        .chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 18px
+        }
 
-    .hidden { display: none !important; }
-  </style>
+        .chip {
+            padding: 5px 9px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font: 13px monospace
+        }
+
+        .section-head {
+            font: 12px monospace;
+            color: var(--accent);
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            margin-bottom: 8px
+        }
+
+        .job {
+            display: grid;
+            grid-template-columns:160px 1fr;
+            gap: 18px;
+            margin-bottom: 18px
+        }
+
+        .job ul {
+            padding-left: 20px
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column
+        }
+
+        .project p {
+            flex: 1
+        }
+
+        .project .links {
+            padding-top: 16px;
+            border-top: 1px solid var(--line)
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 28px 0
+        }
+
+        .theme-dot {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 0
+        }
+
+        .toolbar {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            display: flex;
+            gap: 8px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 8px;
+            border-radius: 14px
+        }
+
+        dialog {
+            width: min(480px, calc(100% - 28px));
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--panel);
+            color: var(--text);
+            padding: 24px
+        }
+
+        dialog::backdrop {
+            background: #000a
+        }
+
+        label {
+            display: block;
+            margin-top: 14px;
+            font-weight: 700
+        }
+
+        input, textarea {
+            width: 100%;
+            margin-top: 6px;
+            padding: 11px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--bg);
+            color: var(--text)
+        }
+
+        @media (max-width: 800px) {
+            .hero, .grid3 {
+                grid-template-columns:1fr
+            }
+
+            .grid2 {
+                grid-template-columns:1fr
+            }
+
+            .navlinks {
+                display: none
+            }
+
+            .job {
+                grid-template-columns:1fr
+            }
+
+            .hero {
+                gap: 28px
+            }
+        }
+
+        @media (max-width: 520px) {
+            .stats {
+                grid-template-columns:1fr
+            }
+
+            .hide-mobile {
+                display: none
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 10mm
+        }
+
+        @media print {
+            nav, .toolbar, .no-print, dialog {
+                display: none !important
+            }
+
+            body {
+                --bg: #fff;
+                --panel: #fff;
+                --text: #0f172a;
+                --muted: #475569;
+                --line: #cbd5e1
+            }
+
+            section {
+                padding: 22px 0
+            }
+
+            .card {
+                break-inside: avoid
+            }
+
+            .hero {
+                grid-template-columns:1fr 250px
+            }
+
+            .wrap {
+                width: 100%
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-
-  <header>
-    <h1>Ngân hàng đề thi</h1>
-    <div class="muted">Tự động xáo trộn câu hỏi & đáp án</div>
-  </header>
-
-  <section id="startCard" class="card">
-    <h3 style="margin-top:0">Bắt đầu làm bài</h3>
-    <p id="bankInfo" class="muted">Đang tải ngân hàng câu hỏi...</p>
-
-    <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
-      <label style="display:flex; justify-content:space-between; align-items:center;">
-        <span>Số lượng câu hỏi:</span>
-        <select id="questionCount">
-          <option value="20">20 câu</option>
-          <option value="30">30 câu</option>
-          <option value="40">40 câu</option>
-          <option value="50" selected>50 câu</option>
-          <option value="60">60 câu</option>
-          <option value="100">100 câu</option>
-        </select>
-      </label>
-      <button id="startBtn" style="width:100%" disabled>Bắt đầu ngay</button>
+<nav>
+    <div class="wrap"><a class="brand" href="#top"><span class="accent">&lt;</span>VU<span
+            class="accent">/&gt;</span></a>
+        <div class="navlinks"><a data-t="about" href="#about"></a><a data-t="skills" href="#skills"></a><a
+                data-t="experience" href="#experience"></a><a data-t="projects" href="#projects"></a></div>
+        <div class="actions">
+            <button id="lang">VI</button>
+            <button id="mode">☀</button>
+            <button class="primary hide-mobile" id="contactBtn" data-t="contact"></button>
+        </div>
     </div>
-  </section>
-
-  <section id="examCard" class="hidden">
-
-    <div class="card">
-      <div class="toolbar">
-        <strong id="counter" style="font-size:15px"></strong>
-        <span class="muted" id="answeredInfo"></span>
-      </div>
-      <div id="progress"><div id="progressBar"></div></div>
-    </div>
-
-    <div class="card">
-      <div id="question" class="question"></div>
-      <div id="options"></div>
-    </div>
-
-    <div class="card">
-      <h4 style="margin:0 0 10px">Danh sách câu hỏi</h4>
-      <div id="questionNav"></div>
-    </div>
-
-    <div class="bottom-bar">
-      <button id="prevBtn" class="secondary">← Câu trước</button>
-      <button id="nextBtn">Câu tiếp →</button>
-      <button id="submitBtn" class="hidden" style="background:var(--correct)">Nộp bài</button>
-    </div>
-
-  </section>
-
-  <section id="resultCard" class="card hidden">
-    <div class="result">
-      <h2>Kết quả</h2>
-      <div id="score" class="score-text"></div>
-      <p id="scoreDetail" class="muted"></p>
-      <button id="newExamBtn" style="width:100%; margin-top:10px;">Làm đề khác</button>
-    </div>
-  </section>
-
+</nav>
+<main id="top">
+    <section id="about">
+        <div class="wrap">
+            <div class="hero">
+                <div>
+                    <div class="code">public class Developer {</div>
+                    <h1 id="name"></h1>
+                    <h2 class="gradient" id="role"></h2>
+                    <p class="muted" id="tagline"></p>
+                    <div class="actions no-print"><a class="button primary" href="#projects" data-t="viewProjects"></a>
+                        <button id="print" data-t="pdf"></button>
+                    </div>
+                    <div class="code" style="margin-top:25px">}</div>
+                </div>
+                <aside class="card">
+                    <div class="avatar" id="initials"></div>
+                    <div class="contact-line" id="email"></div>
+                    <div class="contact-line" id="phone"></div>
+                    <div class="contact-line" id="location"></div>
+                    <div class="links no-print" style="margin-top:20px"><a id="github" target="_blank">GitHub ↗</a><a
+                            id="linkedin" target="_blank">LinkedIn ↗</a></div>
+                </aside>
+            </div>
+            <div class="stats" id="stats"></div>
+            <div class="card muted" id="summary" style="margin-top:18px"></div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="wrap">
+            <div class="section-head">01 / STACK</div>
+            <h2 data-t="skills"></h2>
+            <div class="grid2" id="skillList"></div>
+        </div>
+    </section>
+    <section id="experience">
+        <div class="wrap">
+            <div class="section-head">02 / CAREER</div>
+            <h2 data-t="experience"></h2>
+            <div id="experienceList"></div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="wrap">
+            <div class="section-head">03 / BUILD</div>
+            <h2 data-t="projects"></h2>
+            <div class="grid3" id="projectList"></div>
+        </div>
+    </section>
+    <section id="interests">
+        <div class="wrap">
+            <div class="section-head">04 / BEYOND CODE</div>
+            <h2 data-t="interests"></h2>
+            <div class="chips" id="interestList"></div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="wrap muted">© <span id="year"></span> <span id="footerName"></span>. <span data-t="footer"></span></div>
+</footer>
+<div class="toolbar no-print">
+    <button class="theme-dot" data-theme="cyan" style="background:#22d3ee" title="Cyan"></button>
+    <button class="theme-dot" data-theme="green" style="background:#34d399" title="Green"></button>
+    <button class="theme-dot" data-theme="violet" style="background:#a78bfa" title="Violet"></button>
+    <button class="theme-dot" data-theme="amber" style="background:#fbbf24" title="Amber"></button>
 </div>
-
+<dialog id="contactDialog">
+    <button id="closeDialog" style="float:right">×</button>
+    <h2 data-t="contact"></h2>
+    <form id="contactForm"><label><span data-t="fullName"></span><input name="name" required></label><label>Email<input
+            type="email" name="email" required></label><label><span data-t="message"></span><textarea name="message"
+                                                                                                      rows="4"
+                                                                                                      required></textarea></label>
+        <p class="muted" data-t="formNote"></p>
+        <button class="primary" type="submit" data-t="send"></button>
+    </form>
+</dialog>
 <script>
-let bank = [];
-let exam = [];
-let current = 0;
-let answers = {};
-let submitted = false;
-
-const $ = id => document.getElementById(id);
-
-async function loadBank() {
-  try {
-    const response = await fetch("questions.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Không thể tải questions.json");
-
-    bank = await response.json();
-    $("bankInfo").textContent = `Sẵn sàng với ${bank.length} câu hỏi trong hệ thống.`;
-    $("startBtn").disabled = bank.length === 0;
-
-  } catch (error) {
-    $("bankInfo").textContent = "Lỗi: Không tải được dữ liệu câu hỏi.";
-    console.error(error);
-  }
-}
-
-function shuffle(array) {
-  const a = [...array];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function createExam(count) {
-  if (bank.length < count) {
-    alert(`Ngân hàng chỉ có ${bank.length} câu.`);
-    return;
-  }
-
-  const selected = shuffle(bank).slice(0, count);
-  exam = selected.map(q => ({
-    ...q,
-    shuffledOptions: shuffle(Object.entries(q.options || {}))
-  }));
-
-  current = 0;
-  answers = {};
-  submitted = false;
-
-  $("startCard").classList.add("hidden");
-  $("resultCard").classList.add("hidden");
-  $("examCard").classList.remove("hidden");
-
-  render();
-}
-
-function render() {
-  const q = exam[current];
-
-  $("counter").textContent = `Câu ${current + 1}/${exam.length}`;
-  $("answeredInfo").textContent = `Đã chọn: ${Object.keys(answers).length}/${exam.length}`;
-  $("progressBar").style.width = `${((current + 1) / exam.length) * 100}%`;
-  $("question").textContent = q.question;
-  $("options").innerHTML = "";
-
-  for (const [letter, text] of q.shuffledOptions) {
-    const button = document.createElement("button");
-    button.className = "option";
-
-    if (answers[q.id] === letter) button.classList.add("selected");
-
-    if (submitted) {
-      if (letter === q.answer) button.classList.add("correct");
-      else if (answers[q.id] === letter) button.classList.add("wrong");
-    }
-
-    button.textContent = `${letter}. ${text}`;
-
-    if (!submitted) {
-      button.onclick = () => {
-        answers[q.id] = letter;
-        render();
-      };
-    }
-
-    $("options").appendChild(button);
-  }
-
-  $("prevBtn").disabled = current === 0;
-  $("nextBtn").classList.toggle("hidden", current === exam.length - 1);
-  $("submitBtn").classList.toggle("hidden", current !== exam.length - 1 || submitted);
-
-  renderNavigation();
-}
-
-function renderNavigation() {
-  $("questionNav").innerHTML = "";
-
-  exam.forEach((q, index) => {
-    const button = document.createElement("button");
-    button.className = "q-number";
-
-    if (answers[q.id]) button.classList.add("answered");
-    if (index === current) button.classList.add("current");
-
-    button.textContent = index + 1;
-    button.onclick = () => {
-      current = index;
-      render();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    const I18N = {
+        vi: {
+            about: 'Giới thiệu',
+            skills: 'Công nghệ',
+            experience: 'Kinh nghiệm',
+            projects: 'Dự án',
+            interests: 'Sở thích',
+            contact: 'Liên hệ',
+            viewProjects: 'Xem dự án',
+            pdf: 'Xuất PDF',
+            source: 'Mã nguồn',
+            demo: 'Video demo',
+            fullName: 'Họ và tên',
+            message: 'Nội dung',
+            send: 'Gửi liên hệ',
+            formNote: 'Cấu hình formEndpoint trong data.json để nhận email. Nếu để trống, trình duyệt chỉ lưu bản nháp.',
+            footer: 'Xây dựng với tư duy clean code.'
+        },
+        en: {
+            about: 'About',
+            skills: 'Technology',
+            experience: 'Experience',
+            projects: 'Projects',
+            interests: 'Interests',
+            contact: 'Contact',
+            viewProjects: 'View projects',
+            pdf: 'Export PDF',
+            source: 'Source',
+            demo: 'Video demo',
+            fullName: 'Full name',
+            message: 'Message',
+            send: 'Send message',
+            formNote: 'Configure formEndpoint in data.json to receive email. If empty, the browser only stores a draft.',
+            footer: 'Built with a clean-code mindset.'
+        }
     };
+    let DATA, lang = 'vi';
+    const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
+    const loc = v => v && typeof v === 'object' && !Array.isArray(v) ? v[lang] : v;
 
-    $("questionNav").appendChild(button);
-  });
-}
+    async function init() {
+        try {
+            const r = await fetch('./cv/data.json', {cache: 'no-store'});
+            if (!r.ok) throw Error('HTTP ' + r.status);
+            DATA = await r.json();
+            lang = DATA.settings.defaultLanguage || 'vi';
+            setTheme(DATA.settings.defaultTheme || 'cyan');
+            render()
+        } catch (e) {
+            document.body.innerHTML = '<main class="wrap"><div class="card" style="margin-top:40px"><h2>Không tải được data.json</h2><p>Hãy chạy qua web server hoặc GitHub Pages, không mở trực tiếp bằng file://.</p><pre>' + e.message + '</pre></div></main>'
+        }
+    }
 
-function submitExam() {
-  const unanswered = exam.filter(q => !answers[q.id]).length;
-  if (unanswered > 0) {
-    if (!confirm(`Bạn còn ${unanswered} câu chưa trả lời. Vẫn nộp bài?`)) return;
-  }
+    function render() {
+        document.documentElement.lang = lang;
+        $('#lang').textContent = lang.toUpperCase();
+        $$('[data-t]').forEach(x => x.textContent = I18N[lang][x.dataset.t]);
+        $('#name').textContent = DATA.personal.fullName;
+        $('#role').textContent = loc(DATA.personal.role);
+        $('#tagline').textContent = loc(DATA.personal.tagline);
+        $('#summary').textContent = loc(DATA.personal.summary);
+        $('#initials').textContent = DATA.personal.initials;
+        $('#email').innerHTML = '✉ <a href="mailto:' + DATA.personal.email + '">' + DATA.personal.email + '</a>';
+        $('#phone').textContent = '☎ ' + DATA.personal.phone;
+        $('#location').textContent = '⌖ ' + loc(DATA.personal.location);
+        $('#github').href = DATA.personal.github;
+        $('#linkedin').href = DATA.personal.linkedin;
+        $('#footerName').textContent = DATA.personal.fullName;
+        $('#year').textContent = new Date().getFullYear();
+        $('#stats').innerHTML = DATA.stats.map(x => '<div class="card stat"><strong>' + x.value + '</strong><div class="muted">' + loc(x.label) + '</div></div>').join('');
+        $('#skillList').innerHTML = DATA.skills.map(x => '<article class="card"><h3>' + x.title + '</h3><div class="chips">' + x.items.map(i => '<span class="chip">' + i + '</span>').join('') + '</div></article>').join('');
+        $('#experienceList').innerHTML = DATA.experience.map(x => '<article class="job"><div class="code">' + x.period + '</div><div class="card"><h3>' + loc(x.role) + '</h3><div class="muted">' + x.company + '</div><p class="muted">' + loc(x.description) + '</p><ul>' + loc(x.achievements).map(a => '<li>' + a + '</li>').join('') + '</ul></div></article>').join('');
+        $('#projectList').innerHTML = DATA.projects.map(x => '<article class="card project"><small class="accent">' + x.type + '</small><h3>' + x.name + '</h3><p class="muted">' + loc(x.description) + '</p><div class="chips">' + x.tech.map(i => '<span class="chip">' + i + '</span>').join('') + '</div><div class="links no-print"><a href="' + x.source + '" target="_blank">' + I18N[lang].source + ' ↗</a><a href="' + x.demo + '" target="_blank">' + I18N[lang].demo + ' ↗</a></div></article>').join('');
+        $('#interestList').innerHTML = DATA.interests.map(x => '<span class="card">♡ ' + loc(x) + '</span>').join('')
+    }
 
-  submitted = true;
-  let correct = 0;
+    function setTheme(n) {
+        const t = {
+            cyan: ['#22d3ee', '#3b82f6'],
+            green: ['#34d399', '#10b981'],
+            violet: ['#a78bfa', '#7c3aed'],
+            amber: ['#fbbf24', '#f97316']
+        }[n] || ['#22d3ee', '#3b82f6'];
+        document.documentElement.style.setProperty('--accent', t[0]);
+        document.documentElement.style.setProperty('--accent2', t[1])
+    }
 
-  exam.forEach(q => {
-    if (answers[q.id] === q.answer) correct++;
-  });
-
-  const percent = Math.round((correct / exam.length) * 100);
-
-  $("score").textContent = `${correct}/${exam.length} (${percent}%)`;
-  $("scoreDetail").textContent = `Đúng ${correct} câu, sai/bỏ qua ${exam.length - correct} câu.`;
-  $("resultCard").classList.remove("hidden");
-
-  render();
-  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-}
-
-$("startBtn").onclick = () => createExam(Number($("questionCount").value));
-$("prevBtn").onclick = () => { if (current > 0) { current--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } };
-$("nextBtn").onclick = () => { if (current < exam.length - 1) { current++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } };
-$("submitBtn").onclick = submitExam;
-$("newExamBtn").onclick = () => {
-  $("resultCard").classList.add("hidden");
-  $("examCard").classList.add("hidden");
-  $("startCard").classList.remove("hidden");
-};
-
-loadBank();
+    $('#lang').onclick = () => {
+        lang = lang === 'vi' ? 'en' : 'vi';
+        render()
+    };
+    $('#mode').onclick = () => document.body.classList.toggle('light');
+    $('#print').onclick = () => window.print();
+    $('#contactBtn').onclick = () => $('#contactDialog').showModal();
+    $('#closeDialog').onclick = () => $('#contactDialog').close();
+    $$('[data-theme]').forEach(b => b.onclick = () => setTheme(b.dataset.theme));
+    $('#contactForm').onsubmit = async e => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        if (DATA.settings.formEndpoint) {
+            const r = await fetch(DATA.settings.formEndpoint, {
+                method: 'POST',
+                body: fd,
+                headers: {Accept: 'application/json'}
+            });
+            if (!r.ok) return alert('Send failed');
+        } else localStorage.setItem('cv-contact-draft', JSON.stringify(Object.fromEntries(fd)));
+        alert(lang === 'vi' ? 'Đã xử lý thông tin liên hệ.' : 'Contact processed.');
+        e.target.reset();
+        $('#contactDialog').close()
+    };
+    init();
 </script>
 </body>
 </html>
