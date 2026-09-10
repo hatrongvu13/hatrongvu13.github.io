@@ -1,0 +1,305 @@
+{
+  "settings": {
+    "defaultLanguage": "vi",
+    "defaultTheme": "cyan",
+    "siteTitle": "Vu Ha Trong Portfolio",
+    "siteDescription": "Senior Java Backend Developer Portfolio",
+    "cvDownload": "/assets/cv/Vu-Ha-Trong-CV.pdf"
+  },
+
+  "personal": {
+    "fullName": "Vũ Hà Trọng",
+    "initials": "VHT",
+
+    "role": {
+      "vi": "Chuyên viên chính Lập trình Back End",
+      "en": "Senior Java Backend Developer"
+    },
+
+    "tagline": {
+      "vi": "Xây dựng hệ thống Java ổn định, dễ mở rộng và bám sát nghiệp vụ.",
+      "en": "Building reliable and scalable Java systems aligned with business requirements."
+    },
+
+    "summary": {
+      "vi": "Backend Developer tập trung Java, Spring Boot, tích hợp hệ thống, kiến trúc phần mềm và tối ưu hiệu năng.",
+      "en": "Backend Developer focusing on Java, Spring Boot, system integration, software architecture and performance optimization."
+    },
+
+    "email": "your-email@gmail.com",
+
+    "phone": "+84xxxxxxxxx",
+
+    "location": {
+      "vi": "Hà Nội, Việt Nam",
+      "en": "Hanoi, Vietnam"
+    },
+
+    "github": "https://github.com/hatrongvu13",
+
+    "linkedin": "",
+
+    "youtube": "",
+
+    "facebook": "",
+
+    "tiktok": ""
+  },
+
+  "stats": [
+    {
+      "value": "5+",
+      "label": {
+        "vi": "Năm kinh nghiệm",
+        "en": "Years Experience"
+      }
+    },
+    {
+      "value": "20+",
+      "label": {
+        "vi": "API & Tích hợp",
+        "en": "API Integrations"
+      }
+    },
+    {
+      "value": "10+",
+      "label": {
+        "vi": "Dự án tham gia",
+        "en": "Projects Delivered"
+      }
+    }
+  ],
+
+  "skills": [
+    {
+      "group": "Backend",
+      "items": [
+        "Java 17",
+        "Spring Boot",
+        "Spring Security",
+        "JPA",
+        "Hibernate",
+        "REST API"
+      ]
+    },
+    {
+      "group": "Database",
+      "items": [
+        "Oracle",
+        "PostgreSQL",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "group": "Architecture",
+      "items": [
+        "DDD",
+        "SOLID",
+        "Clean Architecture",
+        "Microservices"
+      ]
+    },
+    {
+      "group": "DevOps",
+      "items": [
+        "Docker",
+        "Linux",
+        "GitHub Actions",
+        "Kubernetes"
+      ]
+    }
+  ],
+
+  "experience": [
+    {
+      "period": "2022 - Present",
+
+      "company": "Enterprise / Financial Technology",
+
+      "role": {
+        "vi": "Chuyên viên chính Lập trình Back End",
+        "en": "Senior Java Backend Developer"
+      },
+
+      "description": {
+        "vi": "Phát triển backend enterprise, tích hợp hệ thống và workflow.",
+        "en": "Enterprise backend development, integrations and workflow systems."
+      },
+
+      "achievements": {
+        "vi": [
+          "Thiết kế API và tích hợp hệ thống.",
+          "Tối ưu truy vấn dữ liệu.",
+          "Review code và chuẩn hóa coding standard."
+        ],
+        "en": [
+          "Designed APIs and system integrations.",
+          "Optimized database queries.",
+          "Performed code review and code standardization."
+        ]
+      }
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Java Design Patterns Lab",
+
+      "type": "Open Source",
+
+      "status": "active",
+
+      "description": {
+        "vi": "Kho ví dụ Design Pattern thực tế trong Java.",
+        "en": "Practical Java Design Pattern examples."
+      },
+
+      "tech": [
+        "Java 17",
+        "JUnit 5",
+        "Maven"
+      ],
+
+      "source": "",
+
+      "demo": ""
+    }
+  ],
+
+  "architectures": [
+    {
+      "name": "Workflow Engine",
+
+      "level": "Enterprise",
+
+      "description": {
+        "vi": "Quy trình phê duyệt nhiều cấp.",
+        "en": "Multi-level approval workflow."
+      },
+
+      "diagram": [
+        "Client",
+        "API Gateway",
+        "Workflow Engine",
+        "Notification Service",
+        "Oracle"
+      ]
+    },
+
+    {
+      "name": "Secure Media Gateway",
+
+      "level": "System Design",
+
+      "description": {
+        "vi": "Media protection bằng Signed URL.",
+        "en": "Media protection using Signed URL."
+      },
+
+      "diagram": [
+        "Client",
+        "Media Gateway",
+        "Redis",
+        "MinIO"
+      ]
+    }
+  ],
+
+  "roadmap": [
+    {
+      "year": "2026",
+      "title": "Senior Java Developer",
+      "status": "completed"
+    },
+
+    {
+      "year": "2027",
+      "title": "Technical Lead",
+      "status": "learning"
+    },
+
+    {
+      "year": "2028",
+      "title": "Solution Architect",
+      "status": "planned"
+    },
+
+    {
+      "year": "2029",
+      "title": "Enterprise Architect",
+      "status": "planned"
+    }
+  ],
+
+  "knowledge": [
+    {
+      "title": "Spring Boot Optimization",
+
+      "description": {
+        "vi": "Kinh nghiệm tối ưu hiệu năng ứng dụng Spring Boot.",
+        "en": "Tips for Spring Boot performance optimization."
+      },
+
+      "link": ""
+    }
+  ],
+
+  "creator": {
+    "topics": [
+      "Java",
+      "Spring Boot",
+      "System Design",
+      "Software Architecture",
+      "AI Automation",
+      "CNC",
+      "Sustainable Farming"
+    ]
+  },
+
+  "community": {
+    "enabled": true,
+
+    "title": {
+      "vi": "Cảm ơn cộng đồng",
+      "en": "Community Support"
+    },
+
+    "description": {
+      "vi": "Cảm ơn mọi người đã ghé thăm portfolio.",
+      "en": "Thank you for visiting my portfolio."
+    },
+
+    "followers": [
+      {
+        "name": "Anonymous",
+
+        "message": {
+          "vi": "Chúc bạn thành công.",
+          "en": "Wish you success."
+        }
+      }
+    ]
+  },
+
+  "contact": {
+    "githubIssueEnabled": true,
+
+    "repository": "hatrongvu13/portfolio",
+
+    "labels": [
+      "portfolio-contact"
+    ],
+
+    "telegram": {
+      "enabled": false,
+      "botToken": "",
+      "chatId": ""
+    },
+
+    "email": {
+      "enabled": false,
+      "smtpFuture": true
+    }
+  }
+}
