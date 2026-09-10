@@ -1,7 +1,7 @@
 {
   "settings": {
     "defaultLanguage": "vi",
-    "siteTitle": "Vũ Hà Trọng | Senior Java Backend Developer",
+    "siteTitle": "Hà Trọng Vũ | Senior Java Backend Developer",
     "siteDescription": {
       "vi": "Portfolio Java Backend Developer, thiết kế hệ thống và chia sẻ kiến thức.",
       "en": "Java Backend Developer portfolio, system design and knowledge sharing."
@@ -26,7 +26,7 @@
     }
   },
   "personal": {
-    "fullName": "Vũ Hà Trọng",
+    "fullName": "Hà Trọng Vũ",
     "initials": "VHT",
     "avatar":"./assets/avatar/avatar.png",
     "role": {
