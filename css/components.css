@@ -1,0 +1,996 @@
+/*
+ * Vu Ha Trong Portfolio
+ * Components: navigation, buttons, cards, avatar, chips, forms and feedback
+ * Requires: theme.css and layout.css
+ */
+
+/* ================================================================
+   Branding and navigation
+   ================================================================ */
+
+.logo {
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.logo > span:first-child,
+.logo > span:last-child {
+  color: var(--java);
+}
+
+.logo-dot {
+  color: var(--primary-hover);
+  font-weight: 600;
+}
+
+.nav-menu a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 550;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  opacity: 0;
+  transform: scaleX(0.45);
+  transition:
+    opacity var(--duration-fast) ease,
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active,
+.nav-menu a[aria-current="page"] {
+  color: var(--text-strong);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after,
+.nav-menu a[aria-current="page"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ================================================================
+   Buttons
+   ================================================================ */
+
+.btn {
+  appearance: none;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.68rem 1rem;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  transition:
+    color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-normal) ease,
+    transform var(--duration-fast) ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  pointer-events: none;
+  transform: none;
+}
+
+.btn-primary {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(30, 64, 110, 0.2);
+}
+
+.btn-primary:hover {
+  border-color: var(--primary-hover);
+  background: var(--primary-hover);
+  color: #ffffff;
+  box-shadow: 0 9px 24px rgba(30, 64, 110, 0.28);
+}
+
+.btn-primary:active {
+  border-color: var(--primary-active);
+  background: var(--primary-active);
+}
+
+.btn-secondary {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary-border);
+  background: var(--surface-hover);
+  color: var(--text-strong);
+}
+
+.btn-quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.btn-quiet:hover {
+  border-color: var(--line);
+  background: var(--surface-soft);
+  color: var(--text-strong);
+}
+
+.control-button {
+  padding-inline: 0.72rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+#theme-btn {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+/* ================================================================
+   Section typography
+   ================================================================ */
+
+.section-kicker,
+.hero-eyebrow {
+  margin-bottom: 10px;
+  color: var(--java);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  padding: 7px 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--spring);
+  box-shadow: 0 0 0 3px var(--spring-soft);
+}
+
+.section-title {
+  margin-bottom: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.section-subtitle {
+  max-width: 68ch;
+  margin: 14px 0 0;
+  font-size: 1rem;
+}
+
+#role {
+  color: var(--primary-hover);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+/* ================================================================
+   Card foundation
+   ================================================================ */
+
+.content-card,
+.profile-card,
+.stat-card,
+.skill-card,
+.project-card,
+.knowledge-card,
+.community-card,
+.architecture-card,
+.roadmap-card,
+.experience-content {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+  transition:
+    background-color var(--duration-normal) ease,
+    border-color var(--duration-normal) ease,
+    box-shadow var(--duration-normal) ease,
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.content-card,
+.profile-card,
+.skill-card,
+.project-card,
+.knowledge-card,
+.community-card,
+.architecture-card,
+.roadmap-card,
+.experience-content {
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.skill-card:hover,
+.project-card:hover,
+.knowledge-card:hover,
+.community-card:hover,
+.architecture-card:hover {
+  border-color: var(--primary-border);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.content-card > :last-child,
+.profile-card > :last-child,
+.skill-card > :last-child,
+.project-card > :last-child,
+.knowledge-card > :last-child,
+.community-card > :last-child,
+.architecture-card > :last-child,
+.roadmap-card > :last-child,
+.experience-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* ================================================================
+   Profile and avatar
+   ================================================================ */
+
+.profile-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--java), var(--primary), var(--spring));
+  opacity: 0.76;
+}
+
+.avatar-frame {
+  position: relative;
+  width: clamp(172px, 24vw, 222px);
+  aspect-ratio: 1;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  box-shadow:
+    0 0 0 1px var(--line),
+    0 16px 38px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-frame::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: 0;
+  border: 1px solid var(--primary-border);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.avatar-frame::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  bottom: 12px;
+  z-index: 2;
+  width: 15px;
+  height: 15px;
+  border: 4px solid var(--surface);
+  border-radius: 50%;
+  background: var(--spring);
+}
+
+.avatar-frame img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--surface);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.25rem;
+}
+
+.profile-card > p {
+  margin-bottom: 20px;
+}
+
+/* ================================================================
+   Stats and technology chips
+   ================================================================ */
+
+.stat-card {
+  padding: 22px;
+  text-align: center;
+}
+
+.stat-card strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.stat-card div,
+.stat-card span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.tech-preview span,
+.chip,
+.tech-chip,
+.topic-chip,
+.creator-topic {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  color: var(--text-muted);
+  padding: 5px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.tech-chip {
+  border-color: var(--primary-border);
+  background: var(--primary-soft);
+  color: var(--primary-hover);
+}
+
+.topic-chip,
+.creator-topic {
+  border-color: rgba(114, 164, 90, 0.28);
+  background: var(--spring-soft);
+  color: var(--spring);
+}
+
+.skill-card h3 {
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+.skill-card .creator-topics,
+.skill-card .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ================================================================
+   Experience
+   ================================================================ */
+
+.experience-period {
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.experience-content h3 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.experience-content h3 + p {
+  color: var(--java);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.experience-content ul {
+  color: var(--text-muted);
+}
+
+.experience-content li::marker,
+.collaboration-card li::marker {
+  color: var(--primary);
+}
+
+/* ================================================================
+   Projects and knowledge cards
+   ================================================================ */
+
+.project-card,
+.knowledge-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.project-card h3,
+.knowledge-card h3,
+.architecture-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.12rem;
+}
+
+.project-card p,
+.knowledge-card p {
+  flex: 1;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: max-content;
+  margin-bottom: 14px;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+
+.project-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.project-status.active {
+  color: var(--success);
+}
+
+.project-status.maintenance {
+  color: var(--warning);
+}
+
+.project-status.archived {
+  color: var(--text-subtle);
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.card-actions a,
+.text-link,
+.knowledge-card > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--primary-hover);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.card-actions a::after,
+.knowledge-card > a::after {
+  content: "↗";
+  font-size: 0.8em;
+}
+
+.card-actions a:hover,
+.text-link:hover,
+.knowledge-card > a:hover {
+  color: var(--text-strong);
+}
+
+/* Hide placeholder links generated with href="#" */
+.project-card a[href="#"],
+.knowledge-card a[href="#"] {
+  display: none;
+}
+
+/* ================================================================
+   Architecture
+   ================================================================ */
+
+.architecture-card small {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--java);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.architecture-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  color: var(--text);
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.architecture-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+}
+
+/* ================================================================
+   Roadmap and progress
+   ================================================================ */
+
+.roadmap-card {
+  padding: 20px 22px;
+}
+
+.timeline-year {
+  margin-bottom: 5px;
+  color: var(--java);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.roadmap-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.roadmap-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+
+.roadmap-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.skill-progress {
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  box-shadow: inset 0 0 0 1px var(--line-soft);
+}
+
+.skill-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--primary);
+  transform-origin: left center;
+}
+
+/* ================================================================
+   Community and social links
+   ================================================================ */
+
+.community-card h4 {
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+}
+
+.community-quote {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  padding: 5px 11px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  transition:
+    color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.social-links a:hover {
+  border-color: var(--primary-border);
+  background: var(--primary-soft);
+  color: var(--text-strong);
+  transform: translateY(-1px);
+}
+
+.social-links a[href="#"],
+.social-links a:not([href]) {
+  display: none;
+}
+
+/* ================================================================
+   Forms
+   ================================================================ */
+
+#contact-form label {
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-deep);
+  color: var(--text-strong);
+  padding: 0.78rem 0.9rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  transition:
+    border-color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+}
+
+body.light input,
+body.light textarea,
+body.light select {
+  background: var(--surface-soft);
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--line-strong);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  background: var(--surface-soft);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: var(--danger);
+}
+
+.form-note {
+  color: var(--text-subtle);
+  font-size: 0.8rem;
+}
+
+.collaboration-card h3 {
+  margin-bottom: 14px;
+}
+
+.collaboration-card ul {
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+/* ================================================================
+   Dialog
+   ================================================================ */
+
+dialog {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text);
+  padding: clamp(22px, 4vw, 30px);
+  box-shadow: var(--shadow-md);
+}
+
+dialog[open] {
+  animation: dialog-enter var(--duration-normal) var(--ease-standard);
+}
+
+.dialog-close {
+  appearance: none;
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.dialog-close:hover {
+  border-color: var(--primary-border);
+  color: var(--text-strong);
+}
+
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================================================================
+   Toast, loading and empty states
+   ================================================================ */
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3000;
+  width: min(360px, calc(100% - 40px));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--text);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-md);
+  font-size: 0.9rem;
+}
+
+.toast.success {
+  border-color: rgba(104, 168, 120, 0.45);
+  background: color-mix(in srgb, var(--surface-raised) 88%, var(--success));
+}
+
+.toast.warning {
+  border-color: rgba(196, 154, 87, 0.48);
+}
+
+.toast.error {
+  border-color: rgba(204, 111, 114, 0.52);
+}
+
+.skeleton {
+  position: relative;
+  min-height: 96px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.045),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.empty-state,
+.noscript-message {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ================================================================
+   GSAP progressive enhancement
+   Elements remain visible if GSAP or CDN fails
+   ================================================================ */
+
+.gsap-reveal {
+  will-change: transform, opacity;
+}
+
+.gsap-ready .gsap-reveal {
+  opacity: 0;
+}
+
+/* ================================================================
+   Back to top button created by app.js
+   ================================================================ */
+
+#back-to-top {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ================================================================
+   Responsive component adjustments
+   ================================================================ */
+
+@media (max-width: 680px) {
+  .hero-eyebrow {
+    align-items: flex-start;
+    border-radius: var(--radius-sm);
+    white-space: normal;
+  }
+
+  .content-card,
+  .profile-card,
+  .skill-card,
+  .project-card,
+  .knowledge-card,
+  .community-card,
+  .architecture-card,
+  .roadmap-card,
+  .experience-content {
+    padding: 20px;
+  }
+
+  .avatar-frame {
+    width: min(190px, 64vw);
+  }
+
+  .social-links a {
+    flex: 1 1 auto;
+  }
+
+  .toast {
+    right: 14px;
+    bottom: 14px;
+    width: calc(100% - 28px);
+  }
+}
+
+/* ================================================================
+   Motion preferences
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover,
+  .social-links a:hover,
+  .skill-card:hover,
+  .project-card:hover,
+  .knowledge-card:hover,
+  .community-card:hover,
+  .architecture-card:hover {
+    transform: none;
+  }
+
+  dialog[open],
+  .skeleton::after {
+    animation: none;
+  }
+
+  .gsap-ready .gsap-reveal {
+    opacity: 1;
+  }
+}
+
+/* ================================================================
+   Print
+   ================================================================ */
+
+@media print {
+  .content-card,
+  .profile-card,
+  .stat-card,
+  .skill-card,
+  .project-card,
+  .knowledge-card,
+  .community-card,
+  .architecture-card,
+  .roadmap-card,
+  .experience-content {
+    border-color: var(--line);
+    box-shadow: none;
+  }
+
+  .profile-card::before,
+  .avatar-frame::before,
+  .avatar-frame::after,
+  .nav-menu a::after {
+    display: none;
+  }
+
+  .avatar-frame {
+    box-shadow: none;
+  }
+}

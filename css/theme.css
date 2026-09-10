@@ -1,0 +1,426 @@
+/*
+ * Vũ Hà Trọng Portfolio
+ * Theme: Java Enterprise / JetBrains-inspired
+ * Scope: color tokens, typography, surfaces, theme modes and global defaults
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Typography */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono",
+    monospace;
+
+  /* Dark theme: neutral first, accent second */
+  --bg: #0b1220;
+  --bg-deep: #080d17;
+  --surface: #111a2b;
+  --surface-raised: #162136;
+  --surface-soft: #18243a;
+  --surface-hover: #1c2940;
+
+  --text: #e7edf6;
+  --text-strong: #f6f8fb;
+  --text-muted: #9aa8ba;
+  --text-subtle: #738196;
+
+  --line: #26354b;
+  --line-soft: rgba(148, 163, 184, 0.14);
+  --line-strong: #3a4b63;
+
+  /* Brand accents */
+  --primary: #4f7fc4;
+  --primary-hover: #638fd0;
+  --primary-active: #3f6faf;
+  --primary-soft: rgba(79, 127, 196, 0.14);
+  --primary-border: rgba(99, 143, 208, 0.35);
+
+  --java: #c97830;
+  --java-soft: rgba(201, 120, 48, 0.14);
+  --spring: #72a45a;
+  --spring-soft: rgba(114, 164, 90, 0.14);
+
+  /* Status colors */
+  --success: #68a878;
+  --success-soft: rgba(104, 168, 120, 0.14);
+  --warning: #c49a57;
+  --warning-soft: rgba(196, 154, 87, 0.14);
+  --danger: #cc6f72;
+  --danger-soft: rgba(204, 111, 114, 0.14);
+  --info: #6f9bc7;
+  --info-soft: rgba(111, 155, 199, 0.14);
+
+  /* Effects */
+  --focus-ring: rgba(99, 143, 208, 0.45);
+  --header-bg: rgba(11, 18, 32, 0.88);
+  --overlay: rgba(3, 7, 18, 0.72);
+  --selection-bg: rgba(79, 127, 196, 0.42);
+  --selection-text: #ffffff;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.22);
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 18px 46px rgba(0, 0, 0, 0.24);
+  --shadow-focus: 0 0 0 4px var(--focus-ring);
+
+  /* Shared geometry */
+  --radius-xs: 5px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-normal: 240ms;
+  --duration-slow: 420ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-color: color var(--duration-fast) ease,
+    background-color var(--duration-normal) ease,
+    border-color var(--duration-normal) ease;
+}
+
+body.light {
+  color-scheme: light;
+
+  --bg: #f4f6f9;
+  --bg-deep: #e9edf3;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-soft: #f7f9fc;
+  --surface-hover: #eef3f8;
+
+  --text: #253247;
+  --text-strong: #111b2b;
+  --text-muted: #5f6d80;
+  --text-subtle: #7a8798;
+
+  --line: #d7dee8;
+  --line-soft: rgba(71, 85, 105, 0.12);
+  --line-strong: #bcc7d5;
+
+  --primary: #3f6fae;
+  --primary-hover: #315f99;
+  --primary-active: #2d5689;
+  --primary-soft: rgba(63, 111, 174, 0.1);
+  --primary-border: rgba(63, 111, 174, 0.28);
+
+  --java: #b96525;
+  --java-soft: rgba(185, 101, 37, 0.1);
+  --spring: #5e8f49;
+  --spring-soft: rgba(94, 143, 73, 0.11);
+
+  --success: #4f8a60;
+  --success-soft: rgba(79, 138, 96, 0.11);
+  --warning: #a87c39;
+  --warning-soft: rgba(168, 124, 57, 0.11);
+  --danger: #b8585e;
+  --danger-soft: rgba(184, 88, 94, 0.11);
+  --info: #527fae;
+  --info-soft: rgba(82, 127, 174, 0.11);
+
+  --focus-ring: rgba(63, 111, 174, 0.28);
+  --header-bg: rgba(244, 246, 249, 0.88);
+  --overlay: rgba(15, 23, 42, 0.46);
+  --selection-bg: rgba(63, 111, 174, 0.24);
+  --selection-text: #111827;
+
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.07);
+  --shadow-sm: 0 10px 28px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+/* Optional preset kept subtle and Java-oriented */
+body.theme-java {
+  --primary: #b96b2f;
+  --primary-hover: #ca7a3c;
+  --primary-active: #9f5926;
+  --primary-soft: rgba(185, 107, 47, 0.14);
+  --primary-border: rgba(201, 120, 48, 0.32);
+}
+
+body.light.theme-java {
+  --primary: #a85a22;
+  --primary-hover: #914b1b;
+  --primary-active: #7f4017;
+  --primary-soft: rgba(168, 90, 34, 0.1);
+  --primary-border: rgba(168, 90, 34, 0.26);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 86% 8%, rgba(79, 127, 196, 0.08), transparent 26rem),
+    radial-gradient(circle at 10% 36%, rgba(201, 120, 48, 0.035), transparent 24rem),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  transition: var(--transition-color);
+}
+
+body.light {
+  background:
+    radial-gradient(circle at 86% 8%, rgba(63, 111, 174, 0.055), transparent 26rem),
+    radial-gradient(circle at 10% 36%, rgba(185, 101, 37, 0.025), transparent 24rem),
+    var(--bg);
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-strong);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  line-height: 1.04;
+}
+
+h2 {
+  line-height: 1.18;
+}
+
+h3,
+h4 {
+  line-height: 1.3;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+small {
+  color: var(--text-subtle);
+}
+
+a {
+  color: var(--primary-hover);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+  transition: var(--transition-color);
+}
+
+a:hover {
+  color: var(--text-strong);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--primary-hover);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-focus);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+
+code {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-xs);
+  background: var(--surface-soft);
+  color: var(--java);
+  padding: 0.12em 0.35em;
+  font-size: 0.9em;
+}
+
+pre {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-deep);
+  color: var(--text);
+  overflow: auto;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background: var(--line);
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+::placeholder {
+  color: var(--text-subtle);
+  opacity: 1;
+}
+
+/* Scrollbar: restrained, no neon accent */
+* {
+  scrollbar-color: var(--line-strong) var(--bg);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--bg);
+  border-radius: var(--radius-pill);
+  background: var(--line-strong);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-subtle);
+}
+
+/* Semantic theme helpers used by rendered components */
+.text-primary {
+  color: var(--primary-hover);
+}
+
+.text-java {
+  color: var(--java);
+}
+
+.text-spring {
+  color: var(--spring);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.surface {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.status-completed,
+.roadmap-status.completed {
+  color: var(--success);
+}
+
+.status-learning,
+.roadmap-status.learning {
+  color: var(--info);
+}
+
+.status-planned,
+.roadmap-status.planned {
+  color: var(--text-subtle);
+}
+
+.status-warning {
+  color: var(--warning);
+}
+
+.status-error {
+  color: var(--danger);
+}
+
+/* Respect operating-system accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  :root,
+  body.light {
+    color-scheme: light;
+    --bg: #ffffff;
+    --bg-deep: #ffffff;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --surface-soft: #f8fafc;
+    --surface-hover: #ffffff;
+    --text: #1f2937;
+    --text-strong: #111827;
+    --text-muted: #4b5563;
+    --text-subtle: #6b7280;
+    --line: #d1d5db;
+    --line-soft: #e5e7eb;
+    --line-strong: #9ca3af;
+    --primary: #315f99;
+    --primary-hover: #315f99;
+    --java: #9a4e1d;
+    --spring: #4f7b3f;
+    --shadow-xs: none;
+    --shadow-sm: none;
+    --shadow-md: none;
+  }
+
+  body {
+    background: #ffffff;
+    color: #1f2937;
+  }
+}

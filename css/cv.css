@@ -1,0 +1,447 @@
+/*
+==================================
+Dynamic CV Theme
+==================================
+*/
+
+.cv-document {
+    background: #e5e7eb;
+    color: #172033;
+
+    padding: 40px 0;
+}
+
+.cv-page {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    box-shadow:
+            0 20px 60px rgba(15, 23, 42, .18);
+
+    font-family:
+            "Inter",
+            "Segoe UI",
+            Arial,
+            sans-serif;
+}
+
+.cv-header {
+    display: grid;
+
+    grid-template-columns:
+        128px 1fr;
+
+    gap: 28px;
+
+    align-items: center;
+
+    padding: 28px 32px;
+
+    color: #ffffff;
+
+    background:
+            linear-gradient(
+                    120deg,
+                    #111827,
+                    #16263b
+            );
+
+    border-bottom:
+            5px solid #f89820;
+}
+
+.cv-avatar-wrap {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.cv-avatar,
+.cv-avatar-fallback {
+    width: 112px;
+    height: 112px;
+
+    border-radius: 18px;
+
+    border: 3px solid #6db33f;
+}
+
+.cv-avatar {
+    display: block;
+    object-fit: cover;
+}
+
+.cv-avatar-fallback {
+    display: grid;
+    place-items: center;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #f89820,
+                    #58a6ff,
+                    #6db33f
+            );
+
+    color: #071019;
+
+    font-family:
+            "JetBrains Mono",
+            Consolas,
+            monospace;
+
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.cv-avatar-fallback[hidden] {
+    display: none;
+}
+
+.cv-heading h1 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+
+    letter-spacing: -.02em;
+}
+
+.cv-heading h2 {
+    margin: 0 0 10px;
+
+    color: #f89820;
+
+    font-size: 19px;
+}
+
+.cv-heading p {
+    margin: 0 0 12px;
+
+    color: #d5deea;
+}
+
+.cv-contact-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px 18px;
+
+    font-size: 12px;
+
+    color: #d5deea;
+}
+
+.cv-contact-list a {
+    color: #d5deea;
+}
+
+.cv-layout {
+    display: grid;
+
+    grid-template-columns:
+        31% 69%;
+}
+
+.cv-sidebar {
+    padding: 26px 22px;
+
+    background: #f3f6f9;
+
+    border-right:
+            1px solid #dbe2ea;
+}
+
+.cv-main {
+    padding: 26px 30px;
+}
+
+.cv-block {
+    margin-bottom: 24px;
+
+    break-inside: avoid;
+}
+
+.cv-block:last-child {
+    margin-bottom: 0;
+}
+
+.cv-block h3 {
+    margin: 0 0 12px;
+
+    padding-bottom: 7px;
+
+    color: #172033;
+
+    border-bottom:
+            2px solid #f89820;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+}
+
+.cv-block p,
+.cv-block li {
+    color: #364152;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+.cv-skill-group {
+    margin-bottom: 16px;
+}
+
+.cv-skill-group h4 {
+    margin: 0 0 7px;
+
+    color: #172033;
+
+    font-size: 12px;
+}
+
+.cv-chip-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.cv-chip {
+    display: inline-block;
+
+    padding: 4px 7px;
+
+    border:
+            1px solid #cdd7e3;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #27364a;
+
+    font-family:
+            "JetBrains Mono",
+            Consolas,
+            monospace;
+
+    font-size: 9px;
+}
+
+.cv-experience-item,
+.cv-project-item,
+.cv-architecture-item {
+    margin-bottom: 18px;
+
+    break-inside: avoid;
+}
+
+.cv-item-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 5px;
+}
+
+.cv-item-heading h4 {
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 13px;
+}
+
+.cv-period {
+    flex: 0 0 auto;
+
+    color: #f89820;
+
+    font-family:
+            "JetBrains Mono",
+            Consolas,
+            monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.cv-company {
+    margin-bottom: 7px;
+
+    color: #6db33f;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.cv-experience-item ul {
+    margin: 7px 0 0;
+    padding-left: 18px;
+}
+
+.cv-roadmap-item {
+    position: relative;
+
+    margin-bottom: 12px;
+
+    padding-left: 17px;
+
+    font-size: 10px;
+}
+
+.cv-roadmap-item::before {
+    content: "";
+
+    position: absolute;
+
+    top: 4px;
+    left: 0;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #58a6ff;
+}
+
+.cv-roadmap-item.completed::before {
+    background: #6db33f;
+}
+
+.cv-roadmap-item.learning::before {
+    background: #f89820;
+}
+
+.cv-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 30px;
+
+    color: #d5deea;
+
+    background: #111827;
+
+    font-size: 9px;
+}
+
+/*
+==================================
+Portfolio CV Preview Mode
+==================================
+*/
+
+body.cv-preview-mode > nav,
+body.cv-preview-mode > main,
+body.cv-preview-mode > footer,
+body.cv-preview-mode > dialog,
+body.cv-preview-mode > #back-to-top,
+body.cv-preview-mode > .toast {
+    display: none !important;
+}
+
+body.cv-preview-mode #cv-document {
+    display: block !important;
+}
+
+/*
+==================================
+Print
+==================================
+*/
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+
+        margin: 0;
+        padding: 0;
+
+        background: #ffffff !important;
+    }
+
+    body > nav,
+    body > main,
+    body > footer,
+    body > dialog,
+    body > noscript,
+    body > #back-to-top,
+    body > .toast {
+        display: none !important;
+    }
+
+    #cv-document {
+        display: block !important;
+
+        width: 210mm;
+
+        margin: 0;
+        padding: 0;
+
+        background: #ffffff;
+    }
+
+    .cv-page {
+        width: 210mm;
+        min-height: 297mm;
+
+        margin: 0;
+
+        box-shadow: none;
+    }
+
+    .cv-block,
+    .cv-experience-item,
+    .cv-project-item,
+    .cv-architecture-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .cv-document {
+        padding: 20px 10px;
+
+        overflow-x: auto;
+    }
+
+    .cv-page {
+        transform-origin: top left;
+    }
+}

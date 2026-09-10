@@ -1,10 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="color-scheme" content="dark light">
+
+  <title>Vũ Hà Trọng | Senior Java Backend Developer</title>
+  <meta name="description" content="Portfolio song ngữ của Vũ Hà Trọng, Senior Java Backend Developer tập trung vào Java, Spring Boot, kiến trúc phần mềm và tích hợp hệ thống.">
+  <meta name="keywords" content="Vũ Hà Trọng, Java Developer, Spring Boot, Backend Developer, System Design, Software Architecture, Hanoi, Vietnam">
+  <meta name="author" content="Vũ Hà Trọng">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Vũ Hà Trọng | Senior Java Backend Developer">
+  <meta property="og:description" content="Java backend portfolio, projects, system design, career roadmap and knowledge sharing.">
+  <meta property="og:image" content="./assets/avatar/avatar.png">
+  <meta property="og:image:alt" content="Ảnh đại diện Vũ Hà Trọng">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="Vũ Hà Trọng Portfolio">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vũ Hà Trọng | Senior Java Backend Developer">
+  <meta name="twitter:description" content="Java backend portfolio, projects, system design and career roadmap.">
+  <meta name="twitter:image" content="./assets/avatar/avatar.png">
+
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./data/data.json" as="fetch" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/theme.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+
+  <script type="application/ld+json" id="person-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vũ Hà Trọng",
+    "jobTitle": "Senior Java Backend Developer",
+    "url": "",
+    "image": "./assets/avatar/avatar.png"
+  }
+  </script>
 </head>
 <body>
+  <header class="header" id="site-header">
+    <nav class="navbar" aria-label="Điều hướng chính">
+      <div class="container nav-wrapper">
+        <a class="logo" href="#hero" aria-label="Về đầu trang">
+          <span aria-hidden="true">&lt;</span>VHT<span class="logo-dot">.dev</span><span aria-hidden="true">/&gt;</span>
+        </a>
 
+        <div class="nav-menu" id="primary-navigation">
+          <a href="#about" data-i18n="navAbout">Giới thiệu</a>
+          <a href="#skills" data-i18n="navSkills">Kỹ năng</a>
+          <a href="#experience" data-i18n="navExperience">Sự nghiệp</a>
+          <a href="#projects" data-i18n="navProjects">Dự án</a>
+          <a href="#roadmap" data-i18n="navRoadmap">Lộ trình</a>
+          <a href="#knowledge" data-i18n="navKnowledge">Chia sẻ</a>
+          <a href="#contact" data-i18n="navContact">Liên hệ</a>
+        </div>
+
+        <div class="nav-actions">
+          <button id="lang-btn" class="btn btn-secondary control-button" type="button" aria-label="Đổi ngôn ngữ" title="Đổi ngôn ngữ">
+            VI
+          </button>
+          <button id="theme-btn" class="btn btn-secondary control-button" type="button" aria-label="Đổi giao diện sáng tối" title="Đổi giao diện sáng tối">
+            <span aria-hidden="true">☾</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" class="hero-section" aria-labelledby="hero-name">
+      <div class="container hero-grid">
+        <div class="hero-left gsap-reveal">
+          <p class="hero-eyebrow">Java · Spring Boot · System Architecture</p>
+          <h1 id="hero-name"><span id="full-name">Vũ Hà Trọng</span></h1>
+          <h2 id="role">Senior Java Backend Developer</h2>
+          <p id="tagline" class="hero-description">Đang tải nội dung hồ sơ...</p>
+
+          <div class="hero-actions" aria-label="Hành động chính">
+            <a id="download-cv-btn" class="btn btn-primary" href="./assets/cv/Vu-Ha-Trong-CV.pdf" download>
+              <span data-i18n="heroDownloadCv">Tải CV</span>
+            </a>
+            <a class="btn btn-secondary" href="#projects" data-i18n="heroProjects">Xem dự án</a>
+            <button id="contact-open-btn" class="btn btn-quiet" type="button" data-i18n="heroContact">Liên hệ</button>
+          </div>
+
+          <div class="social-links" id="social-links" aria-label="Mạng xã hội">
+            <a id="github-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a id="linkedin-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a id="youtube-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+            <a id="facebook-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+            <a id="tiktok-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+          </div>
+        </div>
+
+        <aside class="hero-right gsap-reveal" aria-label="Hồ sơ nhanh">
+          <div class="profile-card">
+            <div class="avatar-frame">
+              <img id="avatar-image" src="./assets/avatar/avatar.png" alt="Ảnh đại diện Vũ Hà Trọng" width="320" height="320" loading="eager">
+            </div>
+            <h3 id="profile-name">Vũ Hà Trọng</h3>
+            <p id="profile-location">Hà Nội, Việt Nam</p>
+            <div class="tech-preview" aria-label="Công nghệ chính">
+              <span>Java 17+</span>
+              <span>Spring Boot</span>
+              <span>Oracle</span>
+              <span>Redis</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="stats" class="compact-section" aria-label="Thống kê nổi bật">
+      <div class="container stats-grid" id="stats-container"></div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="container section-layout">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">01 · Profile</p>
+          <h2 id="about-title" class="section-title" data-i18n="aboutTitle">Giới thiệu</h2>
+        </div>
+        <div id="summary" class="content-card gsap-reveal"></div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">02 · Engineering</p>
+          <h2 id="skills-title" class="section-title" data-i18n="skillsTitle">Kỹ năng và công nghệ</h2>
+        </div>
+        <div class="skills-grid" id="skills-container"></div>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">03 · Career</p>
+          <h2 id="experience-title" class="section-title" data-i18n="experienceTitle">Hành trình sự nghiệp</h2>
+        </div>
+        <div id="experience-container"></div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">04 · Build</p>
+          <h2 id="projects-title" class="section-title" data-i18n="projectsTitle">Dự án nổi bật</h2>
+        </div>
+        <div class="project-grid" id="project-container"></div>
+      </div>
+    </section>
+
+    <section id="architectures" aria-labelledby="architecture-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">05 · Design</p>
+          <h2 id="architecture-title" class="section-title" data-i18n="architectureTitle">Thiết kế hệ thống</h2>
+        </div>
+        <div class="architecture-grid" id="architecture-container"></div>
+      </div>
+    </section>
+
+    <section id="roadmap" aria-labelledby="roadmap-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">06 · Growth</p>
+          <h2 id="roadmap-title" class="section-title" data-i18n="roadmapTitle">Lộ trình Java đến kiến trúc sư</h2>
+          <p class="section-subtitle" data-i18n="roadmapJourney">Năng lực đang phát triển và các cột mốc nghề nghiệp tiếp theo.</p>
+        </div>
+        <div id="roadmap-container"></div>
+      </div>
+    </section>
+
+    <section id="knowledge" aria-labelledby="knowledge-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">07 · Share</p>
+          <h2 id="knowledge-title" class="section-title" data-i18n="knowledgeTitle">Chia sẻ kiến thức</h2>
+        </div>
+        <div class="knowledge-grid" id="knowledge-container"></div>
+      </div>
+    </section>
+
+    <section id="creator" aria-labelledby="creator-title">
+      <div class="container section-layout">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">08 · Create</p>
+          <h2 id="creator-title" class="section-title" data-i18n="creatorTitle">Nội dung và ý tưởng</h2>
+        </div>
+        <div class="content-card gsap-reveal">
+          <div id="creator-topics" class="creator-topics"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" aria-labelledby="community-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">09 · Community</p>
+          <h2 id="community-title" class="section-title">Cảm ơn cộng đồng</h2>
+          <p id="community-description" class="section-subtitle"></p>
+        </div>
+        <div class="community-grid" id="community-container"></div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-heading gsap-reveal">
+          <p class="section-kicker">10 · Connect</p>
+          <h2 id="contact-title" class="section-title" data-i18n="contactTitle">Liên hệ</h2>
+          <p class="section-subtitle">Trao đổi về Java, kiến trúc hệ thống, dự án cá nhân hoặc hợp tác nội dung.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <form id="contact-form" class="content-card gsap-reveal" novalidate>
+            <label for="contact-name" data-i18n="contactName">Họ và tên</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+
+            <label for="contact-email" data-i18n="contactEmail">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="160" required>
+
+            <label for="contact-message" data-i18n="contactMessage">Nội dung</label>
+            <textarea id="contact-message" name="message" rows="7" maxlength="3000" required></textarea>
+
+            <button class="btn btn-primary" type="submit" data-i18n="contactSend">Gửi liên hệ</button>
+            <p class="form-note" id="contact-form-note" aria-live="polite">Thông tin sẽ được chuyển thành GitHub Issue sau khi cấu hình endpoint.</p>
+          </form>
+
+          <aside class="content-card collaboration-card gsap-reveal">
+            <h3>Collaboration</h3>
+            <ul>
+              <li>Java và Spring Boot</li>
+              <li>System design và software architecture</li>
+              <li>Open source và dự án cá nhân</li>
+              <li>Chia sẻ kiến thức và hợp tác nội dung</li>
+            </ul>
+            <a id="contact-email-link" class="text-link" href="mailto:hatrongvu13@gmail.com">hatrongvu13@gmail.com</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© <span id="footer-year"></span> <span id="footer-name">Vũ Hà Trọng</span></p>
+      <p data-i18n="footerText">Xây dựng bằng HTML, CSS và JavaScript thuần.</p>
+    </div>
+  </footer>
+
+  <dialog id="contact-dialog" aria-labelledby="contact-dialog-title">
+    <div class="dialog-header">
+      <h2 id="contact-dialog-title" data-i18n="contactTitle">Liên hệ</h2>
+      <button id="dialog-close" class="dialog-close" type="button" aria-label="Đóng hộp thoại">×</button>
+    </div>
+    <p>Chọn biểu mẫu bên dưới hoặc gửi email trực tiếp. GitHub Issue, Telegram và email notification sẽ được kích hoạt theo cấu hình trong <code>data.json</code>.</p>
+    <a class="btn btn-primary" href="#contact" onclick="document.getElementById('contact-dialog').close()">Mở biểu mẫu liên hệ</a>
+  </dialog>
+
+  <noscript>
+    <div class="noscript-message">Trang này cần JavaScript để tải nội dung từ data.json.</div>
+  </noscript>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" defer></script>
+  <script src="./js/i18n.js" defer></script>
+  <script src="./js/renderer.js" defer></script>
+  <script src="./js/roadmap.js" defer></script>
+  <script src="./js/github.js" defer></script>
+  <script src="./js/contact.js" defer></script>
+  <script src="./js/app.js" defer></script>
 </body>
 </html>

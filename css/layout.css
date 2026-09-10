@@ -1,0 +1,750 @@
+/*
+ * Vu Ha Trong Portfolio
+ * Layout: responsive structure, navigation, sections and content grids
+ * Component appearance belongs in components.css
+ */
+
+/* ================================================================
+   Layout tokens
+   ================================================================ */
+
+:root {
+  --container-width: 1180px;
+  --container-gutter: clamp(18px, 4vw, 32px);
+  --header-height: 68px;
+  --section-space: clamp(72px, 9vw, 116px);
+  --section-space-compact: clamp(32px, 5vw, 56px);
+  --grid-gap: clamp(18px, 2.4vw, 28px);
+}
+
+/* ================================================================
+   Document structure
+   ================================================================ */
+
+html {
+  scroll-padding-top: calc(var(--header-height) + 24px);
+}
+
+body {
+  position: relative;
+}
+
+main {
+  display: block;
+  min-height: 70vh;
+}
+
+section {
+  position: relative;
+  padding-block: var(--section-space);
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
+section + section {
+  border-top: 1px solid var(--line-soft);
+}
+
+#hero,
+#stats {
+  border-top: 0;
+}
+
+.compact-section {
+  padding-block: var(--section-space-compact);
+}
+
+.container {
+  width: min(
+    calc(100% - (var(--container-gutter) * 2)),
+    var(--container-width)
+  );
+  margin-inline: auto;
+}
+
+.section-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.34fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.section-layout > .section-heading {
+  position: sticky;
+  top: calc(var(--header-height) + 36px);
+  margin-bottom: 0;
+}
+
+/* ================================================================
+   Header and navigation
+   ================================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  min-height: var(--header-height);
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--header-bg);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+}
+
+.nav-wrapper {
+  min-height: var(--header-height);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.nav-menu a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.control-button {
+  min-width: 44px;
+  min-height: 40px;
+}
+
+/* ================================================================
+   Hero
+   ================================================================ */
+
+.hero-section {
+  min-height: calc(100svh - var(--header-height));
+  padding-block: clamp(72px, 10vw, 132px);
+  display: flex;
+  align-items: center;
+  overflow: clip;
+}
+
+.hero-grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.72fr);
+  gap: clamp(44px, 7vw, 96px);
+  align-items: center;
+}
+
+.hero-left {
+  min-width: 0;
+  max-width: 760px;
+}
+
+.hero-left h1 {
+  max-width: 14ch;
+  margin-bottom: 14px;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+.hero-left h2 {
+  max-width: 26ch;
+  margin-bottom: 20px;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+}
+
+.hero-description {
+  max-width: 64ch;
+  margin-bottom: 0;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-left > .social-links {
+  margin-top: 28px;
+}
+
+.hero-right {
+  min-width: 0;
+  width: 100%;
+  max-width: 390px;
+  justify-self: end;
+}
+
+.profile-card {
+  width: 100%;
+}
+
+.avatar-frame {
+  margin-inline: auto;
+}
+
+.tech-preview,
+.creator-topics,
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-preview {
+  justify-content: center;
+}
+
+/* ================================================================
+   Reusable grids
+   ================================================================ */
+
+.stats-grid,
+.skills-grid,
+.project-grid,
+.knowledge-grid,
+.community-grid,
+.architecture-grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skills-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.knowledge-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.community-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.architecture-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Ensure dynamically rendered children can shrink correctly */
+.stats-grid > *,
+.skills-grid > *,
+.project-grid > *,
+.knowledge-grid > *,
+.community-grid > *,
+.architecture-grid > * {
+  min-width: 0;
+}
+
+/* ================================================================
+   Experience timeline
+   ================================================================ */
+
+#experience-container {
+  display: grid;
+  gap: 20px;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: minmax(130px, 180px) minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 48px);
+  align-items: start;
+}
+
+.experience-period {
+  position: sticky;
+  top: calc(var(--header-height) + 30px);
+  padding-top: 20px;
+}
+
+.experience-content {
+  min-width: 0;
+}
+
+.experience-content ul,
+.collaboration-card ul {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+.experience-content li + li,
+.collaboration-card li + li {
+  margin-top: 8px;
+}
+
+/* ================================================================
+   Architecture diagrams
+   ================================================================ */
+
+.architecture-diagram {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  overflow-x: auto;
+}
+
+.architecture-node {
+  flex: 1 1 140px;
+  min-width: 120px;
+}
+
+.architecture-arrow {
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+/* ================================================================
+   Roadmap
+   ================================================================ */
+
+#roadmap-container {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.roadmap-container {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  padding-left: 34px;
+}
+
+.roadmap-container::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 8px;
+  width: 1px;
+  background: var(--line-strong);
+}
+
+.roadmap-card {
+  position: relative;
+  min-width: 0;
+}
+
+.roadmap-card::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -32px;
+  width: 13px;
+  height: 13px;
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary-border);
+}
+
+/* ================================================================
+   Contact and footer
+   ================================================================ */
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+#contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+#contact-form label:not(:first-child) {
+  margin-top: 6px;
+}
+
+#contact-form .btn {
+  width: max-content;
+  margin-top: 8px;
+}
+
+.form-note {
+  max-width: 62ch;
+  margin: 4px 0 0;
+}
+
+.collaboration-card {
+  position: sticky;
+  top: calc(var(--header-height) + 30px);
+}
+
+footer {
+  border-top: 1px solid var(--line-soft);
+  padding-block: 30px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-content p {
+  margin-bottom: 0;
+}
+
+/* ================================================================
+   Dialog and utility layout
+   ================================================================ */
+
+dialog {
+  width: min(560px, calc(100% - 32px));
+  max-height: min(720px, calc(100dvh - 32px));
+  margin: auto;
+}
+
+dialog::backdrop {
+  background: var(--overlay);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dialog-header h2 {
+  margin-bottom: 0;
+}
+
+.noscript-message {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2000;
+  width: min(420px, calc(100% - 32px));
+}
+
+/* ================================================================
+   Large tablet
+   ================================================================ */
+
+@media (max-width: 1080px) {
+  :root {
+    --container-width: 960px;
+  }
+
+  .nav-wrapper {
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+  }
+
+  .nav-menu {
+    justify-content: flex-end;
+    gap: 14px;
+  }
+
+  .nav-menu a {
+    font-size: 0.9rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.65fr);
+    gap: 48px;
+  }
+
+  .project-grid,
+  .community-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ================================================================
+   Tablet
+   ================================================================ */
+
+@media (max-width: 880px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .nav-wrapper {
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: clamp(64px, 10vw, 96px);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .hero-left {
+    max-width: 700px;
+  }
+
+  .hero-right {
+    max-width: 520px;
+    justify-self: start;
+  }
+
+  .section-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .section-layout > .section-heading,
+  .experience-period,
+  .collaboration-card {
+    position: static;
+  }
+
+  .section-layout > .section-heading {
+    margin-bottom: 0;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================================
+   Mobile
+   ================================================================ */
+
+@media (max-width: 680px) {
+  :root {
+    --container-gutter: 18px;
+    --section-space: 66px;
+    --section-space-compact: 30px;
+    --grid-gap: 16px;
+  }
+
+  .logo-dot {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .control-button {
+    min-width: 40px;
+    min-height: 38px;
+    padding-inline: 10px;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(2.65rem, 14vw, 4.4rem);
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .hero-left > .social-links {
+    gap: 8px;
+  }
+
+  .stats-grid,
+  .skills-grid,
+  .project-grid,
+  .knowledge-grid,
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .experience-period {
+    padding-top: 0;
+  }
+
+  .architecture-diagram {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-x: visible;
+  }
+
+  .architecture-node {
+    width: 100%;
+  }
+
+  .architecture-arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* ================================================================
+   Small mobile
+   ================================================================ */
+
+@media (max-width: 420px) {
+  :root {
+    --container-gutter: 14px;
+  }
+
+  .hero-left h1 {
+    font-size: 2.55rem;
+  }
+
+  .hero-left h2 {
+    font-size: 1.2rem;
+  }
+
+  .roadmap-container {
+    padding-left: 28px;
+  }
+
+  .roadmap-card::before {
+    left: -26px;
+  }
+}
+
+/* ================================================================
+   Print / CV export
+   ================================================================ */
+
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  html {
+    scroll-padding-top: 0;
+  }
+
+  body {
+    font-size: 10.5pt;
+  }
+
+  .header,
+  .hero-actions,
+  .social-links,
+  #contact,
+  #community,
+  dialog,
+  .noscript-message {
+    display: none !important;
+  }
+
+  main {
+    min-height: 0;
+  }
+
+  section,
+  .compact-section,
+  .hero-section {
+    min-height: auto;
+    border-top: 0;
+    padding-block: 8mm;
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 48mm;
+    gap: 10mm;
+  }
+
+  .hero-left h1 {
+    font-size: 28pt;
+  }
+
+  .hero-right {
+    max-width: none;
+  }
+
+  .section-layout,
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .section-layout > .section-heading,
+  .experience-period,
+  .collaboration-card {
+    position: static;
+  }
+
+  .project-grid,
+  .community-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-card,
+  .profile-card,
+  .stat-card,
+  .skill-card,
+  .project-card,
+  .knowledge-card,
+  .community-card,
+  .architecture-card,
+  .roadmap-card,
+  .experience-item {
+    break-inside: avoid;
+  }
+}

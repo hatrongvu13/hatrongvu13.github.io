@@ -1,16 +1,34 @@
 {
   "settings": {
     "defaultLanguage": "vi",
-    "defaultTheme": "cyan",
-    "siteTitle": "Vu Ha Trong Portfolio",
-    "siteDescription": "Senior Java Backend Developer Portfolio",
-    "cvDownload": "/assets/cv/Vu-Ha-Trong-CV.pdf"
-  },
+    "siteTitle": "Vũ Hà Trọng | Senior Java Backend Developer",
+    "siteDescription": {
+      "vi": "Portfolio Java Backend Developer, thiết kế hệ thống và chia sẻ kiến thức.",
+      "en": "Java Backend Developer portfolio, system design and knowledge sharing."
+    },
+    "siteUrl": "https://hatrongvu13.github.io/",
 
+    "cv": {
+      "mode": "print",
+      "url": "./assets/cv/Vu-Ha-Trong-Java-Developer-CV.pdf",
+      "showAvatar": true,
+      "showRoadmap": true,
+      "showProjects": true,
+      "showArchitecture": true,
+      "showKnowledge": false,
+      "showCommunity": false,
+      "showContact": false,
+      "maxProjects": 3,
+      "maxExperience": 4,
+      "paperSize": "A4",
+      "accentColor": "java",
+      "fileName": "Vu-Ha-Trong-Java-Developer-CV.pdf"
+    }
+  },
   "personal": {
     "fullName": "Vũ Hà Trọng",
     "initials": "VHT",
-
+    "avatar":"./assets/avatar/avatar.png",
     "role": {
       "vi": "Chuyên viên chính Lập trình Back End",
       "en": "Senior Java Backend Developer"
@@ -26,9 +44,9 @@
       "en": "Backend Developer focusing on Java, Spring Boot, system integration, software architecture and performance optimization."
     },
 
-    "email": "your-email@gmail.com",
+    "email": "hatrongvu13@gmail.com",
 
-    "phone": "+84xxxxxxxxx",
+    "phone": "+84943561685",
 
     "location": {
       "vi": "Hà Nội, Việt Nam",
@@ -37,13 +55,13 @@
 
     "github": "https://github.com/hatrongvu13",
 
-    "linkedin": "",
+    "linkedin": "https://github.com/hatrongvu13",
 
-    "youtube": "",
+    "youtube": "https://github.com/hatrongvu13",
 
-    "facebook": "",
+    "facebook": "https://github.com/hatrongvu13",
 
-    "tiktok": ""
+    "tiktok": "https://github.com/hatrongvu13"
   },
 
   "stats": [
@@ -231,6 +249,67 @@
       "status": "planned"
     }
   ],
+  "roadmapSettings": {
+    "showStatistics": true,
+    "showCapabilities": true,
+    "showCareerPath": true,
+    "sortByYear": false
+  },
+  "careerPath": [
+    {
+      "vi": "Java Developer",
+      "en": "Java Developer"
+    },
+    {
+      "vi": "Senior Java Developer",
+      "en": "Senior Java Developer"
+    },
+    {
+      "vi": "Technical Lead",
+      "en": "Technical Lead"
+    },
+    {
+      "vi": "Solution Architect",
+      "en": "Solution Architect"
+    },
+    {
+      "vi": "Enterprise Architect",
+      "en": "Enterprise Architect"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": {
+        "vi": "Kỹ thuật Backend",
+        "en": "Backend Engineering"
+      },
+      "description": {
+        "vi": "Java, Spring Boot, API và tích hợp hệ thống.",
+        "en": "Java, Spring Boot, APIs and system integrations."
+      },
+      "value": 88,
+      "target": 100,
+      "status": "completed"
+    },
+    {
+      "name": {
+        "vi": "Kiến trúc phần mềm",
+        "en": "Software Architecture"
+      },
+      "value": 70,
+      "target": 100,
+      "status": "learning"
+    },
+    {
+      "name": {
+        "vi": "Năng lực lãnh đạo kỹ thuật",
+        "en": "Technical Leadership"
+      },
+      "value": 52,
+      "target": 100,
+      "status": "learning"
+    }
+  ],
 
   "knowledge": [
     {
@@ -283,23 +362,34 @@
   },
 
   "contact": {
+    "saveDraft": true,
+    "addLocalThankYou": true,
+    "rateLimitSeconds": 60,
+
     "githubIssueEnabled": true,
 
-    "repository": "hatrongvu13/portfolio",
-
-    "labels": [
-      "portfolio-contact"
-    ],
+    "github": {
+      "enabled": true,
+      "mode": "issue-url",
+      "repository": "hatrongvu13/hatrongvu13.github.io",
+      "labels": [
+        "portfolio-contact",
+        "visitor"
+      ],
+      "assignees": [],
+      "issueTemplate": "",
+      "openInNewTab": true,
+      "requestTimeoutMs": 12000
+    },
 
     "telegram": {
       "enabled": false,
-      "botToken": "",
-      "chatId": ""
+      "endpoint": ""
     },
 
     "email": {
       "enabled": false,
-      "smtpFuture": true
+      "endpoint": ""
     }
   }
 }
