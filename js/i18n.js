@@ -6,9 +6,7 @@ Internationalization Engine
 */
 
 const I18N = {
-
     vi: {
-
         navAbout: "Giới thiệu",
         navSkills: "Kỹ năng",
         navExperience: "Kinh nghiệm",
@@ -18,95 +16,62 @@ const I18N = {
         navKnowledge: "Chia sẻ kiến thức",
         navCommunity: "Cộng đồng",
         navContact: "Liên hệ",
-
         heroProjects: "Xem dự án",
         heroDownloadCv: "Tải CV",
         heroContact: "Liên hệ",
-
         aboutTitle: "Giới thiệu",
-
         skillsTitle: "Công nghệ",
-
         experienceTitle: "Kinh nghiệm",
-
         projectsTitle: "Dự án nổi bật",
-
         architectureTitle: "Thiết kế hệ thống",
-
         roadmapTitle: "Lộ trình Java",
-
         knowledgeTitle: "Chia sẻ kiến thức",
-
         creatorTitle: "Nhà sáng tạo nội dung",
-
         communityTitle: "Cộng đồng",
-
         contactTitle: "Liên hệ",
-
         contactName: "Họ và tên",
-
         contactEmail: "Email",
-
         contactMessage: "Nội dung",
-
         contactSend: "Gửi",
-
         downloadCv: "Tải CV",
-
         sourceCode: "Mã nguồn",
-
         liveDemo: "Demo",
-
         active: "Đang hoạt động",
-
         maintenance: "Bảo trì",
-
         archived: "Lưu trữ",
-
         completed: "Đã hoàn thành",
-
         learning: "Đang học",
-
         planned: "Kế hoạch",
-
         githubIssue: "Liên hệ qua GitHub Issue",
-
         telegramFuture: "Tích hợp Telegram trong tương lai",
-
         emailFuture: "Tích hợp Email trong tương lai",
-
         loading: "Đang tải dữ liệu...",
-
         noData: "Không có dữ liệu",
-
         formSuccess: "Đã gửi thông tin thành công.",
-
         formError: "Có lỗi xảy ra.",
-
-        thanksCommunity:
-            "Cảm ơn bạn đã ghé thăm portfolio của tôi.",
-
-        footerText:
-            "Xây dựng bằng HTML, CSS và JavaScript thuần.",
-
-        roadmapJourney:
-            "Lộ trình nghề nghiệp",
-
-        architectureDiagram:
-            "Sơ đồ hệ thống",
-
-        knowledgeReadMore:
-            "Xem thêm",
-
-        creatorTopics:
-            "Chủ đề chia sẻ",
-
-        systemDesigner:
-            "Kiến trúc sư hệ thống tương lai"
+        thanksCommunity: "Cảm ơn bạn đã ghé thăm portfolio của tôi.",
+        footerText: "Xây dựng bằng HTML, CSS và JavaScript thuần.",
+        roadmapJourney: "Lộ trình nghề nghiệp",
+        architectureDiagram: "Sơ đồ hệ thống",
+        knowledgeReadMore: "Xem thêm",
+        creatorTopics: "Chủ đề chia sẻ",
+        systemDesigner: "Kiến trúc sư hệ thống tương lai",
+        cvSummaryTitle: "Hồ sơ",
+        cvSkillsTitle: "Kỹ năng",
+        cvCompetenciesTitle: "Năng lực chính",
+        cvRoadmapTitle: "Lộ trình phát triển",
+        cvExperienceTitle: "Kinh nghiệm",
+        cvProjectsTitle: "Dự án nổi bật",
+        cvArchitecturesTitle: "Thiết kế hệ thống",
+        cvContactLabel: "Thông tin liên hệ",
+        cvCompleted: "Đã hoàn thành",
+        cvCurrent: "Hiện tại",
+        cvNext: "Tiếp theo",
+        cvPlanned: "Dự kiến",
+        documentation: "Tài liệu",
     },
 
     en: {
-
         navAbout: "About",
         navSkills: "Skills",
         navExperience: "Experience",
@@ -116,95 +81,59 @@ const I18N = {
         navKnowledge: "Knowledge",
         navCommunity: "Community",
         navContact: "Contact",
-
         heroProjects: "View Projects",
         heroDownloadCv: "Download CV",
         heroContact: "Contact",
-
         aboutTitle: "About",
-
         skillsTitle: "Technology",
-
         experienceTitle: "Experience",
-
         projectsTitle: "Featured Projects",
-
         architectureTitle: "System Design",
-
         roadmapTitle: "Java Roadmap",
-
         knowledgeTitle: "Knowledge Sharing",
-
         creatorTitle: "Content Creator",
-
         communityTitle: "Community",
-
         contactTitle: "Contact",
-
         contactName: "Full Name",
-
         contactEmail: "Email",
-
         contactMessage: "Message",
-
         contactSend: "Send",
-
         downloadCv: "Download CV",
-
         sourceCode: "Source",
-
         liveDemo: "Demo",
-
         active: "Active",
-
         maintenance: "Maintenance",
-
         archived: "Archived",
-
         completed: "Completed",
-
         learning: "Learning",
-
         planned: "Planned",
-
         githubIssue: "Contact via GitHub Issue",
-
-        telegramFuture:
-            "Telegram integration in the future",
-
-        emailFuture:
-            "Email integration in the future",
-
+        telegramFuture: "Telegram integration in the future",
+        emailFuture: "Email integration in the future",
         loading: "Loading data...",
-
         noData: "No data available",
-
-        formSuccess:
-            "Information submitted successfully.",
-
-        formError:
-            "An error has occurred.",
-
-        thanksCommunity:
-            "Thank you for visiting my portfolio.",
-
-        footerText:
-            "Built with pure HTML, CSS and JavaScript.",
-
-        roadmapJourney:
-            "Career Journey",
-
-        architectureDiagram:
-            "System Diagram",
-
-        knowledgeReadMore:
-            "Read More",
-
-        creatorTopics:
-            "Sharing Topics",
-
-        systemDesigner:
-            "Future System Architect"
+        formSuccess: "Information submitted successfully.",
+        formError: "An error has occurred.",
+        thanksCommunity: "Thank you for visiting my portfolio.",
+        footerText: "Built with pure HTML, CSS and JavaScript.",
+        roadmapJourney: "Career Journey",
+        architectureDiagram: "System Diagram",
+        knowledgeReadMore: "Read More",
+        creatorTopics: "Sharing Topics",
+        systemDesigner: "Future System Architect",
+        cvSummaryTitle: "Profile",
+        cvSkillsTitle: "Skills",
+        cvCompetenciesTitle: "Core competencies",
+        cvRoadmapTitle: "Development focus",
+        cvExperienceTitle: "Experience",
+        cvProjectsTitle: "Featured projects",
+        cvArchitecturesTitle: "System design",
+        cvContactLabel: "Contact information",
+        cvCompleted: "Completed",
+        cvCurrent: "Current",
+        cvNext: "Next",
+        cvPlanned: "Planned",
+        documentation: "Documentation"
     }
 };
 

@@ -3,101 +3,123 @@
     "defaultLanguage": "vi",
     "siteTitle": "Hà Trọng Vũ | Senior Java Backend Developer",
     "siteDescription": {
-      "vi": "Portfolio Java Backend Developer, thiết kế hệ thống và chia sẻ kiến thức.",
-      "en": "Java Backend Developer portfolio, system design and knowledge sharing."
+      "vi": "Portfolio Java Backend Developer, thiết kế hệ thống, xử lý tài liệu, computer vision và chia sẻ kiến thức.",
+      "en": "Java Backend Developer portfolio covering system design, document processing, computer vision, and knowledge sharing."
     },
     "siteUrl": "https://hatrongvu13.github.io/",
-
     "cv": {
       "mode": "print",
       "url": "./assets/cv/Vu-Ha-Trong-Java-Developer-CV.pdf",
       "showAvatar": true,
-      "showRoadmap": true,
+      "showRoadmap": false,
       "showProjects": true,
       "showArchitecture": true,
       "showKnowledge": false,
       "showCommunity": false,
       "showContact": false,
-      "maxProjects": 3,
+      "maxProjects": 5,
       "maxExperience": 4,
+      "maxArchitectures": 2,
       "paperSize": "A4",
       "accentColor": "java",
-      "fileName": "Vu-Ha-Trong-Java-Developer-CV.pdf"
+      "fileName": "Vu-Ha-Trong-Java-Developer-CV.pdf",
+      "competencies": [
+        "Java Backend",
+        "Spring Boot",
+        "REST / gRPC / GraphQL",
+        "System Integration",
+        "Workflow Automation",
+        "Document Processing",
+        "Computer Vision",
+        "Clean Architecture"
+      ]
     }
   },
   "personal": {
     "fullName": "Hà Trọng Vũ",
     "initials": "VHT",
-    "avatar":"./assets/avatar/avatar.png",
+    "avatar": "./assets/avatar/avatar.png",
+    "avatarAlt": {
+      "vi": "Ảnh đại diện Hà Trọng Vũ",
+      "en": "Ha Trong Vu profile picture"
+    },
     "role": {
       "vi": "Chuyên viên chính Lập trình Back End",
       "en": "Senior Java Backend Developer"
     },
-
     "tagline": {
       "vi": "Xây dựng hệ thống Java ổn định, dễ mở rộng và bám sát nghiệp vụ.",
       "en": "Building reliable and scalable Java systems aligned with business requirements."
     },
-
     "summary": {
-      "vi": "Backend Developer tập trung Java, Spring Boot, tích hợp hệ thống, kiến trúc phần mềm và tối ưu hiệu năng.",
-      "en": "Backend Developer focusing on Java, Spring Boot, system integration, software architecture and performance optimization."
+      "vi": "Backend Developer tập trung vào Java, Spring Boot, tích hợp hệ thống, workflow, xử lý tài liệu và các ứng dụng computer vision có khả năng triển khai thực tế.",
+      "en": "Backend developer focused on Java, Spring Boot, system integration, workflows, document processing, and practical computer vision applications."
     },
-
     "email": "hatrongvu13@gmail.com",
-
     "phone": "+84943561685",
-
     "location": {
       "vi": "Hà Nội, Việt Nam",
       "en": "Hanoi, Vietnam"
     },
-
     "github": "https://github.com/hatrongvu13",
-
     "linkedin": "https://www.linkedin.com/in/iamhatrongvu",
-
     "youtube": "https://www.youtube.com/@hatrongvu2000",
-
     "facebook": "https://www.facebook.com/iamhatrongvu",
-
     "tiktok": "https://www.tiktok.com/@iamhatrongvu"
   },
-
+  "social": {
+    "github": "https://github.com/hatrongvu13",
+    "linkedin": "https://www.linkedin.com/in/iamhatrongvu",
+    "youtube": "https://www.youtube.com/@hatrongvu2000",
+    "facebook": "https://www.facebook.com/iamhatrongvu",
+    "tiktok": "https://www.tiktok.com/@iamhatrongvu"
+  },
   "stats": [
     {
       "value": "5+",
       "label": {
         "vi": "Năm kinh nghiệm",
-        "en": "Years Experience"
+        "en": "Years of experience"
       }
     },
     {
       "value": "20+",
       "label": {
-        "vi": "API & Tích hợp",
-        "en": "API Integrations"
+        "vi": "API và tích hợp",
+        "en": "APIs and integrations"
       }
     },
     {
       "value": "10+",
       "label": {
-        "vi": "Dự án tham gia",
-        "en": "Projects Delivered"
+        "vi": "Dự án và thử nghiệm",
+        "en": "Projects and experiments"
       }
     }
   ],
-
   "skills": [
     {
       "group": "Backend",
       "items": [
-        "Java 17",
+        "Java 17+",
         "Spring Boot",
         "Spring Security",
-        "JPA",
-        "Hibernate",
-        "REST API"
+        "Spring Data JPA",
+        "REST API",
+        "gRPC",
+        "GraphQL"
+      ]
+    },
+    {
+      "group": "Workflow & Integration",
+      "items": [
+        "Camunda",
+        "Async Processing",
+        "Data Fetcher",
+        "Event-driven",
+        "Retry",
+        "Idempotency",
+        "System Integration"
       ]
     },
     {
@@ -106,177 +128,436 @@
         "Oracle",
         "PostgreSQL",
         "MySQL",
-        "Redis"
+        "Redis",
+        "Hibernate",
+        "SQL Tuning"
       ]
     },
     {
       "group": "Architecture",
       "items": [
+        "Clean Architecture",
         "DDD",
         "SOLID",
-        "Clean Architecture",
-        "Microservices"
+        "Design Patterns",
+        "Microservices",
+        "API Design"
       ]
     },
     {
-      "group": "DevOps",
+      "group": "Documents & Vision",
+      "items": [
+        "OCR",
+        "OpenCV",
+        "Image Processing",
+        "Video Processing",
+        "Excel Template",
+        "Word Template",
+        "Email Template"
+      ]
+    },
+    {
+      "group": "DevOps & Testing",
       "items": [
         "Docker",
         "Linux",
         "GitHub Actions",
-        "Kubernetes"
+        "Maven",
+        "JUnit 5",
+        "SonarQube",
+        "Kubernetes",
+        "Apache JMeter"
       ]
     }
   ],
-
   "experience": [
     {
       "period": "2022 - Present",
-
       "company": "Enterprise / Financial Technology",
-
       "role": {
         "vi": "Chuyên viên chính Lập trình Back End",
         "en": "Senior Java Backend Developer"
       },
-
       "description": {
-        "vi": "Phát triển backend enterprise, tích hợp hệ thống và workflow.",
-        "en": "Enterprise backend development, integrations and workflow systems."
+        "vi": "Phát triển dịch vụ backend cho quy trình nghiệp vụ nhiều bước, tích hợp hệ thống, xử lý dữ liệu bất đồng bộ và tự động hóa thông báo.",
+        "en": "Develop backend services for multi-step business workflows, system integrations, asynchronous data processing, and notification automation."
       },
-
       "achievements": {
         "vi": [
-          "Thiết kế API và tích hợp hệ thống.",
-          "Tối ưu truy vấn dữ liệu.",
-          "Review code và chuẩn hóa coding standard."
+          "Thiết kế API và cơ chế tích hợp có logging, retry và xử lý lỗi.",
+          "Chuẩn hóa template email và báo cáo theo Strategy, Factory và Template Method.",
+          "Tối ưu truy vấn dữ liệu, review code và cải thiện khả năng bảo trì."
         ],
         "en": [
-          "Designed APIs and system integrations.",
-          "Optimized database queries.",
-          "Performed code review and code standardization."
+          "Designed APIs and integrations with logging, retries, and error handling.",
+          "Standardized email and report templates using Strategy, Factory, and Template Method.",
+          "Optimized data queries, reviewed code, and improved maintainability."
         ]
       }
     }
   ],
-
   "projects": [
     {
-      "name": "Java Design Patterns Lab",
-
-      "type": "Open Source",
-
-      "status": "active",
-
-      "description": {
-        "vi": "Kho ví dụ Design Pattern thực tế trong Java.",
-        "en": "Practical Java Design Pattern examples."
+      "id": "spring-grpc-service-lab",
+      "name": "Spring gRPC Service Lab",
+      "type": {
+        "vi": "Giao tiếp dịch vụ",
+        "en": "Backend Communication"
       },
-
+      "status": "active",
+      "description": {
+        "vi": "Dự án demo giao tiếp hiệu năng cao giữa các dịch vụ Spring Boot bằng Protocol Buffers và gRPC, gồm unary call, streaming, validation và xử lý lỗi.",
+        "en": "A Spring Boot demo for high-performance service communication with Protocol Buffers and gRPC, including unary calls, streaming, validation, and error handling."
+      },
       "tech": [
         "Java 17",
+        "Spring Boot",
+        "gRPC",
+        "Protocol Buffers",
+        "JUnit 5"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "spring-security-identity-lab",
+      "name": "Spring Security Identity Lab",
+      "type": {
+        "vi": "Bảo mật ứng dụng",
+        "en": "Application Security"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Dự án mẫu xác thực và phân quyền cho REST API với JWT, refresh token, role-based access control và xử lý lỗi bảo mật thống nhất.",
+        "en": "A reference project for REST API authentication and authorization with JWT, refresh tokens, role-based access control, and consistent security error handling."
+      },
+      "tech": [
+        "Spring Boot",
+        "Spring Security",
+        "JWT",
+        "RBAC",
+        "PostgreSQL"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "spring-graphql-query-hub",
+      "name": "Spring GraphQL Query Hub",
+      "type": {
+        "vi": "Kỹ thuật API",
+        "en": "API Engineering"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Dự án demo xây dựng GraphQL API với query, mutation, resolver, phân trang, validation và kiểm soát truy cập dữ liệu.",
+        "en": "A GraphQL API demo featuring queries, mutations, resolvers, pagination, validation, and data access control."
+      },
+      "tech": [
+        "Spring Boot",
+        "Spring for GraphQL",
+        "GraphQL",
+        "JPA",
+        "PostgreSQL"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "java-patterns-workshop",
+      "name": "Java Patterns Workshop",
+      "type": {
+        "vi": "Mẫu thiết kế",
+        "en": "Design Patterns"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Bộ ví dụ thực tế cho Singleton, Strategy, Factory, Template Method, Adapter và Chain of Responsibility, kèm kiểm thử và tình huống sử dụng.",
+        "en": "Practical examples of Singleton, Strategy, Factory, Template Method, Adapter, and Chain of Responsibility with tests and use cases."
+      },
+      "tech": [
+        "Java 17",
+        "Design Patterns",
         "JUnit 5",
         "Maven"
       ],
-
       "source": "",
-
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "camunda-process-orchestration-lab",
+      "name": "Camunda Process Orchestration Lab",
+      "type": {
+        "vi": "Tự động hóa quy trình",
+        "en": "Workflow Automation"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Mô phỏng quy trình nghiệp vụ nhiều bước bằng BPMN và Camunda, gồm phê duyệt, service task, retry, timeout và theo dõi trạng thái quy trình.",
+        "en": "A multi-step business process simulation with BPMN and Camunda, including approvals, service tasks, retries, timeouts, and process monitoring."
+      },
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Camunda",
+        "BPMN",
+        "PostgreSQL"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "async-data-fetch-pipeline",
+      "name": "Async Data Fetch Pipeline",
+      "type": {
+        "vi": "Mẫu tích hợp",
+        "en": "Integration Pattern"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Pipeline lấy dữ liệu từ nhiều nguồn bằng fetcher đồng bộ và bất đồng bộ, hỗ trợ timeout, retry, tổng hợp kết quả và cô lập lỗi từng nguồn.",
+        "en": "A multi-source data pipeline with synchronous and asynchronous fetchers, supporting timeouts, retries, result aggregation, and per-source failure isolation."
+      },
+      "tech": [
+        "Java 17",
+        "Spring Boot",
+        "CompletableFuture",
+        "Strategy",
+        "Factory"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "document-template-engine",
+      "name": "Document Template Engine",
+      "type": {
+        "vi": "Tự động hóa tài liệu",
+        "en": "Document Automation"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Engine hợp nhất việc chọn dữ liệu và render template email, báo cáo Excel và tài liệu Word theo từng nghiệp vụ, giúp mở rộng định dạng mà không thay đổi luồng chính.",
+        "en": "A unified engine for selecting data and rendering email, Excel report, and Word document templates by business context without changing the core workflow."
+      },
+      "tech": [
+        "Spring Boot",
+        "Strategy",
+        "Factory",
+        "Thymeleaf",
+        "Apache POI",
+        "docx4j"
+      ],
+      "source": "#github",
+      "docs": "#docs",
+      "demo": "#demo"
+    },
+    {
+      "id": "pocket-ocr-scanner",
+      "name": "Pocket OCR Scanner",
+      "type": {
+        "vi": "OCR di động",
+        "en": "Mobile OCR"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Ứng dụng OCR trên điện thoại để chụp tài liệu, hiệu chỉnh ảnh, nhận dạng văn bản và đồng bộ kết quả tới backend.",
+        "en": "A mobile OCR application for document capture, image correction, text recognition, and backend synchronization."
+      },
+      "tech": [
+        "Mobile",
+        "OCR",
+        "OpenCV",
+        "Image Processing",
+        "REST API"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "scan2learn-exam-platform",
+      "name": "Scan2Learn Exam Platform",
+      "type": {
+        "vi": "Công nghệ giáo dục và OCR",
+        "en": "EdTech and OCR"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Nền tảng luyện thi đồng bộ với ứng dụng OCR, cho phép quét bộ đề giấy, chuẩn hóa câu hỏi, xây dựng ngân hàng đề và luyện tập trên thiết bị số.",
+        "en": "An exam preparation platform integrated with OCR to scan paper tests, normalize questions, build a question bank, and practice digitally."
+      },
+      "tech": [
+        "Spring Boot",
+        "OCR",
+        "PostgreSQL",
+        "REST API",
+        "Object Storage"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": ""
+    },
+    {
+      "id": "privacy-vision-toolkit",
+      "name": "Privacy Vision Toolkit",
+      "type": {
+        "vi": "Thị giác máy tính",
+        "en": "Computer Vision"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Bộ công cụ xử lý ảnh và video để nhận dạng tạm thời, làm mờ khuôn mặt và che biển số nhằm bảo vệ quyền riêng tư trước khi chia sẻ nội dung.",
+        "en": "An image and video processing toolkit for temporary detection, face blurring, and license plate masking before content sharing."
+      },
+      "tech": [
+        "Java",
+        "OpenCV",
+        "Computer Vision",
+        "Video Processing",
+        "Object Detection"
+      ],
+      "source": "",
+      "docs": "",
       "demo": ""
     }
   ],
-
   "architectures": [
     {
-      "name": "Workflow Engine",
-
-      "level": "Enterprise",
-
+      "name": "Scan2Learn OCR Pipeline",
+      "level": "End-to-End System Design",
       "description": {
-        "vi": "Quy trình phê duyệt nhiều cấp.",
-        "en": "Multi-level approval workflow."
+        "vi": "Luồng từ ứng dụng quét đề, tiền xử lý ảnh, OCR, chuẩn hóa câu hỏi, kiểm duyệt và đồng bộ vào ngân hàng đề luyện thi.",
+        "en": "An end-to-end flow from exam scanning and image preprocessing to OCR, question normalization, review, and synchronization with the practice question bank."
       },
-
       "diagram": [
-        "Client",
-        "API Gateway",
-        "Workflow Engine",
-        "Notification Service",
-        "Oracle"
+        "Mobile Scanner",
+        "Upload API",
+        "OCR Worker",
+        "Question Normalizer",
+        "Review Queue",
+        "Exam Bank"
       ]
     },
-
     {
-      "name": "Secure Media Gateway",
-
-      "level": "System Design",
-
+      "name": "Privacy Video Processing Pipeline",
+      "level": "Computer Vision System Design",
       "description": {
-        "vi": "Media protection bằng Signed URL.",
-        "en": "Media protection using Signed URL."
+        "vi": "Pipeline xử lý video theo từng frame, phát hiện khuôn mặt và biển số, áp dụng làm mờ hoặc che vùng nhạy cảm rồi xuất bản video an toàn hơn.",
+        "en": "A frame-by-frame video pipeline that detects faces and license plates, applies privacy masking, and exports a safer video."
       },
-
       "diagram": [
-        "Client",
-        "Media Gateway",
-        "Redis",
-        "MinIO"
+        "Video Upload",
+        "Frame Extractor",
+        "Object Detection",
+        "Privacy Mask",
+        "Video Encoder",
+        "Secure Output"
+      ]
+    },
+    {
+      "name": "Async Integration Pipeline",
+      "level": "Backend Architecture",
+      "description": {
+        "vi": "Kiến trúc lấy dữ liệu đa nguồn với các fetcher độc lập, thực thi bất đồng bộ, timeout, retry và tổng hợp kết quả theo nghiệp vụ.",
+        "en": "A multi-source integration architecture with independent fetchers, asynchronous execution, timeouts, retries, and business-oriented aggregation."
+      },
+      "diagram": [
+        "Request",
+        "Fetcher Registry",
+        "Async Executors",
+        "Result Aggregator",
+        "Template Renderer",
+        "Response"
       ]
     }
   ],
-
   "roadmap": [
     {
-      "year": "2026",
-      "title": "Senior Java Developer",
-      "status": "completed"
+      "year": "Completed",
+      "title": {
+        "vi": "Nền tảng Java Backend sẵn sàng cho production",
+        "en": "Production-ready Java Backend Foundation"
+      },
+      "description": {
+        "vi": "API, security, persistence, integration, logging và xử lý lỗi.",
+        "en": "APIs, security, persistence, integration, logging, and error handling."
+      },
+      "status": "completed",
+      "topics": [
+        "Spring Boot",
+        "Security",
+        "Database",
+        "Integration"
+      ]
     },
-
     {
-      "year": "2027",
-      "title": "Technical Lead",
-      "status": "learning"
+      "year": "Current",
+      "title": {
+        "vi": "Giao tiếp dịch vụ và xử lý bất đồng bộ",
+        "en": "Service Communication and Async Processing"
+      },
+      "description": {
+        "vi": "Hoàn thiện gRPC, GraphQL, async fetcher, retry, idempotency và observability.",
+        "en": "Advancing gRPC, GraphQL, async fetchers, retries, idempotency, and observability."
+      },
+      "status": "learning",
+      "topics": [
+        "gRPC",
+        "GraphQL",
+        "CompletableFuture",
+        "Resilience"
+      ]
     },
-
     {
-      "year": "2028",
-      "title": "Solution Architect",
-      "status": "planned"
+      "year": "Next",
+      "title": {
+        "vi": "Làm chủ thiết kế hệ thống",
+        "en": "System Design Ownership"
+      },
+      "description": {
+        "vi": "Xây dựng case study có ADR, capacity planning, threat modeling và phân tích đánh đổi.",
+        "en": "Produce case studies with ADRs, capacity planning, threat modeling, and trade-off analysis."
+      },
+      "status": "planned",
+      "topics": [
+        "ADR",
+        "Scalability",
+        "Security",
+        "Trade-offs"
+      ]
     },
-
     {
-      "year": "2029",
-      "title": "Enterprise Architect",
-      "status": "planned"
+      "year": "Planned",
+      "title": {
+        "vi": "Dẫn dắt kỹ thuật và sản phẩm cá nhân",
+        "en": "Technical Leadership and Product Delivery"
+      },
+      "description": {
+        "vi": "Hoàn thiện dự án nguồn mở, tài liệu kiến trúc, mentoring và quy trình chất lượng.",
+        "en": "Deliver open-source projects, architecture documentation, mentoring, and quality practices."
+      },
+      "status": "planned",
+      "topics": [
+        "Mentoring",
+        "Architecture Review",
+        "Open Source",
+        "Delivery"
+      ]
     }
   ],
   "roadmapSettings": {
-    "showStatistics": true,
+    "showStatistics": false,
     "showCapabilities": true,
-    "showCareerPath": true,
+    "showCareerPath": false,
     "sortByYear": false
   },
-  "careerPath": [
-    {
-      "vi": "Java Developer",
-      "en": "Java Developer"
-    },
-    {
-      "vi": "Senior Java Developer",
-      "en": "Senior Java Developer"
-    },
-    {
-      "vi": "Technical Lead",
-      "en": "Technical Lead"
-    },
-    {
-      "vi": "Solution Architect",
-      "en": "Solution Architect"
-    },
-    {
-      "vi": "Enterprise Architect",
-      "en": "Enterprise Architect"
-    }
-  ],
   "capabilities": [
     {
       "name": {
@@ -284,8 +565,8 @@
         "en": "Backend Engineering"
       },
       "description": {
-        "vi": "Java, Spring Boot, API và tích hợp hệ thống.",
-        "en": "Java, Spring Boot, APIs and system integrations."
+        "vi": "Java, Spring Boot, bảo mật API, dữ liệu và tích hợp hệ thống.",
+        "en": "Java, Spring Boot, API security, data, and system integrations."
       },
       "value": 88,
       "target": 100,
@@ -293,66 +574,106 @@
     },
     {
       "name": {
-        "vi": "Kiến trúc phần mềm",
-        "en": "Software Architecture"
+        "vi": "Thiết kế hệ thống",
+        "en": "System Design"
       },
-      "value": 70,
+      "description": {
+        "vi": "Workflow, xử lý bất đồng bộ, resilience và thiết kế pipeline.",
+        "en": "Workflows, asynchronous processing, resilience, and pipeline design."
+      },
+      "value": 72,
       "target": 100,
       "status": "learning"
     },
     {
       "name": {
-        "vi": "Năng lực lãnh đạo kỹ thuật",
+        "vi": "Xử lý tài liệu và Computer Vision",
+        "en": "Document Processing and Computer Vision"
+      },
+      "description": {
+        "vi": "OCR, xử lý ảnh, video và bảo vệ quyền riêng tư.",
+        "en": "OCR, image processing, video processing, and privacy protection."
+      },
+      "value": 58,
+      "target": 100,
+      "status": "learning"
+    },
+    {
+      "name": {
+        "vi": "Lãnh đạo kỹ thuật",
         "en": "Technical Leadership"
       },
-      "value": 52,
+      "description": {
+        "vi": "Code review, tiêu chuẩn kỹ thuật, mentoring và ra quyết định kiến trúc.",
+        "en": "Code reviews, engineering standards, mentoring, and architecture decisions."
+      },
+      "value": 55,
       "target": 100,
       "status": "learning"
     }
   ],
-
   "knowledge": [
     {
-      "title": "Spring Boot Optimization",
-
+      "title": "Spring Boot Communication Series",
       "description": {
-        "vi": "Kinh nghiệm tối ưu hiệu năng ứng dụng Spring Boot.",
-        "en": "Tips for Spring Boot performance optimization."
+        "vi": "So sánh REST, gRPC và GraphQL qua các dự án demo có thể chạy và kiểm thử.",
+        "en": "Comparing REST, gRPC, and GraphQL through runnable and testable demo projects."
       },
-
+      "link": ""
+    },
+    {
+      "title": "Practical Java Design Patterns",
+      "description": {
+        "vi": "Ứng dụng Strategy, Factory, Template Method và các pattern thông dụng vào bài toán backend thực tế.",
+        "en": "Applying Strategy, Factory, Template Method, and common patterns to practical backend problems."
+      },
+      "link": ""
+    },
+    {
+      "title": "OCR to Exam Platform",
+      "description": {
+        "vi": "Hành trình từ nhận dạng đề giấy tới ngân hàng câu hỏi và nền tảng luyện thi.",
+        "en": "The journey from paper exam recognition to a question bank and digital practice platform."
+      },
+      "link": ""
+    },
+    {
+      "title": "Privacy-first Video Processing",
+      "description": {
+        "vi": "Nhận dạng, làm mờ khuôn mặt và che biển số trong quy trình xử lý video.",
+        "en": "Detection, face blurring, and license plate masking in a video processing workflow."
+      },
       "link": ""
     }
   ],
-
   "creator": {
     "topics": [
       "Java",
       "Spring Boot",
+      "gRPC",
+      "GraphQL",
+      "Spring Security",
+      "Design Patterns",
+      "Camunda BPMN",
       "System Design",
-      "Software Architecture",
-      "AI Automation",
-      "CNC",
-      "Sustainable Farming"
+      "OCR",
+      "Computer Vision",
+      "AI Automation"
     ]
   },
-
   "community": {
     "enabled": true,
-
     "title": {
       "vi": "Cảm ơn cộng đồng",
       "en": "Community Support"
     },
-
     "description": {
-      "vi": "Cảm ơn mọi người đã ghé thăm portfolio.",
-      "en": "Thank you for visiting my portfolio."
+      "vi": "Cảm ơn mọi người đã theo dõi, góp ý và ghé thăm portfolio.",
+      "en": "Thank you for following, sharing feedback, and visiting my portfolio."
     },
-
     "followers": [
       {
         "name": "Anonymous",
-
         "message": {
           "vi": "Chúc bạn thành công.",
           "en": "Wish you success."
@@ -360,14 +681,11 @@
       }
     ]
   },
-
   "contact": {
     "saveDraft": true,
     "addLocalThankYou": true,
     "rateLimitSeconds": 60,
-
     "githubIssueEnabled": true,
-
     "github": {
       "enabled": true,
       "mode": "issue-url",
@@ -376,17 +694,15 @@
         "portfolio-contact",
         "visitor"
       ],
-      "assignees": [],
+      "assignees": ["@hatrongvu13"],
       "issueTemplate": "",
       "openInNewTab": true,
       "requestTimeoutMs": 12000
     },
-
     "telegram": {
       "enabled": false,
       "endpoint": ""
     },
-
     "email": {
       "enabled": false,
       "endpoint": ""

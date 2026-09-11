@@ -17,6 +17,66 @@
     const safeUrl = (value) => { try { const u=new URL(value,location.href); return ["http:","https:"].includes(u.protocol)?u.href:""; } catch { return ""; } };
     const setBlockVisibility = (id,visible) => { const b=byId(id)?.closest(".cv-block"); if(b) b.hidden=!visible; };
 
+    function roadmapStageLabel(value) {
+        const normalized = String(value || "")
+            .trim()
+            .toLowerCase();
+
+        const keys = {
+            completed: "cvCompleted",
+            current: "cvCurrent",
+            next: "cvNext",
+            planned: "cvPlanned"
+        };
+
+        return keys[normalized]
+            ? window.t?.(keys[normalized]) || value
+            : value;
+    }
+
+    function renderRoadmap(data) {
+        const config = data.settings?.cv || {};
+        const showRoadmap = config.showRoadmap !== false;
+        const roadmap = toArray(data.roadmap);
+
+        setBlockVisibility(
+            "cv-roadmap",
+            showRoadmap && roadmap.length > 0
+        );
+
+        if (!showRoadmap) {
+            setHtml("cv-roadmap", "");
+            return;
+        }
+
+        const html = roadmap.map(item => {
+            const status = [
+                "completed",
+                "learning",
+                "planned"
+            ].includes(item.status)
+                ? item.status
+                : "planned";
+
+            return `
+      <div class="cv-roadmap-item ${status}">
+        <strong>
+          ${escapeHtml(
+                roadmapStageLabel(item.year)
+            )}
+        </strong>
+
+        <div>
+          ${escapeHtml(
+                localized(item.title)
+            )}
+        </div>
+      </div>
+    `;
+        }).join("");
+
+        setHtml("cv-roadmap", html);
+    }
     function renderHeader(data) {
         const personal=data.personal||{};
         const social=data.social||{};
@@ -44,6 +104,7 @@
     function render() {
         const data=getData();
         if(!data) throw new Error("Portfolio data is not ready.");
+        window.LanguageManager?.applyTranslations?.();
         const config=data.settings?.cv||{};
         renderHeader(data);
         setText("cv-summary",localized(data.personal?.summary));
@@ -60,6 +121,7 @@
         const roadmap=toArray(data.roadmap);
         setBlockVisibility("cv-roadmap",config.showRoadmap!==false&&roadmap.length>0);
         setHtml("cv-roadmap",roadmap.map(x=>`<div class="cv-roadmap-item ${["completed","learning","planned"].includes(x.status)?x.status:"planned"}"><strong>${escapeHtml(x.year)}</strong><div>${escapeHtml(localized(x.title))}</div></div>`).join(""));
+        renderRoadmap(data);
     }
 
     function printCv(event) {
@@ -96,7 +158,15 @@
         initialized=true;
         button.addEventListener("click",printCv);
         window.addEventListener("afterprint",restorePortfolio);
-        document.addEventListener("languageChanged",()=>{ if(!byId(CV_DOCUMENT_ID)?.hidden) render(); });
+        document.addEventListener("languageChanged",()=>{
+            if (getData()) {
+                try {
+                    render();
+                } catch (error) {
+                    console.error('{ERROR}', error);
+                }
+            }
+        });
     }
 
     window.CvModule=Object.freeze({init,render,print:printCv,restorePortfolio});
