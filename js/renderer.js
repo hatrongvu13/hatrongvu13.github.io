@@ -623,7 +623,7 @@
             appendTextElement(card, "h3", localized(item.title));
             appendTextElement(card, "p", localized(item.description || item.summary));
 
-            const link = createExternalLink(
+            const link = createProjectAction(
                 item.link || item.url,
                 translate("knowledgeReadMore", "Xem thêm")
             );
