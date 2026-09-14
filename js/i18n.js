@@ -69,6 +69,12 @@ const I18N = {
         cvNext: "Tiếp theo",
         cvPlanned: "Dự kiến",
         documentation: "Tài liệu",
+        engineeringLabsTitle: "Phòng thí nghiệm kỹ thuật",
+        engineeringLabsSubtitle: "Các pattern và building block được thử nghiệm độc lập trước khi tích hợp vào dự án thực tế.",
+        patternsLabel: "Pattern",
+        examplesLabel: "Ví dụ",
+        usedByLabel: "Được ứng dụng trong",
+        architecturePatternsLabel: "Kiến trúc sử dụng"
     },
 
     en: {
@@ -133,7 +139,13 @@ const I18N = {
         cvCurrent: "Current",
         cvNext: "Next",
         cvPlanned: "Planned",
-        documentation: "Documentation"
+        documentation: "Documentation",
+        engineeringLabsTitle: "Engineering Labs",
+        engineeringLabsSubtitle: "Patterns and building blocks tested independently before being integrated into practical projects.",
+        patternsLabel: "Patterns",
+        examplesLabel: "Examples",
+        usedByLabel: "Applied in",
+        architecturePatternsLabel: "Architecture patterns"
     }
 };
 

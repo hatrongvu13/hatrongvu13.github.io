@@ -160,6 +160,12 @@
         }, {});
     }
 
+    function findProjectById(id) {
+        return state.data.projects.find(
+            project => project.id === id
+        );
+    }
+
     function normalizeData(rawData) {
         const data = asObject(rawData);
 
@@ -172,6 +178,7 @@
             skills: asArray(data.skills),
             experience: asArray(data.experience),
             projects: asArray(data.projects),
+            engineeringLabs: asArray(data.engineeringLabs),
             architectures: asArray(data.architectures),
             roadmap: asArray(data.roadmap),
             knowledge: asArray(data.knowledge || data.articles),
@@ -524,6 +531,58 @@
                 card.appendChild(chips);
             }
 
+            const architecturePatterns =
+                asArray(
+                    project.architecturePatterns
+                );
+
+            if (architecturePatterns.length) {
+
+                const architectureBlock =
+                    create("div", {
+                        className:
+                            "project-architecture"
+                    });
+
+                appendTextElement(
+                    architectureBlock,
+                    "h4",
+                    translate(
+                        "architecturePatternsLabel",
+                        "Kiến trúc sử dụng"
+                    )
+                );
+
+                const patternList =
+                    create("div", {
+                        className:
+                            "creator-topics"
+                    });
+
+                architecturePatterns.forEach(
+                    pattern => {
+
+                        patternList.appendChild(
+                            create("span", {
+                                className:
+                                    "topic-chip",
+
+                                text:
+                                    localized(pattern)
+                            })
+                        );
+                    }
+                );
+
+                architectureBlock.appendChild(
+                    patternList
+                );
+
+                card.appendChild(
+                    architectureBlock
+                );
+            }
+
             const actions = create("div", {
                 className: "card-actions",
                 attributes: { "aria-label": `${projectName} actions` }
@@ -565,6 +624,208 @@
         });
 
         renderEmptyState(container, state.data.projects);
+    }
+
+    function renderEngineeringLabs() {
+        const container =
+            byId("engineering-labs-container");
+
+        if (!container) {
+            return;
+        }
+
+        clear(container);
+
+        state.data.engineeringLabs.forEach(
+            lab => {
+
+                const card = create("article", {
+                    className:
+                        "engineering-lab-card gsap-card"
+                });
+
+                const header = create("div", {
+                    className:
+                        "engineering-lab-header"
+                });
+
+                const heading = create("div");
+
+                appendTextElement(
+                    heading,
+                    "h3",
+                    localized(lab.name)
+                );
+
+                appendTextElement(
+                    heading,
+                    "small",
+                    localized(lab.category),
+                    "project-type"
+                );
+
+                appendTextElement(
+                    header,
+                    "span",
+                    translate(
+                        lab.status,
+                        lab.status
+                    ),
+                    `project-status ${lab.status}`
+                );
+
+                card.append(
+                    heading,
+                    header
+                );
+
+                appendTextElement(
+                    card,
+                    "p",
+                    localized(lab.description)
+                );
+
+                const patterns =
+                    asArray(lab.patterns);
+
+                if (patterns.length) {
+
+                    appendTextElement(
+                        card,
+                        "h4",
+                        translate(
+                            "patternsLabel",
+                            "Pattern"
+                        ),
+                        "lab-label"
+                    );
+
+                    const patternList =
+                        create("div", {
+                            className:
+                                "creator-topics"
+                        });
+
+                    patterns.forEach(pattern => {
+
+                        patternList.appendChild(
+                            create("span", {
+                                className:
+                                    "chip tech-chip",
+
+                                text:
+                                    localized(pattern)
+                            })
+                        );
+                    });
+
+                    card.appendChild(patternList);
+                }
+
+                const usedBy =
+                    asArray(lab.usedBy)
+                        .map(findProjectById)
+                        .filter(Boolean);
+
+                if (usedBy.length) {
+
+                    appendTextElement(
+                        card,
+                        "h4",
+                        translate(
+                            "usedByLabel",
+                            "Được ứng dụng trong"
+                        ),
+                        "lab-label"
+                    );
+
+                    const projectList =
+                        create("div", {
+                            className:
+                                "lab-project-links"
+                        });
+
+                    usedBy.forEach(project => {
+
+                        const link =
+                            create("a", {
+
+                                className:
+                                    "lab-project-link",
+
+                                text:
+                                    localized(
+                                        project.name
+                                    ),
+
+                                attributes: {
+                                    href:
+                                        `#project-${project.id}`
+                                }
+                            });
+
+                        projectList.appendChild(
+                            link
+                        );
+                    });
+
+                    card.appendChild(
+                        projectList
+                    );
+                }
+
+                const sourceLink =
+                    createProjectAction(
+                        lab.source,
+
+                        translate(
+                            "sourceCode",
+                            "Mã nguồn"
+                        ),
+
+                        {
+                            className:
+                                "project-action-source",
+
+                            ariaLabel:
+                                `${translate(
+                                    "sourceCode",
+                                    "Mã nguồn"
+                                )}: ${localized(
+                                    lab.name
+                                )}`,
+
+                            icon:
+                            PROJECT_ACTION_ICONS
+                                .source
+                        }
+                    );
+
+                if (sourceLink) {
+
+                    const actions =
+                        create("div", {
+                            className:
+                                "card-actions"
+                        });
+
+                    actions.appendChild(
+                        sourceLink
+                    );
+
+                    card.appendChild(
+                        actions
+                    );
+                }
+
+                container.appendChild(card);
+            }
+        );
+
+        renderEmptyState(
+            container,
+            state.data.engineeringLabs
+        );
     }
 
     function renderArchitectures() {
@@ -712,6 +973,7 @@
         renderSkills();
         renderExperience();
         renderProjects();
+        renderEngineeringLabs();
         renderArchitectures();
         renderKnowledge();
         renderCreator();

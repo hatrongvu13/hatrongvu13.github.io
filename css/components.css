@@ -545,6 +545,171 @@
     display: none;
 }
 
+.engineering-labs-grid {
+    display: grid;
+
+    grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+    gap:
+            var(--grid-gap);
+}
+
+.engineering-lab-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    border:
+            1px solid var(--line-soft);
+
+    border-radius:
+            var(--radius-md);
+
+    background:
+            var(--surface);
+
+    padding:
+            clamp(20px, 3vw, 28px);
+
+    box-shadow:
+            var(--shadow-xs);
+
+    transition:
+            border-color
+            var(--duration-normal)
+            ease,
+
+            background-color
+            var(--duration-normal)
+            ease,
+
+            transform
+            var(--duration-normal)
+            var(--ease-standard);
+}
+
+.engineering-lab-card:hover {
+    border-color:
+            var(--primary-border);
+
+    background:
+            var(--surface-raised);
+
+    transform:
+            translateY(-2px);
+}
+
+.engineering-lab-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content:
+            space-between;
+
+    gap: 16px;
+}
+
+.engineering-lab-card h3 {
+    margin-bottom: 8px;
+
+    font-size:
+            1.08rem;
+}
+
+.lab-label,
+.project-architecture h4 {
+    margin:
+            20px 0 9px;
+
+    color:
+            var(--text-subtle);
+
+    font-family:
+            var(--font-mono);
+
+    font-size:
+            0.72rem;
+
+    font-weight:
+            700;
+
+    letter-spacing:
+            0.06em;
+
+    text-transform:
+            uppercase;
+}
+
+.lab-project-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.lab-project-link {
+    display: inline-flex;
+    align-items: center;
+
+    border:
+            1px solid var(--line);
+
+    border-radius:
+            var(--radius-sm);
+
+    background:
+            var(--surface-soft);
+
+    color:
+            var(--primary-hover);
+
+    padding:
+            7px 10px;
+
+    font-size:
+            0.78rem;
+
+    font-weight:
+            650;
+}
+
+.lab-project-link:hover {
+    border-color:
+            var(--primary-border);
+
+    background:
+            var(--primary-soft);
+
+    color:
+            var(--text-strong);
+}
+
+.project-architecture {
+    margin-top: 18px;
+
+    padding-top: 16px;
+
+    border-top:
+            1px solid var(--line-soft);
+}
+
+.project-architecture h4 {
+    margin-top: 0;
+}
+
+@media (max-width: 760px) {
+    .engineering-labs-grid {
+        grid-template-columns:
+      1fr;
+    }
+}
+
 /* ================================================================
    Architecture
    ================================================================ */
