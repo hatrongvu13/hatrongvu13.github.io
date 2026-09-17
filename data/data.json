@@ -570,240 +570,54 @@
   ],
   "engineeringLabs": [
     {
-      "id": "creational-patterns",
-      "name": "Java Creational Patterns",
+      "id": "java-engineering-patterns",
+      "name": "Java Engineering Patterns Lab",
 
       "category": {
-        "vi": "Mẫu khởi tạo",
-        "en": "Creational Patterns"
+        "vi": "Java Pattern và kiến trúc",
+        "en": "Java Patterns and Architecture"
       },
 
       "description": {
-        "vi": "Các cách kiểm soát việc khởi tạo đối tượng, từ Singleton cơ bản tới Factory, Builder và Prototype.",
-        "en": "Object creation techniques ranging from basic Singleton variants to Factory, Builder, and Prototype."
+        "vi": "Bộ thực hành Java từ các mẫu GoF cơ bản đến Fetcher, Pipeline, Resilience, Workflow và các mẫu hệ thống phân tán.",
+        "en": "A practical Java catalog ranging from core GoF patterns to fetchers, pipelines, resilience, workflows, and distributed-system patterns."
       },
 
       "patterns": [
-        "Singleton",
-        "Factory Method",
-        "Abstract Factory",
-        "Builder",
-        "Prototype"
+        "Creational",
+        "Behavioral",
+        "Structural",
+        "Integration",
+        "Resilience",
+        "Workflow",
+        "Distributed Systems"
       ],
 
       "examples": [
-        "Lazy Singleton",
-        "Holder Singleton",
-        "Enum Singleton",
         "Supplier-backed Singleton",
-        "Registry Factory",
-        "Step Builder"
-      ],
-
-      "tech": [
-        "Java 17",
-        "JUnit 5",
-        "Concurrency"
-      ],
-
-      "status": "learning",
-
-      "source": "",
-
-      "usedBy": [
-        "document-template-engine",
-        "async-data-fetch-pipeline"
-      ]
-    },
-
-    {
-      "id": "behavioral-patterns",
-      "name": "Java Behavioral Patterns",
-
-      "category": {
-        "vi": "Mẫu hành vi",
-        "en": "Behavioral Patterns"
-      },
-
-      "description": {
-        "vi": "Các mẫu điều phối hành vi, lựa chọn thuật toán và xây dựng quy trình xử lý có thể mở rộng.",
-        "en": "Patterns for behavior coordination, runtime algorithm selection, and extensible processing flows."
-      },
-
-      "patterns": [
-        "Strategy",
-        "Template Method",
-        "Chain of Responsibility",
-        "Observer",
-        "Command",
-        "State"
-      ],
-
-      "examples": [
-        "Fetcher Strategy",
-        "Report Template Method",
-        "Validation Chain",
-        "Domain Events",
-        "OCR Command",
-        "Exam State Machine"
-      ],
-
-      "tech": [
-        "Java 17",
-        "SOLID",
-        "JUnit 5"
-      ],
-
-      "status": "learning",
-
-      "source": "",
-
-      "usedBy": [
-        "document-template-engine",
-        "camunda-process-orchestration-lab",
-        "scan2learn-exam-platform"
-      ]
-    },
-
-    {
-      "id": "structural-patterns",
-      "name": "Java Structural Patterns",
-
-      "category": {
-        "vi": "Mẫu cấu trúc",
-        "en": "Structural Patterns"
-      },
-
-      "description": {
-        "vi": "Các mẫu kết hợp component và bao bọc dịch vụ nhằm giảm phụ thuộc vào hệ thống bên ngoài.",
-        "en": "Patterns for composing components and wrapping services to reduce external dependencies."
-      },
-
-      "patterns": [
-        "Adapter",
-        "Facade",
-        "Decorator",
-        "Composite",
-        "Proxy"
-      ],
-
-      "examples": [
-        "OCR Provider Adapter",
-        "Exam Import Facade",
-        "Retry Fetcher Decorator",
-        "Composite Validator",
-        "Cached Service Proxy"
-      ],
-
-      "tech": [
-        "Java 17",
-        "Spring Boot",
-        "Dependency Injection"
-      ],
-
-      "status": "planned",
-
-      "source": "",
-
-      "usedBy": [
-        "pocket-ocr-scanner",
-        "scan2learn-exam-platform",
-        "privacy-vision-toolkit"
-      ]
-    },
-
-    {
-      "id": "integration-patterns",
-      "name": "Java Integration Patterns",
-
-      "category": {
-        "vi": "Mẫu tích hợp",
-        "en": "Integration Patterns"
-      },
-
-      "description": {
-        "vi": "Các building block cho xử lý dữ liệu đa nguồn, pipeline, bất đồng bộ, retry và idempotency.",
-        "en": "Building blocks for multi-source retrieval, pipelines, asynchronous processing, retries, and idempotency."
-      },
-
-      "patterns": [
-        "Fetcher",
+        "Strategy Registry",
         "Async Fetcher",
-        "Pipeline",
-        "Retry",
-        "Fallback",
-        "Idempotency"
-      ],
-
-      "examples": [
-        "Database Fetcher",
-        "REST Fetcher",
-        "Parallel Fetcher",
-        "Conditional Pipeline",
+        "Processing Pipeline",
         "Retry Decorator",
-        "Idempotency Key"
+        "Transactional Outbox"
       ],
 
       "tech": [
-        "Spring Boot",
-        "CompletableFuture",
-        "Redis",
+        "Java 21",
+        "Maven",
+        "JUnit",
+        "Testcontainers",
         "Resilience4j"
       ],
 
-      "status": "active",
+      "status": "learning",
 
-      "source": "",
+      "source": "https://github.com/hatrongvu13/java-engineering-patterns",
 
       "usedBy": [
         "async-data-fetch-pipeline",
         "document-template-engine",
-        "scan2learn-exam-platform"
-      ]
-    },
-
-    {
-      "id": "distributed-patterns",
-      "name": "Distributed Systems Patterns",
-
-      "category": {
-        "vi": "Mẫu hệ thống phân tán",
-        "en": "Distributed Systems Patterns"
-      },
-
-      "description": {
-        "vi": "Các mẫu đảm bảo độ tin cậy và tính nhất quán trong hệ thống phân tán.",
-        "en": "Reliability and consistency patterns for distributed systems."
-      },
-
-      "patterns": [
-        "Circuit Breaker",
-        "Bulkhead",
-        "Transactional Outbox",
-        "Idempotent Consumer",
-        "Saga"
-      ],
-
-      "examples": [
-        "External API Circuit Breaker",
-        "OCR Worker Bulkhead",
-        "Exam Event Outbox",
-        "Idempotent OCR Consumer",
-        "Exam Import Saga"
-      ],
-
-      "tech": [
-        "Spring Boot",
-        "Kafka",
-        "Redis",
-        "PostgreSQL"
-      ],
-
-      "status": "planned",
-
-      "source": "",
-
-      "usedBy": [
+        "camunda-process-orchestration-lab",
         "scan2learn-exam-platform"
       ]
     }
