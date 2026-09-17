@@ -18,7 +18,7 @@
   <meta property="og:description" content="Java backend portfolio, projects, system design, career roadmap and knowledge sharing.">
   <meta property="og:image" content="./assets/avatar/avatar.png">
   <meta property="og:image:alt" content="Ảnh đại diện Hà Trọng Vũ">
-  <meta property="og:url" content="">
+  <meta property="og:url" content="https://hatrongvu13.github.io/">
   <meta property="og:site_name" content="Hà Trọng Vũ Portfolio">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -26,7 +26,9 @@
   <meta name="twitter:description" content="Java backend portfolio, projects, system design and career roadmap.">
   <meta name="twitter:image" content="./assets/avatar/avatar.png">
 
+  <link rel="canonical" href="https://hatrongvu13.github.io/">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
   <link rel="preload" href="./data/data.json" as="fetch" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/theme.css">
   <link rel="stylesheet" href="./css/layout.css">
@@ -103,7 +105,10 @@
         <aside class="hero-right gsap-reveal" aria-label="Hồ sơ nhanh">
           <div class="profile-card">
             <div class="avatar-frame">
-              <img id="avatar-image" src="./assets/avatar/avatar.png" alt="Ảnh đại diện Hà Trọng Vũ" width="320" height="320" loading="eager">
+              <picture>
+                <source srcset="./assets/avatar/avatar.webp" type="image/webp">
+                <img id="avatar-image" src="./assets/avatar/avatar.png" alt="Ảnh đại diện Hà Trọng Vũ" width="320" height="400" loading="eager" fetchpriority="high">
+              </picture>
             </div>
             <h3 id="profile-name">Hà Trọng Vũ</h3>
             <p id="profile-location">Hà Nội, Việt Nam</p>
@@ -265,7 +270,7 @@
             <textarea id="contact-message" name="message" rows="7" maxlength="3000" required></textarea>
 
             <button class="btn btn-primary" type="submit" data-i18n="contactSend">Gửi liên hệ</button>
-            <p class="form-note" id="contact-form-note" aria-live="polite">Thông tin sẽ được chuyển thành GitHub Issue sau khi cấu hình endpoint.</p>
+            <p class="form-note" id="contact-form-note" aria-live="polite">Khi gửi, một trang tạo GitHub Issue sẽ mở ra với nội dung đã điền sẵn — bạn chỉ cần bấm “Submit new issue”.</p>
           </form>
 
           <aside class="content-card collaboration-card gsap-reveal">
@@ -386,5 +391,6 @@
   <script src="./js/contact.js" defer></script>
   <script src="./js/cv.js" defer></script>
   <script src="./js/app.js" defer></script>
+  <script src="./js/animations.js" defer></script>
 </body>
 </html>

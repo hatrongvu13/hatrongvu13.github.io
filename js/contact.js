@@ -388,51 +388,50 @@ const ContactModule = (() => {
                     ?.getData()
                     ?.contact;
 
+            const githubCfg = config?.github || {};
+            const mode = githubCfg.mode || "issue-url";
+
+            let handled = false;
+
             /*
             ------------------------------
-            GitHub Issue
+            GitHub Issue (FREE, no backend)
+            mode "issue-url": open a prefilled
+            "New Issue" page; visitor clicks
+            Submit to create the issue on the repo.
             ------------------------------
             */
-
             if (
-                config?.githubIssueEnabled
+                (config?.githubIssueEnabled || githubCfg.enabled) &&
+                mode === "issue-url" &&
+                window.GitHubModule?.generateIssueUrl
             ) {
 
-                await sendToGithubIssue(
-                    data
-                );
+                const issueUrl =
+                    window.GitHubModule.generateIssueUrl(data);
+
+                if (issueUrl) {
+                    window.open(
+                        issueUrl,
+                        githubCfg.openInNewTab === false ? "_self" : "_blank",
+                        "noopener,noreferrer"
+                    );
+                    handled = true;
+                }
             }
 
             /*
             ------------------------------
-            Telegram
+            Backend dispatch (optional, if endpoint set)
             ------------------------------
             */
-
             if (
-                config?.telegram
-                    ?.enabled
+                !handled &&
+                window.GitHubModule?.submitContact &&
+                (config?.workerEndpoint || config?.dispatchEndpoint)
             ) {
-
-                await sendToTelegram(
-                    data
-                );
-            }
-
-            /*
-            ------------------------------
-            Email
-            ------------------------------
-            */
-
-            if (
-                config?.email
-                    ?.enabled
-            ) {
-
-                await sendToEmail(
-                    data
-                );
+                await window.GitHubModule.submitContact(data);
+                handled = true;
             }
 
             markSubmitted();

@@ -510,6 +510,19 @@
             );
             appendTextElement(card, "h3", projectName);
 
+            const visibility = asText(project.visibility, "").toLowerCase();
+            if (visibility === "public" || visibility === "private") {
+                appendTextElement(
+                    card,
+                    "span",
+                    translate(
+                        visibility === "public" ? "visibilityPublic" : "visibilityPrivate",
+                        visibility === "public" ? "Public" : "Private"
+                    ),
+                    `project-visibility ${visibility}`
+                );
+            }
+
             const type = asText(localized(project.type));
             if (type) appendTextElement(card, "small", type, "project-type");
 
@@ -618,6 +631,13 @@
 
             if (actions.childElementCount) {
                 card.appendChild(actions);
+            } else if (project.privateNote) {
+                appendTextElement(
+                    card,
+                    "p",
+                    localized(project.privateNote),
+                    "project-private-note"
+                );
             }
 
             container.appendChild(card);

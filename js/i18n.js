@@ -74,7 +74,9 @@ const I18N = {
         patternsLabel: "Pattern",
         examplesLabel: "Ví dụ",
         usedByLabel: "Được ứng dụng trong",
-        architecturePatternsLabel: "Kiến trúc sử dụng"
+        architecturePatternsLabel: "Kiến trúc sử dụng",
+        visibilityPublic: "Công khai",
+        visibilityPrivate: "Riêng tư"
     },
 
     en: {
@@ -145,7 +147,9 @@ const I18N = {
         patternsLabel: "Patterns",
         examplesLabel: "Examples",
         usedByLabel: "Applied in",
-        architecturePatternsLabel: "Architecture patterns"
+        architecturePatternsLabel: "Architecture patterns",
+        visibilityPublic: "Public",
+        visibilityPrivate: "Private"
     }
 };
 

@@ -506,6 +506,76 @@
     color: var(--text-subtle);
 }
 
+/* Public / Private visibility badge */
+.project-visibility {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: max-content;
+    margin: 0 0 12px 10px;
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--line-soft);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.project-visibility::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.project-visibility.public {
+    color: var(--spring);
+    background: var(--spring-soft);
+    border-color: rgba(114, 164, 90, 0.32);
+}
+
+.project-visibility.private {
+    color: var(--java);
+    background: var(--java-soft);
+    border-color: rgba(201, 120, 48, 0.32);
+}
+
+.project-private-note {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px dashed var(--line-strong);
+    background: var(--surface-soft);
+    color: var(--text-subtle);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Scroll progress bar (GSAP ScrollTrigger, progressive enhancement) */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, var(--primary), var(--java));
+    z-index: 10000;
+    pointer-events: none;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #scroll-progress {
+        display: none;
+    }
+}
+
 .card-actions {
     display: flex;
     flex-wrap: wrap;

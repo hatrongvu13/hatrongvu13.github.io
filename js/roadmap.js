@@ -68,6 +68,15 @@ Helpers
 ==================================
 */
 
+function escapeRoadmapHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 function roadmapStatusLabel(status) {
 
     switch (status) {
@@ -138,13 +147,16 @@ function renderRoadmapTimeline() {
         card.className =
             "roadmap-card";
 
+        const year = window.resolveLanguageValue?.(item.year) ?? item.year ?? "";
+        const title = window.resolveLanguageValue?.(item.title) ?? item.title ?? "";
+
         card.innerHTML = `
             <div class="timeline-year">
-                ${item.year}
+                ${escapeRoadmapHtml(year)}
             </div>
 
             <h3>
-                ${item.title}
+                ${escapeRoadmapHtml(title)}
             </h3>
 
             <div

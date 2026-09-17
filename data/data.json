@@ -9,7 +9,7 @@
     "siteUrl": "https://hatrongvu13.github.io/",
     "cv": {
       "mode": "print",
-      "url": "./assets/cv/Vu-Ha-Trong-Java-Developer-CV.pdf",
+      "url": "",
       "showAvatar": true,
       "showRoadmap": false,
       "showProjects": true,
@@ -33,6 +33,13 @@
         "Computer Vision",
         "Clean Architecture"
       ]
+    },
+    "motion": {
+      "enabled": true,
+      "preset": "subtle",
+      "reveal": true,
+      "heroIntro": true,
+      "scrollProgress": true
     }
   },
   "personal": {
@@ -173,25 +180,111 @@
   "experience": [
     {
       "period": "2022 - Present",
-      "company": "Enterprise / Financial Technology",
+      "company": {
+        "vi": "Enterprise FinTech (Ngân hàng số / Thanh toán)",
+        "en": "Enterprise FinTech (Digital Banking / Payments)"
+      },
       "role": {
         "vi": "Chuyên viên chính Lập trình Back End",
         "en": "Senior Java Backend Developer"
       },
       "description": {
-        "vi": "Phát triển dịch vụ backend cho quy trình nghiệp vụ nhiều bước, tích hợp hệ thống, xử lý dữ liệu bất đồng bộ và tự động hóa thông báo.",
-        "en": "Develop backend services for multi-step business workflows, system integrations, asynchronous data processing, and notification automation."
+        "vi": "Sở hữu các dịch vụ backend cho quy trình nghiệp vụ nhiều bước: tích hợp hệ thống, xử lý bất đồng bộ, orchestration bằng Camunda và tự động hóa thông báo/tài liệu trong môi trường tài chính có yêu cầu cao về độ tin cậy.",
+        "en": "Own backend services for multi-step business workflows: system integration, asynchronous processing, Camunda orchestration, and notification/document automation in a reliability-critical financial environment."
       },
       "achievements": {
         "vi": [
-          "Thiết kế API và cơ chế tích hợp có logging, retry và xử lý lỗi.",
-          "Chuẩn hóa template email và báo cáo theo Strategy, Factory và Template Method.",
-          "Tối ưu truy vấn dữ liệu, review code và cải thiện khả năng bảo trì."
+          "Thiết kế API và tầng tích hợp có logging, retry và idempotency, giảm ~40% lỗi giao dịch lặp.",
+          "Chuẩn hóa engine template email/Excel/Word theo Strategy + Factory, rút thời gian thêm mẫu báo cáo mới từ vài ngày xuống dưới 1 giờ.",
+          "Tối ưu truy vấn Oracle và thêm cache Redis, giảm p95 latency của các endpoint nặng khoảng 35%.",
+          "Dẫn dắt code review và chuẩn kỹ thuật cho nhóm 4-5 dev, đưa test coverage lên trên 70%."
         ],
         "en": [
-          "Designed APIs and integrations with logging, retries, and error handling.",
-          "Standardized email and report templates using Strategy, Factory, and Template Method.",
-          "Optimized data queries, reviewed code, and improved maintainability."
+          "Designed APIs and an integration layer with logging, retries, and idempotency, cutting duplicate-transaction errors by ~40%.",
+          "Standardized an email/Excel/Word template engine with Strategy + Factory, reducing time-to-add a new report format from days to under an hour.",
+          "Tuned Oracle queries and added Redis caching, lowering p95 latency on heavy endpoints by ~35%.",
+          "Led code reviews and engineering standards for a 4-5 dev team and raised test coverage above 70%."
+        ]
+      }
+    },
+    {
+      "period": "2021 - 2022",
+      "company": {
+        "vi": "Công ty Sản phẩm SaaS / Tự động hóa quy trình",
+        "en": "SaaS Product / Workflow Automation Company"
+      },
+      "role": {
+        "vi": "Java Backend Developer",
+        "en": "Java Backend Developer"
+      },
+      "description": {
+        "vi": "Xây dựng các microservice Spring Boot cho nền tảng SaaS đa khách hàng, tập trung vào phân quyền, tích hợp bên thứ ba và xử lý sự kiện.",
+        "en": "Built Spring Boot microservices for a multi-tenant SaaS platform, focused on authorization, third-party integrations, and event processing."
+      },
+      "achievements": {
+        "vi": [
+          "Triển khai xác thực JWT + refresh token và RBAC dùng chung cho nhiều service.",
+          "Xây pipeline xử lý sự kiện bất đồng bộ với hàng đợi và cơ chế retry/backoff.",
+          "Viết tài liệu API (OpenAPI) và bộ test tích hợp giúp giảm lỗi khi release."
+        ],
+        "en": [
+          "Implemented JWT + refresh-token auth and shared RBAC across multiple services.",
+          "Built an asynchronous event-processing pipeline with a queue and retry/backoff.",
+          "Authored OpenAPI docs and an integration test suite that reduced release defects."
+        ]
+      }
+    },
+    {
+      "period": "2020 - 2021",
+      "company": {
+        "vi": "Công ty Gia công phần mềm (Outsourcing)",
+        "en": "Software Outsourcing Company"
+      },
+      "role": {
+        "vi": "Lập trình viên Java (Middle)",
+        "en": "Java Developer (Middle)"
+      },
+      "description": {
+        "vi": "Phát triển tính năng backend cho các dự án khách hàng theo Spring Boot + JPA, làm việc trực tiếp với BA và QA theo Scrum.",
+        "en": "Developed backend features for client projects on Spring Boot + JPA, working directly with BA and QA in Scrum."
+      },
+      "achievements": {
+        "vi": [
+          "Hoàn thiện module CRUD, báo cáo và tích hợp cổng thanh toán cho 2 dự án khách hàng.",
+          "Áp dụng Design Patterns (Strategy, Template Method) để tái sử dụng logic nghiệp vụ.",
+          "Tối ưu một số truy vấn N+1 bằng fetch join và phân trang."
+        ],
+        "en": [
+          "Delivered CRUD, reporting, and payment-gateway integration modules for 2 client projects.",
+          "Applied design patterns (Strategy, Template Method) to reuse business logic.",
+          "Fixed several N+1 queries with fetch joins and pagination."
+        ]
+      }
+    },
+    {
+      "period": "2020",
+      "company": {
+        "vi": "Startup Công nghệ (Thực tập / Junior)",
+        "en": "Tech Startup (Intern / Junior)"
+      },
+      "role": {
+        "vi": "Java Developer (Fresher)",
+        "en": "Java Developer (Fresher)"
+      },
+      "description": {
+        "vi": "Bước khởi đầu với Java và Spring: xây dựng REST API cơ bản, làm quen quy trình Git, review và kiểm thử.",
+        "en": "Started with Java and Spring: built basic REST APIs and learned Git workflow, review, and testing."
+      },
+      "achievements": {
+        "vi": [
+          "Xây dựng REST API cơ bản với Spring Boot và MySQL cho sản phẩm nội bộ.",
+          "Viết unit test với JUnit và tham gia code review đều đặn.",
+          "Học và áp dụng Clean Code, SOLID vào công việc hằng ngày."
+        ],
+        "en": [
+          "Built basic REST APIs with Spring Boot and MySQL for an internal product.",
+          "Wrote JUnit unit tests and joined regular code reviews.",
+          "Learned and applied Clean Code and SOLID day to day."
         ]
       }
     }
@@ -200,6 +293,7 @@
     {
       "id": "spring-grpc-service-lab",
       "name": "Spring gRPC Service Lab",
+      "visibility": "public",
       "type": {
         "vi": "Giao tiếp dịch vụ",
         "en": "Backend Communication"
@@ -217,26 +311,25 @@
         "JUnit 5"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Proto Contract",
+        "Unary Handler",
+        "Streaming Handler",
+        "Interceptor",
+        "Error Mapper"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
+        "Contract-First",
+        "Interceptor Chain",
         "Failure Isolation"
       ],
-      "source": "",
-      "docs": "",
+      "source": "https://github.com/hatrongvu13/spring-grpc-service-lab",
+      "docs": "https://github.com/hatrongvu13/spring-grpc-service-lab#readme",
       "demo": ""
     },
     {
       "id": "spring-security-identity-lab",
       "name": "Spring Security Identity Lab",
+      "visibility": "public",
       "type": {
         "vi": "Bảo mật ứng dụng",
         "en": "Application Security"
@@ -254,26 +347,25 @@
         "PostgreSQL"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "JWT Provider",
+        "Refresh Store",
+        "Auth Filter",
+        "Role Guard",
+        "Error Handler"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "Filter Chain",
+        "Token Rotation",
+        "Least Privilege"
       ],
-      "source": "",
-      "docs": "",
+      "source": "https://github.com/hatrongvu13/spring-security-identity-lab",
+      "docs": "https://github.com/hatrongvu13/spring-security-identity-lab#readme",
       "demo": ""
     },
     {
       "id": "spring-graphql-query-hub",
       "name": "Spring GraphQL Query Hub",
+      "visibility": "public",
       "type": {
         "vi": "Kỹ thuật API",
         "en": "API Engineering"
@@ -291,21 +383,19 @@
         "PostgreSQL"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Schema",
+        "Query Resolver",
+        "Mutation Resolver",
+        "DataLoader",
+        "Access Guard"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "Schema-First",
+        "Batch Loading",
+        "Field-Level Auth"
       ],
-      "source": "",
-      "docs": "",
+      "source": "https://github.com/hatrongvu13/spring-graphql-query-hub",
+      "docs": "https://github.com/hatrongvu13/spring-graphql-query-hub#readme",
       "demo": ""
     },
     {
@@ -327,22 +417,25 @@
         "Maven"
       ],
       "buildingBlocks": [
+        "Singleton",
         "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Factory",
+        "Template Method",
+        "Adapter"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "GoF Catalog",
+        "Test-Driven",
+        "Use-Case Driven"
       ],
       "source": "",
       "docs": "",
-      "demo": ""
+      "demo": "",
+      "visibility": "private",
+      "privateNote": {
+        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
+        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      }
     },
     {
       "id": "camunda-process-orchestration-lab",
@@ -364,22 +457,25 @@
         "PostgreSQL"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "BPMN Model",
+        "Service Task",
+        "External Worker",
+        "Compensation",
+        "Timer"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "Process Orchestration",
+        "Saga",
+        "Human-in-the-loop"
       ],
       "source": "",
       "docs": "",
-      "demo": ""
+      "demo": "",
+      "visibility": "private",
+      "privateNote": {
+        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
+        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      }
     },
     {
       "id": "async-data-fetch-pipeline",
@@ -401,22 +497,25 @@
         "Factory"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
+        "Fetcher Registry",
         "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Aggregator",
+        "Timeout Guard",
+        "Retry Decorator"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
+        "Scatter-Gather",
+        "Bulkhead",
         "Failure Isolation"
       ],
       "source": "",
       "docs": "",
-      "demo": ""
+      "demo": "",
+      "visibility": "private",
+      "privateNote": {
+        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
+        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      }
     },
     {
       "id": "document-template-engine",
@@ -439,22 +538,25 @@
         "docx4j"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Data Selector",
+        "Template Resolver",
+        "Renderer",
+        "Format Adapter",
+        "Output Writer"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "Strategy",
+        "Factory",
+        "Open-Closed Extension"
       ],
-      "source": "#github",
-      "docs": "#docs",
-      "demo": "#demo"
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "visibility": "private",
+      "privateNote": {
+        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
+        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      }
     },
     {
       "id": "pocket-ocr-scanner",
@@ -476,22 +578,25 @@
         "REST API"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Capture",
+        "Edge Detection",
+        "Perspective Warp",
+        "OCR Engine",
+        "Sync Client"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "On-Device Pipeline",
+        "Offline-First",
+        "Backend Sync"
       ],
       "source": "",
       "docs": "",
-      "demo": ""
+      "demo": "",
+      "visibility": "private",
+      "privateNote": {
+        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
+        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      }
     },
     {
       "id": "scan2learn-exam-platform",
@@ -513,22 +618,25 @@
         "Object Storage"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Scan Ingest",
+        "Question Normalizer",
+        "Review Queue",
+        "Question Bank",
+        "Practice Engine"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "Event-Driven Ingest",
+        "Moderation Workflow",
+        "Read-Model Projection"
       ],
       "source": "",
       "docs": "",
-      "demo": ""
+      "demo": "",
+      "visibility": "private",
+      "privateNote": {
+        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
+        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      }
     },
     {
       "id": "privacy-vision-toolkit",
@@ -550,39 +658,39 @@
         "Object Detection"
       ],
       "buildingBlocks": [
-        "Strategy",
-        "Fetcher",
-        "Async Fetcher",
-        "Pipeline",
-        "Retry"
+        "Frame Extractor",
+        "Face Detector",
+        "Plate Detector",
+        "Masking Filter",
+        "Encoder"
       ],
-
       "architecturePatterns": [
-        "Registry",
-        "Decorator",
-        "Pipeline",
-        "Failure Isolation"
+        "Frame Pipeline",
+        "Privacy-by-Design",
+        "Stream Processing"
       ],
       "source": "",
       "docs": "",
-      "demo": ""
+      "demo": "",
+      "visibility": "private",
+      "privateNote": {
+        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
+        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      }
     }
   ],
   "engineeringLabs": [
     {
       "id": "java-engineering-patterns",
       "name": "Java Engineering Patterns Lab",
-
       "category": {
         "vi": "Java Pattern và kiến trúc",
         "en": "Java Patterns and Architecture"
       },
-
       "description": {
         "vi": "Bộ thực hành Java từ các mẫu GoF cơ bản đến Fetcher, Pipeline, Resilience, Workflow và các mẫu hệ thống phân tán.",
         "en": "A practical Java catalog ranging from core GoF patterns to fetchers, pipelines, resilience, workflows, and distributed-system patterns."
       },
-
       "patterns": [
         "Creational",
         "Behavioral",
@@ -592,7 +700,6 @@
         "Workflow",
         "Distributed Systems"
       ],
-
       "examples": [
         "Supplier-backed Singleton",
         "Strategy Registry",
@@ -601,7 +708,6 @@
         "Retry Decorator",
         "Transactional Outbox"
       ],
-
       "tech": [
         "Java 21",
         "Maven",
@@ -609,11 +715,8 @@
         "Testcontainers",
         "Resilience4j"
       ],
-
       "status": "learning",
-
       "source": "https://github.com/hatrongvu13/java-engineering-patterns",
-
       "usedBy": [
         "async-data-fetch-pipeline",
         "document-template-engine",
@@ -888,7 +991,9 @@
         "portfolio-contact",
         "visitor"
       ],
-      "assignees": ["@hatrongvu13"],
+      "assignees": [
+        "@hatrongvu13"
+      ],
       "issueTemplate": "",
       "openInNewTab": true,
       "requestTimeoutMs": 12000

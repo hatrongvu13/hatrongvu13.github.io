@@ -389,7 +389,11 @@ Generated automatically.
         const config =
             getPortfolioConfig();
 
+        const githubCfg =
+            config?.github || {};
+
         const repo =
+            githubCfg.repository ||
             config?.repository;
 
         if (!repo) {
@@ -410,7 +414,33 @@ Generated automatically.
                 )
             );
 
-        return `https://github.com/${repo}/issues/new?title=${title}&body=${body}`;
+        const params = [
+            `title=${title}`,
+            `body=${body}`
+        ];
+
+        const labels =
+            (githubCfg.labels || DEFAULT_LABELS)
+                .filter(Boolean);
+
+        if (labels.length) {
+            params.push(
+                `labels=${encodeURIComponent(labels.join(","))}`
+            );
+        }
+
+        const assignees =
+            (githubCfg.assignees || [])
+                .map(a => String(a).replace(/^@/, ""))
+                .filter(Boolean);
+
+        if (assignees.length) {
+            params.push(
+                `assignees=${encodeURIComponent(assignees.join(","))}`
+            );
+        }
+
+        return `https://github.com/${repo}/issues/new?${params.join("&")}`;
     }
 
     /*

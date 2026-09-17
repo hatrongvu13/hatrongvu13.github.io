@@ -1,0 +1,19 @@
+{
+  "name": "Hà Trọng Vũ — Senior Java Backend Developer",
+  "short_name": "HTV Portfolio",
+  "description": "Portfolio song ngữ: Java, Spring Boot, system design và career roadmap.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
