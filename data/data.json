@@ -296,26 +296,31 @@
       "visibility": "public",
       "type": {
         "vi": "Giao tiếp dịch vụ",
-        "en": "Backend Communication"
+        "en": "Service Communication"
       },
       "status": "active",
       "description": {
-        "vi": "Dự án demo giao tiếp hiệu năng cao giữa các dịch vụ Spring Boot bằng Protocol Buffers và gRPC, gồm unary call, streaming, validation và xử lý lỗi.",
-        "en": "A Spring Boot demo for high-performance service communication with Protocol Buffers and gRPC, including unary calls, streaming, validation, and error handling."
+        "vi": "Reference architecture cho giao tiếp nội bộ giữa các dịch vụ Spring Boot bằng gRPC và Protocol Buffers, tập trung vào contract-first, interceptor chain, internal JWT, deadline và cô lập lỗi downstream.",
+        "en": "A reference architecture for internal Spring Boot service communication with gRPC and Protocol Buffers, focused on contract-first APIs, interceptor chains, internal JWTs, deadlines, and downstream failure isolation."
       },
       "tech": [
         "Java 17",
-        "Spring Boot",
-        "gRPC",
+        "Spring Boot 4",
+        "Spring gRPC",
         "Protocol Buffers",
+        "Spring Security",
+        "Resilience4j",
+        "Spring Data JPA",
         "JUnit 5"
       ],
       "buildingBlocks": [
-        "Proto Contract",
-        "Unary Handler",
-        "Streaming Handler",
-        "Interceptor",
-        "Error Mapper"
+        "Proto Contracts",
+        "Named gRPC Channels",
+        "Server and Client Interceptors",
+        "Internal JWT",
+        "Deadline Propagation",
+        "Failure Isolation",
+        "Streaming Telemetry"
       ],
       "architecturePatterns": [
         "Contract-First",
