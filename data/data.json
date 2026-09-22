@@ -300,8 +300,8 @@
       },
       "status": "active",
       "description": {
-        "vi": "Reference architecture cho giao tiếp nội bộ giữa các dịch vụ Spring Boot bằng gRPC và Protocol Buffers, tập trung vào contract-first, interceptor chain, internal JWT, deadline và cô lập lỗi downstream.",
-        "en": "A reference architecture for internal Spring Boot service communication with gRPC and Protocol Buffers, focused on contract-first APIs, interceptor chains, internal JWTs, deadlines, and downstream failure isolation."
+        "vi": "Reference architecture cho giao tiếp nội bộ giữa các dịch vụ Spring Boot bằng gRPC và Protocol Buffers: chuỗi gọi phân tầng xuyên 4 tiến trình, contract-first, interceptor chain, internal JWT phát/xác minh theo từng hop, deadline propagation và cô lập lỗi downstream bằng Resilience4j.",
+        "en": "A reference architecture for internal Spring Boot service communication with gRPC and Protocol Buffers: a layered call chain across four processes, contract-first APIs, interceptor chains, per-hop internal JWTs, deadline propagation, and Resilience4j downstream failure isolation."
       },
       "tech": [
         "Java 17",
@@ -317,7 +317,8 @@
         "Proto Contracts",
         "Named gRPC Channels",
         "Server and Client Interceptors",
-        "Internal JWT",
+        "Per-Hop Internal JWT",
+        "4-Hop Call Chain",
         "Deadline Propagation",
         "Failure Isolation",
         "Streaming Telemetry"
