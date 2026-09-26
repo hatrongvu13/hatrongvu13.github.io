@@ -61,9 +61,32 @@ Sửa `data/data.json`:
 
 **Dự án ẩn/hiện:** đặt `"visibility": "private"` và để trống `source` → nút mã nguồn tự ẩn, thay bằng badge *Private* và ghi chú. `"visibility": "public"` + `source` là URL repo → hiện nút *Mã nguồn*.
 
-## Liên hệ qua GitHub Issue
+## Ba loại dự án (`category`)
 
-`contact.github.mode = "issue-url"` (mặc định): khi khách gửi form, một trang *New Issue* của repo `contact.github.repository` mở ra với title/body điền sẵn. Khách bấm **Submit new issue** → issue xuất hiện trong tab **Issues** của repo. Hoàn toàn miễn phí, không cần server hay token.
+Mỗi dự án trong `projects[]` có `category` để nhóm khi hiển thị:
+
+| category | Ý nghĩa | Nguồn |
+|----------|---------|-------|
+| `demo` | Dự án demo / review / áp dụng công nghệ | repo public, có `repo` |
+| `product` | Ứng dụng thật do cá nhân xây & vận hành | repo public hoặc private |
+| `company` | Dự án công ty — chỉ tên, công nghệ, nghiệp vụ | không có repo (EB, QuickLoan, SME, LMC, LC) |
+
+Tiêu đề & mô tả nhóm nằm ở `projectCategories[]`.
+
+## Cập nhật nhanh bằng 1 lệnh (auto-scan)
+
+Không cần đọc lại từng repo. Script quét toàn bộ repo dưới `~/Documents/code/my`, khớp theo trường `repo` (tên thư mục), rồi làm mới các trường **động** (`lastCommit`, `lastCommitDate`, `commitCount`, `source` khớp remote GitHub) — **không đụng** nội dung bạn tự viết (category, visibility, mô tả, privateNote).
+
+```bash
+npm run scan        # quét + ghi data.json + báo cáo
+npm run scan:dry    # chỉ báo cáo, không ghi
+npm run scan:check  # exit 1 nếu data.json đã cũ (dùng cho CI)
+
+# đổi thư mục workspace nếu cần
+WORKSPACE=/duong/dan/khac npm run scan
+```
+
+Script còn **liệt kê repo mới** trên máy chưa có trong portfolio, kèm công nghệ phát hiện được — chỉ cần thêm một dòng `{ "repo": "<tên>", "category": "...", ... }` là xong.
 
 ## License
 

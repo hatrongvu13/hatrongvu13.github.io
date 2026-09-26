@@ -262,6 +262,13 @@ section + section {
   grid-template-columns: 1fr;
 }
 
+/* Category groups stack vertically; each group holds its own .project-grid */
+.project-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
 /* Ensure dynamically rendered children can shrink correctly */
 .stats-grid > *,
 .skills-grid > *,

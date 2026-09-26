@@ -75,7 +75,6 @@ body.cv-preview-mode > .cv-document {
     min-height: var(--cv-paper-min-height);
     margin: 0 auto;
     padding: var(--cv-page-padding-y) var(--cv-page-padding-x);
-    overflow: hidden;
     background: #ffffff;
     color: var(--cv-text);
     box-shadow: 0 16px 50px rgba(15, 23, 42, 0.18);
@@ -542,11 +541,24 @@ body.cv-preview-mode > .cv-document {
 
     .cv-page {
         width: 210mm;
-        min-height: 297mm;
+        min-height: auto;
         margin: 0;
         padding: var(--cv-page-padding-y) var(--cv-page-padding-x);
         overflow: visible;
         box-shadow: none;
+    }
+
+    /* Keep the two columns from being split mid-flow across pages */
+    .cv-body {
+        display: block;
+    }
+
+    .cv-sidebar {
+        border-right: 0;
+        padding-right: 0;
+        margin-bottom: 6mm;
+        padding-bottom: 5mm;
+        border-bottom: 1px solid var(--cv-line);
     }
 
     .cv-header,

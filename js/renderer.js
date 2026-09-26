@@ -345,6 +345,26 @@
             emailLink.hidden = true;
         }
 
+        // Contact section social links (replaces the old GitHub-issue form)
+        const contactSocial = byId("contact-social-links");
+        if (contactSocial) {
+            clear(contactSocial);
+            SOCIAL_NETWORKS.forEach(({ key, label }) => {
+                if (!isSafeHttpUrl(social[key])) return;
+                const a = create("a", {
+                    className: "contact-social-link",
+                    text: label,
+                    attributes: {
+                        href: social[key].trim(),
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        "aria-label": label
+                    }
+                });
+                contactSocial.appendChild(a);
+            });
+        }
+
         const footerName = byId("footer-name");
         const footerYear = byId("footer-year");
         if (footerName) footerName.textContent = name;
@@ -494,7 +514,107 @@
         if (!container) return;
         clear(container);
 
-        state.data.projects.forEach((project) => {
+        const projects = state.data.projects;
+        const categories = asArray(state.data.projectCategories);
+
+        // If categories are defined, render grouped sections; else flat grid.
+        if (categories.length) {
+            let anyRendered = false;
+            categories.forEach((cat) => {
+                const items = projects.filter((p) => p.category === cat.key);
+                if (!items.length) return;
+                anyRendered = true;
+
+                const group = create("div", { className: "project-category-group" });
+                const head = create("div", { className: "project-category-head" });
+                appendTextElement(head, "h3", localized(cat.title), "project-category-title");
+                const sub = asText(localized(cat.subtitle));
+                if (sub) appendTextElement(head, "p", sub, "project-category-subtitle");
+                group.appendChild(head);
+
+                const previewCount = Number.isFinite(Number(cat.previewCount))
+                    ? Math.max(0, Number(cat.previewCount))
+                    : 2;
+
+                // Collapsible group (e.g. demos): show `previewCount` cards,
+                // fold the rest into a native <details> dropdown.
+                if (cat.collapsible && items.length > previewCount) {
+                    const previewGrid = create("div", { className: "project-grid" });
+                    items.slice(0, previewCount).forEach((project) =>
+                        previewGrid.appendChild(buildProjectCard(project))
+                    );
+                    group.appendChild(previewGrid);
+
+                    const hiddenCount = items.length - previewCount;
+                    const details = create("details", {
+                        className: "project-collapse"
+                    });
+                    const summary = create("summary", {
+                        className: "project-collapse-toggle",
+                        attributes: { "aria-label": translate("showMoreDemos", "Xem thêm") }
+                    });
+                    const moreLabel = translate("showMoreDemos", "Xem thêm");
+                    const lessLabel = translate("showLessDemos", "Thu gọn");
+                    summary.dataset.more = `${moreLabel} (${hiddenCount})`;
+                    summary.dataset.less = lessLabel;
+                    appendTextElement(
+                        summary,
+                        "span",
+                        `${moreLabel} (${hiddenCount})`,
+                        "project-collapse-label"
+                    );
+                    details.appendChild(summary);
+
+                    const restGrid = create("div", { className: "project-grid" });
+                    items.slice(previewCount).forEach((project) =>
+                        restGrid.appendChild(buildProjectCard(project))
+                    );
+                    details.appendChild(restGrid);
+
+                    details.addEventListener("toggle", () => {
+                        const label = summary.querySelector(".project-collapse-label");
+                        if (label) {
+                            label.textContent = details.open
+                                ? summary.dataset.less
+                                : summary.dataset.more;
+                        }
+                    });
+
+                    group.appendChild(details);
+                } else {
+                    const grid = create("div", { className: "project-grid" });
+                    items.forEach((project) => grid.appendChild(buildProjectCard(project)));
+                    group.appendChild(grid);
+                }
+
+                container.appendChild(group);
+            });
+
+            // projects without a known category fall back into a plain grid
+            const uncategorized = projects.filter(
+                (p) => !categories.some((c) => c.key === p.category)
+            );
+            if (uncategorized.length) {
+                const grid = create("div", { className: "project-grid" });
+                uncategorized.forEach((project) => grid.appendChild(buildProjectCard(project)));
+                container.appendChild(grid);
+            }
+
+            if (!anyRendered && !uncategorized.length) {
+                renderEmptyState(container, []);
+            }
+            return;
+        }
+
+        projects.forEach((project) => {
+            container.appendChild(buildProjectCard(project));
+        });
+
+        renderEmptyState(container, projects);
+    }
+
+    function buildProjectCard(project) {
+        {
             const projectName = localized(project.name);
             const card = create("article", {
                 className: "project-card gsap-card",
@@ -521,13 +641,48 @@
                     ),
                     `project-visibility ${visibility}`
                 );
+            } else if (visibility === "planned") {
+                appendTextElement(
+                    card,
+                    "span",
+                    translate("visibilityPlanned", "Đề xuất"),
+                    "project-visibility planned"
+                );
             }
 
             const type = asText(localized(project.type));
             if (type) appendTextElement(card, "small", type, "project-type");
 
+            if (project.lastCommitDate) {
+                appendTextElement(
+                    card,
+                    "small",
+                    `${translate("lastUpdated", "Cập nhật")}: ${project.lastCommitDate}`,
+                    "project-updated"
+                );
+            }
+
             const description = localized(project.description);
             if (description) appendTextElement(card, "p", description);
+
+            const metrics = asArray(project.metrics);
+            if (metrics.length) {
+                const metricsBlock = create("div", { className: "project-metrics" });
+                appendTextElement(
+                    metricsBlock,
+                    "h4",
+                    translate("metricsLabel", "Kết quả nổi bật")
+                );
+                const metricsGrid = create("div", { className: "project-metrics-grid" });
+                metrics.forEach((metric) => {
+                    const item = create("div", { className: "project-metric" });
+                    appendTextElement(item, "span", asText(localized(metric.value)), "metric-value");
+                    appendTextElement(item, "span", asText(localized(metric.label)), "metric-label");
+                    metricsGrid.appendChild(item);
+                });
+                metricsBlock.appendChild(metricsGrid);
+                card.appendChild(metricsBlock);
+            }
 
             const technologies = asArray(project.tech || project.technologies);
             if (technologies.length) {
@@ -631,6 +786,20 @@
 
             if (actions.childElementCount) {
                 card.appendChild(actions);
+            } else if (project.plannedNote || project.repoSuggestion) {
+                const note = create("div", { className: "project-private-note planned" });
+                const noteText = localized(project.plannedNote) ||
+                    translate("plannedDefault", "Đề xuất — sẽ khởi tạo repo và triển khai.");
+                appendTextElement(note, "p", noteText);
+                if (project.repoSuggestion) {
+                    appendTextElement(
+                        note,
+                        "code",
+                        `repo: ${project.repoSuggestion}`,
+                        "project-repo-suggestion"
+                    );
+                }
+                card.appendChild(note);
             } else if (project.privateNote) {
                 appendTextElement(
                     card,
@@ -640,10 +809,8 @@
                 );
             }
 
-            container.appendChild(card);
-        });
-
-        renderEmptyState(container, state.data.projects);
+            return card;
+        }
     }
 
     function renderEngineeringLabs() {

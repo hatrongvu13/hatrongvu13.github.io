@@ -544,6 +544,23 @@
     border-color: rgba(201, 120, 48, 0.32);
 }
 
+.project-visibility.planned {
+    color: var(--info);
+    background: var(--info-soft);
+    border-color: rgba(111, 155, 199, 0.32);
+}
+
+.project-private-note.planned {
+    border-style: dashed;
+    border-color: var(--info);
+}
+
+.project-repo-suggestion {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.78rem;
+}
+
 .project-private-note {
     margin-top: 18px;
     padding: 12px 14px;
@@ -553,6 +570,128 @@
     color: var(--text-subtle);
     font-size: 0.85rem;
     line-height: 1.5;
+}
+
+.project-updated {
+    display: block;
+    margin-top: 2px;
+    color: var(--text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+}
+
+/* Contact social links (replaces the old form) */
+.contact-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 6px 0 18px;
+}
+
+.contact-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--line);
+    background: var(--surface-soft);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition-color), transform var(--duration-fast) var(--ease-standard);
+}
+
+.contact-social-link::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.contact-social-link:hover {
+    background: var(--surface-hover);
+    border-color: var(--primary-border);
+    color: var(--text-strong);
+    transform: translateY(-2px);
+}
+
+/* Project category groups */
+.project-category-group {
+    display: block;
+}
+
+.project-category-head {
+    margin-bottom: 20px;
+}
+
+.project-category-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+}
+
+.project-category-title::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--java));
+    border-radius: 2px;
+}
+
+.project-category-subtitle {
+    margin: 0;
+    color: var(--text-subtle);
+    font-size: 0.9rem;
+}
+
+/* Collapsible demo group (native <details> dropdown) */
+.project-collapse {
+    margin-top: 20px;
+}
+
+.project-collapse > .project-grid {
+    margin-top: 20px;
+}
+
+.project-collapse-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    list-style: none;
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-soft);
+    color: var(--text-strong);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+.project-collapse-toggle:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.project-collapse-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.project-collapse-toggle::after {
+    content: "▾";
+    font-size: 0.85rem;
+    color: var(--primary);
+    transition: transform 0.2s ease;
+}
+
+.project-collapse[open] > .project-collapse-toggle::after {
+    transform: rotate(180deg);
 }
 
 /* Scroll progress bar (GSAP ScrollTrigger, progressive enhancement) */
@@ -771,6 +910,51 @@
 
 .project-architecture h4 {
     margin-top: 0;
+}
+
+/* Project metrics — highlight quantified results */
+.project-metrics {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+}
+
+.project-metrics h4 {
+    margin: 0 0 10px;
+    color: var(--java);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.project-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+    gap: 10px;
+}
+
+.project-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 10px;
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm);
+    background: var(--surface-soft);
+}
+
+.project-metric .metric-value {
+    color: var(--spring, #72a45a);
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.project-metric .metric-label {
+    color: var(--text-subtle);
+    font-size: 0.72rem;
+    line-height: 1.3;
 }
 
 @media (max-width: 760px) {

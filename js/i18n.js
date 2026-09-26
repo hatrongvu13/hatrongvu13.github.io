@@ -33,6 +33,8 @@ const I18N = {
         contactEmail: "Email",
         contactMessage: "Nội dung",
         contactSend: "Gửi",
+        contactConnectTitle: "Kết nối với tôi",
+        contactConnectText: "Trao đổi về Java, kiến trúc hệ thống, dự án cá nhân hoặc hợp tác nội dung — chọn kênh bạn tiện nhất.",
         downloadCv: "Tải CV",
         sourceCode: "Mã nguồn",
         liveDemo: "Demo",
@@ -75,8 +77,14 @@ const I18N = {
         examplesLabel: "Ví dụ",
         usedByLabel: "Được ứng dụng trong",
         architecturePatternsLabel: "Kiến trúc sử dụng",
+        metricsLabel: "Kết quả nổi bật",
         visibilityPublic: "Công khai",
-        visibilityPrivate: "Riêng tư"
+        visibilityPrivate: "Riêng tư",
+        visibilityPlanned: "Đề xuất",
+        plannedDefault: "Đề xuất — sẽ khởi tạo repo và triển khai.",
+        lastUpdated: "Cập nhật",
+        showMoreDemos: "Xem thêm demo",
+        showLessDemos: "Thu gọn"
     },
 
     en: {
@@ -106,6 +114,8 @@ const I18N = {
         contactEmail: "Email",
         contactMessage: "Message",
         contactSend: "Send",
+        contactConnectTitle: "Connect with me",
+        contactConnectText: "Let's talk about Java, system architecture, personal projects or content collaboration — pick the channel you prefer.",
         downloadCv: "Download CV",
         sourceCode: "Source",
         liveDemo: "Demo",
@@ -148,8 +158,14 @@ const I18N = {
         examplesLabel: "Examples",
         usedByLabel: "Applied in",
         architecturePatternsLabel: "Architecture patterns",
+        metricsLabel: "Highlights",
         visibilityPublic: "Public",
-        visibilityPrivate: "Private"
+        visibilityPrivate: "Private",
+        visibilityPlanned: "Proposed",
+        plannedDefault: "Proposed — repo to be created and implemented.",
+        lastUpdated: "Updated",
+        showMoreDemos: "Show more demos",
+        showLessDemos: "Show less"
     }
 };
 

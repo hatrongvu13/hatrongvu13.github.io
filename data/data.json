@@ -83,24 +83,24 @@
   },
   "stats": [
     {
-      "value": "5+",
+      "value": "6+",
       "label": {
         "vi": "Năm kinh nghiệm",
         "en": "Years of experience"
       }
     },
     {
-      "value": "20+",
+      "value": "4",
       "label": {
-        "vi": "API và tích hợp",
-        "en": "APIs and integrations"
+        "vi": "Công ty đã đồng hành",
+        "en": "Companies"
       }
     },
     {
-      "value": "10+",
+      "value": "8",
       "label": {
-        "vi": "Dự án và thử nghiệm",
-        "en": "Projects and experiments"
+        "vi": "Repo mã nguồn mở",
+        "en": "Open-source repos"
       }
     }
   ],
@@ -181,110 +181,112 @@
     {
       "period": "2022 - Present",
       "company": {
-        "vi": "Enterprise FinTech (Ngân hàng số / Thanh toán)",
-        "en": "Enterprise FinTech (Digital Banking / Payments)"
+        "vi": "MSB — Ngân hàng TMCP Hàng Hải",
+        "en": "MSB — Maritime Commercial Bank"
       },
       "role": {
         "vi": "Chuyên viên chính Lập trình Back End",
         "en": "Senior Java Backend Developer"
       },
       "description": {
-        "vi": "Sở hữu các dịch vụ backend cho quy trình nghiệp vụ nhiều bước: tích hợp hệ thống, xử lý bất đồng bộ, orchestration bằng Camunda và tự động hóa thông báo/tài liệu trong môi trường tài chính có yêu cầu cao về độ tin cậy.",
-        "en": "Own backend services for multi-step business workflows: system integration, asynchronous processing, Camunda orchestration, and notification/document automation in a reliability-critical financial environment."
+        "vi": "Phát triển backend cho mảng phê duyệt khoản vay: QuickLoan, phê duyệt SME‑LC và SEMI‑AUTO. Tập trung rút ngắn thời gian xử lý hồ sơ, tích hợp xác minh thực địa và tự động hoá quy trình duyệt/giải ngân.",
+        "en": "Backend development for loan approval: QuickLoan, SME‑LC approval and SEMI‑AUTO. Focused on shortening processing time, field-verification integration, and automating approval/disbursement."
       },
       "achievements": {
         "vi": [
-          "Thiết kế API và tầng tích hợp có logging, retry và idempotency, giảm ~40% lỗi giao dịch lặp.",
-          "Chuẩn hóa engine template email/Excel/Word theo Strategy + Factory, rút thời gian thêm mẫu báo cáo mới từ vài ngày xuống dưới 1 giờ.",
-          "Tối ưu truy vấn Oracle và thêm cache Redis, giảm p95 latency của các endpoint nặng khoảng 35%.",
-          "Dẫn dắt code review và chuẩn kỹ thuật cho nhóm 4-5 dev, đưa test coverage lên trên 70%."
+          "Xây dựng dịch vụ phê duyệt & giải ngân nhanh (QuickLoan), rút ngắn thời gian xử lý hồ sơ.",
+          "Tích hợp xác minh thực địa với thiết bị có định danh & định vị, tăng tính minh bạch và giảm tiêu cực.",
+          "Phát triển SEMI‑AUTO phê duyệt siêu tốc cho hồ sơ khoản vay theo bộ quy tắc.",
+          "Viết stored procedure/function SQL, tối ưu truy vấn Oracle cho nghiệp vụ tín dụng."
         ],
         "en": [
-          "Designed APIs and an integration layer with logging, retries, and idempotency, cutting duplicate-transaction errors by ~40%.",
-          "Standardized an email/Excel/Word template engine with Strategy + Factory, reducing time-to-add a new report format from days to under an hour.",
-          "Tuned Oracle queries and added Redis caching, lowering p95 latency on heavy endpoints by ~35%.",
-          "Led code reviews and engineering standards for a 4-5 dev team and raised test coverage above 70%."
+          "Built fast approval & disbursement (QuickLoan), cutting application processing time.",
+          "Integrated field verification with identified & geolocated devices for transparency.",
+          "Developed SEMI‑AUTO rapid rule-based approval for loan applications.",
+          "Wrote SQL stored procedures/functions and tuned Oracle queries for credit workflows."
         ]
       }
     },
     {
-      "period": "2021 - 2022",
+      "period": "2020 - 2022",
       "company": {
-        "vi": "Công ty Sản phẩm SaaS / Tự động hóa quy trình",
-        "en": "SaaS Product / Workflow Automation Company"
+        "vi": "CMC Global",
+        "en": "CMC Global"
       },
       "role": {
-        "vi": "Java Backend Developer",
-        "en": "Java Backend Developer"
+        "vi": "Lập trình viên Java",
+        "en": "Java Developer"
       },
       "description": {
-        "vi": "Xây dựng các microservice Spring Boot cho nền tảng SaaS đa khách hàng, tập trung vào phân quyền, tích hợp bên thứ ba và xử lý sự kiện.",
-        "en": "Built Spring Boot microservices for a multi-tenant SaaS platform, focused on authorization, third-party integrations, and event processing."
+        "vi": "Dự án AGV — quản lý & điều tiết AGV trong kho: lên bản đồ, điểm dừng và layout riêng cho từng kho. Đồng thời migrate hệ thống cũ từ .NET sang Java, số hoá báo cáo và bản vẽ thiết kế máy móc/AGV.",
+        "en": "AGV project — managing and dispatching AGVs in warehouses: mapping, stop points, and per-warehouse layouts. Also migrated a legacy .NET system to Java, digitizing machine/AGV design reports and drawings."
       },
       "achievements": {
         "vi": [
-          "Triển khai xác thực JWT + refresh token và RBAC dùng chung cho nhiều service.",
-          "Xây pipeline xử lý sự kiện bất đồng bộ với hàng đợi và cơ chế retry/backoff.",
-          "Viết tài liệu API (OpenAPI) và bộ test tích hợp giúp giảm lỗi khi release."
+          "Thiết kế bản đồ kho, điểm dừng và layout AGV theo từng kho; điều tiết luồng di chuyển AGV.",
+          "Migrate hệ thống .NET → Java (Spring, MyBatis, MySQL/PostgreSQL), giữ tương thích nghiệp vụ.",
+          "Số hoá báo cáo & bản vẽ thiết kế máy móc/AGV từ tệp thiết kế có sẵn.",
+          "Viết stored procedure/function SQL và vận dụng một phần DevOps trong quy trình."
         ],
         "en": [
-          "Implemented JWT + refresh-token auth and shared RBAC across multiple services.",
-          "Built an asynchronous event-processing pipeline with a queue and retry/backoff.",
-          "Authored OpenAPI docs and an integration test suite that reduced release defects."
+          "Designed warehouse maps, stop points and per-warehouse AGV layouts; dispatched AGV movement.",
+          "Migrated .NET → Java (Spring, MyBatis, MySQL/PostgreSQL) keeping business parity.",
+          "Digitized machine/AGV design reports and drawings from existing design files.",
+          "Wrote SQL stored procedures/functions and applied DevOps practices partially."
         ]
       }
     },
     {
-      "period": "2020 - 2021",
+      "period": "2019 - 2020",
       "company": {
-        "vi": "Công ty Gia công phần mềm (Outsourcing)",
-        "en": "Software Outsourcing Company"
+        "vi": "ATI JSC",
+        "en": "ATI JSC"
       },
       "role": {
-        "vi": "Lập trình viên Java (Middle)",
-        "en": "Java Developer (Middle)"
+        "vi": "Lập trình viên Java",
+        "en": "Java Developer"
       },
       "description": {
-        "vi": "Phát triển tính năng backend cho các dự án khách hàng theo Spring Boot + JPA, làm việc trực tiếp với BA và QA theo Scrum.",
-        "en": "Developed backend features for client projects on Spring Boot + JPA, working directly with BA and QA in Scrum."
+        "vi": "Xây dựng các mini web app liên kết với ứng dụng ngân hàng và phần mềm mô phỏng nghiệp vụ ngân hàng phục vụ sinh viên chuyên ngành ngân hàng. Bắt đầu tiếp cận DevOps thực tế.",
+        "en": "Built mini web apps integrated with banking applications and a banking-simulation platform for finance students. Began hands-on DevOps."
       },
       "achievements": {
         "vi": [
-          "Hoàn thiện module CRUD, báo cáo và tích hợp cổng thanh toán cho 2 dự án khách hàng.",
-          "Áp dụng Design Patterns (Strategy, Template Method) để tái sử dụng logic nghiệp vụ.",
-          "Tối ưu một số truy vấn N+1 bằng fetch join và phân trang."
+          "Phát triển mini web app tích hợp với hệ thống ngân hàng và mô phỏng nghiệp vụ.",
+          "Vận dụng linh hoạt SQL và NoSQL giữa các dự án theo yêu cầu bài toán.",
+          "Học & áp dụng DevOps: Docker, Kubernetes, Jenkins CI/CD, GitLab."
         ],
         "en": [
-          "Delivered CRUD, reporting, and payment-gateway integration modules for 2 client projects.",
-          "Applied design patterns (Strategy, Template Method) to reuse business logic.",
-          "Fixed several N+1 queries with fetch joins and pagination."
+          "Developed mini web apps integrated with banking systems and business simulation.",
+          "Applied SQL and NoSQL flexibly across projects per problem needs.",
+          "Learned & applied DevOps: Docker, Kubernetes, Jenkins CI/CD, GitLab."
         ]
       }
     },
     {
-      "period": "2020",
+      "period": "2019",
       "company": {
-        "vi": "Startup Công nghệ (Thực tập / Junior)",
-        "en": "Tech Startup (Intern / Junior)"
+        "vi": "TDT JSC (Thực tập)",
+        "en": "TDT JSC (Internship)"
       },
       "role": {
-        "vi": "Java Developer (Fresher)",
-        "en": "Java Developer (Fresher)"
+        "vi": "Thực tập sinh Java",
+        "en": "Java Intern"
       },
       "description": {
-        "vi": "Bước khởi đầu với Java và Spring: xây dựng REST API cơ bản, làm quen quy trình Git, review và kiểm thử.",
-        "en": "Started with Java and Spring: built basic REST APIs and learned Git workflow, review, and testing."
+        "vi": "Bắt đầu sự nghiệp: học việc và làm quen Spring Framework, Spring Web MVC và cơ sở dữ liệu. Tham gia dự án mạng xã hội nội bộ.",
+        "en": "Career start: learning Spring Framework, Spring Web MVC and databases. Contributed to an internal social-network project."
       },
       "achievements": {
         "vi": [
-          "Xây dựng REST API cơ bản với Spring Boot và MySQL cho sản phẩm nội bộ.",
-          "Viết unit test với JUnit và tham gia code review đều đặn.",
-          "Học và áp dụng Clean Code, SOLID vào công việc hằng ngày."
+          "Làm quen Spring Framework, Web MVC và mô hình MVC trong dự án thực tế.",
+          "Tham gia phát triển tính năng cho mạng xã hội nội bộ.",
+          "Rèn nền tảng Java, SQL và quy trình làm việc nhóm."
         ],
         "en": [
-          "Built basic REST APIs with Spring Boot and MySQL for an internal product.",
-          "Wrote JUnit unit tests and joined regular code reviews.",
-          "Learned and applied Clean Code and SOLID day to day."
+          "Learned Spring Framework, Web MVC and the MVC model on a real project.",
+          "Contributed features to an internal social network.",
+          "Built Java, SQL fundamentals and teamwork practices."
         ]
       }
     }
@@ -292,72 +294,74 @@
   "projects": [
     {
       "id": "spring-grpc-service-lab",
-      "name": "Spring gRPC Service Lab",
+      "category": "demo",
       "visibility": "public",
+      "name": "Spring gRPC Service Lab",
+      "repo": "spring-grpc-service-lab",
       "type": {
         "vi": "Giao tiếp dịch vụ",
-        "en": "Service Communication"
+        "en": "Backend Communication"
       },
       "status": "active",
       "description": {
-        "vi": "Reference architecture cho giao tiếp nội bộ giữa các dịch vụ Spring Boot bằng gRPC và Protocol Buffers: chuỗi gọi phân tầng xuyên 4 tiến trình, contract-first, interceptor chain, internal JWT phát/xác minh theo từng hop, deadline propagation và cô lập lỗi downstream bằng Resilience4j.",
-        "en": "A reference architecture for internal Spring Boot service communication with gRPC and Protocol Buffers: a layered call chain across four processes, contract-first APIs, interceptor chains, per-hop internal JWTs, deadline propagation, and Resilience4j downstream failure isolation."
+        "vi": "Nền tảng điều phối & theo dõi giao hàng thời gian thực trên Spring Boot + gRPC theo mô hình contract-first, chuỗi gọi phân tầng edge-gateway → dispatch → pricing → telemetry.",
+        "en": "A real-time delivery orchestration platform on Spring Boot + gRPC using a contract-first, layered call chain: edge-gateway → dispatch → pricing → telemetry."
       },
       "tech": [
         "Java 17",
-        "Spring Boot 4",
-        "Spring gRPC",
+        "Spring Boot",
+        "gRPC",
         "Protocol Buffers",
-        "Spring Security",
-        "Resilience4j",
-        "Spring Data JPA",
         "JUnit 5"
       ],
       "buildingBlocks": [
-        "Proto Contracts",
-        "Named gRPC Channels",
-        "Server and Client Interceptors",
-        "Per-Hop Internal JWT",
-        "4-Hop Call Chain",
-        "Deadline Propagation",
-        "Failure Isolation",
-        "Streaming Telemetry"
+        "Proto Contract",
+        "Edge Gateway",
+        "Dispatch Service",
+        "Pricing Service",
+        "Telemetry"
       ],
       "architecturePatterns": [
         "Contract-First",
-        "Interceptor Chain",
+        "Layered gRPC",
         "Failure Isolation"
       ],
       "source": "https://github.com/hatrongvu13/spring-grpc-service-lab",
       "docs": "https://github.com/hatrongvu13/spring-grpc-service-lab#readme",
-      "demo": ""
+      "demo": "",
+      "lastCommit": "update test",
+      "lastCommitDate": "2026-09-22",
+      "commitCount": 7,
+      "branch": "main"
     },
     {
       "id": "spring-security-identity-lab",
-      "name": "Spring Security Identity Lab",
+      "category": "demo",
       "visibility": "public",
+      "name": "Spring Security Identity Lab",
+      "repo": "spring-security-identity-lab",
       "type": {
         "vi": "Bảo mật ứng dụng",
         "en": "Application Security"
       },
       "status": "active",
       "description": {
-        "vi": "Dự án mẫu xác thực và phân quyền cho REST API với JWT, refresh token, role-based access control và xử lý lỗi bảo mật thống nhất.",
-        "en": "A reference project for REST API authentication and authorization with JWT, refresh tokens, role-based access control, and consistent security error handling."
+        "vi": "Bảo mật REST API stateless: JWT access token, opaque refresh token có rotation, phát hiện refresh-token reuse & thu hồi cả token family, RBAC với @PreAuthorize.",
+        "en": "Stateless REST API security: JWT access tokens, rotating opaque refresh tokens, refresh-token reuse detection with family revocation, and RBAC via @PreAuthorize."
       },
       "tech": [
+        "Java 17",
         "Spring Boot",
         "Spring Security",
         "JWT",
-        "RBAC",
-        "PostgreSQL"
+        "OAuth2 Resource Server"
       ],
       "buildingBlocks": [
         "JWT Provider",
-        "Refresh Store",
-        "Auth Filter",
+        "Refresh Rotation",
+        "Reuse Detection",
         "Role Guard",
-        "Error Handler"
+        "Error Format"
       ],
       "architecturePatterns": [
         "Filter Chain",
@@ -366,20 +370,26 @@
       ],
       "source": "https://github.com/hatrongvu13/spring-security-identity-lab",
       "docs": "https://github.com/hatrongvu13/spring-security-identity-lab#readme",
-      "demo": ""
+      "demo": "",
+      "lastCommit": "source demo",
+      "lastCommitDate": "2026-09-22",
+      "commitCount": 2,
+      "branch": "main"
     },
     {
       "id": "spring-graphql-query-hub",
-      "name": "Spring GraphQL Query Hub",
+      "category": "demo",
       "visibility": "public",
+      "name": "Spring GraphQL Query Hub",
+      "repo": "spring-graphql-query-hub",
       "type": {
         "vi": "Kỹ thuật API",
         "en": "API Engineering"
       },
       "status": "active",
       "description": {
-        "vi": "Dự án demo xây dựng GraphQL API với query, mutation, resolver, phân trang, validation và kiểm soát truy cập dữ liệu.",
-        "en": "A GraphQL API demo featuring queries, mutations, resolvers, pagination, validation, and data access control."
+        "vi": "GraphQL API với query, mutation, resolver, phân trang, validation, DataLoader chống N+1 và kiểm soát truy cập dữ liệu.",
+        "en": "A GraphQL API with queries, mutations, resolvers, pagination, validation, DataLoader against N+1, and data access control."
       },
       "tech": [
         "Spring Boot",
@@ -402,98 +412,26 @@
       ],
       "source": "https://github.com/hatrongvu13/spring-graphql-query-hub",
       "docs": "https://github.com/hatrongvu13/spring-graphql-query-hub#readme",
-      "demo": ""
-    },
-    {
-      "id": "java-patterns-workshop",
-      "name": "Java Patterns Workshop",
-      "type": {
-        "vi": "Mẫu thiết kế",
-        "en": "Design Patterns"
-      },
-      "status": "active",
-      "description": {
-        "vi": "Bộ ví dụ thực tế cho Singleton, Strategy, Factory, Template Method, Adapter và Chain of Responsibility, kèm kiểm thử và tình huống sử dụng.",
-        "en": "Practical examples of Singleton, Strategy, Factory, Template Method, Adapter, and Chain of Responsibility with tests and use cases."
-      },
-      "tech": [
-        "Java 17",
-        "Design Patterns",
-        "JUnit 5",
-        "Maven"
-      ],
-      "buildingBlocks": [
-        "Singleton",
-        "Strategy",
-        "Factory",
-        "Template Method",
-        "Adapter"
-      ],
-      "architecturePatterns": [
-        "GoF Catalog",
-        "Test-Driven",
-        "Use-Case Driven"
-      ],
-      "source": "",
-      "docs": "",
       "demo": "",
-      "visibility": "private",
-      "privateNote": {
-        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
-        "en": "Internal / product project — architecture walkthrough and private demo on request."
-      }
+      "lastCommit": "add createAt mapping",
+      "lastCommitDate": "2026-09-22",
+      "commitCount": 3,
+      "branch": "main"
     },
     {
-      "id": "camunda-process-orchestration-lab",
-      "name": "Camunda Process Orchestration Lab",
-      "type": {
-        "vi": "Tự động hóa quy trình",
-        "en": "Workflow Automation"
-      },
-      "status": "active",
-      "description": {
-        "vi": "Mô phỏng quy trình nghiệp vụ nhiều bước bằng BPMN và Camunda, gồm phê duyệt, service task, retry, timeout và theo dõi trạng thái quy trình.",
-        "en": "A multi-step business process simulation with BPMN and Camunda, including approvals, service tasks, retries, timeouts, and process monitoring."
-      },
-      "tech": [
-        "Java",
-        "Spring Boot",
-        "Camunda",
-        "BPMN",
-        "PostgreSQL"
-      ],
-      "buildingBlocks": [
-        "BPMN Model",
-        "Service Task",
-        "External Worker",
-        "Compensation",
-        "Timer"
-      ],
-      "architecturePatterns": [
-        "Process Orchestration",
-        "Saga",
-        "Human-in-the-loop"
-      ],
-      "source": "",
-      "docs": "",
-      "demo": "",
-      "visibility": "private",
-      "privateNote": {
-        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
-        "en": "Internal / product project — architecture walkthrough and private demo on request."
-      }
-    },
-    {
-      "id": "async-data-fetch-pipeline",
-      "name": "Async Data Fetch Pipeline",
+      "id": "spring-fetcher-pipeline",
+      "category": "demo",
+      "visibility": "public",
+      "name": "Spring Fetcher Pipeline",
+      "repo": "spring-fetcher-pipeline",
       "type": {
         "vi": "Mẫu tích hợp",
         "en": "Integration Pattern"
       },
       "status": "active",
       "description": {
-        "vi": "Pipeline lấy dữ liệu từ nhiều nguồn bằng fetcher đồng bộ và bất đồng bộ, hỗ trợ timeout, retry, tổng hợp kết quả và cô lập lỗi từng nguồn.",
-        "en": "A multi-source data pipeline with synchronous and asynchronous fetchers, supporting timeouts, retries, result aggregation, and per-source failure isolation."
+        "vi": "Pipeline lấy dữ liệu đa nguồn với fetcher đồng bộ/bất đồng bộ, timeout, retry, tổng hợp kết quả và cô lập lỗi từng nguồn.",
+        "en": "A multi-source data pipeline with sync/async fetchers, timeouts, retries, result aggregation, and per-source failure isolation."
       },
       "tech": [
         "Java 17",
@@ -514,174 +452,709 @@
         "Bulkhead",
         "Failure Isolation"
       ],
-      "source": "",
-      "docs": "",
+      "source": "https://github.com/hatrongvu13/spring-fetcher-pipeline",
+      "docs": "https://github.com/hatrongvu13/spring-fetcher-pipeline#readme",
       "demo": "",
-      "visibility": "private",
-      "privateNote": {
-        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
-        "en": "Internal / product project — architecture walkthrough and private demo on request."
-      }
+      "lastCommit": "update source code",
+      "lastCommitDate": "2026-09-24",
+      "commitCount": 5,
+      "branch": "main"
     },
     {
-      "id": "document-template-engine",
-      "name": "Document Template Engine",
+      "id": "java-engineering-patterns",
+      "category": "demo",
+      "visibility": "public",
+      "name": "Java Engineering Patterns",
+      "repo": "java-engineering-patterns",
       "type": {
-        "vi": "Tự động hóa tài liệu",
-        "en": "Document Automation"
+        "vi": "Mẫu thiết kế & kiến trúc",
+        "en": "Design & Architecture Patterns"
       },
       "status": "active",
       "description": {
-        "vi": "Engine hợp nhất việc chọn dữ liệu và render template email, báo cáo Excel và tài liệu Word theo từng nghiệp vụ, giúp mở rộng định dạng mà không thay đổi luồng chính.",
-        "en": "A unified engine for selecting data and rendering email, Excel report, and Word document templates by business context without changing the core workflow."
+        "vi": "Catalog Java đa module: từ GoF (creational/behavioral/structural) đến integration, resilience, workflow và distributed patterns — kèm pattern-core, benchmarks và case studies.",
+        "en": "A multi-module Java catalog: from GoF (creational/behavioral/structural) to integration, resilience, workflow and distributed patterns — with pattern-core, benchmarks, and case studies."
       },
       "tech": [
-        "Spring Boot",
-        "Strategy",
-        "Factory",
-        "Thymeleaf",
-        "Apache POI",
-        "docx4j"
+        "Java 21",
+        "Maven",
+        "JUnit 5",
+        "Testcontainers",
+        "Resilience4j"
       ],
       "buildingBlocks": [
-        "Data Selector",
-        "Template Resolver",
-        "Renderer",
-        "Format Adapter",
-        "Output Writer"
+        "pattern-core",
+        "Creational",
+        "Behavioral",
+        "Structural",
+        "Distributed"
       ],
       "architecturePatterns": [
-        "Strategy",
-        "Factory",
-        "Open-Closed Extension"
+        "GoF Catalog",
+        "Resilience",
+        "Distributed Systems"
+      ],
+      "source": "https://github.com/hatrongvu13/java-engineering-patterns",
+      "docs": "https://github.com/hatrongvu13/java-engineering-patterns#readme",
+      "demo": "",
+      "lastCommit": "update catalog",
+      "lastCommitDate": "2026-09-17",
+      "commitCount": 22,
+      "branch": "main"
+    },
+    {
+      "id": "spring-distributed-workflow-lab",
+      "category": "demo",
+      "visibility": "planned",
+      "name": "Spring Distributed Workflow Lab",
+      "repo": "spring-distributed-workflow-lab",
+      "type": {
+        "vi": "Saga phân tán · Orchestration",
+        "en": "Distributed Saga · Orchestration"
+      },
+      "status": "planned",
+      "description": {
+        "vi": "Monorepo workflow phân tán qua RabbitMQ: orchestrated saga kết hợp process manager, idempotent consumer, transactional state machine, deadline/retry, compensation/rollback và DLQ.",
+        "en": "A distributed-workflow monorepo over RabbitMQ: an orchestrated saga combining a process manager, idempotent consumers, a transactional state machine, deadline/retry, compensation/rollback and a DLQ."
+      },
+      "tech": [
+        "Java 17",
+        "Spring Boot",
+        "RabbitMQ",
+        "Saga",
+        "Docker"
+      ],
+      "buildingBlocks": [
+        "request-api",
+        "workflow-orchestrator",
+        "worker-service",
+        "target-service",
+        "workflow-contracts"
+      ],
+      "architecturePatterns": [
+        "Orchestrated Saga",
+        "Process Manager",
+        "Idempotent Consumer",
+        "Compensation / DLQ"
       ],
       "source": "",
       "docs": "",
       "demo": "",
-      "visibility": "private",
-      "privateNote": {
-        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
-        "en": "Internal / product project — architecture walkthrough and private demo on request."
+      "branch": "",
+      "lastCommit": "",
+      "lastCommitDate": "",
+      "repoSuggestion": "spring-distributed-workflow-lab",
+      "plannedNote": {
+        "vi": "Đang hoàn thiện — sẽ đẩy mã nguồn lên GitHub.",
+        "en": "In progress — source will be pushed to GitHub."
       }
     },
     {
-      "id": "pocket-ocr-scanner",
-      "name": "Pocket OCR Scanner",
+      "id": "spring-mqtt-sensor-ingestion",
+      "category": "demo",
+      "visibility": "public",
+      "name": "Spring MQTT Sensor Ingestion",
+      "repo": "spring-mqtt-sensor-ingestion",
       "type": {
-        "vi": "OCR di động",
-        "en": "Mobile OCR"
+        "vi": "Thu nhận IoT · Ingestion",
+        "en": "IoT Ingestion Pipeline"
       },
       "status": "active",
       "description": {
-        "vi": "Ứng dụng OCR trên điện thoại để chụp tài liệu, hiệu chỉnh ảnh, nhận dạng văn bản và đồng bộ kết quả tới backend.",
-        "en": "A mobile OCR application for document capture, image correction, text recognition, and backend synchronization."
+        "vi": "Ingestion cảm biến qua MQTT: raw inbox, chống trùng (idempotency), làm sạch & chuẩn hoá, lưu trữ và tổng hợp theo cửa sổ thời gian — thiết kế để mở rộng thành ingestion service trong hệ microservices.",
+        "en": "MQTT sensor ingestion: a raw inbox, deduplication/idempotency, cleansing & normalization, storage and time-window aggregation — designed to scale into an ingestion microservice."
       },
       "tech": [
-        "Mobile",
+        "Java 17",
+        "Spring Boot 4",
+        "Spring Integration MQTT",
+        "Eclipse Paho",
+        "JPA"
+      ],
+      "buildingBlocks": [
+        "MQTT Inbound",
+        "Raw Inbox",
+        "Dedup Filter",
+        "Normalizer",
+        "Window Aggregator"
+      ],
+      "architecturePatterns": [
+        "Ingestion Pipeline",
+        "Idempotency",
+        "Windowed Aggregation"
+      ],
+      "source": "https://github.com/hatrongvu13/spring-mqtt-sensor-ingestion",
+      "docs": "https://github.com/hatrongvu13/spring-mqtt-sensor-ingestion#readme",
+      "demo": "",
+      "branch": "main",
+      "lastCommit": "update localhost yaml",
+      "lastCommitDate": "2026-09-24",
+      "commitCount": 3
+    },
+    {
+      "id": "image2doc",
+      "category": "product",
+      "visibility": "public",
+      "name": "Image2Doc",
+      "repo": "Image2Doc",
+      "type": {
+        "vi": "Ứng dụng Android · OCR & Speech-to-Text",
+        "en": "Android App · OCR & Speech-to-Text"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Ứng dụng cá nhân biến ảnh/giọng nói thành tài liệu số: chụp tài liệu, nhận dạng văn bản (OCR) và chuyển giọng nói thành văn bản.",
+        "en": "A personal app turning images/voice into digital documents: capture, OCR text recognition, and speech-to-text."
+      },
+      "tech": [
+        "Android",
+        "Kotlin/Java",
+        "Gradle",
         "OCR",
-        "OpenCV",
-        "Image Processing",
-        "REST API"
+        "Speech-to-Text"
       ],
       "buildingBlocks": [
         "Capture",
-        "Edge Detection",
-        "Perspective Warp",
         "OCR Engine",
-        "Sync Client"
+        "Speech Recognizer",
+        "Document Builder",
+        "Export"
       ],
       "architecturePatterns": [
         "On-Device Pipeline",
-        "Offline-First",
-        "Backend Sync"
+        "MVVM",
+        "Offline-First"
       ],
-      "source": "",
-      "docs": "",
+      "source": "https://github.com/hatrongvu13/Image2Doc",
+      "docs": "https://github.com/hatrongvu13/Image2Doc#readme",
       "demo": "",
-      "visibility": "private",
-      "privateNote": {
-        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
-        "en": "Internal / product project — architecture walkthrough and private demo on request."
-      }
+      "lastCommit": "speecd to text",
+      "lastCommitDate": "2026-09-08",
+      "commitCount": 2,
+      "branch": "main"
     },
     {
-      "id": "scan2learn-exam-platform",
-      "name": "Scan2Learn Exam Platform",
+      "id": "architect-iot-lab",
+      "category": "product",
+      "visibility": "public",
+      "name": "Architect IoT Lab",
+      "repo": "architect-iot-lab",
       "type": {
-        "vi": "Công nghệ giáo dục và OCR",
-        "en": "EdTech and OCR"
+        "vi": "Nền tảng IoT đa module",
+        "en": "Multi-module IoT Platform"
       },
       "status": "active",
       "description": {
-        "vi": "Nền tảng luyện thi đồng bộ với ứng dụng OCR, cho phép quét bộ đề giấy, chuẩn hóa câu hỏi, xây dựng ngân hàng đề và luyện tập trên thiết bị số.",
-        "en": "An exam preparation platform integrated with OCR to scan paper tests, normalize questions, build a question bank, and practice digitally."
-      },
-      "tech": [
-        "Spring Boot",
-        "OCR",
-        "PostgreSQL",
-        "REST API",
-        "Object Storage"
-      ],
-      "buildingBlocks": [
-        "Scan Ingest",
-        "Question Normalizer",
-        "Review Queue",
-        "Question Bank",
-        "Practice Engine"
-      ],
-      "architecturePatterns": [
-        "Event-Driven Ingest",
-        "Moderation Workflow",
-        "Read-Model Projection"
-      ],
-      "source": "",
-      "docs": "",
-      "demo": "",
-      "visibility": "private",
-      "privateNote": {
-        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
-        "en": "Internal / product project — architecture walkthrough and private demo on request."
-      }
-    },
-    {
-      "id": "privacy-vision-toolkit",
-      "name": "Privacy Vision Toolkit",
-      "type": {
-        "vi": "Thị giác máy tính",
-        "en": "Computer Vision"
-      },
-      "status": "active",
-      "description": {
-        "vi": "Bộ công cụ xử lý ảnh và video để nhận dạng tạm thời, làm mờ khuôn mặt và che biển số nhằm bảo vệ quyền riêng tư trước khi chia sẻ nội dung.",
-        "en": "An image and video processing toolkit for temporary detection, face blurring, and license plate masking before content sharing."
+        "vi": "Nền tảng IoT cá nhân nhiều module: platform, apps (user-manager), libs, quarkus-extensions và spring-starter — sân chơi kiến trúc thực tế đa runtime.",
+        "en": "A personal multi-module IoT platform: platform, apps (user-manager), libs, quarkus-extensions and spring-starter — a real multi-runtime architecture playground."
       },
       "tech": [
         "Java",
-        "OpenCV",
-        "Computer Vision",
-        "Video Processing",
-        "Object Detection"
+        "Spring Boot",
+        "Quarkus",
+        "Maven",
+        "IoT"
       ],
       "buildingBlocks": [
-        "Frame Extractor",
-        "Face Detector",
-        "Plate Detector",
-        "Masking Filter",
-        "Encoder"
+        "Platform",
+        "Apps",
+        "Libs",
+        "Quarkus Extensions",
+        "Spring Starter"
       ],
       "architecturePatterns": [
-        "Frame Pipeline",
-        "Privacy-by-Design",
-        "Stream Processing"
+        "Modular Monorepo",
+        "Multi-Runtime",
+        "Shared Libraries"
+      ],
+      "source": "https://github.com/hatrongvu13/architect-iot-lab",
+      "docs": "https://github.com/hatrongvu13/architect-iot-lab#readme",
+      "demo": "",
+      "lastCommit": "app user-manager",
+      "lastCommitDate": "2026-09-17",
+      "commitCount": 18,
+      "branch": "main"
+    },
+    {
+      "id": "msb-quickloan",
+      "category": "company",
+      "visibility": "private",
+      "name": "QuickLoan (MSB)",
+      "employer": "MSB",
+      "type": {
+        "vi": "Cho vay nhanh · Digital Lending",
+        "en": "Digital Lending"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Sản phẩm cho vay nhanh: duyệt và giải ngân nhanh chóng theo bộ quy tắc, rút ngắn thời gian xử lý hồ sơ. Chi tiết nghiệp vụ được giữ bảo mật.",
+        "en": "A fast-lending product: rapid rule-based approval and disbursement, cutting processing time. Business details confidential."
+      },
+      "metrics": [
+        { "value": "~70%", "label": { "vi": "giảm thời gian duyệt hồ sơ", "en": "faster application approval" } },
+        { "value": "24/7", "label": { "vi": "giải ngân tự động theo rule", "en": "rule-based auto disbursement" } },
+        { "value": "p95 < 500ms", "label": { "vi": "độ trễ API quyết định", "en": "decision API latency" } }
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Oracle",
+        "REST",
+        "SQL Procedure"
+      ],
+      "architecturePatterns": [
+        "Rule Engine",
+        "Approval Flow",
+        "Async Disbursement"
       ],
       "source": "",
       "docs": "",
       "demo": "",
-      "visibility": "private",
       "privateNote": {
-        "vi": "Dự án nội bộ / sản phẩm — trao đổi kiến trúc & demo riêng khi phỏng vấn.",
-        "en": "Internal / product project — architecture walkthrough and private demo on request."
+        "vi": "Dự án doanh nghiệp (MSB) — chỉ công khai tên, công nghệ, nghiệp vụ tổng quan.",
+        "en": "Enterprise project (MSB) — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "id": "msb-sme-lc",
+      "category": "company",
+      "visibility": "private",
+      "name": "Phê duyệt SME · LC (MSB)",
+      "employer": "MSB",
+      "type": {
+        "vi": "Phê duyệt KHDN · Trade Finance",
+        "en": "SME Approval · Trade Finance"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Rút ngắn thời gian làm thủ tục phê duyệt khách hàng doanh nghiệp SME và thư tín dụng (LC); tích hợp khảo sát & xác minh thực địa tường minh với thiết bị có định danh và định vị rõ ràng, giảm thiểu tiêu cực. Chi tiết nghiệp vụ được giữ bảo mật.",
+        "en": "Shortening SME and Letter-of-Credit (LC) approval procedures; integrating transparent field survey/verification with identified and geolocated devices to reduce fraud. Business details confidential."
+      },
+      "metrics": [
+        { "value": "~50%", "label": { "vi": "rút ngắn thủ tục phê duyệt", "en": "shorter approval procedure" } },
+        { "value": "100%", "label": { "vi": "xác minh thực địa có định vị", "en": "geolocated field verification" } },
+        { "value": "↓ rủi ro", "label": { "vi": "giảm tiêu cực nhờ thiết bị định danh", "en": "fraud reduced via device identity" } }
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Oracle",
+        "Geolocation",
+        "Document Processing"
+      ],
+      "architecturePatterns": [
+        "Field Verification",
+        "Trusted Device Identity",
+        "Approval Workflow"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "privateNote": {
+        "vi": "Dự án doanh nghiệp (MSB) — chỉ công khai tên, công nghệ, nghiệp vụ tổng quan.",
+        "en": "Enterprise project (MSB) — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "id": "msb-semi-auto",
+      "category": "company",
+      "visibility": "private",
+      "name": "SEMI-AUTO (MSB)",
+      "employer": "MSB",
+      "type": {
+        "vi": "Phê duyệt siêu tốc",
+        "en": "Rapid Approval"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Dự án phê duyệt siêu tốc cho các hồ sơ khoản vay: tự động hoá theo bộ quy tắc, chỉ giữ lại quyết định của con người ở các điểm cần thiết. Chi tiết nghiệp vụ được giữ bảo mật.",
+        "en": "Ultra-fast loan application approval: rule-based automation, keeping human decisions only where needed. Business details confidential."
+      },
+      "metrics": [
+        { "value": "~80%", "label": { "vi": "hồ sơ xử lý tự động (STP)", "en": "applications straight-through" } },
+        { "value": "giây", "label": { "vi": "thời gian ra quyết định", "en": "decision time" } },
+        { "value": "↓ thủ công", "label": { "vi": "chỉ can thiệp ở điểm cần thiết", "en": "human-in-the-loop only where needed" } }
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Oracle",
+        "Rule Engine",
+        "BPMN"
+      ],
+      "architecturePatterns": [
+        "Automated Decisioning",
+        "Human-in-the-loop",
+        "Straight-Through Processing"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "privateNote": {
+        "vi": "Dự án doanh nghiệp (MSB) — chỉ công khai tên, công nghệ, nghiệp vụ tổng quan.",
+        "en": "Enterprise project (MSB) — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "id": "cmc-agv-fleet",
+      "category": "company",
+      "visibility": "private",
+      "name": "AGV Fleet Management (CMC Global)",
+      "employer": "CMC Global",
+      "type": {
+        "vi": "Điều tiết AGV trong kho",
+        "en": "Warehouse AGV Orchestration"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Quản lý và điều tiết AGV trong kho: lên bản đồ, thiết lập điểm dừng và thiết kế/tạo layout AGV riêng cho từng kho; điều phối luồng di chuyển. Chi tiết nghiệp vụ được giữ bảo mật.",
+        "en": "Managing and dispatching AGVs in warehouses: mapping, stop points, per-warehouse AGV layout design, and movement orchestration. Business details confidential."
+      },
+      "metrics": [
+        { "value": "đa kho", "label": { "vi": "layout riêng từng kho", "en": "per-warehouse layouts" } },
+        { "value": "real-time", "label": { "vi": "điều phối luồng di chuyển AGV", "en": "real-time AGV dispatching" } },
+        { "value": "↓ va chạm", "label": { "vi": "tối ưu điểm dừng & lộ trình", "en": "optimized stops & routing" } }
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "PostgreSQL",
+        "Mapping"
+      ],
+      "architecturePatterns": [
+        "Fleet Orchestration",
+        "Path/Stop Planning",
+        "Per-warehouse Layout"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "privateNote": {
+        "vi": "Dự án doanh nghiệp (CMC Global) — chỉ công khai tên, công nghệ, nghiệp vụ tổng quan.",
+        "en": "Enterprise project (CMC Global) — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "id": "cmc-dotnet-to-java-migration",
+      "category": "company",
+      "visibility": "private",
+      "name": "Legacy .NET → Java Migration (CMC Global)",
+      "employer": "CMC Global",
+      "type": {
+        "vi": "Migrate & Số hoá thiết kế",
+        "en": "Migration & Design Digitization"
+      },
+      "status": "active",
+      "description": {
+        "vi": "Migrate hệ thống cũ từ .NET sang Java; số hoá báo cáo và bản vẽ thiết kế máy móc/AGV từ tệp thiết kế có sẵn. Viết stored procedure/function SQL, vận dụng một phần DevOps. Chi tiết nghiệp vụ được giữ bảo mật.",
+        "en": "Migrated a legacy .NET system to Java; digitized machine/AGV design reports and drawings from existing files. Wrote SQL procedures/functions, applied partial DevOps. Business details confidential."
+      },
+      "metrics": [
+        { "value": ".NET→Java", "label": { "vi": "migrate theo Strangler, không downtime lớn", "en": "Strangler migration, minimal downtime" } },
+        { "value": "số hoá", "label": { "vi": "báo cáo & bản vẽ thiết kế", "en": "reports & design drawings" } },
+        { "value": "SQL proc", "label": { "vi": "procedure/function tối ưu truy vấn", "en": "query-optimized procedures/functions" } }
+      ],
+      "tech": [
+        "Java",
+        "Spring",
+        "MyBatis",
+        "MySQL",
+        "PostgreSQL"
+      ],
+      "architecturePatterns": [
+        "Strangler Migration",
+        "Report Digitization",
+        "SQL Procedures"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "privateNote": {
+        "vi": "Dự án doanh nghiệp (CMC Global) — chỉ công khai tên, công nghệ, nghiệp vụ tổng quan.",
+        "en": "Enterprise project (CMC Global) — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "id": "ati-banking-simulation",
+      "category": "company",
+      "visibility": "private",
+      "name": "Banking Simulation & Mini Apps (ATI JSC)",
+      "employer": "ATI JSC",
+      "type": {
+        "vi": "Mô phỏng nghiệp vụ ngân hàng",
+        "en": "Banking Business Simulation"
+      },
+      "status": "archived",
+      "description": {
+        "vi": "Các mini web app liên kết với ứng dụng ngân hàng và phần mềm mô phỏng nghiệp vụ ngân hàng hỗ trợ sinh viên chuyên ngành ngân hàng học tập; vận dụng SQL/NoSQL và DevOps (Docker, K8s, Jenkins, GitLab).",
+        "en": "Mini web apps integrated with banking apps and a banking-simulation platform for finance students; applied SQL/NoSQL and DevOps (Docker, K8s, Jenkins, GitLab)."
+      },
+      "metrics": [
+        { "value": "nhiều app", "label": { "vi": "mini web app nghiệp vụ ngân hàng", "en": "banking mini web apps" } },
+        { "value": "CI/CD", "label": { "vi": "Docker · K8s · Jenkins · GitLab", "en": "Docker · K8s · Jenkins · GitLab" } },
+        { "value": "SQL+NoSQL", "label": { "vi": "vận dụng linh hoạt theo dự án", "en": "polyglot persistence per project" } }
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "SQL/NoSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "architecturePatterns": [
+        "Web MVC",
+        "Simulation Engine",
+        "CI/CD"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "privateNote": {
+        "vi": "Dự án doanh nghiệp (ATI JSC) — chỉ công khai tên, công nghệ, nghiệp vụ tổng quan.",
+        "en": "Enterprise project (ATI JSC) — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "id": "tdt-internal-social",
+      "category": "company",
+      "visibility": "private",
+      "name": "Internal Social Network (TDT JSC)",
+      "employer": "TDT JSC",
+      "type": {
+        "vi": "Mạng xã hội nội bộ",
+        "en": "Internal Social Network"
+      },
+      "status": "archived",
+      "description": {
+        "vi": "Dự án thực tập: mạng xã hội nội bộ trên Spring Web MVC và cơ sở dữ liệu — nơi làm quen Spring Framework và mô hình MVC.",
+        "en": "Internship project: an internal social network on Spring Web MVC and a database — where I learned Spring Framework and the MVC model."
+      },
+      "metrics": [
+        { "value": "8+ tháng", "label": { "vi": "thực tập dài nhất, nền tảng Spring", "en": "longest internship, Spring foundation" } },
+        { "value": "full CRUD", "label": { "vi": "MVC · session auth · CSDL", "en": "MVC · session auth · database" } }
+      ],
+      "tech": [
+        "Java",
+        "Spring MVC",
+        "SQL",
+        "JSP/Thymeleaf"
+      ],
+      "architecturePatterns": [
+        "MVC",
+        "CRUD",
+        "Session Auth"
+      ],
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "privateNote": {
+        "vi": "Dự án thực tập (TDT JSC) — chỉ công khai tên, công nghệ, nghiệp vụ tổng quan.",
+        "en": "Internship project (TDT JSC) — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "id": "smartfarm-livestock-tasks",
+      "category": "planned",
+      "visibility": "planned",
+      "name": "SmartFarm · Livestock Task Service",
+      "type": {
+        "vi": "Chăn nuôi · Nhiệm vụ",
+        "en": "Livestock · Tasks"
+      },
+      "status": "planned",
+      "description": {
+        "vi": "Microservice tạo & giao nhiệm vụ chăn nuôi theo lịch/định kỳ, phân công người thực hiện và theo dõi hoàn thành.",
+        "en": "A microservice to create and assign scheduled livestock tasks, dispatch workers, and track completion."
+      },
+      "tech": [
+        "Spring Boot",
+        "gRPC",
+        "PostgreSQL",
+        "Scheduler"
+      ],
+      "architecturePatterns": [
+        "MSA",
+        "Event-Driven",
+        "Task Scheduling"
+      ],
+      "repoSuggestion": "smartfarm-livestock-service",
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "plannedNote": {
+        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
+        "en": "Proposed — repo to be created and implemented."
+      }
+    },
+    {
+      "id": "smartfarm-animal-health",
+      "category": "planned",
+      "visibility": "planned",
+      "name": "SmartFarm · Animal Health Service",
+      "type": {
+        "vi": "Kiểm tra sức khoẻ vật nuôi",
+        "en": "Animal Health Check"
+      },
+      "status": "planned",
+      "description": {
+        "vi": "Theo dõi sức khoẻ vật nuôi: hồ sơ tiêm phòng, cảnh báo bất thường, lịch khám và nhật ký điều trị.",
+        "en": "Track animal health: vaccination records, anomaly alerts, checkup schedules and treatment logs."
+      },
+      "tech": [
+        "Spring Boot",
+        "gRPC",
+        "PostgreSQL",
+        "Alerting"
+      ],
+      "architecturePatterns": [
+        "MSA",
+        "Domain Events",
+        "Alerting"
+      ],
+      "repoSuggestion": "smartfarm-health-service",
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "plannedNote": {
+        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
+        "en": "Proposed — repo to be created and implemented."
+      }
+    },
+    {
+      "id": "smartfarm-inventory",
+      "category": "planned",
+      "visibility": "planned",
+      "name": "SmartFarm · Inventory Service",
+      "type": {
+        "vi": "Quản lý kho",
+        "en": "Inventory Management"
+      },
+      "status": "planned",
+      "description": {
+        "vi": "Quản lý kho thức ăn/thuốc/vật tư: nhập–xuất–tồn, ngưỡng cảnh báo và truy vết lô hàng.",
+        "en": "Manage feed/medicine/supply inventory: in–out–stock, low-stock alerts and batch tracing."
+      },
+      "tech": [
+        "Spring Boot",
+        "GraphQL",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "architecturePatterns": [
+        "MSA",
+        "CQRS Read Model",
+        "Stock Ledger"
+      ],
+      "repoSuggestion": "smartfarm-inventory-service",
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "plannedNote": {
+        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
+        "en": "Proposed — repo to be created and implemented."
+      }
+    },
+    {
+      "id": "smartfarm-finance",
+      "category": "planned",
+      "visibility": "planned",
+      "name": "SmartFarm · Farm Finance Service",
+      "type": {
+        "vi": "Tài chính trang trại",
+        "en": "Farm Finance"
+      },
+      "status": "planned",
+      "description": {
+        "vi": "Quản lý tài chính trang trại: thu–chi, giá thành theo đàn/lứa, công nợ và dòng tiền.",
+        "en": "Manage farm finance: income–expense, cost per herd/batch, receivables and cash flow."
+      },
+      "tech": [
+        "Spring Boot",
+        "GraphQL",
+        "PostgreSQL",
+        "Reporting"
+      ],
+      "architecturePatterns": [
+        "MSA",
+        "Ledger",
+        "Aggregation"
+      ],
+      "repoSuggestion": "smartfarm-finance-service",
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "plannedNote": {
+        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
+        "en": "Proposed — repo to be created and implemented."
+      }
+    },
+    {
+      "id": "smartfarm-reporting",
+      "category": "planned",
+      "visibility": "planned",
+      "name": "SmartFarm · Reporting Service",
+      "type": {
+        "vi": "Xuất báo cáo đa định dạng",
+        "en": "Multi-format Reporting"
+      },
+      "status": "planned",
+      "description": {
+        "vi": "Xuất báo cáo nhiều dạng (PDF/Excel/CSV) từ dữ liệu các service; tái dùng Document Template Engine.",
+        "en": "Export reports in multiple formats (PDF/Excel/CSV) from service data; reuses the Document Template Engine."
+      },
+      "tech": [
+        "Spring Boot",
+        "Apache POI",
+        "Thymeleaf",
+        "gRPC"
+      ],
+      "architecturePatterns": [
+        "MSA",
+        "Template Strategy",
+        "Async Export"
+      ],
+      "repoSuggestion": "smartfarm-reporting-service",
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "plannedNote": {
+        "vi": "Đề xuất — tái dùng base document-template.",
+        "en": "Proposed — reuses document-template base."
+      }
+    },
+    {
+      "id": "smartfarm-gateway",
+      "category": "planned",
+      "visibility": "planned",
+      "name": "SmartFarm · API Gateway & BFF",
+      "type": {
+        "vi": "Cổng API · BFF",
+        "en": "API Gateway · BFF"
+      },
+      "status": "planned",
+      "description": {
+        "vi": "Cổng vào hệ thống SmartFarm: định tuyến, xác thực, GraphQL BFF hợp nhất dữ liệu từ các microservice.",
+        "en": "The SmartFarm entry point: routing, auth, and a GraphQL BFF aggregating data from microservices."
+      },
+      "tech": [
+        "Spring Cloud Gateway",
+        "Spring for GraphQL",
+        "gRPC",
+        "JWT"
+      ],
+      "architecturePatterns": [
+        "MSA",
+        "BFF",
+        "Gateway"
+      ],
+      "repoSuggestion": "smartfarm-gateway",
+      "source": "",
+      "docs": "",
+      "demo": "",
+      "plannedNote": {
+        "vi": "Đề xuất — dùng base spring-security & graphql-query-hub.",
+        "en": "Proposed — uses spring-security & graphql-query-hub base."
       }
     }
   ],
@@ -724,44 +1197,34 @@
       "status": "learning",
       "source": "https://github.com/hatrongvu13/java-engineering-patterns",
       "usedBy": [
-        "async-data-fetch-pipeline",
-        "document-template-engine",
-        "camunda-process-orchestration-lab",
-        "scan2learn-exam-platform"
+        "spring-fetcher-pipeline",
+        "spring-grpc-service-lab",
+        "spring-graphql-query-hub"
       ]
     }
   ],
   "architectures": [
     {
-      "name": "Scan2Learn OCR Pipeline",
-      "level": "End-to-End System Design",
+      "name": {
+        "vi": "SmartFarm — Kiến trúc Microservices",
+        "en": "SmartFarm — Microservices Architecture"
+      },
+      "level": {
+        "vi": "MSA · Spring Boot · gRPC · GraphQL",
+        "en": "MSA · Spring Boot · gRPC · GraphQL"
+      },
       "description": {
-        "vi": "Luồng từ ứng dụng quét đề, tiền xử lý ảnh, OCR, chuẩn hóa câu hỏi, kiểm duyệt và đồng bộ vào ngân hàng đề luyện thi.",
-        "en": "An end-to-end flow from exam scanning and image preprocessing to OCR, question normalization, review, and synchronization with the practice question bank."
+        "vi": "Nền tảng quản lý trang trại thông minh theo microservices: Gateway/BFF (GraphQL) định tuyến tới các service Chăn nuôi, Sức khoẻ vật nuôi, Kho, Tài chính; giao tiếp nội bộ bằng gRPC; Reporting xuất báo cáo đa định dạng.",
+        "en": "A smart-farm platform in microservices: a GraphQL Gateway/BFF routes to Livestock, Animal Health, Inventory and Finance services; internal gRPC communication; a Reporting service exports multi-format reports."
       },
       "diagram": [
-        "Mobile Scanner",
-        "Upload API",
-        "OCR Worker",
-        "Question Normalizer",
-        "Review Queue",
-        "Exam Bank"
-      ]
-    },
-    {
-      "name": "Privacy Video Processing Pipeline",
-      "level": "Computer Vision System Design",
-      "description": {
-        "vi": "Pipeline xử lý video theo từng frame, phát hiện khuôn mặt và biển số, áp dụng làm mờ hoặc che vùng nhạy cảm rồi xuất bản video an toàn hơn.",
-        "en": "A frame-by-frame video pipeline that detects faces and license plates, applies privacy masking, and exports a safer video."
-      },
-      "diagram": [
-        "Video Upload",
-        "Frame Extractor",
-        "Object Detection",
-        "Privacy Mask",
-        "Video Encoder",
-        "Secure Output"
+        "Client",
+        "GraphQL Gateway / BFF",
+        "Livestock Service",
+        "Health Service",
+        "Inventory Service",
+        "Finance Service",
+        "Reporting Service"
       ]
     },
     {
@@ -984,33 +1447,53 @@
       }
     ]
   },
-  "contact": {
-    "saveDraft": true,
-    "addLocalThankYou": true,
-    "rateLimitSeconds": 60,
-    "githubIssueEnabled": true,
-    "github": {
-      "enabled": true,
-      "mode": "issue-url",
-      "repository": "hatrongvu13/hatrongvu13.github.io",
-      "labels": [
-        "portfolio-contact",
-        "visitor"
-      ],
-      "assignees": [
-        "@hatrongvu13"
-      ],
-      "issueTemplate": "",
-      "openInNewTab": true,
-      "requestTimeoutMs": 12000
+  "projectCategories": [
+    {
+      "key": "demo",
+      "title": {
+        "vi": "Demo & Nghiên cứu công nghệ",
+        "en": "Demos & Tech Exploration"
+      },
+      "subtitle": {
+        "vi": "Dự án minh hoạ, review và áp dụng công nghệ — mã nguồn công khai.",
+        "en": "Showcase, review and tech-application projects — public source."
+      },
+      "collapsible": true,
+      "previewCount": 2
     },
-    "telegram": {
-      "enabled": false,
-      "endpoint": ""
+    {
+      "key": "product",
+      "title": {
+        "vi": "Sản phẩm cá nhân",
+        "en": "Personal Products"
+      },
+      "subtitle": {
+        "vi": "Ứng dụng thật do cá nhân xây dựng và vận hành.",
+        "en": "Real applications built and operated personally."
+      }
     },
-    "email": {
-      "enabled": false,
-      "endpoint": ""
+    {
+      "key": "company",
+      "title": {
+        "vi": "Dự án doanh nghiệp",
+        "en": "Enterprise Projects"
+      },
+      "subtitle": {
+        "vi": "Nghiệp vụ ngân hàng — chỉ công khai tên, công nghệ và nghiệp vụ tổng quan.",
+        "en": "Banking domain — only name, stack and high-level domain shared."
+      }
+    },
+    {
+      "key": "planned",
+      "title": {
+        "vi": "Đề xuất & Đang xây dựng",
+        "en": "Proposed & In Progress"
+      },
+      "subtitle": {
+        "vi": "Hệ SmartFarm (MSA) — các service sẽ được khởi tạo repo và triển khai.",
+        "en": "SmartFarm system (MSA) — services to be created and implemented."
+      }
     }
-  }
+  ],
+  "generatedAt": "2026-09-25T16:33:33.934Z"
 }

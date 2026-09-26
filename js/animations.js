@@ -118,6 +118,23 @@ Design goals:
                 });
             });
 
+            // Experience timeline items -> slide in from the left, one after another
+            gsap.utils.toArray("#experience-container .experience-item").forEach((el, i) => {
+                gsap.from(el, {
+                    x: -28,
+                    opacity: 0,
+                    duration: preset.duration,
+                    ease: preset.ease,
+                    delay: (i % 4) * 0.05,
+                    clearProps: "all",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 88%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            });
+
             // Cards -> reveal in staggered batches per grid
             const cards = gsap.utils.toArray(".gsap-card");
             if (cards.length) {
@@ -127,6 +144,7 @@ Design goals:
                         gsap.from(batch, {
                             y: preset.distance,
                             opacity: 0,
+                            scale: 0.985,
                             duration: preset.duration,
                             ease: preset.ease,
                             stagger: preset.stagger,
