@@ -307,6 +307,32 @@
         "vi": "Nền tảng điều phối & theo dõi giao hàng thời gian thực trên Spring Boot + gRPC theo mô hình contract-first, chuỗi gọi phân tầng edge-gateway → dispatch → pricing → telemetry.",
         "en": "A real-time delivery orchestration platform on Spring Boot + gRPC using a contract-first, layered call chain: edge-gateway → dispatch → pricing → telemetry."
       },
+      "metrics": [
+        {
+          "value": "contract-first",
+          "label": {
+            "vi": "gRPC + Protobuf",
+            "en": "gRPC + Protobuf"
+          }
+        },
+        {
+          "value": {
+            "vi": "4 tầng",
+            "en": "4 tiers"
+          },
+          "label": {
+            "vi": "edge → dispatch → pricing → telemetry",
+            "en": "edge → dispatch → pricing → telemetry"
+          }
+        },
+        {
+          "value": "real-time",
+          "label": {
+            "vi": "điều phối & theo dõi giao hàng",
+            "en": "delivery tracking & dispatch"
+          }
+        }
+      ],
       "tech": [
         "Java 17",
         "Spring Boot",
@@ -349,6 +375,29 @@
         "vi": "Bảo mật REST API stateless: JWT access token, opaque refresh token có rotation, phát hiện refresh-token reuse & thu hồi cả token family, RBAC với @PreAuthorize.",
         "en": "Stateless REST API security: JWT access tokens, rotating opaque refresh tokens, refresh-token reuse detection with family revocation, and RBAC via @PreAuthorize."
       },
+      "metrics": [
+        {
+          "value": "JWT + rotation",
+          "label": {
+            "vi": "refresh token có xoay vòng",
+            "en": "rotating refresh tokens"
+          }
+        },
+        {
+          "value": "reuse-detect",
+          "label": {
+            "vi": "thu hồi cả token family khi lộ",
+            "en": "revoke token family on reuse"
+          }
+        },
+        {
+          "value": "RBAC",
+          "label": {
+            "vi": "phân quyền @PreAuthorize",
+            "en": "@PreAuthorize authorization"
+          }
+        }
+      ],
       "tech": [
         "Java 17",
         "Spring Boot",
@@ -391,6 +440,29 @@
         "vi": "GraphQL API với query, mutation, resolver, phân trang, validation, DataLoader chống N+1 và kiểm soát truy cập dữ liệu.",
         "en": "A GraphQL API with queries, mutations, resolvers, pagination, validation, DataLoader against N+1, and data access control."
       },
+      "metrics": [
+        {
+          "value": "0 N+1",
+          "label": {
+            "vi": "DataLoader chống N+1",
+            "en": "DataLoader batching"
+          }
+        },
+        {
+          "value": "cursor",
+          "label": {
+            "vi": "phân trang + validation",
+            "en": "pagination + validation"
+          }
+        },
+        {
+          "value": "field-auth",
+          "label": {
+            "vi": "kiểm soát truy cập dữ liệu",
+            "en": "field-level access control"
+          }
+        }
+      ],
       "tech": [
         "Spring Boot",
         "Spring for GraphQL",
@@ -433,6 +505,29 @@
         "vi": "Pipeline lấy dữ liệu đa nguồn với fetcher đồng bộ/bất đồng bộ, timeout, retry, tổng hợp kết quả và cô lập lỗi từng nguồn.",
         "en": "A multi-source data pipeline with sync/async fetchers, timeouts, retries, result aggregation, and per-source failure isolation."
       },
+      "metrics": [
+        {
+          "value": "async",
+          "label": {
+            "vi": "fetcher đồng bộ/bất đồng bộ",
+            "en": "sync/async fetchers"
+          }
+        },
+        {
+          "value": "retry+timeout",
+          "label": {
+            "vi": "cô lập lỗi từng nguồn",
+            "en": "per-source fault isolation"
+          }
+        },
+        {
+          "value": "Strategy",
+          "label": {
+            "vi": "Factory + tổng hợp kết quả",
+            "en": "Factory + result aggregation"
+          }
+        }
+      ],
       "tech": [
         "Java 17",
         "Spring Boot",
@@ -475,6 +570,32 @@
         "vi": "Catalog Java đa module: từ GoF (creational/behavioral/structural) đến integration, resilience, workflow và distributed patterns — kèm pattern-core, benchmarks và case studies.",
         "en": "A multi-module Java catalog: from GoF (creational/behavioral/structural) to integration, resilience, workflow and distributed patterns — with pattern-core, benchmarks, and case studies."
       },
+      "metrics": [
+        {
+          "value": {
+            "vi": "22 commit",
+            "en": "22 commits"
+          },
+          "label": {
+            "vi": "catalog đa module active",
+            "en": "active multi-module catalog"
+          }
+        },
+        {
+          "value": "GoF→distributed",
+          "label": {
+            "vi": "creational · resilience · workflow",
+            "en": "creational · resilience · workflow"
+          }
+        },
+        {
+          "value": "Testcontainers",
+          "label": {
+            "vi": "benchmark + case study",
+            "en": "benchmarks + case studies"
+          }
+        }
+      ],
       "tech": [
         "Java 21",
         "Maven",
@@ -517,6 +638,29 @@
         "vi": "Monorepo workflow phân tán qua RabbitMQ: orchestrated saga kết hợp process manager, idempotent consumer, transactional state machine, deadline/retry, compensation/rollback và DLQ.",
         "en": "A distributed-workflow monorepo over RabbitMQ: an orchestrated saga combining a process manager, idempotent consumers, a transactional state machine, deadline/retry, compensation/rollback and a DLQ."
       },
+      "metrics": [
+        {
+          "value": "saga",
+          "label": {
+            "vi": "orchestrated + process manager",
+            "en": "orchestrated + process manager"
+          }
+        },
+        {
+          "value": "idempotent",
+          "label": {
+            "vi": "state machine giao dịch, DLQ",
+            "en": "transactional state machine, DLQ"
+          }
+        },
+        {
+          "value": "compensation",
+          "label": {
+            "vi": "deadline/retry + rollback",
+            "en": "deadline/retry + rollback"
+          }
+        }
+      ],
       "tech": [
         "Java 17",
         "Spring Boot",
@@ -564,6 +708,29 @@
         "vi": "Ingestion cảm biến qua MQTT: raw inbox, chống trùng (idempotency), làm sạch & chuẩn hoá, lưu trữ và tổng hợp theo cửa sổ thời gian — thiết kế để mở rộng thành ingestion service trong hệ microservices.",
         "en": "MQTT sensor ingestion: a raw inbox, deduplication/idempotency, cleansing & normalization, storage and time-window aggregation — designed to scale into an ingestion microservice."
       },
+      "metrics": [
+        {
+          "value": "MQTT",
+          "label": {
+            "vi": "Spring Integration + Paho",
+            "en": "Spring Integration + Paho"
+          }
+        },
+        {
+          "value": "idempotency",
+          "label": {
+            "vi": "raw inbox chống trùng",
+            "en": "dedup raw inbox"
+          }
+        },
+        {
+          "value": "windowed",
+          "label": {
+            "vi": "chuẩn hoá + tổng hợp theo cửa sổ",
+            "en": "cleanse + time-window aggregation"
+          }
+        }
+      ],
       "tech": [
         "Java 17",
         "Spring Boot 4",
@@ -606,6 +773,29 @@
         "vi": "Ứng dụng cá nhân biến ảnh/giọng nói thành tài liệu số: chụp tài liệu, nhận dạng văn bản (OCR) và chuyển giọng nói thành văn bản.",
         "en": "A personal app turning images/voice into digital documents: capture, OCR text recognition, and speech-to-text."
       },
+      "metrics": [
+        {
+          "value": "OCR",
+          "label": {
+            "vi": "chụp → nhận dạng văn bản",
+            "en": "capture → text recognition"
+          }
+        },
+        {
+          "value": "speech→text",
+          "label": {
+            "vi": "giọng nói thành tài liệu",
+            "en": "voice to document"
+          }
+        },
+        {
+          "value": "Android",
+          "label": {
+            "vi": "ứng dụng cá nhân thật",
+            "en": "real personal app"
+          }
+        }
+      ],
       "tech": [
         "Android",
         "Kotlin/Java",
@@ -648,6 +838,32 @@
         "vi": "Nền tảng IoT cá nhân nhiều module: platform, apps (user-manager), libs, quarkus-extensions và spring-starter — sân chơi kiến trúc thực tế đa runtime.",
         "en": "A personal multi-module IoT platform: platform, apps (user-manager), libs, quarkus-extensions and spring-starter — a real multi-runtime architecture playground."
       },
+      "metrics": [
+        {
+          "value": {
+            "vi": "18 commit",
+            "en": "18 commits"
+          },
+          "label": {
+            "vi": "nền tảng IoT đa module",
+            "en": "multi-module IoT platform"
+          }
+        },
+        {
+          "value": "multi-runtime",
+          "label": {
+            "vi": "Spring Boot + Quarkus",
+            "en": "Spring Boot + Quarkus"
+          }
+        },
+        {
+          "value": "libs+starter",
+          "label": {
+            "vi": "platform · apps · extensions",
+            "en": "platform · apps · extensions"
+          }
+        }
+      ],
       "tech": [
         "Java",
         "Spring Boot",
@@ -691,9 +907,27 @@
         "en": "A fast-lending product: rapid rule-based approval and disbursement, cutting processing time. Business details confidential."
       },
       "metrics": [
-        { "value": "~70%", "label": { "vi": "giảm thời gian duyệt hồ sơ", "en": "faster application approval" } },
-        { "value": "24/7", "label": { "vi": "giải ngân tự động theo rule", "en": "rule-based auto disbursement" } },
-        { "value": "p95 < 500ms", "label": { "vi": "độ trễ API quyết định", "en": "decision API latency" } }
+        {
+          "value": "~70%",
+          "label": {
+            "vi": "giảm thời gian duyệt hồ sơ",
+            "en": "faster application approval"
+          }
+        },
+        {
+          "value": "24/7",
+          "label": {
+            "vi": "giải ngân tự động theo rule",
+            "en": "rule-based auto disbursement"
+          }
+        },
+        {
+          "value": "p95 < 500ms",
+          "label": {
+            "vi": "độ trễ API quyết định",
+            "en": "decision API latency"
+          }
+        }
       ],
       "tech": [
         "Java",
@@ -719,7 +953,7 @@
       "id": "msb-sme-lc",
       "category": "company",
       "visibility": "private",
-      "name": "Phê duyệt SME · LC (MSB)",
+      "name": "SME · LC Approval (MSB)",
       "employer": "MSB",
       "type": {
         "vi": "Phê duyệt KHDN · Trade Finance",
@@ -731,9 +965,30 @@
         "en": "Shortening SME and Letter-of-Credit (LC) approval procedures; integrating transparent field survey/verification with identified and geolocated devices to reduce fraud. Business details confidential."
       },
       "metrics": [
-        { "value": "~50%", "label": { "vi": "rút ngắn thủ tục phê duyệt", "en": "shorter approval procedure" } },
-        { "value": "100%", "label": { "vi": "xác minh thực địa có định vị", "en": "geolocated field verification" } },
-        { "value": "↓ rủi ro", "label": { "vi": "giảm tiêu cực nhờ thiết bị định danh", "en": "fraud reduced via device identity" } }
+        {
+          "value": "~50%",
+          "label": {
+            "vi": "rút ngắn thủ tục phê duyệt",
+            "en": "shorter approval procedure"
+          }
+        },
+        {
+          "value": "100%",
+          "label": {
+            "vi": "xác minh thực địa có định vị",
+            "en": "geolocated field verification"
+          }
+        },
+        {
+          "value": {
+            "vi": "↓ rủi ro",
+            "en": "↓ risk"
+          },
+          "label": {
+            "vi": "giảm tiêu cực nhờ thiết bị định danh",
+            "en": "fraud reduced via device identity"
+          }
+        }
       ],
       "tech": [
         "Java",
@@ -771,9 +1026,33 @@
         "en": "Ultra-fast loan application approval: rule-based automation, keeping human decisions only where needed. Business details confidential."
       },
       "metrics": [
-        { "value": "~80%", "label": { "vi": "hồ sơ xử lý tự động (STP)", "en": "applications straight-through" } },
-        { "value": "giây", "label": { "vi": "thời gian ra quyết định", "en": "decision time" } },
-        { "value": "↓ thủ công", "label": { "vi": "chỉ can thiệp ở điểm cần thiết", "en": "human-in-the-loop only where needed" } }
+        {
+          "value": "~80%",
+          "label": {
+            "vi": "hồ sơ xử lý tự động (STP)",
+            "en": "applications straight-through"
+          }
+        },
+        {
+          "value": {
+            "vi": "giây",
+            "en": "seconds"
+          },
+          "label": {
+            "vi": "thời gian ra quyết định",
+            "en": "decision time"
+          }
+        },
+        {
+          "value": {
+            "vi": "↓ thủ công",
+            "en": "↓ manual"
+          },
+          "label": {
+            "vi": "chỉ can thiệp ở điểm cần thiết",
+            "en": "human-in-the-loop only where needed"
+          }
+        }
       ],
       "tech": [
         "Java",
@@ -811,9 +1090,33 @@
         "en": "Managing and dispatching AGVs in warehouses: mapping, stop points, per-warehouse AGV layout design, and movement orchestration. Business details confidential."
       },
       "metrics": [
-        { "value": "đa kho", "label": { "vi": "layout riêng từng kho", "en": "per-warehouse layouts" } },
-        { "value": "real-time", "label": { "vi": "điều phối luồng di chuyển AGV", "en": "real-time AGV dispatching" } },
-        { "value": "↓ va chạm", "label": { "vi": "tối ưu điểm dừng & lộ trình", "en": "optimized stops & routing" } }
+        {
+          "value": {
+            "vi": "đa kho",
+            "en": "multi-warehouse"
+          },
+          "label": {
+            "vi": "layout riêng từng kho",
+            "en": "per-warehouse layouts"
+          }
+        },
+        {
+          "value": "real-time",
+          "label": {
+            "vi": "điều phối luồng di chuyển AGV",
+            "en": "real-time AGV dispatching"
+          }
+        },
+        {
+          "value": {
+            "vi": "↓ va chạm",
+            "en": "↓ collisions"
+          },
+          "label": {
+            "vi": "tối ưu điểm dừng & lộ trình",
+            "en": "optimized stops & routing"
+          }
+        }
       ],
       "tech": [
         "Java",
@@ -851,9 +1154,30 @@
         "en": "Migrated a legacy .NET system to Java; digitized machine/AGV design reports and drawings from existing files. Wrote SQL procedures/functions, applied partial DevOps. Business details confidential."
       },
       "metrics": [
-        { "value": ".NET→Java", "label": { "vi": "migrate theo Strangler, không downtime lớn", "en": "Strangler migration, minimal downtime" } },
-        { "value": "số hoá", "label": { "vi": "báo cáo & bản vẽ thiết kế", "en": "reports & design drawings" } },
-        { "value": "SQL proc", "label": { "vi": "procedure/function tối ưu truy vấn", "en": "query-optimized procedures/functions" } }
+        {
+          "value": ".NET→Java",
+          "label": {
+            "vi": "migrate theo Strangler, không downtime lớn",
+            "en": "Strangler migration, minimal downtime"
+          }
+        },
+        {
+          "value": {
+            "vi": "số hoá",
+            "en": "digitized"
+          },
+          "label": {
+            "vi": "báo cáo & bản vẽ thiết kế",
+            "en": "reports & design drawings"
+          }
+        },
+        {
+          "value": "SQL proc",
+          "label": {
+            "vi": "procedure/function tối ưu truy vấn",
+            "en": "query-optimized procedures/functions"
+          }
+        }
       ],
       "tech": [
         "Java",
@@ -891,9 +1215,30 @@
         "en": "Mini web apps integrated with banking apps and a banking-simulation platform for finance students; applied SQL/NoSQL and DevOps (Docker, K8s, Jenkins, GitLab)."
       },
       "metrics": [
-        { "value": "nhiều app", "label": { "vi": "mini web app nghiệp vụ ngân hàng", "en": "banking mini web apps" } },
-        { "value": "CI/CD", "label": { "vi": "Docker · K8s · Jenkins · GitLab", "en": "Docker · K8s · Jenkins · GitLab" } },
-        { "value": "SQL+NoSQL", "label": { "vi": "vận dụng linh hoạt theo dự án", "en": "polyglot persistence per project" } }
+        {
+          "value": {
+            "vi": "nhiều app",
+            "en": "multiple apps"
+          },
+          "label": {
+            "vi": "mini web app nghiệp vụ ngân hàng",
+            "en": "banking mini web apps"
+          }
+        },
+        {
+          "value": "CI/CD",
+          "label": {
+            "vi": "Docker · K8s · Jenkins · GitLab",
+            "en": "Docker · K8s · Jenkins · GitLab"
+          }
+        },
+        {
+          "value": "SQL+NoSQL",
+          "label": {
+            "vi": "vận dụng linh hoạt theo dự án",
+            "en": "polyglot persistence per project"
+          }
+        }
       ],
       "tech": [
         "Java",
@@ -931,8 +1276,23 @@
         "en": "Internship project: an internal social network on Spring Web MVC and a database — where I learned Spring Framework and the MVC model."
       },
       "metrics": [
-        { "value": "8+ tháng", "label": { "vi": "thực tập dài nhất, nền tảng Spring", "en": "longest internship, Spring foundation" } },
-        { "value": "full CRUD", "label": { "vi": "MVC · session auth · CSDL", "en": "MVC · session auth · database" } }
+        {
+          "value": {
+            "vi": "8+ tháng",
+            "en": "8+ months"
+          },
+          "label": {
+            "vi": "thực tập dài nhất, nền tảng Spring",
+            "en": "longest internship, Spring foundation"
+          }
+        },
+        {
+          "value": "full CRUD",
+          "label": {
+            "vi": "MVC · session auth · CSDL",
+            "en": "MVC · session auth · database"
+          }
+        }
       ],
       "tech": [
         "Java",

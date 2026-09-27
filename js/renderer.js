@@ -1278,7 +1278,27 @@
     }
 
     document.addEventListener("languageChanged", () => {
-        if (state.data) renderAll();
+        if (!state.data) return;
+
+        const root = document.querySelector("main") || document.body;
+        const reduceMotion =
+            window.matchMedia &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduceMotion || !root) {
+            renderAll();
+            return;
+        }
+
+        // Smooth cross-fade: fade out -> re-render off-screen -> fade back in.
+        root.classList.add("lang-switching");
+        window.setTimeout(() => {
+            renderAll();
+            // Next frame, after new DOM is painted, fade the content back in.
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => root.classList.remove("lang-switching"));
+            });
+        }, 160);
     });
 
     window.PORTFOLIO = Object.freeze({

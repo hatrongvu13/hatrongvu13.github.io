@@ -580,6 +580,37 @@
     font-size: 0.72rem;
 }
 
+/* ---- Even, comparable project cards ----
+   Cards become a vertical flex column so the footer note/actions align to the
+   bottom regardless of body length -> tidier spacing when scanning side by side. */
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card > .card-actions,
+.project-card > .project-private-note {
+    margin-top: auto; /* push footer to the bottom for a consistent baseline */
+}
+
+/* Keep the private/enterprise note compact — no oversized empty box */
+.project-card .project-private-note {
+    align-self: stretch;
+}
+
+.project-card .project-private-note p {
+    margin: 0;
+}
+
+/* ---- Smooth language cross-fade ---- */
+main {
+    transition: opacity var(--duration-normal, 0.24s) ease;
+}
+
+main.lang-switching {
+    opacity: 0;
+}
+
 /* Contact social links (replaces the old form) */
 .contact-social {
     display: flex;
