@@ -1,0 +1,985 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset=utf8>
+    <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <style>:root {
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    html {
+        scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font: 14px -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #faf9f5;
+        color: #141413
+    }
+
+    img {
+        max-width: 100%
+    }
+
+    [hidden]:not([hidden=until-found i]) {
+        display: none !important
+    }</style>
+</head>
+<body>
+<title>Vệt sao quanh Polaris</title>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+    /* Bố cục: sân khấu canvas vuông bên trái (dính khi cuộn), bảng điều khiển và công thức trực tiếp bên phải.
+       Một bầu trời đêm duy nhất, chủ ý chỉ có một giao diện tối. */
+    :root {
+        --bg: #04070f;
+        --panel: #0a1020;
+        --line: #1a2745;
+        --ink: #d6deef;
+        --muted: #8392af;
+        --accent: #8fb8ff;
+        --ax-x: #e4b162;
+        --ax-y: #5cc8b5;
+        --ax-z: #b49cff;
+        --gold: #ffd9a0;
+        --f-display: 'Instrument Serif', Georgia, serif;
+        --f-body: 'IBM Plex Sans', system-ui, sans-serif;
+        --f-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+        color-scheme: dark;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--ink);
+        font: 15px/1.55 var(--f-body)
+    }
+
+    .wrap {
+        max-width: 1240px;
+        margin-inline: auto;
+        padding: 20px 16px 48px
+    }
+
+    .head {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 20px
+    }
+
+    .head h1 {
+        margin: 0;
+        font: 400 clamp(2rem, 5vw, 3rem)/1.05 var(--f-display);
+        text-wrap: balance
+    }
+
+    .head p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 62ch
+    }
+
+    .layout {
+        display: grid;
+        grid-template-columns:minmax(0, 1fr);
+        gap: 24px;
+        align-items: start
+    }
+
+    @media (min-width: 920px) {
+        .layout {
+            grid-template-columns:minmax(0, 1fr) minmax(320px, 390px)
+        }
+    }
+
+    .stage {
+        position: relative;
+        aspect-ratio: 1/1;
+        width: 100%;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        overflow: hidden
+    }
+
+    @media (min-width: 920px) {
+        .stage {
+            position: sticky;
+            top: 16px;
+            width: min(100%, calc(100vh - 32px));
+            max-height: calc(100vh - 32px)
+        }
+    }
+
+    #sky {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: crosshair
+    }
+
+    .hud {
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        font: 11px/1.4 var(--f-mono);
+        color: var(--muted);
+        pointer-events: none;
+        max-width: 60%
+    }
+
+    .hint {
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        font: 11px/1.4 var(--f-mono);
+        color: var(--muted);
+        pointer-events: none
+    }
+
+    .stagebtns {
+        position: absolute;
+        right: 10px;
+        bottom: 8px;
+        display: flex;
+        gap: 6px
+    }
+
+    .btn {
+        font: 500 12px/1 var(--f-mono);
+        color: var(--ink);
+        background: rgba(4, 7, 15, .72);
+        border: 1px solid var(--line);
+        padding: 8px 12px;
+        cursor: pointer
+    }
+
+    .btn:hover {
+        border-color: var(--accent)
+    }
+
+    .btn:focus-visible, input:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px
+    }
+
+    .side {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-width: 0
+    }
+
+    .sec {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-width: 0
+    }
+
+    .sec h2 {
+        margin: 0;
+        font: 500 11px/1 var(--f-mono);
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--line)
+    }
+
+    .ctl {
+        display: grid;
+        grid-template-columns:1fr auto;
+        gap: 2px 8px;
+        align-items: baseline
+    }
+
+    .ctl label {
+        font-size: 13px
+    }
+
+    .ctl output {
+        font: 12px var(--f-mono);
+        color: var(--accent);
+        font-variant-numeric: tabular-nums
+    }
+
+    .ctl input {
+        grid-column: 1/-1;
+        width: 100%;
+        margin: 4px 0 0;
+        accent-color: var(--accent)
+    }
+
+    .tg {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px
+    }
+
+    .tg label {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 13px;
+        cursor: pointer
+    }
+
+    .tg input {
+        accent-color: var(--accent);
+        width: 15px;
+        height: 15px;
+        margin: 0
+    }
+
+    .presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px
+    }
+
+    .presets .btn {
+        background: transparent
+    }
+
+    .sel {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font: 12px var(--f-mono);
+        color: var(--ink);
+        min-width: 0
+    }
+
+    .sel #sw {
+        flex: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px currentColor
+    }
+
+    .fx {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+        min-width: 0
+    }
+
+    .fx:first-of-type {
+        border-top: 0;
+        padding-top: 0
+    }
+
+    .fx h3 {
+        margin: 0;
+        font: 500 12px/1.2 var(--f-mono);
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--gold)
+    }
+
+    .f {
+        font: 400 1.3rem/1.4 var(--f-display);
+        overflow-x: auto;
+        padding-bottom: 2px
+    }
+
+    .f i {
+        font-style: italic
+    }
+
+    .f sub, .f sup {
+        font-size: .62em;
+        line-height: 0
+    }
+
+    .f .gap {
+        display: inline-block;
+        width: 1.2em
+    }
+
+    .live {
+        margin: 0;
+        font: 12px/1.55 var(--f-mono);
+        color: var(--muted);
+        overflow-wrap: anywhere;
+        font-variant-numeric: tabular-nums
+    }
+
+    .live b {
+        font-weight: 500;
+        color: var(--ink)
+    }
+
+    .note {
+        margin: 0;
+        font-size: 12.5px;
+        color: var(--muted);
+        max-width: 60ch
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            scroll-behavior: auto
+        }
+    }
+</style>
+
+<div class="wrap">
+    <header class="head">
+        <h1>Vệt sao quanh Polaris</h1>
+        <p>Sao quay quanh cực thiên cầu theo tọa độ cực. Kéo thanh trượt để đổi tốc độ, độ nghiêng phối cảnh và độ mờ
+            dần của vệt, bấm vào một sao để xem phép tính của chính nó.</p>
+    </header>
+
+    <div class="layout">
+        <div class="stage" id="stage">
+            <canvas id="sky" aria-label="Mô phỏng vệt sao quay quanh sao Bắc Cực" role="img"></canvas>
+            <div class="hint">Bấm vào sao để chọn</div>
+            <div class="hud" id="hud"></div>
+            <div class="stagebtns">
+                <button class="btn" id="b-reset" type="button">t = 0</button>
+                <button class="btn" id="b-play" type="button">Dừng</button>
+            </div>
+        </div>
+
+        <div class="side">
+            <section class="sec" aria-labelledby="h-ctl">
+                <h2 id="h-ctl">Điều khiển</h2>
+                <div class="ctl"><label for="c-speed">Tốc độ thời gian</label>
+                    <output id="o-speed"></output>
+                    <input id="c-speed" type="range" min="0" max="8" step="0.1" value="1.5"></div>
+                <div class="ctl"><label for="c-trail">Chiều dài vệt</label>
+                    <output id="o-trail"></output>
+                    <input id="c-trail" type="range" min="0.5" max="12" step="0.1" value="3.5"></div>
+                <div class="ctl"><label for="c-lambda">Hệ số suy giảm λ</label>
+                    <output id="o-lambda"></output>
+                    <input id="c-lambda" type="range" min="0" max="6" step="0.1" value="2.4"></div>
+                <div class="ctl"><label for="c-tilt">Độ nghiêng camera α</label>
+                    <output id="o-tilt"></output>
+                    <input id="c-tilt" type="range" min="0" max="75" step="1" value="55"></div>
+                <div class="presets">
+                    <button class="btn" type="button" data-tilt="0">Nhìn dọc trục cực</button>
+                    <button class="btn" type="button" data-tilt="55">Phối cảnh 55°</button>
+                    <button class="btn" type="button" data-tilt="72">Nghiêng 72°</button>
+                </div>
+                <div class="ctl"><label for="c-layers">Số lớp quỹ đạo K</label>
+                    <output id="o-layers"></output>
+                    <input id="c-layers" type="range" min="1" max="8" step="1" value="5"></div>
+                <div class="ctl"><label for="c-spread">Chênh lệch tốc độ giữa các lớp κ</label>
+                    <output id="o-spread"></output>
+                    <input id="c-spread" type="range" min="0" max="1" step="0.05" value="0.35"></div>
+                <div class="ctl"><label for="c-density">Mật độ sao</label>
+                    <output id="o-density"></output>
+                    <input id="c-density" type="range" min="20" max="140" step="5" value="70"></div>
+                <div class="ctl"><label for="c-glow">Cường độ glow</label>
+                    <output id="o-glow"></output>
+                    <input id="c-glow" type="range" min="0" max="1.5" step="0.05" value="1"></div>
+                <div class="tg">
+                    <label><input id="t-grid" type="checkbox" checked>Lưới cực</label>
+                    <label><input id="t-axes" type="checkbox" checked>Hệ trục x, y, z</label>
+                    <label><input id="t-polaris" type="checkbox" checked>Polaris</label>
+                    <label><input id="t-trails" type="checkbox" checked>Vệt sao</label>
+                </div>
+            </section>
+
+            <section class="sec" aria-labelledby="h-fx">
+                <h2 id="h-fx">Công thức trên sao đang chọn</h2>
+                <div class="sel"><span id="sw"></span><span id="selname"></span></div>
+
+                <article class="fx">
+                    <h3>Quỹ đạo cực</h3>
+                    <div class="f"><i>x</i> = <i>r</i> cos <i>θ</i><span class="gap"></span><i>y</i> = <i>r</i> sin
+                        <i>θ</i></div>
+                    <p class="live" id="e1x"></p>
+                    <p class="live" id="e1y"></p>
+                </article>
+
+                <article class="fx">
+                    <h3>Chuyển động theo thời gian</h3>
+                    <div class="f"><i>θ</i> = <i>θ</i><sub>0</sub> + <i>ω t</i></div>
+                    <p class="live" id="e2"></p>
+                    <p class="note">Một vòng sao quay hết 23,934 giờ, nên ω<sub>0</sub> = 2π / 23,934 ≈ 15,04°/giờ.</p>
+                </article>
+
+                <article class="fx">
+                    <h3>Nhiều lớp quỹ đạo</h3>
+                    <div class="f"><i>r</i><sub><i>k</i></sub> = <i>r</i><sub>min</sub> + (<i>k</i> + ½)
+                        Δ<i>r</i><br><i>ω</i><sub><i>k</i></sub> = <i>ω</i><sub>0</sub> [1 + <i>κ</i> (½ − <i>k</i> /
+                        (<i>K</i> − 1))]
+                    </div>
+                    <p class="live" id="e4a"></p>
+                    <p class="live" id="e4b"></p>
+                </article>
+
+                <article class="fx">
+                    <h3>Phối cảnh 3D</h3>
+                    <div class="f"><i>Y′</i> = <i>y</i> cos <i>α</i> − <i>z</i> sin <i>α</i><br><i>Z′</i> = <i>y</i> sin
+                        <i>α</i> + <i>z</i> cos <i>α</i><br><i>s</i> = <i>D</i> / (<i>D</i> + <i>Z′</i>)<br>(<i>u</i>,
+                        <i>v</i>) = (<i>c</i><sub>x</sub> + <i>R x s</i>, <i>c</i><sub>y</sub> − <i>R Y′ s</i>)
+                    </div>
+                    <p class="live" id="e5a"></p>
+                    <p class="live" id="e5b"></p>
+                </article>
+
+                <article class="fx">
+                    <h3>Độ sáng và vệt suy giảm</h3>
+                    <div class="f"><i>F</i> = 10<sup>−0,4 (<i>m</i> − <i>m</i><sub>0</sub>)</sup><span
+                            class="gap"></span><i>I</i><sub>0</sub> = <i>F</i><sup>γ</sup><br><i>I</i>(<i>s</i>) =
+                        <i>I</i><sub>0</sub> e<sup>−<i>λ s</i></sup></div>
+                    <p class="live" id="e3a"></p>
+                    <p class="live" id="e3b"></p>
+                    <p class="note">s chạy từ 0 ở đầu vệt (vị trí hiện tại) đến 1 ở đuôi. m<sub>0</sub> = 0,6 và γ =
+                        0,33 để sao mờ vẫn nhìn thấy.</p>
+                </article>
+
+                <article class="fx">
+                    <h3>Màu theo nhiệt độ và glow</h3>
+                    <div class="f"><i>T</i> → (<i>R</i>, <i>G</i>, <i>B</i>)<span class="gap"></span><i>C</i> = min(1,
+                        <i>C</i><sub>nền</sub> + Σ <i>α</i><sub><i>i</i></sub> <i>C</i><sub><i>i</i></sub>)
+                    </div>
+                    <p class="live" id="e6a"></p>
+                    <p class="note">Màu lấy từ xấp xỉ vật đen theo nhiệt độ. Glow là ảnh tròn mờ dần vẽ chồng bằng chế
+                        độ cộng sáng (lighter), nên chỗ nhiều sao giao nhau sẽ sáng dần lên.</p>
+                </article>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    (() => {
+        'use strict';
+        const TAU = Math.PI * 2, DEG = 180 / Math.PI;
+        const SIDEREAL = 23.9345;           // giờ cho một vòng sao quay
+        const W0 = TAU / SIDEREAL;          // rad/giờ
+        const D = 3.2;                      // khoảng cách camera, đơn vị bán kính ngoài
+        const M0 = 0.6, GAMMA = 0.33;
+        const COL = {x: '#e4b162', y: '#5cc8b5', z: '#b49cff', gold: '#ffd9a0', accent: '#8fb8ff'};
+        const $ = id => document.getElementById(id);
+
+        const stage = $('stage'), cv = $('sky'), ctx = cv.getContext('2d');
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const S = {
+            speed: 1.5, trail: 3.5, lambda: 2.4, tilt: 55, layers: 5, spread: 0.35, glow: 1, density: 70,
+            grid: true, axes: true, polaris: true, trails: true, paused: reduce
+        };
+        let T = 6;                          // thời gian mô phỏng (giờ)
+        let w = 600, h = 600, cx = 300, cy = 300, R = 240, dpr = 1, dirty = true;
+        let ca = 1, sa = 0;
+        let px = 0, py = 0, ps = 1, py2 = 0, pz2 = 0;   // kết quả của P()
+
+        /* ---------- màu theo nhiệt độ (Tanner Helland) ---------- */
+        function kelvin(K) {
+            const t = K / 100;
+            let r, g, b;
+            if (t <= 66) {
+                r = 255;
+                g = 99.4708025861 * Math.log(t) - 161.1195681661;
+            } else {
+                r = 329.698727446 * Math.pow(t - 60, -0.1332047592);
+                g = 288.1221695283 * Math.pow(t - 60, -0.0755148492);
+            }
+            if (t >= 66) b = 255; else if (t <= 19) b = 0; else b = 138.5177312231 * Math.log(t - 10) - 305.0447927307;
+            const c = v => Math.max(0, Math.min(255, Math.round(v)));
+            return [c(r), c(g), c(b)];
+        }
+
+        function specClass(K) {
+            return K < 3900 ? 'M' : K < 5200 ? 'K' : K < 6000 ? 'G' : K < 7500 ? 'F' : K < 10000 ? 'A' : 'B';
+        }
+
+        const NB = 24, TMIN = 2800, TMAX = 30000, sprites = [];
+
+        function makeSprite(rgb) {
+            const c = document.createElement('canvas');
+            c.width = c.height = 96;
+            const x = c.getContext('2d');
+            const g = x.createRadialGradient(48, 48, 0, 48, 48, 48);
+            const [r, gg, b] = rgb, wt = v => Math.round(v + (255 - v) * 0.7);
+            g.addColorStop(0, `rgba(${wt(r)},${wt(gg)},${wt(b)},1)`);
+            g.addColorStop(0.07, `rgba(${wt(r)},${wt(gg)},${wt(b)},0.95)`);
+            g.addColorStop(0.16, `rgba(${r},${gg},${b},0.55)`);
+            g.addColorStop(0.4, `rgba(${r},${gg},${b},0.14)`);
+            g.addColorStop(1, `rgba(${r},${gg},${b},0)`);
+            x.fillStyle = g;
+            x.fillRect(0, 0, 96, 96);
+            return c;
+        }
+
+        for (let i = 0; i < NB; i++) {
+            const Tk = Math.exp(Math.log(TMIN) + (Math.log(TMAX) - Math.log(TMIN)) * i / (NB - 1));
+            sprites.push(makeSprite(kelvin(Tk)));
+        }
+        const bucket = K => Math.max(0, Math.min(NB - 1, Math.round((Math.log(K) - Math.log(TMIN)) / (Math.log(TMAX) - Math.log(TMIN)) * (NB - 1))));
+
+        /* ---------- tạo sao ---------- */
+        function rng(seed) {
+            return function () {
+                seed |= 0;
+                seed = seed + 0x6D2B79F5 | 0;
+                let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+                t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+                return ((t ^ t >>> 14) >>> 0) / 4294967296;
+            };
+        }
+
+        const CLASSES = [[2800, 3900, .24], [3900, 5200, .28], [5200, 6000, .16], [6000, 7500, .14], [7500, 10000, .10], [10000, 30000, .08]];
+
+        function sampleT(rand) {
+            let u = rand(), acc = 0, c = CLASSES[0];
+            for (const k of CLASSES) {
+                acc += k[2];
+                if (u <= acc) {
+                    c = k;
+                    break;
+                }
+                c = k;
+            }
+            return c[0] * Math.pow(c[1] / c[0], rand());
+        }
+
+        function makeStar(o) {
+            o.flux = Math.pow(10, -0.4 * (o.m - M0));
+            o.b = Math.min(1, Math.pow(o.flux, GAMMA));
+            const rgb = kelvin(o.T);
+            o.rgb = rgb;
+            o.col = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+            o.sp = bucket(o.T);
+            o.cls = specClass(o.T);
+            return o;
+        }
+
+        const polaris = makeStar({id: 'Polaris', k: -1, r: 0.045, th0: 1.1, z: 0, m: M0 - 1.2, T: 6015});
+        polaris.b = 1;
+
+        let stars = [], sel = polaris;
+
+        function build() {
+            const rand = rng(20261008);
+            stars = [];
+            const K = S.layers;
+            for (let k = 0; k < K; k++) {
+                const band = 0.82 / K, rc = 0.14 + band * (k + 0.5);
+                const z = K > 1 ? (k / (K - 1) - 0.5) * 0.9 : 0;
+                const cnt = Math.round(S.density * (0.6 + 0.8 * rc));
+                for (let i = 0; i < cnt; i++) {
+                    stars.push(makeStar({
+                        id: 'Sao #' + (stars.length + 1), k,
+                        r: rc + (rand() - 0.5) * band * 0.8,
+                        th0: rand() * TAU,
+                        z: z + (rand() - 0.5) * 0.06,
+                        m: 0.6 + 5.6 * Math.pow(rand(), 0.45),
+                        T: sampleT(rand)
+                    }));
+                }
+            }
+            sel = stars.find(s => s.k === Math.floor(K / 2) && s.m < 3.4) || stars[0] || polaris;
+            dirty = true;
+        }
+
+        const layerFactor = k => S.layers > 1 ? 1 + S.spread * (0.5 - k / (S.layers - 1)) : 1;
+        const omegaOf = o => o.k < 0 ? W0 : W0 * layerFactor(o.k);
+
+        /* ---------- phối cảnh ---------- */
+        function camera() {
+            const a = S.tilt / DEG;
+            ca = Math.cos(a);
+            sa = Math.sin(a);
+        }
+
+        function P(X, Y, Z) {
+            py2 = Y * ca - Z * sa;
+            pz2 = Y * sa + Z * ca;
+            ps = D / (D + pz2);
+            px = cx + X * ps * R;
+            py = cy - py2 * ps * R;
+        }
+
+        /* ---------- vẽ ---------- */
+        const heads = [];
+
+        function drawStar(o, wv, isPolaris) {
+            const th = o.th0 + wv * T;
+            P(o.r * Math.cos(th), o.r * Math.sin(th), o.z);
+            const hx = px, hy = py, hs = ps;
+            if (S.trails) {
+                const N = 16, span = S.trail * wv;
+                ctx.strokeStyle = o.col;
+                ctx.lineCap = 'round';
+                let x0 = hx, y0 = hy, s0 = hs;
+                for (let j = 1; j <= N; j++) {
+                    const f = j / N;
+                    const alpha = o.b * Math.exp(-S.lambda * (f - 0.5 / N)) * 0.9;
+                    if (alpha < 0.012) break;
+                    const a = th - span * f;
+                    P(o.r * Math.cos(a), o.r * Math.sin(a), o.z);
+                    ctx.globalAlpha = Math.min(1, alpha);
+                    ctx.lineWidth = (0.7 + 1.5 * o.b) * 0.5 * (s0 + ps) * (1 - 0.5 * f) * (isPolaris ? 1.3 : 1);
+                    ctx.beginPath();
+                    ctx.moveTo(x0, y0);
+                    ctx.lineTo(px, py);
+                    ctx.stroke();
+                    x0 = px;
+                    y0 = py;
+                    s0 = ps;
+                }
+            }
+            const size = (9 + 30 * Math.pow(o.b, 1.3)) * hs * (0.55 + 0.55 * S.glow) * (isPolaris ? 1.5 : 1);
+            ctx.globalAlpha = Math.min(1, (0.3 + 0.7 * o.b) * (0.5 + 0.5 * S.glow));
+            ctx.drawImage(sprites[o.sp], hx - size / 2, hy - size / 2, size, size);
+            if (isPolaris) {
+                ctx.globalAlpha = 0.55;
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 1;
+                const L = 30 * hs, d = L * 0.55;
+                ctx.beginPath();
+                ctx.moveTo(hx - L, hy);
+                ctx.lineTo(hx + L, hy);
+                ctx.moveTo(hx, hy - L);
+                ctx.lineTo(hx, hy + L);
+                ctx.moveTo(hx - d, hy - d);
+                ctx.lineTo(hx + d, hy + d);
+                ctx.moveTo(hx - d, hy + d);
+                ctx.lineTo(hx + d, hy - d);
+                ctx.stroke();
+            }
+            heads.push({o, x: hx, y: hy});
+            return [hx, hy];
+        }
+
+        function seg3(a, b, col, lw, arrow) {
+            P(a[0], a[1], a[2]);
+            const x0 = px, y0 = py;
+            P(b[0], b[1], b[2]);
+            ctx.strokeStyle = col;
+            ctx.fillStyle = col;
+            ctx.lineWidth = lw;
+            ctx.beginPath();
+            ctx.moveTo(x0, y0);
+            ctx.lineTo(px, py);
+            ctx.stroke();
+            if (arrow) {
+                const dx = px - x0, dy = py - y0, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L;
+                ctx.beginPath();
+                ctx.moveTo(px, py);
+                ctx.lineTo(px - ux * 9 - uy * 3.5, py - uy * 9 + ux * 3.5);
+                ctx.lineTo(px - ux * 9 + uy * 3.5, py - uy * 9 - ux * 3.5);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function drawGrid() {
+            ctx.lineWidth = 1;
+            ctx.setLineDash([]);
+            const rings = [0.25, 0.5, 0.75, 1];
+            for (const rr of rings) {
+                ctx.strokeStyle = rr === 1 ? 'rgba(150,175,220,0.30)' : 'rgba(150,175,220,0.14)';
+                ctx.beginPath();
+                for (let i = 0; i <= 96; i++) {
+                    const a = i / 96 * TAU;
+                    P(rr * Math.cos(a), rr * Math.sin(a), 0);
+                    i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+                }
+                ctx.stroke();
+            }
+            ctx.font = '10px "IBM Plex Mono", ui-monospace, monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            for (let d = 0; d < 360; d += 30) {
+                const a = d / DEG;
+                ctx.strokeStyle = 'rgba(150,175,220,0.10)';
+                P(0, 0, 0);
+                const x0 = px, y0 = py;
+                P(Math.cos(a), Math.sin(a), 0);
+                ctx.beginPath();
+                ctx.moveTo(x0, y0);
+                ctx.lineTo(px, py);
+                ctx.stroke();
+                P(1.1 * Math.cos(a), 1.1 * Math.sin(a), 0);
+                ctx.fillStyle = 'rgba(160,180,215,0.65)';
+                ctx.fillText(d + '°', px, py);
+            }
+            ctx.textAlign = 'left';
+            for (const rr of rings) {
+                const a = 15 / DEG;
+                P(rr * Math.cos(a), rr * Math.sin(a), 0);
+                ctx.fillStyle = 'rgba(160,180,215,0.5)';
+                ctx.fillText('r=' + rr.toFixed(2).replace('.', ','), px + 3, py - 6);
+            }
+        }
+
+        function drawAxes() {
+            ctx.setLineDash([]);
+            ctx.font = '11px "IBM Plex Mono", ui-monospace, monospace';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'alphabetic';
+            seg3([-1.12, 0, 0], [1.2, 0, 0], COL.x, 1.2, true);
+            ctx.fillStyle = COL.x;
+            ctx.fillText('x', px + 8, py + 4);
+            seg3([0, -1.12, 0], [0, 1.2, 0], COL.y, 1.2, true);
+            ctx.fillStyle = COL.y;
+            ctx.fillText('y', px + 8, py + 4);
+            seg3([0, 0, -0.62], [0, 0, 0.62], COL.z, 1.2, true);
+            if (S.tilt > 6) {
+                ctx.fillStyle = COL.z;
+                ctx.fillText('z · trục cực', px + 8, py + 4);
+            }
+            P(0, 0, 0);
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(px, py, 3.5, 0, TAU);
+            ctx.stroke();
+            ctx.fillStyle = 'rgba(214,222,239,0.85)';
+            ctx.textAlign = 'right';
+            ctx.fillText('O · tâm cực', px - 10, py + 20);
+            ctx.textAlign = 'left';
+        }
+
+        function drawSel() {
+            const o = sel, wv = omegaOf(o), th = o.th0 + wv * T;
+            const x = o.r * Math.cos(th), y = o.r * Math.sin(th);
+            ctx.save();
+            ctx.lineWidth = 1;
+            ctx.setLineDash([3, 5]);
+            ctx.strokeStyle = 'rgba(214,222,239,0.38)';
+            ctx.beginPath();
+            for (let i = 0; i <= 96; i++) {
+                const a = i / 96 * TAU;
+                P(o.r * Math.cos(a), o.r * Math.sin(a), o.z);
+                i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+            }
+            ctx.stroke();
+            P(0, 0, o.z);
+            const ox = px, oy = py;
+            P(x, 0, o.z);
+            const ax = px, ay = py;
+            P(x, y, o.z);
+            const hx = px, hy = py;
+            ctx.setLineDash([]);
+            ctx.strokeStyle = 'rgba(214,222,239,0.75)';
+            ctx.beginPath();
+            ctx.moveTo(ox, oy);
+            ctx.lineTo(hx, hy);
+            ctx.stroke();
+            ctx.setLineDash([4, 4]);
+            ctx.strokeStyle = COL.x;
+            ctx.beginPath();
+            ctx.moveTo(ox, oy);
+            ctx.lineTo(ax, ay);
+            ctx.stroke();
+            ctx.strokeStyle = COL.y;
+            ctx.beginPath();
+            ctx.moveTo(ax, ay);
+            ctx.lineTo(hx, hy);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            const thm = ((th % TAU) + TAU) % TAU, ra = Math.min(o.r * 0.55, 0.16);
+            ctx.strokeStyle = COL.gold;
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            for (let i = 0; i <= 40; i++) {
+                const a = thm * i / 40;
+                P(ra * Math.cos(a), ra * Math.sin(a), o.z);
+                i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+            }
+            ctx.stroke();
+            P(ra * 1.35 * Math.cos(thm / 2), ra * 1.35 * Math.sin(thm / 2), o.z);
+            ctx.font = 'italic 15px "Instrument Serif", Georgia, serif';
+            ctx.fillStyle = COL.gold;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('θ', px, py);
+            ctx.fillStyle = 'rgba(214,222,239,0.9)';
+            ctx.fillText('r', (ox + hx) / 2 + 7, (oy + hy) / 2 - 7);
+            ctx.strokeStyle = COL.accent;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(hx, hy, 16, 0, TAU);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        let polX = 0, polY = 0;
+
+        function render() {
+            camera();
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 1;
+            const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(w, h) * 0.75);
+            g.addColorStop(0, '#0b1428');
+            g.addColorStop(1, '#03050a');
+            ctx.fillStyle = g;
+            ctx.fillRect(0, 0, w, h);
+            if (S.grid) drawGrid();
+            if (S.axes) drawAxes();
+            ctx.globalCompositeOperation = 'lighter';
+            heads.length = 0;
+            for (let i = 0; i < stars.length; i++) drawStar(stars[i], omegaOf(stars[i]), false);
+            if (S.polaris) {
+                const p = drawStar(polaris, W0, true);
+                polX = p[0];
+                polY = p[1];
+            }
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 1;
+            if (S.polaris) {
+                ctx.strokeStyle = 'rgba(255,217,160,0.55)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(polX + 8, polY - 8);
+                ctx.lineTo(polX + 30, polY - 30);
+                ctx.lineTo(polX + 36, polY - 30);
+                ctx.stroke();
+                ctx.font = '11px "IBM Plex Mono", ui-monospace, monospace';
+                ctx.fillStyle = COL.gold;
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'alphabetic';
+                ctx.fillText('Polaris (α UMi)', polX + 40, polY - 27);
+            }
+            drawSel();
+            dirty = false;
+        }
+
+        /* ---------- bảng số liệu ---------- */
+        const fmt = (n, d = 2) => n.toFixed(d).replace('-', '−').replace('.', ',');
+        const set = (id, html) => {
+            $(id).innerHTML = html;
+        };
+
+        function updateReadout() {
+            const o = sel, wv = omegaOf(o), th = o.th0 + wv * T;
+            const thd = ((th * DEG) % 360 + 360) % 360, th0d = ((o.th0 * DEG) % 360 + 360) % 360;
+            const x = o.r * Math.cos(th), y = o.r * Math.sin(th);
+            camera();
+            P(x, y, o.z);
+            const name = o.k < 0 ? 'Polaris, lệch cực một vòng rất nhỏ' : `${o.id} · lớp ${o.k + 1}/${S.layers}`;
+            $('selname').textContent = name;
+            $('sw').style.background = o.col;
+            $('sw').style.color = o.col;
+            set('e1x', `<b>x</b> = ${fmt(o.r)} · cos(${fmt(thd, 1)}°) = <b>${fmt(x, 3)}</b>`);
+            set('e1y', `<b>y</b> = ${fmt(o.r)} · sin(${fmt(thd, 1)}°) = <b>${fmt(y, 3)}</b>`);
+            set('e2', `<b>θ</b> = ${fmt(th0d, 1)}° + ${fmt(wv * DEG, 2)}°/giờ × ${fmt(T, 2)} giờ ≡ <b>${fmt(thd, 1)}°</b>`);
+            const lf = o.k < 0 ? 1 : layerFactor(o.k);
+            set('e4a', `lớp <b>k = ${o.k < 0 ? '–' : o.k}</b> · r = ${fmt(o.r, 3)} · z = ${fmt(o.z, 2)}`);
+            set('e4b', `<b>ω</b> = ω₀ × ${fmt(lf, 3)} = ${fmt(W0 * DEG, 2)} × ${fmt(lf, 3)} = <b>${fmt(wv * DEG, 2)}°/giờ</b>`);
+            set('e5a', `α = ${S.tilt}° · Y′ = ${fmt(y, 3)}·${fmt(ca, 3)} − ${fmt(o.z, 2)}·${fmt(sa, 3)} = <b>${fmt(py2, 3)}</b> · Z′ = <b>${fmt(pz2, 3)}</b>`);
+            set('e5b', `s = ${fmt(D, 1)} / (${fmt(D, 1)} + ${fmt(pz2, 3)}) = <b>${fmt(ps, 3)}</b> · (u, v) = <b>(${Math.round(px)}, ${Math.round(py)}) px</b>`);
+            set('e3a', `m = ${fmt(o.m)} → F = ${fmt(o.flux, 4)} → <b>I₀ = ${fmt(o.b, 2)}</b>`);
+            set('e3b', `λ = ${fmt(S.lambda, 1)} · I(s)/I₀ = 1 → <b>${fmt(Math.exp(-S.lambda * 0.5), 2)}</b> (s = 0,5) → <b>${fmt(Math.exp(-S.lambda), 2)}</b> (s = 1)`);
+            set('e6a', `T = <b>${Math.round(o.T / 10) * 10} K</b> · lớp phổ ${o.cls} → rgb(<b>${o.rgb.join(', ')}</b>)`);
+            $('hud').textContent = `t = ${fmt(T, 2)} giờ · bầu trời quay ${fmt(((W0 * T * DEG) % 360 + 360) % 360, 1)}° · ${stars.length + 1} sao`;
+        }
+
+        /* ---------- điều khiển ---------- */
+        const sliders = [
+            ['speed', v => fmt(v, 1) + ' giờ/s', false], ['trail', v => fmt(v, 1) + ' giờ', false],
+            ['lambda', v => fmt(v, 1), false], ['tilt', v => v + '°', false],
+            ['layers', v => String(v), true], ['spread', v => fmt(v, 2), false],
+            ['density', v => String(v), true], ['glow', v => fmt(v, 2), false]
+        ];
+        for (const [key, f, rebuild] of sliders) {
+            const el = $('c-' + key), out = $('o-' + key);
+            const apply = () => {
+                S[key] = parseFloat(el.value);
+                out.textContent = f(S[key]);
+                if (rebuild) build();
+                dirty = true;
+                updateReadout();
+            };
+            el.addEventListener('input', apply);
+            S[key] = parseFloat(el.value);
+            out.textContent = f(S[key]);
+        }
+        for (const key of ['grid', 'axes', 'polaris', 'trails']) {
+            const el = $('t-' + key);
+            el.addEventListener('change', () => {
+                S[key] = el.checked;
+                dirty = true;
+            });
+        }
+        document.querySelectorAll('[data-tilt]').forEach(b => b.addEventListener('click', () => {
+            const el = $('c-tilt');
+            el.value = b.dataset.tilt;
+            el.dispatchEvent(new Event('input'));
+        }));
+        const play = $('b-play');
+        const syncPlay = () => {
+            play.textContent = S.paused ? 'Chạy' : 'Dừng';
+        };
+        play.addEventListener('click', () => {
+            S.paused = !S.paused;
+            syncPlay();
+        });
+        $('b-reset').addEventListener('click', () => {
+            T = 0;
+            dirty = true;
+            updateReadout();
+        });
+        syncPlay();
+
+        cv.addEventListener('pointerdown', e => {
+            const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+            let best = null, bd = 24;
+            for (const hd of heads) {
+                const d = Math.hypot(hd.x - mx, hd.y - my);
+                if (d < bd) {
+                    bd = d;
+                    best = hd.o;
+                }
+            }
+            if (best) {
+                sel = best;
+                dirty = true;
+                updateReadout();
+            }
+        });
+
+        function resize() {
+            const r = stage.getBoundingClientRect();
+            dpr = Math.min(2, window.devicePixelRatio || 1);
+            w = Math.max(200, r.width);
+            h = Math.max(200, r.height);
+            cv.width = Math.round(w * dpr);
+            cv.height = Math.round(h * dpr);
+            cx = w / 2;
+            cy = h / 2;
+            R = Math.min(w, h) * 0.40;
+            dirty = true;
+        }
+
+        if (window.ResizeObserver) new ResizeObserver(resize).observe(stage); else window.addEventListener('resize', resize);
+
+        /* ---------- vòng lặp ---------- */
+        let last = performance.now(), frame = 0;
+
+        function loop(now) {
+            const dt = Math.min(0.1, (now - last) / 1000);
+            last = now;
+            if (!S.paused) T += dt * S.speed;
+            if (!S.paused || dirty) render();
+            if (frame++ % 6 === 0) updateReadout();
+            requestAnimationFrame(loop);
+        }
+
+        build();
+        resize();
+        updateReadout();
+        requestAnimationFrame(loop);
+    })();
+</script>
+
+</body>
+</html>
