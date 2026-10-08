@@ -988,6 +988,75 @@ main.lang-switching {
     line-height: 1.3;
 }
 
+/* ----- Features in progress ----- */
+.project-features {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+}
+
+.project-features h4 {
+    margin: 0 0 10px;
+    color: var(--java);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.project-feature-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.project-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    color: var(--text-subtle);
+}
+
+.project-feature .feature-state {
+    flex: 0 0 auto;
+    min-width: 72px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--line-soft);
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-align: center;
+    background: var(--surface-soft);
+}
+
+.project-feature .feature-text {
+    flex: 1 1 auto;
+}
+
+.project-feature.feature-done .feature-state {
+    color: var(--spring, #72a45a);
+    border-color: color-mix(in srgb, var(--spring, #72a45a) 45%, transparent);
+    background: color-mix(in srgb, var(--spring, #72a45a) 12%, var(--surface-soft));
+}
+
+.project-feature.feature-inprogress .feature-state {
+    color: var(--java);
+    border-color: color-mix(in srgb, var(--java) 45%, transparent);
+    background: color-mix(in srgb, var(--java) 12%, var(--surface-soft));
+}
+
+.project-feature.feature-planned .feature-state {
+    color: var(--text-subtle);
+}
+
 @media (max-width: 760px) {
     .engineering-labs-grid {
         grid-template-columns:

@@ -684,6 +684,36 @@
                 card.appendChild(metricsBlock);
             }
 
+            const features = asArray(project.features);
+            if (features.length) {
+                const featuresBlock = create("div", { className: "project-features" });
+                appendTextElement(
+                    featuresBlock,
+                    "h4",
+                    translate("featuresLabel", "Tính năng đang phát triển")
+                );
+                const featureList = create("ul", { className: "project-feature-list" });
+                features.forEach((feature) => {
+                    const stateKey = asText(feature.state, "planned").toLowerCase();
+                    const stateLabel = translate(
+                        `feature_${stateKey}`,
+                        stateKey === "done"
+                            ? "Hoàn thành"
+                            : stateKey === "inprogress"
+                            ? "Đang làm"
+                            : "Kế hoạch"
+                    );
+                    const item = create("li", {
+                        className: `project-feature feature-${stateKey}`
+                    });
+                    appendTextElement(item, "span", stateLabel, "feature-state");
+                    appendTextElement(item, "span", asText(localized(feature.label)), "feature-text");
+                    featureList.appendChild(item);
+                });
+                featuresBlock.appendChild(featureList);
+                card.appendChild(featuresBlock);
+            }
+
             const technologies = asArray(project.tech || project.technologies);
             if (technologies.length) {
                 const chips = create("div", {

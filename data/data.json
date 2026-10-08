@@ -1314,207 +1314,176 @@
       }
     },
     {
-      "id": "smartfarm-livestock-tasks",
+      "id": "smartfarm-platform",
       "category": "planned",
-      "visibility": "planned",
-      "name": "SmartFarm · Livestock Task Service",
+      "visibility": "private",
+      "name": "SmartFarm Platform",
+      "repo": "smartfarm-platform-maven-starter",
       "type": {
-        "vi": "Chăn nuôi · Nhiệm vụ",
-        "en": "Livestock · Tasks"
+        "vi": "Nền tảng chăn nuôi · Microservices monorepo",
+        "en": "Livestock Platform · Microservices monorepo"
       },
-      "status": "planned",
+      "status": "active",
       "description": {
-        "vi": "Microservice tạo & giao nhiệm vụ chăn nuôi theo lịch/định kỳ, phân công người thực hiện và theo dõi hoàn thành.",
-        "en": "A microservice to create and assign scheduled livestock tasks, dispatch workers, and track completion."
+        "vi": "Nền tảng quản lý nông trại chăn nuôi end-to-end theo kiến trúc microservice trong một Maven monorepo (14 module): gateway edge (REST/GraphQL/WebSocket) dịch sang gRPC gọi các service nghiệp vụ, event bus qua MQTT (outbox/inbox), mỗi service một Postgres (Flyway). Đang phát triển dần theo các tính năng — hiện ở cuối Foundation / giữa V1 Core Platform.",
+        "en": "An end-to-end livestock-farm management platform in a microservice architecture inside a single Maven monorepo (14 modules): an edge gateway (REST/GraphQL/WebSocket) translating to gRPC business services, an MQTT event bus (outbox/inbox), and a Postgres per service (Flyway). Built incrementally, feature by feature — currently late Foundation / mid V1 Core Platform."
       },
+      "metrics": [
+        {
+          "value": {
+            "vi": "14 module",
+            "en": "14 modules"
+          },
+          "label": {
+            "vi": "Maven reactor monorepo",
+            "en": "Maven reactor monorepo"
+          }
+        },
+        {
+          "value": "gRPC + MQTT",
+          "label": {
+            "vi": "nội bộ gRPC · event bus MQTT",
+            "en": "internal gRPC · MQTT event bus"
+          }
+        },
+        {
+          "value": "saga + outbox",
+          "label": {
+            "vi": "order saga + outbox at-least-once",
+            "en": "order saga + at-least-once outbox"
+          }
+        }
+      ],
       "tech": [
-        "Spring Boot",
-        "gRPC",
-        "PostgreSQL",
-        "Scheduler"
-      ],
-      "architecturePatterns": [
-        "MSA",
-        "Event-Driven",
-        "Task Scheduling"
-      ],
-      "repoSuggestion": "smartfarm-livestock-service",
-      "source": "",
-      "docs": "",
-      "demo": "",
-      "plannedNote": {
-        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
-        "en": "Proposed — repo to be created and implemented."
-      }
-    },
-    {
-      "id": "smartfarm-animal-health",
-      "category": "planned",
-      "visibility": "planned",
-      "name": "SmartFarm · Animal Health Service",
-      "type": {
-        "vi": "Kiểm tra sức khoẻ vật nuôi",
-        "en": "Animal Health Check"
-      },
-      "status": "planned",
-      "description": {
-        "vi": "Theo dõi sức khoẻ vật nuôi: hồ sơ tiêm phòng, cảnh báo bất thường, lịch khám và nhật ký điều trị.",
-        "en": "Track animal health: vaccination records, anomaly alerts, checkup schedules and treatment logs."
-      },
-      "tech": [
-        "Spring Boot",
-        "gRPC",
-        "PostgreSQL",
-        "Alerting"
-      ],
-      "architecturePatterns": [
-        "MSA",
-        "Domain Events",
-        "Alerting"
-      ],
-      "repoSuggestion": "smartfarm-health-service",
-      "source": "",
-      "docs": "",
-      "demo": "",
-      "plannedNote": {
-        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
-        "en": "Proposed — repo to be created and implemented."
-      }
-    },
-    {
-      "id": "smartfarm-inventory",
-      "category": "planned",
-      "visibility": "planned",
-      "name": "SmartFarm · Inventory Service",
-      "type": {
-        "vi": "Quản lý kho",
-        "en": "Inventory Management"
-      },
-      "status": "planned",
-      "description": {
-        "vi": "Quản lý kho thức ăn/thuốc/vật tư: nhập–xuất–tồn, ngưỡng cảnh báo và truy vết lô hàng.",
-        "en": "Manage feed/medicine/supply inventory: in–out–stock, low-stock alerts and batch tracing."
-      },
-      "tech": [
-        "Spring Boot",
+        "Java 17",
+        "Spring Boot 4.1.1",
+        "Spring gRPC",
         "GraphQL",
-        "PostgreSQL",
-        "Redis"
+        "MQTT (Mosquitto/Paho)",
+        "PostgreSQL 17",
+        "Redis",
+        "Flyway",
+        "Docker Compose",
+        "Kubernetes"
+      ],
+      "buildingBlocks": [
+        "Edge Gateway (REST/GraphQL/WS)",
+        "Identity (JWT/RBAC/MFA)",
+        "Order Saga",
+        "Inventory",
+        "Finance Ledger",
+        "Livestock",
+        "Health",
+        "Reporting",
+        "Shared libs (proto/security/messaging/kernel)"
       ],
       "architecturePatterns": [
-        "MSA",
+        "Microservices Monorepo",
+        "Contract-First gRPC",
+        "Orchestrated Saga",
+        "Transactional Outbox / Inbox",
         "CQRS Read Model",
-        "Stock Ledger"
+        "Fail-Closed Authz"
       ],
-      "repoSuggestion": "smartfarm-inventory-service",
+      "features": [
+        {
+          "state": "done",
+          "label": {
+            "vi": "Identity · xác thực/RBAC/MFA-TOTP + service-token",
+            "en": "Identity · auth/RBAC/MFA-TOTP + service token"
+          }
+        },
+        {
+          "state": "done",
+          "label": {
+            "vi": "Order · saga bền vững (forward + bù trừ) + worker",
+            "en": "Order · persistent saga (forward + compensation) + worker"
+          }
+        },
+        {
+          "state": "done",
+          "label": {
+            "vi": "Finance · sổ cái thật + bù trừ idempotent",
+            "en": "Finance · real ledger + idempotent compensation"
+          }
+        },
+        {
+          "state": "done",
+          "label": {
+            "vi": "Inventory · domain/gRPC + MQTT inbox + IT",
+            "en": "Inventory · domain/gRPC + MQTT inbox + ITs"
+          }
+        },
+        {
+          "state": "done",
+          "label": {
+            "vi": "Livestock · vòng đời nhiệm vụ + outbox",
+            "en": "Livestock · task lifecycle + outbox"
+          }
+        },
+        {
+          "state": "done",
+          "label": {
+            "vi": "gRPC/Proto · 12 proto tập trung, versioned, fail-closed authz",
+            "en": "gRPC/Proto · 12 centralized protos, versioned, fail-closed authz"
+          }
+        },
+        {
+          "state": "done",
+          "label": {
+            "vi": "Event bus · outbox at-least-once + CQRS projection + gap recovery",
+            "en": "Event bus · at-least-once outbox + CQRS projection + gap recovery"
+          }
+        },
+        {
+          "state": "done",
+          "label": {
+            "vi": "Gateway · MQTT→WebSocket bridge + single-ingress loopback binding",
+            "en": "Gateway · MQTT→WebSocket bridge + single-ingress loopback binding"
+          }
+        },
+        {
+          "state": "inProgress",
+          "label": {
+            "vi": "MQTT hardening · HMAC app-level đã live; broker auth/TLS/ACL đang bật dần",
+            "en": "MQTT hardening · app-level HMAC live; broker auth/TLS/ACL in progress"
+          }
+        },
+        {
+          "state": "inProgress",
+          "label": {
+            "vi": "Reporting · các loại báo cáo non-livestock + read-model",
+            "en": "Reporting · non-livestock report types + read models"
+          }
+        },
+        {
+          "state": "inProgress",
+          "label": {
+            "vi": "Health · 6 RPC còn thiếu + prod path qua gateway",
+            "en": "Health · remaining 6 RPCs + prod path via gateway"
+          }
+        },
+        {
+          "state": "planned",
+          "label": {
+            "vi": "V2 Warehouse plane (kho vận)",
+            "en": "V2 Warehouse plane"
+          }
+        },
+        {
+          "state": "planned",
+          "label": {
+            "vi": "V3 Connected Farm · IoT/automation plane",
+            "en": "V3 Connected Farm · IoT/automation plane"
+          }
+        }
+      ],
       "source": "",
       "docs": "",
       "demo": "",
-      "plannedNote": {
-        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
-        "en": "Proposed — repo to be created and implemented."
-      }
-    },
-    {
-      "id": "smartfarm-finance",
-      "category": "planned",
-      "visibility": "planned",
-      "name": "SmartFarm · Farm Finance Service",
-      "type": {
-        "vi": "Tài chính trang trại",
-        "en": "Farm Finance"
-      },
-      "status": "planned",
-      "description": {
-        "vi": "Quản lý tài chính trang trại: thu–chi, giá thành theo đàn/lứa, công nợ và dòng tiền.",
-        "en": "Manage farm finance: income–expense, cost per herd/batch, receivables and cash flow."
-      },
-      "tech": [
-        "Spring Boot",
-        "GraphQL",
-        "PostgreSQL",
-        "Reporting"
-      ],
-      "architecturePatterns": [
-        "MSA",
-        "Ledger",
-        "Aggregation"
-      ],
-      "repoSuggestion": "smartfarm-finance-service",
-      "source": "",
-      "docs": "",
-      "demo": "",
-      "plannedNote": {
-        "vi": "Đề xuất — sẽ khởi tạo repo và triển khai.",
-        "en": "Proposed — repo to be created and implemented."
-      }
-    },
-    {
-      "id": "smartfarm-reporting",
-      "category": "planned",
-      "visibility": "planned",
-      "name": "SmartFarm · Reporting Service",
-      "type": {
-        "vi": "Xuất báo cáo đa định dạng",
-        "en": "Multi-format Reporting"
-      },
-      "status": "planned",
-      "description": {
-        "vi": "Xuất báo cáo nhiều dạng (PDF/Excel/CSV) từ dữ liệu các service; tái dùng Document Template Engine.",
-        "en": "Export reports in multiple formats (PDF/Excel/CSV) from service data; reuses the Document Template Engine."
-      },
-      "tech": [
-        "Spring Boot",
-        "Apache POI",
-        "Thymeleaf",
-        "gRPC"
-      ],
-      "architecturePatterns": [
-        "MSA",
-        "Template Strategy",
-        "Async Export"
-      ],
-      "repoSuggestion": "smartfarm-reporting-service",
-      "source": "",
-      "docs": "",
-      "demo": "",
-      "plannedNote": {
-        "vi": "Đề xuất — tái dùng base document-template.",
-        "en": "Proposed — reuses document-template base."
-      }
-    },
-    {
-      "id": "smartfarm-gateway",
-      "category": "planned",
-      "visibility": "planned",
-      "name": "SmartFarm · API Gateway & BFF",
-      "type": {
-        "vi": "Cổng API · BFF",
-        "en": "API Gateway · BFF"
-      },
-      "status": "planned",
-      "description": {
-        "vi": "Cổng vào hệ thống SmartFarm: định tuyến, xác thực, GraphQL BFF hợp nhất dữ liệu từ các microservice.",
-        "en": "The SmartFarm entry point: routing, auth, and a GraphQL BFF aggregating data from microservices."
-      },
-      "tech": [
-        "Spring Cloud Gateway",
-        "Spring for GraphQL",
-        "gRPC",
-        "JWT"
-      ],
-      "architecturePatterns": [
-        "MSA",
-        "BFF",
-        "Gateway"
-      ],
-      "repoSuggestion": "smartfarm-gateway",
-      "source": "",
-      "docs": "",
-      "demo": "",
-      "plannedNote": {
-        "vi": "Đề xuất — dùng base spring-security & graphql-query-hub.",
-        "en": "Proposed — uses spring-security & graphql-query-hub base."
+      "privateNote": {
+        "vi": "Source-available (PolyForm Strict 1.0.0) — đang phát triển dần theo tính năng; chưa phải hệ thống production.",
+        "en": "Source-available (PolyForm Strict 1.0.0) — built incrementally feature by feature; not yet a production system."
       }
     }
   ],
@@ -1846,12 +1815,12 @@
     {
       "key": "planned",
       "title": {
-        "vi": "Đề xuất & Đang xây dựng",
-        "en": "Proposed & In Progress"
+        "vi": "Đang xây dựng",
+        "en": "In Progress"
       },
       "subtitle": {
-        "vi": "Hệ SmartFarm (MSA) — các service sẽ được khởi tạo repo và triển khai.",
-        "en": "SmartFarm system (MSA) — services to be created and implemented."
+        "vi": "Nền tảng SmartFarm (MSA monorepo) — phát triển dần theo từng tính năng.",
+        "en": "The SmartFarm platform (MSA monorepo) — built incrementally, feature by feature."
       }
     }
   ],
